@@ -48,16 +48,31 @@ The UK Money Reality Checker aims to:
 
 ---
 
-## Accessibility & Performance
+## ♿ Accessibility & Performance
 
-This project was tested using Lighthouse with the following results:
+This project was tested using Google Lighthouse to ensure a high standard of accessibility, performance, and best practices.
 
-- Performance: 100
-- Accessibility: 96–100
-- Best Practices: 100
-- SEO: 100
+### Audit results
+- **Performance:** 100
+- **Accessibility:** 96–100
+- **Best Practices:** 100
+- **SEO:** 100
 
-Keyboard navigation, focus states, and reduced-motion preferences are supported.
+### Accessibility considerations
+- Fully keyboard navigable interface
+- Visible focus states for interactive elements
+- Semantic HTML structure
+- ARIA attributes for custom controls (income selector)
+- Respects user `prefers-reduced-motion` settings
+- Clear, readable typography and spacing
+
+A temporary advertisement placeholder may trigger a contrast warning in Lighthouse; this is expected to be replaced by third-party ad content in production.
+
+Performance was prioritised through:
+- Minimal JavaScript
+- No external frameworks
+- Mobile-first CSS
+- Lightweight assets
 
 ---
 

@@ -365,7 +365,21 @@ p {
 }
 
 .lifestyle-cards article.deemphasised {
-    opacity: 0.6;
+  background: #f2f4f7;           /* subtle surface change */
+  border-color: #d0d5dd;
+}
+
+.lifestyle-cards article.deemphasised p {
+  color: #475467;                /* darker muted text */
+}
+
+.lifestyle-cards article.highlighted {
+  border-color: var(--primary);
+  background: #f8faff;
+}
+
+.lifestyle-cards article.highlighted h3 {
+  color: var(--primary);
 }
 
 /* -------- Reflection Prompts -------- */
