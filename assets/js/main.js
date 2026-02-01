@@ -31,6 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const STORAGE_KEY = "selectedIncomeRange";
 
+    const REGION_STORAGE_KEY = "selectedRegion";
+
+    const REGION_MULTIPLIERS = {
+        outside: 1,
+        london: 1.25
+    };
+
+    let currentRegion = "outside";
+
     const lifestyleMapping = (remaining) => {
         if (remaining < 200) return ["tight"];
         if (remaining < 400) return ["tight", "cautious"];
@@ -104,10 +113,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const range = incomeRanges[rangeKey];
         if (!range) return;
 
+        const regionMultiplier = REGION_MULTIPLIERS[currentRegion] || 1;
+        const adjustedCosts = Math.round(range.costs * regionMultiplier);
+
         const newValues = {
             takeHome: range.takeHome,
-            costs: range.costs,
-            remaining: range.takeHome - range.costs,
+            costs: adjustedCosts,
+            remaining: range.takeHome - adjustedCosts,
         };
 
         animateNumber(
@@ -203,11 +215,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const activateRegion = () => {
             regionButtons.forEach(btn => {
-            const isActive = btn === button;
-            btn.classList.toggle("active", isActive);
-            btn.setAttribute("aria-checked", isActive);
-            btn.setAttribute("tabindex", isActive ? "0" : "-1");
+                const isActive = btn === button;
+                btn.classList.toggle("active", isActive);
+                btn.setAttribute("aria-checked", isActive);
+                btn.setAttribute("tabindex", isActive ? "0" : "-1");
             });
+
+            currentRegion = button.dataset.region;
+
+            try {
+                localStorage.setItem(REGION_STORAGE_KEY, currentRegion);
+            } catch {}
+
+            const activeIncome =
+                document.querySelector(".income-options button.active")?.dataset.income;
+
+            if (activeIncome) {
+                updateSnapshot(activeIncome);
+            }
         };
 
         button.addEventListener("click", activateRegion);
@@ -241,6 +266,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // -----------------------------
     // Initialise default state
     // -----------------------------
+    // Restore region selection (default: outside)
+    try {
+        const savedRegion = localStorage.getItem(REGION_STORAGE_KEY);
+        const defaultRegionBtn =
+            document.querySelector(`.region-options button[data-region="${savedRegion}"]`) ||
+            document.querySelector('.region-options button.active') ||
+            regionButtons[0];
+
+        if (defaultRegionBtn) {
+            defaultRegionBtn.click();
+        }
+    } catch {}
     let savedRange = null;
 
     try {
