@@ -38,7 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
         london: 1.25
     };
 
-    let currentRegion = "outside";
+    const HOUSEHOLD_STORAGE_KEY = "selectedHousehold";
+
+    const HOUSEHOLD_MULTIPLIERS = {
+        single: 1,
+        couple: 1.6
+    };
 
     const lifestyleMapping = (remaining) => {
         if (remaining < 200) return ["tight"];
@@ -46,6 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (remaining < 700) return ["cautious", "flexible"];
         return ["flexible", "comfortable"];
     };
+
+    let currentRegion = "outside";
+    let currentHousehold = "single";
 
     // -----------------------------
     // DOM references
@@ -115,7 +123,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!range) return;
 
         const regionMultiplier = REGION_MULTIPLIERS[currentRegion] || 1;
-        const adjustedCosts = Math.round(range.costs * regionMultiplier);
+        const householdMultiplier = HOUSEHOLD_MULTIPLIERS[currentHousehold] || 1;
+
+        const adjustedCosts = Math.round(
+            range.costs * regionMultiplier * householdMultiplier
+        );
 
         const newValues = {
             takeHome: range.takeHome,
@@ -268,15 +280,26 @@ document.addEventListener("DOMContentLoaded", () => {
         button.setAttribute("tabindex", index === 0 ? "0" : "-1");
 
         const activateHousehold = () => {
-            householdButtons.forEach(btn => {
-            const isActive = btn === button;
-            btn.classList.toggle("active", isActive);
-            btn.setAttribute("aria-checked", isActive);
-            btn.setAttribute("tabindex", isActive ? "0" : "-1");
-            });
+    householdButtons.forEach(btn => {
+        const isActive = btn === button;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-checked", isActive);
+        btn.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
 
-            // UI only for now (no calculations yet)
-        };
+    currentHousehold = button.dataset.household;
+
+    try {
+        localStorage.setItem(HOUSEHOLD_STORAGE_KEY, currentHousehold);
+    } catch {}
+
+    const activeIncome =
+        document.querySelector(".income-options button.active")?.dataset.income;
+
+    if (activeIncome) {
+        updateSnapshot(activeIncome);
+    }
+};
 
         button.addEventListener("click", activateHousehold);
 
@@ -321,6 +344,20 @@ document.addEventListener("DOMContentLoaded", () => {
             defaultRegionBtn.click();
         }
     } catch {}
+
+    // Restore household selection (default: single)
+    try {
+        const savedHousehold = localStorage.getItem(HOUSEHOLD_STORAGE_KEY);
+        const defaultHouseholdBtn =
+            document.querySelector(`.household-options button[data-household="${savedHousehold}"]`) ||
+            document.querySelector(".household-options button.active") ||
+            householdButtons[0];
+
+        if (defaultHouseholdBtn) {
+            defaultHouseholdBtn.click();
+        }
+    } catch {}
+
     let savedRange = null;
 
     try {
