@@ -36,7 +36,256 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <h1>test its deployed</h1>
+    
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="container">
+            <span class="site-title">UK Money Reality Checker</span>
+        
+            <nav class="site-nav">
+                <a href="#method">Method</a>
+                <a href="#disclaimer">Disclaimer</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1>What does your salary actually feel like?</h1>
+
+                <p>
+                    This tool shows how a typical UK salary breaks down after tax and everyday costs &mdash; to give context, not advice.
+                </p>
+
+                <button class="primary-btn">
+                    Choose your income
+                </button>
+            
+                <p class="meta">
+                   No sign-up. No tracking. Just context.
+                </p>
+            
+            </div>
+        </section>
+
+        <!-- Income selector -->
+        <section class="income-selector">
+            <div class="cntainer">
+                <h2>Choose an income range</h2>
+
+                <p class="meta">
+                    Select the closest option. This is only used to show typical costs.
+                </p>
+
+                <div class="income-options">
+                    <button>£15,000 - £20,000</button>
+                    <button>£20,000 - £25,000</button>
+                    <button class="active">£25,000 – £30,000</button>
+                    <button>£30,000 - £40,000</button>
+                    <button>£40,000 - £50,000</button>
+                    <button>£50,000+</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monthly snpshot -->
+        <section class="monthly-snapshot">
+        <h2>Monthly snapshot</h2>
+
+        <ul class="snapshot-list">
+            <li>
+                <span>Estimated take-home</span>
+                <strong>£1,950 / month</strong>
+            </li>
+            <li>
+                <span>Typical monthly costs</span>
+                <strong>£1,620 / month</strong>
+            </li>
+            <li>
+                <span>Left after essentials</span>
+                <strong>£330 / month</strong>
+            </li>
+        </ul>
+
+        <p class="meta">
+            Figures are estimates based on typical costs, not personal spending.
+        </p>
+        </section>
+
+        <!-- Advertisement -->
+        <section class="ad-slot">
+            <div class="container">
+                <div class="ad-placeholder">
+                    Advertisement
+                </div>
+
+                <p class="meta">Ads help keep this tool free.</p>
+            </div>
+        </section>
+
+        <!-- Typical monthly costs -->
+        <section class="cost-breakdown">
+            <div class="container">
+                <h2>Typical monthly costs</h2>
+
+                <ul class="cost-list">
+                    <li><span>Rent & housing</span><span>£850</span></li>
+                    <li><span>Council tax</span><span>£150</span></li>
+                    <li><span>Utilities & internet</span><span>£180</span></li>
+                    <li><span>Transport</span><span>£160</span></li>
+                    <li><span>Food</span><span>£250</span></li>
+                    <li><span>Other essentials</span><span>£120</span></li>
+                    <li class="total">
+                        <span>Total typical costs</span><strong>£1,710</strong>
+                    </li>
+                </ul>
+
+                <p class="meta">
+                    Costs vary widely by location and household.
+                </p>
+            </div>
+        </section>
+
+        <!-- Lifestyle scenarios -->
+        <section class="lifestyle">
+            <div class="container">
+                <h2>How this might feel day to day</h2>
+
+                <div class="lifestyle-cards">
+                    <article>
+                        <h3>Living fairly tight</h3>
+                        <p>
+                            Most spending is planned. Little room for unexpected costs.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Living cautiously</h3>
+                        <p>
+                            Essentials covered, some flexibility, occasional trade-offs.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Living with some flexibility</h3>
+                        <p>
+                            Regular costs covered, room for modest extras.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Living comfortably but carefully</h3>
+                        <p>
+                            Most needs met, still conscious of spending.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advertisement -->
+        <section class="ad-slot">
+            <div class="container">
+                <div class="ad-placeholder">
+                    Advertisement
+                </div>
+
+                <p class="meta">Ads help keep this tool free.</p>
+            </div>
+        </section>
+
+        <!-- Reflection prompts -->
+        <section class="reflection">
+            <div class="container">
+                <h2>A few things you might reflect on</h2>
+
+                <ul class="reflection-list">
+                    <li>
+                        Do the numbers here feel close to your experience day to day?
+                    </li>
+                    <li>
+                        Does anything in this breakdown surprise you?
+                    </li>
+                    <li>
+                        Where do you feel you have flexibility, if any?
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Method -->
+        <section id="method" class="method">
+            <div class="container">
+                <h2>How this is worked out</h2>
+
+                <p>
+                    This tool uses publicly available UK data to estimate typical take-home pay and everyday costs.
+                </p>
+
+                <ul class="method-list">
+                    <li>
+                        <strong>Income & tax:</strong>Based on current UK income tax and NI thresholds
+                    </li>
+                    <li>
+                        <strong>Typical costs:</strong> National averages across housing, utilities, food, and transport
+                    </li>
+                    <li>
+                        <strong>Estimates, not advice:</strong> Figures are simplified for clarity
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <div class="container">
+                <h2>Common questions</h2>
+
+                <details>
+                    <summary>Is this financial advice?</summary>
+                    <p>
+                        No. This tool provides context, not recommendations.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>How accurate are the numbers?</summary>
+                    <p>
+                        They are estimates based on averages and will not fit everyone.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>oes this include benefits or childcare?</summary>
+                    <p>
+                        No. These figures are simplified and do not include individual arrangements.
+                    </p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="disclaimer">
+        <div class="container">
+            <p>
+                A simple tool to help you understand typical income and costs in the UK.
+            </p>
+
+            <nav>
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="cookies.html">Cookies</a>
+            </nav>
+
+            <p class="meta">
+                © 2026 — Figures shown are estimates only.
+            </p>
+        </div>
+    </footer>
+
     <!-- JS (defer so HTML loads first) -->
     <script src="assets/js/main.js" defer></script>
 </body>
