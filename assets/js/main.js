@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const monthlyCostsEl = document.getElementById("monthlyCosts");
     const remainingEl = document.getElementById("remaining");
     const snapshotSection = document.querySelector(".monthly-snapshot");
+    const regionButtons = document.querySelectorAll(".region-options button");
 
     let previousValues = {
         takeHome: null,
@@ -194,6 +195,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
             event.preventDefault();
             incomeButtons[newIndex].focus();
+        });
+    });
+
+    regionButtons.forEach((button, index) => {
+        button.setAttribute("tabindex", index === 0 ? "0" : "-1");
+
+        const activateRegion = () => {
+            regionButtons.forEach(btn => {
+            const isActive = btn === button;
+            btn.classList.toggle("active", isActive);
+            btn.setAttribute("aria-checked", isActive);
+            btn.setAttribute("tabindex", isActive ? "0" : "-1");
+            });
+        };
+
+        button.addEventListener("click", activateRegion);
+
+        button.addEventListener("keydown", (event) => {
+            let newIndex = null;
+
+            switch (event.key) {
+            case "ArrowRight":
+            case "ArrowDown":
+                newIndex = (index + 1) % regionButtons.length;
+                break;
+            case "ArrowLeft":
+            case "ArrowUp":
+                newIndex = (index - 1 + regionButtons.length) % regionButtons.length;
+                break;
+            case "Enter":
+            case " ":
+                event.preventDefault();
+                activateRegion();
+                return;
+            default:
+                return;
+            }
+
+            event.preventDefault();
+            regionButtons[newIndex].focus();
         });
     });
 
