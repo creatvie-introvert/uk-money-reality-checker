@@ -1,0 +1,472 @@
+/* =========================================================
+   UK Money Reality Checker — Base Styles (mobile-first)
+   ========================================================= */
+
+/* -------- CSS Reset / Base -------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Arial, sans-serif;
+  background: #f7f7f5;
+  color: #0f172a;
+  line-height: 1.5;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* -------- Design Tokens -------- */
+:root {
+  /* 5-colour minimal palette */
+  --bg: #f7f7f5;              /* page background */
+  --surface: #ffffff;         /* cards / panels */
+  --text: #0f172a;            /* primary text */
+  --muted: #667085;           /* secondary text */
+  --primary: #2563eb;         /* action / links */
+  --border: #e6e7eb;          /* derived (neutral line) */
+  --shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
+
+  /* spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+
+  /* radius */
+  --r-8: 8px;
+  --r-12: 12px;
+  --r-16: 16px;
+}
+
+/* -------- Layout -------- */
+.container {
+  width: 100%;
+  max-width: 720px; /* keeps desktop readable; we’ll widen later */
+  margin: 0 auto;
+  padding-left: var(--space-16);
+  padding-right: var(--space-16);
+}
+
+main {
+  display: block;
+}
+
+section {
+  padding: var(--space-32) 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--space-12) 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  margin: 0 0 var(--space-12) 0;
+}
+
+.meta {
+  margin: var(--space-12) 0 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* -------- Header -------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .container {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.site-title {
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.site-nav a {
+  font-size: 12px;
+  color: var(--primary);
+}
+
+/* -------- Hero -------- */
+.hero {
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-24);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: 12px 16px;
+  border-radius: var(--r-12);
+  border: 1px solid transparent;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.primary-btn:hover {
+  filter: brightness(0.98);
+}
+
+.primary-btn:active {
+  transform: translateY(1px);
+}
+
+/* -------- Income Selector -------- */
+.income-selector h2 {
+  margin-bottom: var(--space-8);
+}
+
+.income-options {
+  margin-top: var(--space-16);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.income-options button {
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.income-options button:hover {
+  border-color: #cfd3dd;
+}
+
+.income-options button.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+/* -------- Monthly Snapshot -------- */
+.monthly-snapshot {
+  padding-top: 0; /* tighter after selector */
+}
+
+.monthly-snapshot h2 {
+  margin-bottom: var(--space-12);
+}
+
+.snapshot-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-16);
+  overflow: hidden;
+}
+
+.snapshot-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-12);
+  padding: var(--space-16);
+  border-bottom: 1px solid var(--border);
+}
+
+.snapshot-list li:last-child {
+  border-bottom: 0;
+}
+
+.snapshot-list span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.snapshot-list strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* -------- Ad Slots -------- */
+.ad-slot {
+  padding: var(--space-24) 0;
+}
+
+.ad-placeholder {
+  height: 110px;
+  background: #6b7280;
+  border-radius: var(--r-12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* -------- Cost Breakdown -------- */
+.cost-breakdown h2 {
+  margin-bottom: var(--space-8);
+}
+
+.cost-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-16) 0 0 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-16);
+  overflow: hidden;
+}
+
+.cost-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-16);
+  padding: var(--space-12) var(--space-16);
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.cost-list li span:first-child {
+  color: var(--text);
+}
+
+.cost-list li span:last-child {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.cost-list li.total {
+  background: #f2f4f7;
+}
+
+.cost-list li.total strong {
+  font-weight: 800;
+}
+
+.cost-list li:last-child {
+  border-bottom: 0;
+}
+
+/* -------- Lifestyle Scenarios -------- */
+.lifestyle-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  margin-top: var(--space-16);
+}
+
+.lifestyle-cards article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-16);
+  padding: var(--space-16);
+}
+
+.lifestyle-cards h3 {
+  margin-bottom: var(--space-8);
+}
+
+.lifestyle-cards p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* -------- Reflection Prompts -------- */
+.reflection-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-16) 0 0 0;
+  display: grid;
+  gap: var(--space-12);
+}
+
+.reflection-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-16);
+  padding: var(--space-16);
+  font-size: 14px;
+}
+
+/* -------- Method -------- */
+.method p {
+  color: var(--muted);
+}
+
+.method-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-16) 0 0 0;
+  display: grid;
+  gap: var(--space-12);
+}
+
+.method-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-16);
+  padding: var(--space-16);
+  font-size: 14px;
+}
+
+.method-list strong {
+  display: inline-block;
+  margin-right: var(--space-8);
+}
+
+/* -------- FAQ -------- */
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-16);
+  padding: var(--space-12) var(--space-16);
+  margin-top: var(--space-12);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq details p {
+  margin-top: var(--space-12);
+  color: var(--muted);
+}
+
+/* -------- Footer -------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-32) 0;
+  background: var(--bg);
+}
+
+.site-footer nav {
+  display: flex;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+  margin: var(--space-12) 0;
+}
+
+.site-footer a {
+  font-size: 13px;
+}
+
+/* -------- Responsive (tablet+) -------- */
+@media (min-width: 768px) {
+  .container {
+    max-width: 960px;
+    padding-left: var(--space-32);
+    padding-right: var(--space-32);
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .site-nav a {
+    font-size: 13px;
+  }
+
+  .lifestyle-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reflection-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* -------- Responsive (desktop+) -------- */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1120px;
+  }
+
+  .reflection-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .income-options {
+    gap: var(--space-12);
+  }
+}
