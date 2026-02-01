@@ -45,10 +45,26 @@ document.addEventListener("DOMContentLoaded", () => {
         couple: 1.6
     };
 
-    const lifestyleMapping = (remaining) => {
-        if (remaining < 200) return ["tight"];
-        if (remaining < 400) return ["tight", "cautious"];
-        if (remaining < 700) return ["cautious", "flexible"];
+    const lifestyleMapping = (remaining, household) => {
+        // Base thresholds for single adult
+        let thresholds = {
+            tight: 200,
+            cautious: 400,
+            flexible: 700
+        };
+
+        // Adjust expectations for couples
+        if (household === "couple") {
+            thresholds = {
+                tight: 300,
+                cautious: 550,
+                flexible: 900
+            };
+        }
+
+        if (remaining < thresholds.tight) return ["tight"];
+        if (remaining < thresholds.cautious) return ["tight", "cautious"];
+        if (remaining < thresholds.flexible) return ["cautious", "flexible"];
         return ["flexible", "comfortable"];
     };
 
@@ -107,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const updateLifestyleContext = (remaining) => {
         const cards = document.querySelectorAll(".lifestyle-cards article");
-        const relevantLevels = lifestyleMapping(remaining);
+        const relevantLevels = lifestyleMapping(remaining, currentHousehold);
 
         cards.forEach(card => {
             const level = card.dataset.level;
