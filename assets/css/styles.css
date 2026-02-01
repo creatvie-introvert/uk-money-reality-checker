@@ -252,6 +252,37 @@ p {
     color: var(--primary);
 }
 
+/* -------- Household Selector -------- */
+.household-selector {
+    padding-top: var(--space-16);
+}
+
+.household-options {
+    display: flex;
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+
+.household-options button {
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-size: 13px;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.household-options button:hover {
+    border-color: #cfd3dd;
+}
+
+.household-options button.active {
+    background: #eef2ff;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
 /* -------- Monthly Snapshot -------- */
 .monthly-snapshot {
     padding-top: 0; /* tighter after selector */

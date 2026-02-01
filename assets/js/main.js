@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const remainingEl = document.getElementById("remaining");
     const snapshotSection = document.querySelector(".monthly-snapshot");
     const regionButtons = document.querySelectorAll(".region-options button");
-
+    const householdButtons = document.querySelectorAll(".household-options button");
+    
     let previousValues = {
         takeHome: null,
         costs: null,
@@ -260,6 +261,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
             event.preventDefault();
             regionButtons[newIndex].focus();
+        });
+    });
+
+    householdButtons.forEach((button, index) => {
+        button.setAttribute("tabindex", index === 0 ? "0" : "-1");
+
+        const activateHousehold = () => {
+            householdButtons.forEach(btn => {
+            const isActive = btn === button;
+            btn.classList.toggle("active", isActive);
+            btn.setAttribute("aria-checked", isActive);
+            btn.setAttribute("tabindex", isActive ? "0" : "-1");
+            });
+
+            // UI only for now (no calculations yet)
+        };
+
+        button.addEventListener("click", activateHousehold);
+
+        button.addEventListener("keydown", (event) => {
+            let newIndex = null;
+
+            switch (event.key) {
+            case "ArrowRight":
+            case "ArrowDown":
+                newIndex = (index + 1) % householdButtons.length;
+                break;
+            case "ArrowLeft":
+            case "ArrowUp":
+                newIndex = (index - 1 + householdButtons.length) % householdButtons.length;
+                break;
+            case "Enter":
+            case " ":
+                event.preventDefault();
+                activateHousehold();
+                return;
+            default:
+                return;
+            }
+
+            event.preventDefault();
+            householdButtons[newIndex].focus();
         });
     });
 

@@ -111,19 +111,37 @@
 
         <section class="region-selector" aria-labelledby="region-heading">
             <div class="container">
-            <h2 id="region-heading">Region</h2>
-            <p class="meta">Used to adjust typical living costs.</p>
+                <h2 id="region-heading">Region</h2>
+                <p class="meta">Used to adjust typical living costs.</p>
 
-            <div class="region-options" role="radiogroup" aria-label="Select region">
-                <button type="button" role="radio" aria-checked="true" tabindex="0" class="active"
-                    data-region="outside-london">
-                    Outside London
-                </button>
+                <div class="region-options" role="radiogroup" aria-label="Select region">
+                    <button type="button" role="radio" aria-checked="true" tabindex="0" class="active"
+                        data-region="outside-london">
+                        Outside London
+                    </button>
 
-                <button type="button" role="radio" aria-checked="false" tabindex="-1" data-region="london">
-                    London
-                </button>
+                    <button type="button" role="radio" aria-checked="false" tabindex="-1" data-region="london">
+                        London
+                    </button>
+                </div>
             </div>
+        </section>
+
+        <section class="household-selector" aria-labelledby="household-heading">
+            <div class="container">
+                <h2 id="household-heading">Household</h2>
+                <p class="meta">Used to adjust typical living costs.</p>
+
+                <div class="household-options" role="radiogroup" aria-label="Select household type">
+                    <button type="button" role="radio" aria-checked="true" tabindex="0" class="active"
+                        data-household="single">
+                        Single adult
+                    </button>
+
+                    <button type="button" role="radio" aria-checked="false" tabindex="-1" data-household="couple">
+                        Couple
+                    </button>
+                </div>
             </div>
         </section>
 
