@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    const STORAGE_KEY = "selectedIncomeRange";
+
     // -----------------------------
     // DOM references
     // -----------------------------
@@ -134,8 +136,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const activateButton = () => {
             const rangeKey = button.dataset.income;
+
             setActiveButton(button);
             updateSnapshot(rangeKey);
+
+            try {
+                localStorage.setItem(STORAGE_KEY, rangeKey);
+            } catch (e) {
+                // Fail silently if storage is unavailable
+            }
         };
 
         button.addEventListener("click", activateButton);
@@ -169,13 +178,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // -----------------------------
     // Initialise default state
     // -----------------------------
+    let savedRange = null;
+
+    try {
+        savedRange = localStorage.getItem(STORAGE_KEY);
+    } catch (e) {
+        savedRange = null;
+    }
+
     const defaultButton =
+        document.querySelector(`.income-options button[data-income="${savedRange}"]`) ||
         document.querySelector(".income-options button.active") ||
         incomeButtons[0];
 
-        if (defaultButton) {
-            const defaultKey = defaultButton.dataset.income;
-            setActiveButton(defaultButton);
-            updateSnapshot(defaultKey);
-        }
+    if (defaultButton) {
+        const defaultKey = defaultButton.dataset.income;
+        setActiveButton(defaultButton);
+        updateSnapshot(defaultKey);
+    }
 });
