@@ -355,6 +355,19 @@ p {
     font-size: 13px;
 }
 
+.lifestyle-cards article {
+    transition: opacity 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.lifestyle-cards article.highlighted {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.lifestyle-cards article.deemphasised {
+    opacity: 0.6;
+}
+
 /* -------- Reflection Prompts -------- */
 .reflection-list {
     list-style: none;

@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const STORAGE_KEY = "selectedIncomeRange";
 
+    const lifestyleMapping = (remaining) => {
+        if (remaining < 200) return ["tight"];
+        if (remaining < 400) return ["tight", "cautious"];
+        if (remaining < 700) return ["cautious", "flexible"];
+        return ["flexible", "comfortable"];
+    };
+
     // -----------------------------
     // DOM references
     // -----------------------------
@@ -38,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const takeHomeEl = document.getElementById("takeHome");
     const monthlyCostsEl = document.getElementById("monthlyCosts");
     const remainingEl = document.getElementById("remaining");
+    const snapshotSection = document.querySelector(".monthly-snapshot");
 
     let previousValues = {
         takeHome: null,
@@ -71,11 +79,24 @@ document.addEventListener("DOMContentLoaded", () => {
             element.textContent = formatCurrency(value);
 
             if (progress < 1) {
-                reuestAnimationFrame(step);
+                requestAnimationFrame(step);
             }
         };
 
         requestAnimationFrame(step);
+    };
+
+    const updateLifestyleContext = (remaining) => {
+        const cards = document.querySelectorAll(".lifestyle-cards article");
+        const relevantLevels = lifestyleMapping(remaining);
+
+        cards.forEach(card => {
+            const level = card.dataset.level;
+            const isRelevant = relevantLevels.includes(level);
+
+            card.classList.toggle("highlighted", isRelevant);
+            card.classList.toggle("deemphasised", !isRelevant);
+        });
     };
 
     const updateSnapshot = (rangeKey) => {
@@ -85,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const newValues = {
             takeHome: range.takeHome,
             costs: range.costs,
-            remaining: range.takeHome - range.costs
+            remaining: range.takeHome - range.costs,
         };
 
         animateNumber(
@@ -108,7 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         previousValues = newValues;
 
-        const snapshotSection = document.querySelector(".monthly-snapshot");
+        updateLifestyleContext(newValues.remaining);
+
         snapshotSection.classList.add("updated");
 
         setTimeout(() => {
