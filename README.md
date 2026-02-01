@@ -48,6 +48,19 @@ The UK Money Reality Checker aims to:
 
 ---
 
+## Accessibility & Performance
+
+This project was tested using Lighthouse with the following results:
+
+- Performance: 100
+- Accessibility: 96–100
+- Best Practices: 100
+- SEO: 100
+
+Keyboard navigation, focus states, and reduced-motion preferences are supported.
+
+---
+
 ## 📁 Project Structure
 
 ```txt
