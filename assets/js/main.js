@@ -37,21 +37,81 @@ document.addEventListener("DOMContentLoaded", () => {
     const monthlyCostsEl = document.getElementById("monthlyCosts");
     const remainingEl = document.getElementById("remaining");
 
+    let previousValues = {
+        takeHome: null,
+        costs: null,
+        remaining: null
+    };
+
     // -----------------------------
     // Helpers
     // -----------------------------
     const formatCurrency = value =>
         `£${value.toLocaleString()} / month`;
 
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    const animateNumber = (element, from, to) => {
+        if (prefersReducedMotion || from === to) {
+            element.textContent = formatCurrency(to);
+            return;
+        }
+
+        const duration = 300;
+        const start = performance.now();
+
+        const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const value = Math.round(from + (to - from) * progress);
+
+            element.textContent = formatCurrency(value);
+
+            if (progress < 1) {
+                reuestAnimationFrame(step);
+            }
+        };
+
+        requestAnimationFrame(step);
+    };
+
     const updateSnapshot = (rangeKey) => {
         const range = incomeRanges[rangeKey];
         if (!range) return;
 
-        const remaining = range.takeHome - range.costs;
+        const newValues = {
+            takeHome: range.takeHome,
+            costs: range.costs,
+            remaining: range.takeHome - range.costs
+        };
 
-        takeHomeEl.textContent = formatCurrency(range.takeHome);
-        monthlyCostsEl.textContent = formatCurrency(range.costs);
-        remainingEl.textContent = formatCurrency(remaining);
+        animateNumber(
+            takeHomeEl,
+            previousValues.takeHome ?? newValues.takeHome,
+            newValues.takeHome
+        );
+
+        animateNumber(
+            monthlyCostsEl,
+            previousValues.costs ?? newValues.costs,
+            newValues.costs
+        );
+
+        animateNumber(
+            remainingEl,
+            previousValues.remaining ?? newValues.remaining,
+            newValues.remaining
+        );
+
+        previousValues = newValues;
+
+        const snapshotSection = document.querySelector(".monthly-snapshot");
+        snapshotSection.classList.add("updated");
+
+        setTimeout(() => {
+            snapshotSection.classList.remove("updated");
+        }, 200);
     };
 
     const setActiveButton = (activeButton) => {
@@ -68,41 +128,41 @@ document.addEventListener("DOMContentLoaded", () => {
     // Event binding
     // -----------------------------
     incomeButtons.forEach((button, index) => {
-    button.setAttribute("role", "radio");
-    button.setAttribute("aria-checked", "false");
-    button.setAttribute("tabindex", index === 0 ? "0" : "-1");
+        button.setAttribute("role", "radio");
+        button.setAttribute("aria-checked", "false");
+        button.setAttribute("tabindex", index === 0 ? "0" : "-1");
 
-    const activateButton = () => {
-        const rangeKey = button.dataset.income;
-        setActiveButton(button);
-        updateSnapshot(rangeKey);
-    };
+        const activateButton = () => {
+            const rangeKey = button.dataset.income;
+            setActiveButton(button);
+            updateSnapshot(rangeKey);
+        };
 
-    button.addEventListener("click", activateButton);
+        button.addEventListener("click", activateButton);
 
-    button.addEventListener("keydown", (event) => {
-        let newIndex = null;
+        button.addEventListener("keydown", (event) => {
+            let newIndex = null;
 
-        switch (event.key) {
-        case "ArrowRight":
-        case "ArrowDown":
-            newIndex = (index + 1) % incomeButtons.length;
-            break;
-        case "ArrowLeft":
-        case "ArrowUp":
-            newIndex = (index - 1 + incomeButtons.length) % incomeButtons.length;
-            break;
-        case "Enter":
-        case " ":
+            switch (event.key) {
+                case "ArrowRight":
+                case "ArrowDown":
+                    newIndex = (index + 1) % incomeButtons.length;
+                    break;
+                case "ArrowLeft":
+                case "ArrowUp":
+                    newIndex = (index - 1 + incomeButtons.length) % incomeButtons.length;
+                    break;
+                case "Enter":
+                case " ":
+                    event.preventDefault();
+                    activateButton();
+                    return;
+                default:
+                    return;
+            }
+
             event.preventDefault();
-            activateButton();
-            return;
-        default:
-            return;
-        }
-
-        event.preventDefault();
-        incomeButtons[newIndex].focus();
+            incomeButtons[newIndex].focus();
         });
     });
 
@@ -118,4 +178,4 @@ document.addEventListener("DOMContentLoaded", () => {
             setActiveButton(defaultButton);
             updateSnapshot(defaultKey);
         }
-    });
+});
