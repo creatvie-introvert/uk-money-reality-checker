@@ -87,12 +87,24 @@
                 </p>
 
                 <div class="income-options">
-                    <button>£15,000 - £20,000</button>
-                    <button>£20,000 - £25,000</button>
-                    <button class="active">£25,000 – £30,000</button>
-                    <button>£30,000 - £40,000</button>
-                    <button>£40,000 - £50,000</button>
-                    <button>£50,000+</button>
+                    <button data-income="15000-20000">
+                        £15,000 - £20,000
+                    </button>
+                    <button data-income="20000-25000">
+                        £20,000 - £25,000
+                    </button>
+                    <button data-income="25000-30000" class="active">
+                        £25,000 - £30,000
+                    </button>
+                    <button data-income="30000-40000">
+                        £30,000 - £40,000
+                    </button>
+                    <button data-income="40000-50000">
+                        £40,000 - £50,000
+                    </button>
+                    <button data-income="50000+">
+                        £50,000+
+                    </button>
                 </div>
             </div>
         </section>
@@ -105,15 +117,15 @@
                 <ul class="snapshot-list">
                     <li>
                         <span>Estimated take-home</span>
-                        <strong>£1,950 / month</strong>
+                        <strong id="takeHome">£1,950 / month</strong>
                     </li>
                     <li>
                         <span>Typical monthly costs</span>
-                        <strong>£1,620 / month</strong>
+                        <strong id="monthlyCosts">£1,620 / month</strong>
                     </li>
                     <li>
                         <span>Left after essentials</span>
-                        <strong>£330 / month</strong>
+                        <strong id="remaining">£330 / month</strong>
                     </li>
                 </ul>
 
