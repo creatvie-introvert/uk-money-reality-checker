@@ -239,6 +239,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    const heroCTA = document.querySelector(".primary-btn");
+    const incomeSection = document.getElementById("income-selector");
+
+    if (heroCTA && incomeSection) {
+        heroCTA.addEventListener("click", () => {
+            incomeSection.setAttribute("tabindex", "-1");
+            incomeSection.focus({ preventScroll: true });
+            incomeSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    }
+
     // -----------------------------
     // Event binding
     // -----------------------------
