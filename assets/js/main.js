@@ -29,6 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    const COST_PROFILES = {
+        outside: {
+            rent: 850,
+            councilTax: 150,
+            utilities: 180,
+            transport: 160,
+            food: 250,
+            essentials: 120
+        },
+        london: {
+            rent: 1200,
+            councilTax: 180,
+            utilities: 200,
+            transport: 200,
+            food: 300,
+            essentials: 150
+        }
+    };
+
     const STORAGE_KEY = "selectedIncomeRange";
 
     const REGION_STORAGE_KEY = "selectedRegion";
@@ -81,6 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const snapshotSection = document.querySelector(".monthly-snapshot");
     const regionButtons = document.querySelectorAll(".region-options button");
     const householdButtons = document.querySelectorAll(".household-options button");
+
+    const costEls = {
+        rent: document.getElementById("cost-rent"),
+        councilTax: document.getElementById("cost-council"),
+        utilities: document.getElementById("cost-utilities"),
+        transport: document.getElementById("cost-transport"),
+        food: document.getElementById("cost-food"),
+        essentials: document.getElementById("cost-essentials"),
+        total: document.getElementById("cost-total")
+    };
     
     let previousValues = {
         takeHome: null,
@@ -134,6 +163,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    const updateCostBreakdown = () => {
+        const profile = COST_PROFILES[currentRegion];
+        if (!profile) return;
+
+        let total = 0;
+
+        Object.entries(profile).forEach(([key, value]) => {
+            total += value;
+
+            if (costEls[key]) {
+                costEls[key].textContent = `£${value.toLocaleString()}`;
+            }
+        });
+
+        if (costEls.total) {
+            costEls.total.textContent = `£${total.toLocaleString()}`;
+        }
+
+        return total;
+    };
+
     const updateSnapshot = (rangeKey) => {
         const range = incomeRanges[rangeKey];
         if (!range) return;
@@ -141,9 +191,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const regionMultiplier = REGION_MULTIPLIERS[currentRegion] || 1;
         const householdMultiplier = HOUSEHOLD_MULTIPLIERS[currentHousehold] || 1;
 
-        const adjustedCosts = Math.round(
-            range.costs * regionMultiplier * householdMultiplier
-        );
+        const baseCosts = updateCostBreakdown();
+        const adjustedCosts = Math.round(baseCosts * HOUSEHOLD_MULTIPLIERS[currentHousehold]);
 
         const newValues = {
             takeHome: range.takeHome,
