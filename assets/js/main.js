@@ -457,4 +457,42 @@ document.addEventListener("DOMContentLoaded", () => {
         setActiveButton(defaultButton);
         updateSnapshot(defaultKey);
     }
+
+    // -----------------------------
+    // Cookie consent (simple, compliant)
+    // -----------------------------
+    const COOKIE_KEY = "cookieConsent";
+
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const rejectBtn = document.getElementById("reject-cookies");
+
+    const loadAds = () => {
+        // Placeholder for AdSense script
+        // This should ONLY run after consent
+        /*
+        const script = document.createElement("script");
+        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        script.async = true;
+        script.crossOrigin = "anonymous";
+        document.head.appendChild(script);
+        */
+    };
+
+    const consent = localStorage.getItem(COOKIE_KEY);
+
+    if (!consent) {
+        banner.hidden = false;
+    }
+
+    acceptBtn?.addEventListener("click", () => {
+        localStorage.setItem(COOKIE_KEY, "accepted");
+        banner.hidden = true;
+        loadAds();
+    });
+
+    rejectBtn?.addEventListener("click", () => {
+        localStorage.setItem(COOKIE_KEY, "rejected");
+        banner.hidden = true;
+    });
 });

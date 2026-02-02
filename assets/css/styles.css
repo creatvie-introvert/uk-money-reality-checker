@@ -533,6 +533,50 @@ p {
     font-size: 13px;
 }
 
+/* -------- Cookie Banner -------- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    z-index: 100;
+}
+
+.cookie-banner .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding: var(--space-16);
+}
+
+.cookie-banner p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.cookie-actions {
+    display: flex;
+    gap: var(--space-12);
+    flex-wrap: wrap;
+}
+
+.secondary-btn {
+    padding: 12px 16px;
+    border-radius: var(--r-12);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    background: #f2f4f7;
+}
+
 /* -------- Responsive (tablet+) -------- */
 @media (min-width: 768px) {
     .container {
