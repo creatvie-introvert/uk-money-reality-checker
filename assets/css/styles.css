@@ -190,6 +190,10 @@ p {
 }
 
 /* -------- Income Selector -------- */
+.income-selector {
+  scroll-margin-top: 64px;
+}
+
 .income-selector h2 {
     margin-bottom: var(--space-8);
 }
