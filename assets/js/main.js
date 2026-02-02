@@ -188,11 +188,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const range = incomeRanges[rangeKey];
         if (!range) return;
 
-        const regionMultiplier = REGION_MULTIPLIERS[currentRegion] || 1;
-        const householdMultiplier = HOUSEHOLD_MULTIPLIERS[currentHousehold] || 1;
-
         const baseCosts = updateCostBreakdown();
-        const adjustedCosts = Math.round(baseCosts * HOUSEHOLD_MULTIPLIERS[currentHousehold]);
+        if (!baseCosts || !range) return;
+
+        const adjustedCosts = Math.round(
+            baseCosts * (HOUSEHOLD_MULTIPLIERS[currentHousehold] || 1)
+        );
 
         const newValues = {
             takeHome: range.takeHome,
@@ -313,7 +314,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.setAttribute("tabindex", isActive ? "0" : "-1");
             });
 
-            currentRegion = button.dataset.region;
+            currentRegion =
+                button.dataset.region === "outside-london" ? "outside" : "london";
 
             try {
                 localStorage.setItem(REGION_STORAGE_KEY, currentRegion);
