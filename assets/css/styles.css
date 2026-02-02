@@ -466,6 +466,10 @@ p {
 }
 
 /* -------- Method -------- */
+#method {
+    scroll-margin-top: 64px;
+}
+
 .method p {
     color: var(--muted);
 }
@@ -515,6 +519,7 @@ p {
     border-top: 1px solid var(--border);
     padding: var(--space-32) 0;
     background: var(--bg);
+    scroll-margin-top: 64px;
 }
 
 .site-footer nav {
