@@ -21,9 +21,25 @@ The UK Money Reality Checker aims to:
 
 ---
 
+## 🧠 Design Philosophy
+
+This project intentionally avoids over-complex budgeting logic.
+
+The goal is not precision, optimisation, or prescription — but **clarity and reflection**.
+
+Design decisions prioritised:
+- Simplicity over configurability
+- Context over calculation
+- Accessibility over visual novelty
+- Client-side logic for speed and privacy
+
+---
+
 ## 🧩 Features
 
 - Income range selection (approximate annual salary)
+- Region toggle (London / Outside London)
+- Household toggle (Single adult / Couple)
 - Monthly snapshot showing:
   - Estimated take-home pay
   - Typical monthly costs
@@ -34,6 +50,7 @@ The UK Money Reality Checker aims to:
 - Clear explanation of assumptions and methodology
 - FAQ section addressing common questions
 - Privacy-first approach with minimal data usage
+- Client-side state persistence using `localStorage`
 
 ---
 
@@ -50,29 +67,31 @@ The UK Money Reality Checker aims to:
 
 ## ♿ Accessibility & Performance
 
-This project was tested using Google Lighthouse to ensure a high standard of accessibility, performance, and best practices.
+This project was tested using Google Lighthouse and achieves **100 scores across all categories** on both mobile and desktop.
 
 ### Audit results
 - **Performance:** 100
-- **Accessibility:** 96–100
+- **Accessibility:** 100
 - **Best Practices:** 100
 - **SEO:** 100
 
 ### Accessibility considerations
-- Fully keyboard navigable interface
-- Visible focus states for interactive elements
-- Semantic HTML structure
-- ARIA attributes for custom controls (income selector)
+- Fully keyboard-navigable interface
+- Custom toggle controls implemented using semantic HTML and ARIA roles
+- Visible focus states for all interactive elements
+- Logical heading hierarchy and landmark regions
 - Respects user `prefers-reduced-motion` settings
+- Sufficient colour contrast across all UI states
 - Clear, readable typography and spacing
 
-A temporary advertisement placeholder may trigger a contrast warning in Lighthouse; this is expected to be replaced by third-party ad content in production.
+All Lighthouse accessibility issues were identified, investigated, and resolved during development.
 
 Performance was prioritised through:
-- Minimal JavaScript
-- No external frameworks
+- Minimal, modular JavaScript
+- No external frameworks or dependencies
 - Mobile-first CSS
 - Lightweight assets
+- Client-side logic only (no network requests)
 
 ---
 
@@ -158,12 +177,12 @@ Deployment is handled via GitHub Pages.
 
 ## 🔮 Possible Future Enhancements
 
-- Region-specific cost adjustments  
-- Household size options  
-- More granular income ranges  
-- Optional savings scenarios  
-- Accessibility improvements  
-- Performance and SEO refinements  
+- More granular regional cost modelling
+- Expanded household scenarios
+- Additional income bands
+- Optional savings or buffer indicators
+- Further accessibility refinements
+- Ongoing performance monitoring
 
 ---
 
