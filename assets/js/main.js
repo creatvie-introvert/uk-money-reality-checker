@@ -184,6 +184,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return total;
     };
 
+    const adSlots = document.querySelectorAll("[data-ad-slot]");
+
+    const setAdVisibility = (consentValue) => {
+        const showAds = consentValue === "accepted";
+
+        adSlots.forEach(slot => {
+            slot.hidden = !showAds;
+        });
+    };
+
     const updateSnapshot = (rangeKey) => {
         const range = incomeRanges[rangeKey];
         if (!range) return;
@@ -483,16 +493,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!consent) {
         banner.hidden = false;
+        setAdVisibility("rejected"); // hide ads until choice
+    } else {
+        setAdVisibility(consent);
+
+        if (consent === "accepted") {
+            loadAds();
+        }
     }
 
     acceptBtn?.addEventListener("click", () => {
         localStorage.setItem(COOKIE_KEY, "accepted");
         banner.hidden = true;
+        setAdVisibility("accepted");
         loadAds();
     });
 
     rejectBtn?.addEventListener("click", () => {
         localStorage.setItem(COOKIE_KEY, "rejected");
         banner.hidden = true;
+        setAdVisibility("rejected");
     });
 });
