@@ -121,7 +121,7 @@ uk-money-reality-checker/
 
 The site is deployed using GitHub Pages.
 
-**Live URL**: _(add once published)_
+**Live URL**: [https://ukmoneyreality.co.uk/](https://ukmoneyreality.co.uk/)
 
 ---
 
