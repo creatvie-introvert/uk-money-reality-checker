@@ -1,0 +1,3 @@
+# Calculator engine
+
+M2 owns the framework-independent calculator engine. It will consume typed release data and explicit user-entered values, preserve distinctions between observed, calculated, modelled and user-entered values, and return transparent outputs without an arbitrary affordability score. M1 establishes the validated data and typed-loader inputs only; M3 adds scenario comparison, cost-driver ranking and salary-preservation calculation.

@@ -1,202 +1,60 @@
-# UK Money Reality Checker
+# UK Money Reality
 
-A simple, judgement-free tool to help people understand **what their salary actually feels like in the UK** after tax and typical everyday costs.
+UK Money Reality is being rebuilt as an evidence-based UK relocation affordability platform. The MVP supports London, Birmingham, Manchester, Leeds, Liverpool, Bristol, Edinburgh and Glasgow. International expansion is out of scope for this MVP.
 
-This project focuses on **context, not advice** — helping users reflect on take-home pay, common expenses, and lifestyle trade-offs without sign-ups, accounts, or complex budgeting tools.
+This branch contains Milestone 0: the production engineering foundation. The approved product specification, data architecture, calculator specification, UX flow, visual design system and high-fidelity prototype remain the authority for later implementation. The calculator formulas, seven-step experience, report and UKMR Data Pack v3.1 integration are not implemented yet.
 
----
+## Stack
 
-## ✨ Purpose
+- Next.js App Router and React
+- TypeScript with strict checking
+- Zod and React Hook Form for the approved data and form layers
+- Vitest for unit tests
+- Playwright for browser tests
+- Vercel-compatible Next.js production build
 
-Salary figures are often discussed in gross terms that don’t reflect real life.
+The calculator engine will be introduced in M2 as framework-independent TypeScript. React components must not perform substantive financial calculations or consume source spreadsheets directly.
 
-The UK Money Reality Checker aims to:
+## Local development
 
-- Translate annual salaries into **monthly take-home context**
-- Show **typical UK living costs** using realistic ranges
-- Encourage **personal reflection**, not optimisation or judgement
-- Remain accessible, fast, and easy to understand
+```bash
+npm install
+npm run dev
+```
 
-> This tool is **not a financial calculator** and **does not provide financial advice**.
+Open `http://localhost:3000` to view the temporary development shell.
 
----
+## Checks
 
-## 🧠 Design Philosophy
+```bash
+npm run lint
+npm run typecheck
+npm test
+npm run test:e2e
+npm run build
+```
 
-This project intentionally avoids over-complex budgeting logic.
+The browser test starts the local Next.js development server automatically. Playwright browsers may need to be installed once with `npx playwright install chromium`.
 
-The goal is not precision, optimisation, or prescription — but **clarity and reflection**.
+## Legacy coexistence
 
-Design decisions prioritised:
-- Simplicity over configurability
-- Context over calculation
-- Accessibility over visual novelty
-- Client-side logic for speed and privacy
+The previous GitHub Pages implementation remains in the root-level HTML, CSS, JavaScript and image files. It is preserved at the `legacy-static-v1` tag and has not been copied into React components. The rebuild lives in `src/app` and currently coexists with those legacy files. This milestone does not change DNS, GitHub Pages settings, the production domain or deployment configuration.
 
----
+## Data and calculator specifications
 
-## 🧩 Features
+The application data specification and calculator specification are separate from the application implementation and must be followed independently. The intended data flow is:
 
-- Income range selection (approximate annual salary)
-- Region toggle (London / Outside London)
-- Household toggle (Single adult / Couple)
-- Monthly snapshot showing:
-  - Estimated take-home pay
-  - Typical monthly costs
-  - Approximate remaining amount
-- Breakdown of common UK living costs
-- Lifestyle scenario cards for real-world context
-- Reflection prompts to help users interpret the numbers
-- Clear explanation of assumptions and methodology
-- FAQ section addressing common questions
-- Privacy-first approach with minimal data usage
-- Client-side state persistence using `localStorage`
+```text
+UKMR Data Pack -> import -> Zod validation -> release-status validation
+  -> generated release dataset -> typed loader -> calculator engine (M2) -> UI
+```
 
----
+Observed, calculated, modelled and user-entered values must remain distinct, with source values, provenance and effective dates preserved. `BLOCKED_FROM_RELEASE` data must never enter a public calculation. The data validation command and Data Pack importer will be added in a later milestone; no UKMR Data Pack has been imported or transformed here.
 
-## 🛠️ Tech Stack
+See `docs/architecture`, `docs/data`, `docs/calculator` and `docs/release` for the current boundaries and milestone notes.
 
-- **HTML5** — semantic and accessible markup  
-- **CSS3** — custom styles (no framework)  
-- **Vanilla JavaScript** — lightweight interactivity  
-- **GitHub Pages** — hosting and deployment  
+## Milestone sequence
 
-> No build tools or dependencies are required.
-
----
-
-## ♿ Accessibility & Performance
-
-This project was tested using Google Lighthouse and achieves **100 scores across all categories** on both mobile and desktop.
-
-### Audit results
-- **Performance:** 100
-- **Accessibility:** 100
-- **Best Practices:** 100
-- **SEO:** 100
-
-### Accessibility considerations
-- Fully keyboard-navigable interface
-- Custom toggle controls implemented using semantic HTML and ARIA roles
-- Visible focus states for all interactive elements
-- Logical heading hierarchy and landmark regions
-- Respects user `prefers-reduced-motion` settings
-- Sufficient colour contrast across all UI states
-- Clear, readable typography and spacing
-
-All Lighthouse accessibility issues were identified, investigated, and resolved during development.
-
-Performance was prioritised through:
-- Minimal, modular JavaScript
-- No external frameworks or dependencies
-- Mobile-first CSS
-- Lightweight assets
-- Client-side logic only (no network requests)
-
----
-
-## 📁 Project Structure
-
-```txt
-uk-money-reality-checker/
-│
-├── assets/
-│   ├── css/
-│   │   └── styles.css
-│   └── js/
-│       └── main.js
-│
-├── index.html          # Main application page
-├── about.html          # About this tool
-├── privacy.html        # Privacy policy
-├── cookies.html        # Cookie policy
-├── 404.html            # Custom 404 page
-├── README.md
-
----
-
----
-
-## 🌍 Live Site
-
-The site is deployed using GitHub Pages.
-
-**Live URL**: [https://ukmoneyreality.co.uk/](https://ukmoneyreality.co.uk/)
-
----
-
-## 🍪 Cookies & Privacy
-
-This site:
-
-- Does **not** require user accounts  
-- Does **not** collect personal financial data  
-- Uses cookies only for:
-  - Basic analytics  
-  - Advertising (e.g. Google AdSense)  
-
-**Policy pages**:
-
-- [Privacy Policy](/privacy.html)  
-- [Cookie Policy](/cookies.html)  
-
-A simple cookie notice is used to inform users and support consent where required.
-
----
-
-## ⚠️ Disclaimer
-
-All figures shown are **estimates only**, based on:
-
-- Public UK tax information  
-- National average cost-of-living data  
-- Simplified assumptions for clarity  
-
-This tool:
-
-- Is **not financial advice**  
-- Does **not replace professional guidance**  
-- Is intended for **reflection and context only**  
-
-> Users should always consider their own personal circumstances.
-
----
-
-## 🚀 Deployment
-
-Deployment is handled via GitHub Pages.
-
-**Steps**:
-
-1. Push changes to the `main` branch  
-2. Enable GitHub Pages in repository settings  
-3. Set source to the root directory  
-4. Access the site via the generated GitHub Pages URL  
-
----
-
-## 🔮 Possible Future Enhancements
-
-- More granular regional cost modelling
-- Expanded household scenarios
-- Additional income bands
-- Optional savings or buffer indicators
-- Further accessibility refinements
-- Ongoing performance monitoring
-
----
-
-## 👤 Author
-
-Created by **Leanne** — a personal project focused on clarity, accessibility, and realistic financial context.
-
----
-
-## 📄 Licence
-
-This project is provided for educational and informational purposes only.
-
-All content © 2026.
-
----
-
+- M1: Data foundation only: UKMR Data Pack v3.1 integration, Zod schemas, provenance, release-status enforcement, generated release datasets and typed loaders.
+- M2: Framework-independent calculator engine.
+- M3: Scenario comparison, cost-driver ranking and salary-preservation calculation.

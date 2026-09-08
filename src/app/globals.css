@@ -1,0 +1,78 @@
+:root {
+  color-scheme: light;
+  --ink: #17211f;
+  --muted: #5b6965;
+  --paper: #f4f0e8;
+  --panel: #fffdf8;
+  --accent: #d2643a;
+  --line: #d8d1c4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.shell__panel {
+  width: min(100%, 720px);
+  padding: clamp(32px, 8vw, 72px);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 14px 14px 0 rgba(23, 33, 31, 0.08);
+}
+
+.shell__eyebrow {
+  margin: 0 0 20px;
+  color: var(--accent);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.shell h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  line-height: 0.95;
+  font-weight: 400;
+}
+
+.shell__copy {
+  max-width: 48ch;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.55;
+}
+
+.shell__status {
+  display: inline-flex;
+  margin-top: 36px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
