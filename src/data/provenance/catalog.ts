@@ -1,0 +1,518 @@
+import { sourceCatalogSchema } from "./source-catalog";
+
+// Reconciled against the user-supplied Batch 1–4 research record.
+// Existing IDs and source-register governance labels are preserved; research
+// suitability and record release status are separate concepts.
+// See docs/data/source-catalogue-reconciliation.md for the evidence ledger.
+export const sourceCatalog = sourceCatalogSchema.parse([
+  {
+    "sourceId": "SRC-001",
+    "category": "rent",
+    "organisation": "ONS",
+    "publicationTitle": "Price Index of Private Rents",
+    "sourceUrl": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 1 — RENT",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Official XLSX controlled import. PIPR-specific API not verified; general ONS API availability is not evidence of a PIPR endpoint. Wider rental stock, not asking rents. London is region E12000007. Birmingham E08000025; Manchester E08000003; Leeds E08000035; Liverpool E08000012; Bristol E06000023. No direct Edinburgh/City of Edinburgh row or closer current ONS city source was identified. Greater Glasgow S33000009 must not be relabelled Glasgow City. Arbitrary bedroom × property-type crosses are unavailable; Scottish source characteristics differ.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ],
+    "accessMechanisms": [
+      "XLSX"
+    ],
+    "licenceReference": "OGL v3.0 unless otherwise stated (ONS material; Batch 2)"
+  },
+  {
+    "sourceId": "SRC-002",
+    "category": "council_tax",
+    "organisation": "MHCLG",
+    "publicationTitle": "Council tax levels set by local authorities in England 2026/27",
+    "sourceUrl": "https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 1 — COUNCIL TAX — ENGLAND",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Official ODS controlled import. Verified authority codes: Birmingham E08000025, Manchester E08000003, Leeds E08000035, Liverpool E08000012, Bristol E06000023. Current Table 9 resolves the previous Bristol coverage gap. London is represented by individual authorities; no source-supported single London scalar or invented average.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Reuse/licensing was not verified for this source in the supplied audits.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ],
+    "accessMechanisms": [
+      "ODS"
+    ],
+    "sourcePeriod": "2026/27"
+  },
+  {
+    "sourceId": "SRC-020",
+    "category": "council_tax",
+    "organisation": "Scottish Government",
+    "publicationTitle": "Council Tax datasets",
+    "sourceUrl": "https://www.gov.scot/publications/council-tax-datasets/",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 1 — COUNCIL TAX — SCOTLAND",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Official XLSX controlled import verifies current City of Edinburgh and Glasgow City 2026/27 schedules. Retain ratio-derived raw precision for audit; normalized amounts follow the official two-decimal pounds/pence display without a different invented rounding rule.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Reuse/licensing was not verified for this source in the supplied audits.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ],
+    "accessMechanisms": [
+      "XLSX"
+    ],
+    "sourcePeriod": "2026/27"
+  },
+  {
+    "sourceId": "SRC-003",
+    "category": "energy_consumption",
+    "organisation": "DESNZ",
+    "publicationTitle": "NEED consumption data tables 2026",
+    "sourceUrl": "https://www.gov.uk/government/statistics/national-energy-efficiency-data-framework-need-consumption-data-tables-2026",
+    "sourceStatus": "MODELLED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 1 — ENERGY CONSUMPTION",
+    "suitability": "REFERENCE_INPUT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "England/Wales multiple-attribute tables include region, property type, property age, bedrooms, gas present, electricity type and gas/electricity distributions. No adult-occupancy dimension or city/local-authority field exists at that joint dimensionality. Scotland has no sub-national geography at that joint dimensionality; property/age vocabularies differ. Existing UKMR profiles remain MODELLED_ESTIMATE and DEV_ONLY. MODELLED is the retained source-register governance label, not a promotion or a claim that source observations are modelled.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Reuse/licensing was not verified for this source in the supplied audits.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ],
+    "accessMechanisms": [
+      "XLSX",
+      "ODS"
+    ]
+  },
+  {
+    "sourceId": "SRC-OFGEM-REGIONAL",
+    "category": "energy_price",
+    "organisation": "Ofgem",
+    "publicationTitle": "Regional price-cap unit rates and standing charges",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 1 — ENERGY PRICES",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Regional unit rates and standing charges vary by fuel, payment method, tariff type and effective period. Selection is fundamentally postcode-based; Ofgem references NESO DNO boundaries and OS Code-Point Open. No city-only mappings without authoritative postcode-boundary evidence. HTML/table export is the researched route, but the exact export mechanism is unresolved. No verified stable CSV/XLSX/JSON/API resource. Do not substitute SRC-004 national-average evidence or assume raw files are redistributable.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact table export mechanism and stable download resource remain unresolved.",
+      "Reuse/licensing remains unresolved; do not assume OGL.",
+      "Authoritative postcode-boundary mapping remains required.",
+      "Source-governance status was not assigned by the audit; source discovery does not imply release readiness.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ],
+    "accessMechanisms": [
+      "HTML"
+    ]
+  },
+  {
+    "sourceId": "SRC-014",
+    "category": "water",
+    "organisation": "Thames Water",
+    "publicationTitle": "Metered household charges",
+    "sourceUrl": "https://www.thameswater.co.uk/help/account-and-billing/understand-your-bill/metered-customers",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 2 — WATER: Thames Water",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Verified London provider for clean water and wastewater. Preserve tariff regime and service components separately; source identification does not approve release readiness.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ]
+  },
+  {
+    "sourceId": "SRC-SEVERN-TRENT",
+    "category": "water",
+    "organisation": "Severn Trent",
+    "publicationTitle": "Household charges",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 2 — WATER: Severn Trent",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Verified Birmingham clean-water and wastewater provider. Authoritative tariff evidence now resolves the previous source gap. Applicable zone/regime mapping still requires validation before RELEASE_READY; source found does not mean calculator-ready.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
+      "Applicable zone/regime mapping requires validation.",
+      "Source-governance status was not assigned by the audit; source discovery does not imply release readiness.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-015",
+    "category": "water",
+    "organisation": "United Utilities",
+    "publicationTitle": "Metered household charges",
+    "sourceUrl": "https://corporate.unitedutilities.com/my-account/your-bill/our-household-charges-20262027/how-bills-for-households-with-a-meter-are-changing-for-20262027/",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 2 — WATER: United Utilities",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Verified Manchester/Liverpool clean-water and wastewater provider. The United Utilities occupancy curve is supplier-specific evidence, not a national observed curve. Transfer to other suppliers requires UKMR_MODEL_REQUIRED methodology and remains MODELLED_ESTIMATE / DEV_ONLY.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ]
+  },
+  {
+    "sourceId": "SRC-017",
+    "category": "water",
+    "organisation": "Yorkshire Water",
+    "publicationTitle": "Metered household charges",
+    "sourceUrl": "https://www.yorkshirewater.com/bill-account/how-we-work-out-your-bill/customers-with-a-meter/",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 2 — WATER: Yorkshire Water",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Verified Leeds clean-water and wastewater provider. Preserve billing regime and service components; no assumed API/CSV/JSON.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ]
+  },
+  {
+    "sourceId": "SRC-BRISTOL-WATER",
+    "category": "water",
+    "organisation": "Bristol Water",
+    "publicationTitle": "Household charges",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 2 — WATER: Bristol Water",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Verified Bristol clean-water provider, separate from Wessex wastewater. Complete current Bristol Water tariff evidence was not fully verified. Bristol complete water tariff remains BLOCKED_FROM_RELEASE.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
+      "Complete current clean-water tariff evidence remains unverified.",
+      "Source-governance status was not assigned by the audit; source discovery does not imply release readiness.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-018",
+    "category": "water",
+    "organisation": "Wessex Water",
+    "publicationTitle": "Metered household charges",
+    "sourceUrl": "https://www.wessexwater.co.uk/bills-and-accounts/our-charges/metered-charges",
+    "sourceStatus": "POPULATED_PARTIAL",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 2 — WATER: Wessex Water",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Verified Bristol wastewater provider with current tariff evidence available. Preserve POPULATED_PARTIAL governance; this does not resolve Bristol Water clean-water evidence or promote the complete Bristol tariff from BLOCKED_FROM_RELEASE.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ]
+  },
+  {
+    "sourceId": "SRC-010",
+    "category": "water",
+    "organisation": "Scottish Water",
+    "publicationTitle": "Unmetered household charges 2026/27",
+    "sourceUrl": "https://www.scottishwater.co.uk/-/media/scottishwater/document-hub/your-home/charges/2026/250226scottish-water-unmetered-household-charges-2026-27-leaflet.pdf",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 2 — WATER: Scottish Water",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Verified Edinburgh/Glasgow provider. Unmetered charges are Council Tax band based; metered charges are a separate regime. Effective periods generally run 1 April to 31 March; no specific effective dates are inferred from that general rule.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ]
+  },
+  {
+    "sourceId": "SRC-005",
+    "category": "groceries",
+    "organisation": "Defra",
+    "publicationTitle": "Family Food household composition expenditure",
+    "sourceUrl": "https://www.gov.uk/government/statistical-data-sets/family-food-datasets",
+    "sourceStatus": "POPULATED_DEV",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 2 — GROCERIES",
+    "suitability": "REFERENCE_INPUT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "ODS expenditure data plus CSV codebank. Source expenditure is observed per-person/per-week input; suitability depends on record layer. Weekly-to-monthly conversion is CALCULATED; household-profile mapping may be MODELLED_ESTIMATE. Never invent people counts for open-ended household groups; unsupported open-ended totals remain blocked.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Current source edition/period was not identified by the supplied audit.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ],
+    "accessMechanisms": [
+      "ODS",
+      "CSV"
+    ],
+    "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)"
+  },
+  {
+    "sourceId": "SRC-006",
+    "category": "coicop_expenditure",
+    "organisation": "ONS",
+    "publicationTitle": "Family Spending FYE 2025 — Workbook 1",
+    "sourceUrl": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 2 — ESSENTIALS / LIFESTYLE",
+    "suitability": "OBSERVED_SOURCE_INPUT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Source-level COICOP expenditure rows are OBSERVED_DATA. Period conversion and category summation are CALCULATED. UKMR household-profile mapping may be MODELLED_ESTIMATE. Essentials/lifestyle are later UKMR views and mappings, not native observed ONS categories.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ],
+    "sourcePeriod": "FYE 2025",
+    "accessMechanisms": [
+      "XLSX"
+    ],
+    "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)"
+  },
+  {
+    "sourceId": "SRC-TFL",
+    "category": "transport",
+    "organisation": "TfL",
+    "publicationTitle": "TfL fare products",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 3 — TfL",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "General open-data/API platform confirmed, but fare-product-specific API/resource not verified. Keep PRIMARY_CONTROLLED_IMPORT; do not infer PRIMARY_AUTOMATED from the Unified API. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
+      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-TFWM",
+    "category": "transport",
+    "organisation": "TfWM / Swift / operators",
+    "publicationTitle": "West Midlands fare products",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 3 — TfWM / Swift / operators",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Current products exist, but no universal Birmingham fare set is established. Do not substitute an operator fare for another operator or integrated product. Behavioural profiles remain unresolved and existing profile rows remain DEV_ONLY. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
+      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-TFGM",
+    "category": "transport",
+    "organisation": "TfGM / Bee Network",
+    "publicationTitle": "Bee Network fare products",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 3 — TfGM / Bee Network",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Complete current integrated fare evidence remains partly unresolved. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
+      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-MCARD",
+    "category": "transport",
+    "organisation": "West Yorkshire / MCard / operators",
+    "publicationTitle": "MCard and West Yorkshire operator fare products",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 3 — West Yorkshire / MCard / operators",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Keep operator fares separate from MCard multi-operator products. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
+      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-MERSEYTRAVEL",
+    "category": "transport",
+    "organisation": "Merseytravel",
+    "publicationTitle": "Solo / Railpass / Trio / Saveaway fare products",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 3 — Merseytravel",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Keep Solo, Railpass, Trio and Saveaway separate. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
+      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-TRAVELWEST",
+    "category": "transport",
+    "organisation": "Travelwest / First Bus / relevant operators",
+    "publicationTitle": "West of England operator fare products",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 3 — Travelwest / First Bus / relevant operators",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "First Bus products are not universal West of England integrated fares. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
+      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-EDINBURGH-TRANSPORT",
+    "category": "transport",
+    "organisation": "Lothian / Edinburgh Trams",
+    "publicationTitle": "Lothian and Edinburgh Trams fare products",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 3 — Lothian / Edinburgh Trams",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Keep bus, tram and city/airport/network products separate. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
+      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-GLASGOW-TRANSPORT",
+    "category": "transport",
+    "organisation": "SPT / First Bus / ZoneCard",
+    "publicationTitle": "Subway / First Bus / ZoneCard fare products",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 3 — SPT / First Bus / ZoneCard",
+    "suitability": "PRIMARY_CONTROLLED_IMPORT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Keep Subway, First Bus and ZoneCard product systems separate. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
+      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ]
+  },
+  {
+    "sourceId": "SRC-011",
+    "category": "income_tax",
+    "organisation": "HMRC",
+    "publicationTitle": "Income Tax rates and allowances",
+    "sourceUrl": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 4 — INCOME TAX — rUK",
+    "suitability": "REFERENCE_INPUT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "rUK jurisdiction, tax year 2026/27. HTML reference input; no verified API. Tax arithmetic is later CALCULATED logic.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ],
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-06",
+    "effectiveTo": "2027-04-05",
+    "licenceReference": "OGL v3.0 (Batch 4)"
+  },
+  {
+    "sourceId": "SRC-013",
+    "category": "income_tax",
+    "organisation": "Scottish Government",
+    "publicationTitle": "Scottish Income Tax rates and bands",
+    "sourceUrl": "https://www.gov.scot/publications/scottish-income-tax-rates-and-bands/",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 4 — INCOME TAX — SCOTLAND",
+    "suitability": "REFERENCE_INPUT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Scotland jurisdiction. Scottish Government rates/bands require the HMRC Personal Allowance/taper reference (SRC-011). HTML reference input; no verified API. Tax arithmetic is later CALCULATED logic.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ],
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "licenceReference": "OGL v3.0 (Batch 4)"
+  },
+  {
+    "sourceId": "SRC-012",
+    "category": "national_insurance",
+    "organisation": "HMRC",
+    "publicationTitle": "Rates and thresholds for employers 2026/27",
+    "sourceStatus": "POPULATED",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 4 — HMRC Rates and thresholds for employers 2026/27",
+    "suitability": "REFERENCE_INPUT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "Class 1 reference data must preserve the official category dimension. Category A is a later ordinary-employee scenario assumption, not a restriction on the reference dataset. Current mechanism is HTML; historical ODS exists but is not asserted as the current source format.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+    ],
+    "sourcePeriod": "2026/27",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "licenceReference": "OGL v3.0 (Batch 4)"
+  },
+  {
+    "sourceId": "SRC-HOUSEHOLD-EQUIVALENCE",
+    "category": "household_equivalence",
+    "organisation": "ONS",
+    "publicationTitle": "Chapter 3: Equivalised income",
+    "sourceUrl": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/compendium/familyspending/2015/chapter3equivalisedincome",
+    "authority": "PRIMARY",
+    "sourceReference": "Batch 4 — OECD-modified equivalence scale used in UK income-distribution methodology",
+    "suitability": "REFERENCE_INPUT",
+    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "useNote": "ONS methodology reference for the OECD-modified scale. Batch 4 specifies first adult 1.0, additional adult/person age 14+ 0.5, child under 14 0.3. Reference methodology for income equivalence/living-standard comparison only. Do not automatically apply these weights to groceries, essentials, lifestyle, water or energy. No calculator implementation is supplied.",
+    "unresolvedMetadata": [
+      "Publication date and refresh cadence were not verified in Batch 1–4.",
+      "Source-governance status was not assigned by the audit; source discovery does not imply release readiness.",
+      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+    ],
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "licenceReference": "OGL v3.0 unless otherwise stated (ONS material; Batch 2)"
+  }
+]);

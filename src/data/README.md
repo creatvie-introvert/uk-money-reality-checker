@@ -1,6 +1,6 @@
 # Data layer
 
-This commit is the contract-foundation slice of Milestone 1. Importers, generated release datasets and typed runtime loaders are subsequent M1 work.
+Milestone 1 contains the canonical record contracts, source catalogue and offline ingestion framework. Production source importers, generated release datasets and typed runtime loaders are subsequent M1 work.
 
 Milestone 1 separates three artifact concepts:
 
@@ -11,3 +11,7 @@ Milestone 1 separates three artifact concepts:
 Source snapshots may be retained or represented by source metadata and checksums when licensing or storage rules prevent repository retention. No live upstream source is a runtime dependency.
 
 Artifact parsing validates manifest record counts and source snapshot references. The artifact manifest's `releaseId` is the authoritative release-level identifier; records do not require a per-record release identifier.
+
+The ingestion flow is source catalogue → snapshot metadata → raw imported payload → category adapter → normalized audit records and diagnostics. The catalogue describes upstream evidence; adapters normalize it into the existing category-specific schemas. Release generation is a later slice, and calculator logic follows in M2.
+
+See `docs/data/README.md` for source verification limits, snapshot retention, row accounting and adapter responsibilities. The single synthetic tax adapter lives under `tests/data/fixtures`; it is not a production importer.

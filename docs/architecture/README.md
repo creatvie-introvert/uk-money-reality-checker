@@ -6,4 +6,4 @@ M1 is data foundation only: UKMR Data Pack v3.1 integration, Zod schemas, proven
 
 Features under `src/features/calculator` coordinate domain use cases without moving financial rules into components.
 
-Data will flow from the UKMR Data Pack through import, Zod schema validation, release-status validation, generated release data and typed loaders in M1. The M2 engine then consumes those typed loaders; source spreadsheets are never a UI dependency.
+The implemented M1 foundation flows from source catalogue through snapshot metadata, raw payload and a category adapter into normalized audit records with validation diagnostics. The source catalogue describes upstream evidence; adapters preserve source meaning while normalizing data. Generated releases and typed loaders are later M1 slices. The M2 engine then consumes those typed loaders; source spreadsheets are never a UI dependency. See `docs/data/README.md` for the offline ingestion contracts and unresolved catalogue metadata.
