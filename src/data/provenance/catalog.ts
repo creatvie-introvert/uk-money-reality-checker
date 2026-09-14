@@ -13,13 +13,15 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "sourceUrl": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics",
     "sourceStatus": "POPULATED",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 1 — RENT",
+    "sourceReference": "ONS 19 August 2026 edition; Table 1; controlled July 2026 cell extract",
+    "publicationDate": "2026-08-19",
+    "sourcePeriod": "2026-07",
+    "refreshCadence": "Monthly; next release 16 September 2026 (verified 14 September 2026)",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "rawSnapshotPolicy": "METADATA_ONLY",
     "useNote": "Official XLSX controlled import. PIPR-specific API not verified; general ONS API availability is not evidence of a PIPR endpoint. Wider rental stock, not asking rents. London is region E12000007. Birmingham E08000025; Manchester E08000003; Leeds E08000035; Liverpool E08000012; Bristol E06000023. No direct Edinburgh/City of Edinburgh row or closer current ONS city source was identified. Greater Glasgow S33000009 must not be relabelled Glasgow City. Arbitrary bedroom × property-type crosses are unavailable; Scottish source characteristics differ.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+      "Edinburgh rent source remains unresolved; no fallback is approved."
     ],
     "accessMechanisms": [
       "XLSX"

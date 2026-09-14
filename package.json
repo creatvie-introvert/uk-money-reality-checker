@@ -12,7 +12,9 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "data:references": "node scripts/data/generate-references.mjs",
-    "data:council-tax": "node scripts/data/generate-council-tax.mjs"
+    "data:council-tax": "node scripts/data/generate-council-tax.mjs",
+    "data:rent": "node scripts/data/generate-rent.mjs",
+    "data:rent:extract": "python3 scripts/data/extract-rent.py"
   },
   "repository": {
     "type": "git",

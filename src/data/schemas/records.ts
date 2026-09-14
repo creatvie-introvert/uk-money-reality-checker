@@ -21,8 +21,16 @@ export const rentRecordSchema = z.object({
   bedroomBand: z.enum(["one bed", "two bed", "three bed", "four or more bed"]).optional(),
   propertyType: z.enum(["detached", "semidetached", "terraced", "flat maisonette"]).optional(),
   measure: z.literal("rental_price"),
-  valueGbp: z.number().finite().nonnegative(),
+  valueGbp: z.number().finite().positive(),
   unit: z.literal("GBP/month"),
+  sourcePeriod: z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/),
+}).superRefine((record, context) => {
+  if (record.bedroomBand && record.propertyType) {
+    context.addIssue({ code: "custom", path: ["propertyType"], message: "ONS bedroom and property-type measures are separate dimensions, not cross-tabs" });
+  }
+  if (record.provenance.sourcePeriod !== record.sourcePeriod) {
+    context.addIssue({ code: "custom", path: ["sourcePeriod"], message: "Rent month must match provenance source period" });
+  }
 });
 
 export const coicopExpenditureRecordSchema = z.object({
