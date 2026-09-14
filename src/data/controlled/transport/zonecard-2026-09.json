@@ -1,0 +1,67 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "zonecard",
+  "sourceId": "SRC-GLASGOW-TRANSPORT",
+  "organisation": "Strathclyde Partnership for Transport",
+  "publicationTitle": "ZoneCard \u2014 Adult Fares",
+  "sourceReference": "ZoneCard \u2014 Adult Fares",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available."
+  ],
+  "rows": [
+    {
+      "rowId": "zone1-week",
+      "cityId": "LOC-GLA",
+      "operator": "ScotRail, SPT Subway and participating bus operators",
+      "network": "ZoneCard",
+      "productName": "Zone 1 \u2014 One week",
+      "rawAmount": "31",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "rail",
+        "subway"
+      ],
+      "fareType": "weekly",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "One week",
+      "zonesOrArea": "ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)",
+      "paymentMethod": "ZoneCard on smartcard; online/app/Payzone",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "Only participating services within zone 1. Other zones need a different ticket. No airport or universal operator entitlement inferred."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "ZoneCard \u2014 Adult Fares \u2014 Zone 1 \u2014 One week; adult ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-zonecard-20260914",
+    "sourceId": "SRC-GLASGOW-TRANSPORT",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.spt.co.uk/tickets/zonecard/",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git.",
+    "checksum": "sha256:c590c674f1f1648eb04369133172aa7f69f2602d4d2cbe80f8378ef399aeaed9"
+  },
+  "captureFile": "ukmr-transport-zonecard.html",
+  "supportingEvidence": []
+}

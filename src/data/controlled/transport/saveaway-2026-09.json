@@ -1,0 +1,66 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "saveaway",
+  "sourceId": "SRC-MERSEYTRAVEL",
+  "organisation": "Merseytravel",
+  "publicationTitle": "Saveaway tickets and prices",
+  "sourceReference": "Saveaway tickets and prices",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available."
+  ],
+  "rows": [
+    {
+      "rowId": "all-areas-day",
+      "cityId": "LOC-LIV",
+      "operator": "Participating buses, trains and Mersey Ferries",
+      "network": "Merseytravel Saveaway",
+      "productName": "Saveaway \u2014 All areas across the county 1 day",
+      "rawAmount": "6.80",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "rail",
+        "ferry"
+      ],
+      "fareType": "day_ticket",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "day",
+      "validity": "One specified day; paper City line ticket valid on purchase day",
+      "zonesOrArea": "Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings",
+      "paymentMethod": "MetroCard or City line paper ticket; cash or card",
+      "passengerType": "adult",
+      "peakStatus": "off_peak",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "Every separate journey must start off peak: excludes 06:31\u201309:29 Monday\u2013Friday; all day weekends/bank holidays.",
+        "River Explorer cruise needs supplement; first MetroCard adds \u00a31."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Saveaway tickets and prices \u2014 Saveaway \u2014 All areas across the county 1 day; adult Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-saveaway-20260914",
+    "sourceId": "SRC-MERSEYTRAVEL",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/saveaway-ticket/",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git."
+  },
+  "supportingEvidence": []
+}

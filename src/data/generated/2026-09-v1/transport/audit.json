@@ -1,0 +1,2172 @@
+{
+  "kind": "AUDIT",
+  "manifest": {
+    "releaseId": "ukmr-transport-2026-09-v1",
+    "schemaVersion": "1.7.0",
+    "generatedAt": "2026-09-14T17:49:38Z",
+    "sourceSnapshotIds": [
+      "transport-bee-20260914",
+      "transport-bristolcurrent-20260914",
+      "transport-firstglasgow-20260914",
+      "transport-lothiancurrent-20260914",
+      "transport-mcard-20260914",
+      "transport-railpass-20260914",
+      "transport-saveaway-20260914",
+      "transport-solo-20260914",
+      "transport-subwaycurrent-20260914",
+      "transport-tfl-20260914",
+      "transport-tfwmbus-20260914",
+      "transport-tfwmnetwork-20260914",
+      "transport-tramscurrent-20260914",
+      "transport-trio-20260914",
+      "transport-zonecard-20260914"
+    ],
+    "recordCount": 25
+  },
+  "records": [
+    {
+      "recordId": "SRC-EDINBURGH-TRANSPORT:lothiancurrent:city-day:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-EDINBURGH-TRANSPORT",
+        "organisation": "Lothian Buses",
+        "publicationTitle": "Fares & Tickets — Lothian Buses",
+        "sourceUrl": "https://www.lothianbuses.com/fares-and-tickets/",
+        "sourceReference": "Fares & Tickets — Lothian Buses — City DAY; adult Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-lothiancurrent-20260914",
+        "snapshotChecksum": "sha256:5aac61fec5e889f1e7f11bad4af113b23e3eeb61d5c2c04eeb8d8f580d96b320",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "6",
+        "sourceReference": "Fares & Tickets — Lothian Buses — City DAY; adult Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": [
+          {
+            "sourceUrl": "https://www.lothianbuses.com/news/2026/01/fares-revision/",
+            "sourceReference": "Lothian revised SINGLE and City DAY prices",
+            "publicationDate": "2026-01-30",
+            "publishedEffectiveFrom": "2026-02-22",
+            "captureFile": "ukmr-transport-lothian.html",
+            "checksum": "sha256:e17c30b794792647a4d03b848fb8edb4b0a5b6769f9dd47e36d96d7e63477806"
+          }
+        ]
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B",
+          "sourceId": "SRC-EDINBURGH-TRANSPORT"
+        }
+      },
+      "authorityOrOperator": "Lothian Buses",
+      "operator": "Lothian Buses, Edinburgh Trams, East Coast Buses and Lothian Country",
+      "network": "Lothian City DAY",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "productName": "City DAY",
+      "fareType": "day_ticket",
+      "fareGbp": 6,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "day",
+      "validity": "Unlimited day-service journeys",
+      "passengerType": "adult",
+      "paymentMethod": "On-bus ticket purchase",
+      "zonesOrArea": "Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "applicability": {
+        "cityIds": [
+          "LOC-EDI"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Airlink and special services excluded. Not the tram-only et app day product.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-EDINBURGH-TRANSPORT:lothiancurrent:single:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-EDINBURGH-TRANSPORT",
+        "organisation": "Lothian Buses",
+        "publicationTitle": "Fares & Tickets — Lothian Buses",
+        "sourceUrl": "https://www.lothianbuses.com/fares-and-tickets/",
+        "sourceReference": "Fares & Tickets — Lothian Buses — SINGLE; adult Lothian Buses day service network",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-lothiancurrent-20260914",
+        "snapshotChecksum": "sha256:5aac61fec5e889f1e7f11bad4af113b23e3eeb61d5c2c04eeb8d8f580d96b320",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "2.40",
+        "sourceReference": "Fares & Tickets — Lothian Buses — SINGLE; adult Lothian Buses day service network",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": [
+          {
+            "sourceUrl": "https://www.lothianbuses.com/news/2026/01/fares-revision/",
+            "sourceReference": "Lothian revised SINGLE and City DAY prices",
+            "publicationDate": "2026-01-30",
+            "publishedEffectiveFrom": "2026-02-22",
+            "captureFile": "ukmr-transport-lothian.html",
+            "checksum": "sha256:e17c30b794792647a4d03b848fb8edb4b0a5b6769f9dd47e36d96d7e63477806"
+          }
+        ]
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Lothian Buses day service network",
+          "sourceId": "SRC-EDINBURGH-TRANSPORT"
+        }
+      },
+      "authorityOrOperator": "Lothian Buses",
+      "operator": "Lothian Buses",
+      "network": "Lothian Buses day services",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "productName": "SINGLE",
+      "fareType": "single",
+      "fareGbp": 2.4,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "journey",
+      "validity": "One journey on a day service",
+      "passengerType": "adult",
+      "paymentMethod": "On-bus cash or contactless",
+      "zonesOrArea": "Lothian Buses day service network",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "applicability": {
+        "cityIds": [
+          "LOC-EDI"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Airlink, night and special services are separate products.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-EDINBURGH-TRANSPORT:tramscurrent:airport-single:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-EDINBURGH-TRANSPORT",
+        "organisation": "Edinburgh Trams",
+        "publicationTitle": "Farefinder — adult city and airport tickets",
+        "sourceUrl": "https://edinburghtrams.com/tickets/farefinder",
+        "sourceReference": "Farefinder — adult city and airport tickets — Adult Airport Single (airport & city zone); adult Edinburgh Trams airport and city zones",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-tramscurrent-20260914",
+        "snapshotChecksum": "sha256:a0f62ef0d7360303d1dab85bcf5b48376e670f4aea4a01e67095e9c5c76edb8e",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "7.90",
+        "sourceReference": "Farefinder — adult city and airport tickets — Adult Airport Single (airport & city zone); adult Edinburgh Trams airport and city zones",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": [
+          {
+            "sourceUrl": "https://edinburghtrams.com/news/changes-tram-fares-2026",
+            "sourceReference": "City single revision; airport single frozen, its original commencement not established",
+            "publicationDate": "2026-01-30",
+            "publishedEffectiveFrom": "2026-02-22",
+            "captureFile": "ukmr-transport-trams.html",
+            "checksum": "sha256:06c13aa9fa3d53fd19a18610f77b76c6fc1708f9c7a7cf7b7f5a7802f232e636"
+          }
+        ]
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Edinburgh Trams airport and city zones",
+          "sourceId": "SRC-EDINBURGH-TRANSPORT"
+        }
+      },
+      "authorityOrOperator": "Edinburgh Trams",
+      "operator": "Edinburgh Trams",
+      "network": "Edinburgh Trams",
+      "mode": "tram",
+      "includedModes": [
+        "tram"
+      ],
+      "productName": "Adult Airport Single (airport & city zone)",
+      "fareType": "single",
+      "fareGbp": 7.9,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "journey",
+      "validity": "One journey; purchase day; board within 30 minutes",
+      "passengerType": "adult",
+      "paymentMethod": "Tram-stop ticket vending machine",
+      "zonesOrArea": "Edinburgh Trams airport and city zones",
+      "peakStatus": "anytime",
+      "airportApplicability": "included",
+      "applicability": {
+        "cityIds": [
+          "LOC-EDI"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Buy before boarding. Online pre-purchase discounts not applied to this machine price.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-EDINBURGH-TRANSPORT:tramscurrent:city-single:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-EDINBURGH-TRANSPORT",
+        "organisation": "Edinburgh Trams",
+        "publicationTitle": "Farefinder — adult city and airport tickets",
+        "sourceUrl": "https://edinburghtrams.com/tickets/farefinder",
+        "sourceReference": "Farefinder — adult city and airport tickets — Adult Single (city zone); adult Edinburgh Trams city zone; excludes Airport",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-tramscurrent-20260914",
+        "snapshotChecksum": "sha256:a0f62ef0d7360303d1dab85bcf5b48376e670f4aea4a01e67095e9c5c76edb8e",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "2.40",
+        "sourceReference": "Farefinder — adult city and airport tickets — Adult Single (city zone); adult Edinburgh Trams city zone; excludes Airport",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": [
+          {
+            "sourceUrl": "https://edinburghtrams.com/news/changes-tram-fares-2026",
+            "sourceReference": "City single revision; airport single frozen, its original commencement not established",
+            "publicationDate": "2026-01-30",
+            "publishedEffectiveFrom": "2026-02-22",
+            "captureFile": "ukmr-transport-trams.html",
+            "checksum": "sha256:06c13aa9fa3d53fd19a18610f77b76c6fc1708f9c7a7cf7b7f5a7802f232e636"
+          }
+        ]
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Edinburgh Trams city zone; excludes Airport",
+          "sourceId": "SRC-EDINBURGH-TRANSPORT"
+        }
+      },
+      "authorityOrOperator": "Edinburgh Trams",
+      "operator": "Edinburgh Trams",
+      "network": "Edinburgh Trams",
+      "mode": "tram",
+      "includedModes": [
+        "tram"
+      ],
+      "productName": "Adult Single (city zone)",
+      "fareType": "single",
+      "fareGbp": 2.4,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "journey",
+      "validity": "One journey; purchase day; board within 30 minutes",
+      "passengerType": "adult",
+      "paymentMethod": "Tram-stop ticket vending machine",
+      "zonesOrArea": "Edinburgh Trams city zone; excludes Airport",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "applicability": {
+        "cityIds": [
+          "LOC-EDI"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Buy before boarding. Online pre-purchase discounts not applied to this machine price.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-GLASGOW-TRANSPORT:firstglasgow:city-day:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-GLASGOW-TRANSPORT",
+        "organisation": "First Glasgow",
+        "publicationTitle": "Ticket prices — City / Adult / FirstDay selection",
+        "sourceUrl": "https://www.firstbus.co.uk/greater-glasgow/tickets/ticket-prices",
+        "sourceReference": "Ticket prices — City / Adult / FirstDay selection — City Adult FirstDay; adult First Glasgow City zone",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-firstglasgow-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "6.60",
+        "sourceReference": "Ticket prices — City / Adult / FirstDay selection — City Adult FirstDay; adult First Glasgow City zone",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "First Glasgow City zone",
+          "sourceId": "SRC-GLASGOW-TRANSPORT"
+        }
+      },
+      "authorityOrOperator": "First Glasgow",
+      "operator": "First Glasgow",
+      "network": "First Glasgow City fare zone",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "productName": "City Adult FirstDay",
+      "fareType": "day_ticket",
+      "fareGbp": 6.6,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "day",
+      "validity": "Unlimited journeys for one day",
+      "passengerType": "adult",
+      "paymentMethod": "First Bus App or on-bus ticket",
+      "zonesOrArea": "First Glasgow City zone",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "applicability": {
+        "cityIds": [
+          "LOC-GLA"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Adult 16+. Excludes Glasgow Airport Express, airport journeys, Night Bus and First Scotland East beyond area validity.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-GLASGOW-TRANSPORT:subwaycurrent:smartcard-single:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-GLASGOW-TRANSPORT",
+        "organisation": "Strathclyde Partnership for Transport",
+        "publicationTitle": "Subway tickets",
+        "sourceUrl": "https://www.spt.co.uk/tickets/subway-tickets/",
+        "sourceReference": "Subway tickets — Adult Smartcard Single; adult Glasgow Subway network",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-subwaycurrent-20260914",
+        "snapshotChecksum": "sha256:cb47c973e73a17c32b00b71d2ebffd9e33040a477bb3144e019bbe410cc43d71",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "1.80",
+        "sourceReference": "Subway tickets — Adult Smartcard Single; adult Glasgow Subway network",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": [
+          {
+            "sourceUrl": "https://www.spt.co.uk/about-us/news/subway-fares-revised-for-2026/",
+            "sourceReference": "Adult Smartcard Single revision",
+            "publicationDate": "2025-12-19",
+            "publishedEffectiveFrom": "2026-01-05",
+            "captureFile": "ukmr-transport-subway.html",
+            "checksum": "sha256:33c2de525042b481057f51565b4f0cd2544b7f8f598cfebea9b57190409e4986"
+          }
+        ]
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Glasgow Subway network",
+          "sourceId": "SRC-GLASGOW-TRANSPORT"
+        }
+      },
+      "authorityOrOperator": "Strathclyde Partnership for Transport",
+      "operator": "SPT Subway",
+      "network": "Glasgow Subway",
+      "mode": "subway",
+      "includedModes": [
+        "subway"
+      ],
+      "productName": "Adult Smartcard Single",
+      "fareType": "single",
+      "fareGbp": 1.8,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "journey",
+      "validity": "One Subway journey",
+      "passengerType": "adult",
+      "paymentMethod": "Subway Smartcard",
+      "zonesOrArea": "Glasgow Subway network",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-GLA"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Disposable ticket and contactless variants are not substituted.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-GLASGOW-TRANSPORT:zonecard:zone1-week:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-GLASGOW-TRANSPORT",
+        "organisation": "Strathclyde Partnership for Transport",
+        "publicationTitle": "ZoneCard — Adult Fares",
+        "sourceUrl": "https://www.spt.co.uk/tickets/zonecard/",
+        "sourceReference": "ZoneCard — Adult Fares — Zone 1 — One week; adult ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-zonecard-20260914",
+        "snapshotChecksum": "sha256:c590c674f1f1648eb04369133172aa7f69f2602d4d2cbe80f8378ef399aeaed9",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "31",
+        "sourceReference": "ZoneCard — Adult Fares — Zone 1 — One week; adult ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)",
+          "sourceId": "SRC-GLASGOW-TRANSPORT"
+        }
+      },
+      "authorityOrOperator": "Strathclyde Partnership for Transport",
+      "operator": "ScotRail, SPT Subway and participating bus operators",
+      "network": "ZoneCard",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "rail",
+        "subway"
+      ],
+      "productName": "Zone 1 — One week",
+      "fareType": "weekly",
+      "fareGbp": 31,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "One week",
+      "passengerType": "adult",
+      "paymentMethod": "ZoneCard on smartcard; online/app/Payzone",
+      "zonesOrArea": "ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-GLA"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Only participating services within zone 1. Other zones need a different ticket. No airport or universal operator entitlement inferred.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-MCARD:mcard:bus-rail-week:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-MCARD",
+        "organisation": "West Yorkshire Ticketing Company / MCard",
+        "publicationTitle": "Adults — MCard Ticket Prices",
+        "sourceUrl": "https://www.m-card.co.uk/the-cards/mcard/",
+        "sourceReference": "Adults — MCard Ticket Prices — Countywide Bus and Rail Zones 1-5 weekly ticket; adult Countywide buses and rail zones 1-5",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-mcard-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "55.30",
+        "sourceReference": "Adults — MCard Ticket Prices — Countywide Bus and Rail Zones 1-5 weekly ticket; adult Countywide buses and rail zones 1-5",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Countywide buses and rail zones 1-5",
+          "sourceId": "SRC-MCARD"
+        }
+      },
+      "authorityOrOperator": "West Yorkshire Ticketing Company / MCard",
+      "operator": "Participating West Yorkshire bus and rail operators",
+      "network": "MCard",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "rail"
+      ],
+      "productName": "Countywide Bus and Rail Zones 1-5 weekly ticket",
+      "fareType": "weekly",
+      "fareGbp": 55.3,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Seven consecutive days; final operational day ends at 03:59",
+      "passengerType": "adult",
+      "paymentMethod": "MCard Mobile App",
+      "zonesOrArea": "Countywide buses and rail zones 1-5",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LEE"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Special services excluded. Rail zones 6-7 not included.",
+          "Activate app ticket before travel; account-holder use only, no sharing between devices.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-MCARD:mcard:bus-week:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-MCARD",
+        "organisation": "West Yorkshire Ticketing Company / MCard",
+        "publicationTitle": "Adults — MCard Ticket Prices",
+        "sourceUrl": "https://www.m-card.co.uk/the-cards/mcard/",
+        "sourceReference": "Adults — MCard Ticket Prices — Countywide Bus - Week ticket; adult West Yorkshire countywide bus",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-mcard-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "26",
+        "sourceReference": "Adults — MCard Ticket Prices — Countywide Bus - Week ticket; adult West Yorkshire countywide bus",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "West Yorkshire countywide bus",
+          "sourceId": "SRC-MCARD"
+        }
+      },
+      "authorityOrOperator": "West Yorkshire Ticketing Company / MCard",
+      "operator": "Participating West Yorkshire bus operators",
+      "network": "MCard",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "productName": "Countywide Bus - Week ticket",
+      "fareType": "weekly",
+      "fareGbp": 26,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Seven consecutive days; final operational day ends at 03:59",
+      "passengerType": "adult",
+      "paymentMethod": "MCard Mobile App",
+      "zonesOrArea": "West Yorkshire countywide bus",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LEE"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Special services excluded; ordinary stopping services within West Yorkshire.",
+          "Activate app ticket before travel; account-holder use only, no sharing between devices.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-MERSEYTRAVEL:railpass:all-zones-week:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-MERSEYTRAVEL",
+        "organisation": "Merseytravel",
+        "publicationTitle": "Railpass tickets and prices",
+        "sourceUrl": "https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/railpass-ticket/",
+        "sourceReference": "Railpass tickets and prices — Railpass — All zones across the county Week; adult Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-railpass-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "43.40",
+        "sourceReference": "Railpass tickets and prices — Railpass — All zones across the county Week; adult Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk",
+          "sourceId": "SRC-MERSEYTRAVEL"
+        }
+      },
+      "authorityOrOperator": "Merseytravel",
+      "operator": "Participating Merseyside rail operators",
+      "network": "Merseytravel Railpass",
+      "mode": "rail",
+      "includedModes": [
+        "rail"
+      ],
+      "productName": "Railpass — All zones across the county Week",
+      "fareType": "weekly",
+      "fareGbp": 43.4,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Weekly; activates on purchase; anytime",
+      "passengerType": "adult",
+      "paymentMethod": "MetroCard; staffed Merseyrail station (except Chester)",
+      "zonesOrArea": "Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LIV"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "£1 initial MetroCard charge separately. This is standard Railpass; online Merseyrail Only Railpass excludes City line and is not substituted.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-MERSEYTRAVEL:saveaway:all-areas-day:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-MERSEYTRAVEL",
+        "organisation": "Merseytravel",
+        "publicationTitle": "Saveaway tickets and prices",
+        "sourceUrl": "https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/saveaway-ticket/",
+        "sourceReference": "Saveaway tickets and prices — Saveaway — All areas across the county 1 day; adult Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-saveaway-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "6.80",
+        "sourceReference": "Saveaway tickets and prices — Saveaway — All areas across the county 1 day; adult Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings",
+          "sourceId": "SRC-MERSEYTRAVEL"
+        }
+      },
+      "authorityOrOperator": "Merseytravel",
+      "operator": "Participating buses, trains and Mersey Ferries",
+      "network": "Merseytravel Saveaway",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "rail",
+        "ferry"
+      ],
+      "productName": "Saveaway — All areas across the county 1 day",
+      "fareType": "day_ticket",
+      "fareGbp": 6.8,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "day",
+      "validity": "One specified day; paper City line ticket valid on purchase day",
+      "passengerType": "adult",
+      "paymentMethod": "MetroCard or City line paper ticket; cash or card",
+      "zonesOrArea": "Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings",
+      "peakStatus": "off_peak",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LIV"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Every separate journey must start off peak: excludes 06:31–09:29 Monday–Friday; all day weekends/bank holidays.",
+          "River Explorer cruise needs supplement; first MetroCard adds £1.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-MERSEYTRAVEL:solo:all-areas-week:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-MERSEYTRAVEL",
+        "organisation": "Merseytravel",
+        "publicationTitle": "Solo tickets and prices",
+        "sourceUrl": "https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/solo-ticket/",
+        "sourceReference": "Solo tickets and prices — Solo — All areas Week; adult All Merseyside bus areas",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-solo-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "23.60",
+        "sourceReference": "Solo tickets and prices — Solo — All areas Week; adult All Merseyside bus areas",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "All Merseyside bus areas",
+          "sourceId": "SRC-MERSEYTRAVEL"
+        }
+      },
+      "authorityOrOperator": "Merseytravel",
+      "operator": "Merseyside bus operators",
+      "network": "Merseytravel Solo",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "productName": "Solo — All areas Week",
+      "fareType": "weekly",
+      "fareGbp": 23.6,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Weekly; first use within 28 days of purchase",
+      "passengerType": "adult",
+      "paymentMethod": "MetroCard; online, PayPoint or Merseytravel Centre",
+      "zonesOrArea": "All Merseyside bus areas",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LIV"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Anytime. Outside Merseyside requires extra fare. New MetroCard activation costs £1 separately.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-MERSEYTRAVEL:trio:all-zones-week:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-MERSEYTRAVEL",
+        "organisation": "Merseytravel",
+        "publicationTitle": "Trio tickets and prices",
+        "sourceUrl": "https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/trio-ticket/",
+        "sourceReference": "Trio tickets and prices — Trio — All zones across the county Week; adult All Merseyside zones; direct cross-river ferries",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-trio-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "50",
+        "sourceReference": "Trio tickets and prices — Trio — All zones across the county Week; adult All Merseyside zones; direct cross-river ferries",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "All Merseyside zones; direct cross-river ferries",
+          "sourceId": "SRC-MERSEYTRAVEL"
+        }
+      },
+      "authorityOrOperator": "Merseytravel",
+      "operator": "Participating buses, trains and Mersey Ferries",
+      "network": "Merseytravel Trio",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "rail",
+        "ferry"
+      ],
+      "productName": "Trio — All zones across the county Week",
+      "fareType": "weekly",
+      "fareGbp": 50,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Weekly; activates on purchase; anytime",
+      "passengerType": "adult",
+      "paymentMethod": "Ticket with passport photograph; cash or card at staffed outlet",
+      "zonesOrArea": "All Merseyside zones; direct cross-river ferries",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LIV"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "River Explorer cruise requires supplement; cross-river validity requires C1 and B1 (included). Outside selected zones needs additional fare.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFGM:bee:bus-day:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFGM",
+        "organisation": "Transport for Greater Manchester",
+        "publicationTitle": "Tap and go with contactless on bus and tram",
+        "sourceUrl": "https://tfgm.com/ways-to-pay/contactless",
+        "sourceReference": "Tap and go with contactless on bus and tram — Daily Bee Bus adult cap; adult Bee Network buses",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-bee-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "5",
+        "sourceReference": "Tap and go with contactless on bus and tram — Daily Bee Bus adult cap; adult Bee Network buses",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Bee Network buses",
+          "sourceId": "SRC-TFGM"
+        }
+      },
+      "authorityOrOperator": "Transport for Greater Manchester",
+      "operator": "Bee Network bus operators",
+      "network": "Bee Network",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "productName": "Daily Bee Bus adult cap",
+      "fareType": "daily_cap",
+      "fareGbp": 5,
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "day",
+      "validity": "Daily cap",
+      "passengerType": "adult",
+      "paymentMethod": "Contactless card or device",
+      "zonesOrArea": "Bee Network buses",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-MAN"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Same card/device for every trip; tap on bus, tap in and out on tram.",
+          "No National Rail entitlement. The operator implements capping; UKMR does not simulate it.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFGM:bee:bus-tram-week:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFGM",
+        "organisation": "Transport for Greater Manchester",
+        "publicationTitle": "Tap and go with contactless on bus and tram",
+        "sourceUrl": "https://tfgm.com/ways-to-pay/contactless",
+        "sourceReference": "Tap and go with contactless on bus and tram — 7-day Bus + Tram ticket price cap — all zones; adult Bee Network buses and all Metrolink zones",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-bee-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "41",
+        "sourceReference": "Tap and go with contactless on bus and tram — 7-day Bus + Tram ticket price cap — all zones; adult Bee Network buses and all Metrolink zones",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Bee Network buses and all Metrolink zones",
+          "sourceId": "SRC-TFGM"
+        }
+      },
+      "authorityOrOperator": "Transport for Greater Manchester",
+      "operator": "Bee Network bus operators and Metrolink",
+      "network": "Bee Network",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "productName": "7-day Bus + Tram ticket price cap — all zones",
+      "fareType": "weekly_cap",
+      "fareGbp": 41,
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "monday_sunday",
+      "validity": "Monday to Sunday all-zones cap",
+      "passengerType": "adult",
+      "paymentMethod": "Contactless card or device",
+      "zonesOrArea": "Bee Network buses and all Metrolink zones",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-MAN"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Same card/device for every trip; tap on bus, tap in and out on tram.",
+          "No National Rail entitlement. The operator implements capping; UKMR does not simulate it.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFGM:bee:bus-week:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFGM",
+        "organisation": "Transport for Greater Manchester",
+        "publicationTitle": "Tap and go with contactless on bus and tram",
+        "sourceUrl": "https://tfgm.com/ways-to-pay/contactless",
+        "sourceReference": "Tap and go with contactless on bus and tram — Weekly Bee Bus adult cap; adult Bee Network buses",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-bee-20260914",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "20",
+        "sourceReference": "Tap and go with contactless on bus and tram — Weekly Bee Bus adult cap; adult Bee Network buses",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Bee Network buses",
+          "sourceId": "SRC-TFGM"
+        }
+      },
+      "authorityOrOperator": "Transport for Greater Manchester",
+      "operator": "Bee Network bus operators",
+      "network": "Bee Network",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "productName": "Weekly Bee Bus adult cap",
+      "fareType": "weekly_cap",
+      "fareGbp": 20,
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "monday_sunday",
+      "validity": "Monday to Sunday cap",
+      "passengerType": "adult",
+      "paymentMethod": "Contactless card or device",
+      "zonesOrArea": "Bee Network buses",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-MAN"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Same card/device for every trip; tap on bus, tap in and out on tram.",
+          "No National Rail entitlement. The operator implements capping; UKMR does not simulate it.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFL:tfl:annual:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFL",
+        "organisation": "Transport for London",
+        "publicationTitle": "Bus and tram fares",
+        "sourceUrl": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares",
+        "sourceReference": "Bus and tram fares — Annual Bus & Tram Pass; adult TfL buses and trams only",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-tfl-20260914",
+        "snapshotChecksum": "sha256:c66fe28e3003316f05c83df1818682cddd1c3db08a8551c2fd313831bea5469f",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "988",
+        "sourceReference": "Bus and tram fares — Annual Bus & Tram Pass; adult TfL buses and trams only",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "TfL buses and trams only",
+          "sourceId": "SRC-TFL"
+        }
+      },
+      "authorityOrOperator": "Transport for London",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "productName": "Annual Bus & Tram Pass",
+      "fareType": "annual",
+      "fareGbp": 988,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "year",
+      "validity": "Annual pass",
+      "passengerType": "adult",
+      "paymentMethod": "Oyster",
+      "zonesOrArea": "TfL buses and trams only",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LON"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+          "No Tube, DLR or rail entitlement inferred.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFL:tfl:daily:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFL",
+        "organisation": "Transport for London",
+        "publicationTitle": "Bus and tram fares",
+        "sourceUrl": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares",
+        "sourceReference": "Bus and tram fares — Daily cap; adult TfL buses and trams only",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-tfl-20260914",
+        "snapshotChecksum": "sha256:c66fe28e3003316f05c83df1818682cddd1c3db08a8551c2fd313831bea5469f",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "5.25",
+        "sourceReference": "Bus and tram fares — Daily cap; adult TfL buses and trams only",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "TfL buses and trams only",
+          "sourceId": "SRC-TFL"
+        }
+      },
+      "authorityOrOperator": "Transport for London",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "productName": "Daily cap",
+      "fareType": "daily_cap",
+      "fareGbp": 5.25,
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "day",
+      "validity": "Daily capping",
+      "passengerType": "adult",
+      "paymentMethod": "Contactless or Oyster PAYG",
+      "zonesOrArea": "TfL buses and trams only",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LON"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+          "No Tube, DLR or rail entitlement inferred.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFL:tfl:hopper:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFL",
+        "organisation": "Transport for London",
+        "publicationTitle": "Bus and tram fares",
+        "sourceUrl": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares",
+        "sourceReference": "Bus and tram fares — Hopper fare; adult TfL buses and trams only",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-tfl-20260914",
+        "snapshotChecksum": "sha256:c66fe28e3003316f05c83df1818682cddd1c3db08a8551c2fd313831bea5469f",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "1.75",
+        "sourceReference": "Bus and tram fares — Hopper fare; adult TfL buses and trams only",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "TfL buses and trams only",
+          "sourceId": "SRC-TFL"
+        }
+      },
+      "authorityOrOperator": "Transport for London",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "productName": "Hopper fare",
+      "fareType": "single",
+      "fareGbp": 1.75,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "hour",
+      "validity": "Unlimited bus/tram journeys within one hour of first touch",
+      "passengerType": "adult",
+      "paymentMethod": "Contactless or Oyster PAYG",
+      "zonesOrArea": "TfL buses and trams only",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LON"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+          "No Tube, DLR or rail entitlement inferred.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFL:tfl:seven-day:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFL",
+        "organisation": "Transport for London",
+        "publicationTitle": "Bus and tram fares",
+        "sourceUrl": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares",
+        "sourceReference": "Bus and tram fares — 7 Day Bus & Tram Pass; adult TfL buses and trams only",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-tfl-20260914",
+        "snapshotChecksum": "sha256:c66fe28e3003316f05c83df1818682cddd1c3db08a8551c2fd313831bea5469f",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "24.70",
+        "sourceReference": "Bus and tram fares — 7 Day Bus & Tram Pass; adult TfL buses and trams only",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "TfL buses and trams only",
+          "sourceId": "SRC-TFL"
+        }
+      },
+      "authorityOrOperator": "Transport for London",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "productName": "7 Day Bus & Tram Pass",
+      "fareType": "weekly",
+      "fareGbp": 24.7,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Seven-day pass",
+      "passengerType": "adult",
+      "paymentMethod": "Oyster",
+      "zonesOrArea": "TfL buses and trams only",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LON"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+          "No Tube, DLR or rail entitlement inferred.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFL:tfl:weekly-cap:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFL",
+        "organisation": "Transport for London",
+        "publicationTitle": "Bus and tram fares",
+        "sourceUrl": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares",
+        "sourceReference": "Bus and tram fares — Weekly cap (Monday to Sunday); adult TfL buses and trams only",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-tfl-20260914",
+        "snapshotChecksum": "sha256:c66fe28e3003316f05c83df1818682cddd1c3db08a8551c2fd313831bea5469f",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "24.70",
+        "sourceReference": "Bus and tram fares — Weekly cap (Monday to Sunday); adult TfL buses and trams only",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "TfL buses and trams only",
+          "sourceId": "SRC-TFL"
+        }
+      },
+      "authorityOrOperator": "Transport for London",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "productName": "Weekly cap (Monday to Sunday)",
+      "fareType": "weekly_cap",
+      "fareGbp": 24.7,
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "monday_sunday",
+      "validity": "Monday to Sunday cap",
+      "passengerType": "adult",
+      "paymentMethod": "Contactless or Oyster PAYG",
+      "zonesOrArea": "TfL buses and trams only",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-LON"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+          "No Tube, DLR or rail entitlement inferred.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFWM:tfwmbus:day-bus:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFWM",
+        "organisation": "Transport for West Midlands",
+        "publicationTitle": "1 day bus",
+        "sourceUrl": "https://ticketing.tfwm.org.uk/Home/ShowTicket/63",
+        "sourceReference": "1 day bus — 1 day bus; adult West Midlands county bus ticket scheme",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-tfwmbus-20260914",
+        "snapshotChecksum": "sha256:8d0bcc50383dfbf0c89a186159faa655c2058442da6d378354f0034241827d91",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "5.50",
+        "sourceReference": "1 day bus — 1 day bus; adult West Midlands county bus ticket scheme",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "West Midlands county bus ticket scheme",
+          "sourceId": "SRC-TFWM"
+        }
+      },
+      "authorityOrOperator": "Transport for West Midlands",
+      "operator": "Participating nbus operators",
+      "network": "West Midlands nbus",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "productName": "1 day bus",
+      "fareType": "day_ticket",
+      "fareGbp": 5.5,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "day",
+      "validity": "Date shown until end of daytime services",
+      "passengerType": "adult",
+      "paymentMethod": "On-bus ticket or Swift PAYG",
+      "zonesOrArea": "West Midlands county bus ticket scheme",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-BIR"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Adult 16+. Excludes night buses and certain special services. Metro requires a separate add-on.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TFWM:tfwmnetwork:day-network:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TFWM",
+        "organisation": "Transport for West Midlands",
+        "publicationTitle": "1 day network Zones 1-5",
+        "sourceUrl": "https://ticketing.tfwm.org.uk/Home/ShowTicket/38",
+        "sourceReference": "1 day network Zones 1-5 — 1 day network Zones 1-5; adult West Midlands county; rail zones 1-5",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-tfwmnetwork-20260914",
+        "snapshotChecksum": "sha256:8fb202fc73003bbfc83328806e8d0450211f112db53fb09362f22ee00b6f3506",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Official rendered page reviewed; no original byte capture/checksum available.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "11.10",
+        "sourceReference": "1 day network Zones 1-5 — 1 day network Zones 1-5; adult West Midlands county; rail zones 1-5",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": []
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "West Midlands county; rail zones 1-5",
+          "sourceId": "SRC-TFWM"
+        }
+      },
+      "authorityOrOperator": "Transport for West Midlands",
+      "operator": "Participating Centrocard bus/rail operators and Midland Metro",
+      "network": "West Midlands network",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram",
+        "rail"
+      ],
+      "productName": "1 day network Zones 1-5",
+      "fareType": "day_ticket",
+      "fareGbp": 11.1,
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "day",
+      "validity": "One day; peak travel allowed",
+      "passengerType": "adult",
+      "paymentMethod": "Published ticket price; bus, Metro or staffed rail station purchase",
+      "zonesOrArea": "West Midlands county; rail zones 1-5",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "applicability": {
+        "cityIds": [
+          "LOC-BIR"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Rail standard class. Excludes night buses and certain special services.",
+          "Swift PAYG amount is also displayed, but this record makes no claim that PAYG credit alone grants rail entry.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TRAVELWEST:bristolcurrent:day-cap:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TRAVELWEST",
+        "organisation": "First Bus Bristol, Bath and the West",
+        "publicationTitle": "Tap On Tap Off — Bristol column",
+        "sourceUrl": "https://www.firstbus.co.uk/bristol-bath-and-west/tickets/tap-tap",
+        "sourceReference": "Tap On Tap Off — Bristol column — Bristol — 1 day capped price; adult Bristol fare zone",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-bristolcurrent-20260914",
+        "snapshotChecksum": "sha256:bbd53a9375c05699989bd9382b76ed8077ae7ed2fcbc053e8a87719ef2c07614",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Current page labels fares from 1 January 2026; upcoming-fare-changes page says 4 January 2026. Selected Bristol amounts agree; historical start date not asserted.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "6.80",
+        "sourceReference": "Tap On Tap Off — Bristol column — Bristol — 1 day capped price; adult Bristol fare zone",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": [
+          {
+            "sourceUrl": "https://www.firstbus.co.uk/bristol-bath-and-west/tickets/upcoming-fare-changes",
+            "sourceReference": "Change notice says 4 January; current Tap On Tap Off table says 1 January. Prices agree for selected Bristol caps; historical date unresolved.",
+            "publishedEffectiveFrom": "2026-01-04",
+            "captureFile": "ukmr-transport-bristol.html",
+            "checksum": "sha256:bd39f26e04818cc7f3fa5ef3430e3145e67b0dad111af1f12f711a814ee7d79a"
+          }
+        ]
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Bristol fare zone",
+          "sourceId": "SRC-TRAVELWEST"
+        }
+      },
+      "authorityOrOperator": "First Bus Bristol, Bath and the West",
+      "operator": "First Bus Bristol, Bath and the West",
+      "network": "First Bus Bristol fare zone",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "productName": "Bristol — 1 day capped price",
+      "fareType": "daily_cap",
+      "fareGbp": 6.8,
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "day",
+      "validity": "Daily cap",
+      "passengerType": "adult",
+      "paymentMethod": "Contactless Visa/Mastercard, Apple Pay or Google Pay",
+      "zonesOrArea": "Bristol fare zone",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "applicability": {
+        "cityIds": [
+          "LOC-BRS"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Tap on and off with same card/device. Other operators not included. Airport Flyer uses a separate fare/cap regime.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    },
+    {
+      "recordId": "SRC-TRAVELWEST:bristolcurrent:week-cap:2026-09",
+      "dataset": "transport-reviewed-2026-09",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "RELEASE_READY",
+      "provenance": {
+        "sourceId": "SRC-TRAVELWEST",
+        "organisation": "First Bus Bristol, Bath and the West",
+        "publicationTitle": "Tap On Tap Off — Bristol column",
+        "sourceUrl": "https://www.firstbus.co.uk/bristol-bath-and-west/tickets/tap-tap",
+        "sourceReference": "Tap On Tap Off — Bristol column — Bristol — 7 day capped price; adult Bristol fare zone",
+        "sourceFormat": "HTML",
+        "sourcePeriod": "Current fare verified 2026-09-14",
+        "effectiveFrom": "2026-09-14",
+        "effectiveTo": "2026-09-14",
+        "retrievedAt": "2026-09-14T17:49:38Z",
+        "importedAt": "2026-09-14T17:49:38Z",
+        "snapshotId": "transport-bristolcurrent-20260914",
+        "snapshotChecksum": "sha256:bbd53a9375c05699989bd9382b76ed8077ae7ed2fcbc053e8a87719ef2c07614",
+        "parserVersion": "1.0.0",
+        "importVersion": "transport-v1",
+        "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
+        "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
+        "limitations": [
+          "Current page labels fares from 1 January 2026; upcoming-fare-changes page says 4 January 2026. Selected Bristol amounts agree; historical start date not asserted.",
+          "Original redistribution/licensing unresolved; metadata-only snapshot.",
+          "Historic fare commencement and future validity are not asserted by this as-of extract."
+        ]
+      },
+      "qa": {
+        "rawAmount": "28",
+        "sourceReference": "Tap On Tap Off — Bristol column — Bristol — 7 day capped price; adult Bristol fare zone",
+        "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+        "supportingEvidence": [
+          {
+            "sourceUrl": "https://www.firstbus.co.uk/bristol-bath-and-west/tickets/upcoming-fare-changes",
+            "sourceReference": "Change notice says 4 January; current Tap On Tap Off table says 1 January. Prices agree for selected Bristol caps; historical date unresolved.",
+            "publishedEffectiveFrom": "2026-01-04",
+            "captureFile": "ukmr-transport-bristol.html",
+            "checksum": "sha256:bd39f26e04818cc7f3fa5ef3430e3145e67b0dad111af1f12f711a814ee7d79a"
+          }
+        ]
+      },
+      "category": "transport_fare",
+      "publishedGeography": {
+        "official": {
+          "geographyType": "fare_network_scope",
+          "name": "Bristol fare zone",
+          "sourceId": "SRC-TRAVELWEST"
+        }
+      },
+      "authorityOrOperator": "First Bus Bristol, Bath and the West",
+      "operator": "First Bus Bristol, Bath and the West",
+      "network": "First Bus Bristol fare zone",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "productName": "Bristol — 7 day capped price",
+      "fareType": "weekly_cap",
+      "fareGbp": 28,
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "rolling_week",
+      "validity": "Capping week starts at first tap",
+      "passengerType": "adult",
+      "paymentMethod": "Contactless Visa/Mastercard, Apple Pay or Google Pay",
+      "zonesOrArea": "Bristol fare zone",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "applicability": {
+        "cityIds": [
+          "LOC-BRS"
+        ],
+        "basis": "CONDITIONAL_NETWORK_PRODUCT",
+        "conditions": [
+          "Tap on and off with same card/device. Other operators not included. Airport Flyer uses a separate fare/cap regime.",
+          "Applies only to journeys eligible for this product within the stated network/zone; not a universal city fare."
+        ],
+        "cityDefault": false
+      },
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "verifiedAsOf": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF"
+    }
+  ]
+}

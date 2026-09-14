@@ -1,0 +1,74 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "subwaycurrent",
+  "sourceId": "SRC-GLASGOW-TRANSPORT",
+  "organisation": "Strathclyde Partnership for Transport",
+  "publicationTitle": "Subway tickets",
+  "sourceReference": "Subway tickets",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available."
+  ],
+  "rows": [
+    {
+      "rowId": "smartcard-single",
+      "cityId": "LOC-GLA",
+      "operator": "SPT Subway",
+      "network": "Glasgow Subway",
+      "productName": "Adult Smartcard Single",
+      "rawAmount": "1.80",
+      "mode": "subway",
+      "includedModes": [
+        "subway"
+      ],
+      "fareType": "single",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "journey",
+      "validity": "One Subway journey",
+      "zonesOrArea": "Glasgow Subway network",
+      "paymentMethod": "Subway Smartcard",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "Disposable ticket and contactless variants are not substituted."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Subway tickets \u2014 Adult Smartcard Single; adult Glasgow Subway network"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-subwaycurrent-20260914",
+    "sourceId": "SRC-GLASGOW-TRANSPORT",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.spt.co.uk/tickets/subway-tickets/",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git.",
+    "checksum": "sha256:cb47c973e73a17c32b00b71d2ebffd9e33040a477bb3144e019bbe410cc43d71"
+  },
+  "captureFile": "ukmr-transport-subwaycurrent.html",
+  "supportingEvidence": [
+    {
+      "sourceUrl": "https://www.spt.co.uk/about-us/news/subway-fares-revised-for-2026/",
+      "sourceReference": "Adult Smartcard Single revision",
+      "publishedEffectiveFrom": "2026-01-05",
+      "captureFile": "ukmr-transport-subway.html",
+      "checksum": "sha256:33c2de525042b481057f51565b4f0cd2544b7f8f598cfebea9b57190409e4986",
+      "publicationDate": "2025-12-19"
+    }
+  ]
+}

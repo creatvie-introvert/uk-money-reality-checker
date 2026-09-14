@@ -80,10 +80,13 @@ describe("M1 data contracts", () => {
   it("preserves transport geography without requiring an MVP city", () => {
     const result = transportFareRecordSchema.parse({
       recordId: "FARE-1", dataset: "transport", category: "transport_fare", valueType: "OBSERVED_DATA",
-      releaseStatus: "RELEASE_READY", provenance,
+      releaseStatus: "RELEASE_READY", provenance: { ...provenance, effectiveFrom: "2026-01-01", effectiveTo: undefined },
       publishedGeography: { official: { geographyType: "operator network", name: "TfL network", sourceId: "SRC-TEST" } },
       authorityOrOperator: "TfL", mode: "bus", productName: "Adult single", fareType: "single",
-      fareGbp: 2, passengerType: "adult", effectiveFrom: "2026-01-01",
+      fareGbp: 2, passengerType: "adult", effectiveFrom: "2026-01-01", effectiveDateBasis: "PUBLISHED_START", verifiedAsOf: "2026-01-01",
+      operator: "TfL bus operators", network: "TfL buses", includedModes: ["bus"], fareUnit: "GBP/ticket",
+      validityPeriod: "journey", validity: "One journey", paymentMethod: "Oyster", zonesOrArea: "TfL buses", peakStatus: "anytime", airportApplicability: "not_established",
+      applicability: { cityIds: [], basis: "CONDITIONAL_NETWORK_PRODUCT", cityDefault: false, conditions: ["Network-scoped"] },
     });
 
     expect(result.publishedGeography.mvpCityId).toBeUndefined();

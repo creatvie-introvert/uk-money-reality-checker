@@ -1,0 +1,65 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "tfwmbus",
+  "sourceId": "SRC-TFWM",
+  "organisation": "Transport for West Midlands",
+  "publicationTitle": "1 day bus",
+  "sourceReference": "1 day bus",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available."
+  ],
+  "rows": [
+    {
+      "rowId": "day-bus",
+      "cityId": "LOC-BIR",
+      "operator": "Participating nbus operators",
+      "network": "West Midlands nbus",
+      "productName": "1 day bus",
+      "rawAmount": "5.50",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "fareType": "day_ticket",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "day",
+      "validity": "Date shown until end of daytime services",
+      "zonesOrArea": "West Midlands county bus ticket scheme",
+      "paymentMethod": "On-bus ticket or Swift PAYG",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "Adult 16+. Excludes night buses and certain special services. Metro requires a separate add-on."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "1 day bus \u2014 1 day bus; adult West Midlands county bus ticket scheme"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-tfwmbus-20260914",
+    "sourceId": "SRC-TFWM",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://ticketing.tfwm.org.uk/Home/ShowTicket/63",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git.",
+    "checksum": "sha256:8d0bcc50383dfbf0c89a186159faa655c2058442da6d378354f0034241827d91"
+  },
+  "captureFile": "ukmr-transport-tfwmbus.html",
+  "supportingEvidence": []
+}

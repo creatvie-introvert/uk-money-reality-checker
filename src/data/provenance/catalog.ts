@@ -349,16 +349,21 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "organisation": "TfL",
     "publicationTitle": "TfL fare products",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 3 — TfL",
+    "sourceReference": "Slice 9 \u2014 reviewed product-level URLs in transport controlled extracts",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "General open-data/API platform confirmed, but fare-product-specific API/resource not verified. Keep PRIMARY_CONTROLLED_IMPORT; do not infer PRIMARY_AUTOMATED from the Unified API. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "General open-data/API platform confirmed, but fare-product-specific API/resource not verified. Keep PRIMARY_CONTROLLED_IMPORT; do not infer PRIMARY_AUTOMATED from the Unified API. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API. Slice 9: selected current official HTML fares verified 2026-09-14; retain conditional product scope and as-of dates.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
-      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Only selected adult products reviewed; no exhaustive product coverage or city default approved.",
+      "Historic commencement, future validity and refresh cadence not established for all products.",
+      "Operator-specific reuse/licensing unresolved; no fare-specific API verified."
+    ],
+    "sourceUrl": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "sourceStatus": "POPULATED_PARTIAL",
+    "licenceReference": "UNRESOLVED \u2014 no operator redistribution licence or OGL assumption"
   },
   {
     "sourceId": "SRC-TFWM",
@@ -366,16 +371,21 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "organisation": "TfWM / Swift / operators",
     "publicationTitle": "West Midlands fare products",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 3 — TfWM / Swift / operators",
+    "sourceReference": "Slice 9 \u2014 reviewed product-level URLs in transport controlled extracts",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Current products exist, but no universal Birmingham fare set is established. Do not substitute an operator fare for another operator or integrated product. Behavioural profiles remain unresolved and existing profile rows remain DEV_ONLY. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Current products exist, but no universal Birmingham fare set is established. Do not substitute an operator fare for another operator or integrated product. Behavioural profiles remain unresolved and existing profile rows remain DEV_ONLY. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API. Slice 9: selected current official HTML fares verified 2026-09-14; retain conditional product scope and as-of dates.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
-      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Only selected adult products reviewed; no exhaustive product coverage or city default approved.",
+      "Historic commencement, future validity and refresh cadence not established for all products.",
+      "Operator-specific reuse/licensing unresolved; no fare-specific API verified."
+    ],
+    "sourceUrl": "https://ticketing.tfwm.org.uk/Home/ShowTicket/63",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "sourceStatus": "POPULATED_PARTIAL",
+    "licenceReference": "UNRESOLVED \u2014 no operator redistribution licence or OGL assumption"
   },
   {
     "sourceId": "SRC-TFGM",
@@ -383,16 +393,21 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "organisation": "TfGM / Bee Network",
     "publicationTitle": "Bee Network fare products",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 3 — TfGM / Bee Network",
+    "sourceReference": "Slice 9 \u2014 reviewed product-level URLs in transport controlled extracts",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Complete current integrated fare evidence remains partly unresolved. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Complete current integrated fare evidence remains partly unresolved. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API. Slice 9: selected current official HTML fares verified 2026-09-14; retain conditional product scope and as-of dates.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
-      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Only selected adult products reviewed; no exhaustive product coverage or city default approved.",
+      "Historic commencement, future validity and refresh cadence not established for all products.",
+      "Operator-specific reuse/licensing unresolved; no fare-specific API verified."
+    ],
+    "sourceUrl": "https://tfgm.com/ways-to-pay/contactless",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "sourceStatus": "POPULATED_PARTIAL",
+    "licenceReference": "UNRESOLVED \u2014 no operator redistribution licence or OGL assumption"
   },
   {
     "sourceId": "SRC-MCARD",
@@ -400,16 +415,21 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "organisation": "West Yorkshire / MCard / operators",
     "publicationTitle": "MCard and West Yorkshire operator fare products",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 3 — West Yorkshire / MCard / operators",
+    "sourceReference": "Slice 9 \u2014 reviewed product-level URLs in transport controlled extracts",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Keep operator fares separate from MCard multi-operator products. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Keep operator fares separate from MCard multi-operator products. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API. Slice 9: selected current official HTML fares verified 2026-09-14; retain conditional product scope and as-of dates.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
-      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Only selected adult products reviewed; no exhaustive product coverage or city default approved.",
+      "Historic commencement, future validity and refresh cadence not established for all products.",
+      "Operator-specific reuse/licensing unresolved; no fare-specific API verified."
+    ],
+    "sourceUrl": "https://www.m-card.co.uk/the-cards/mcard/",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "sourceStatus": "POPULATED_PARTIAL",
+    "licenceReference": "UNRESOLVED \u2014 no operator redistribution licence or OGL assumption"
   },
   {
     "sourceId": "SRC-MERSEYTRAVEL",
@@ -417,16 +437,21 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "organisation": "Merseytravel",
     "publicationTitle": "Solo / Railpass / Trio / Saveaway fare products",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 3 — Merseytravel",
+    "sourceReference": "Slice 9 \u2014 reviewed product-level URLs in transport controlled extracts",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Keep Solo, Railpass, Trio and Saveaway separate. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Keep Solo, Railpass, Trio and Saveaway separate. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API. Slice 9: selected current official HTML fares verified 2026-09-14; retain conditional product scope and as-of dates.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
-      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Only selected adult products reviewed; no exhaustive product coverage or city default approved.",
+      "Historic commencement, future validity and refresh cadence not established for all products.",
+      "Operator-specific reuse/licensing unresolved; no fare-specific API verified."
+    ],
+    "sourceUrl": "https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/solo-ticket/",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "sourceStatus": "POPULATED_PARTIAL",
+    "licenceReference": "UNRESOLVED \u2014 no operator redistribution licence or OGL assumption"
   },
   {
     "sourceId": "SRC-TRAVELWEST",
@@ -434,16 +459,21 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "organisation": "Travelwest / First Bus / relevant operators",
     "publicationTitle": "West of England operator fare products",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 3 — Travelwest / First Bus / relevant operators",
+    "sourceReference": "Slice 9 \u2014 reviewed product-level URLs in transport controlled extracts",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "First Bus products are not universal West of England integrated fares. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "First Bus products are not universal West of England integrated fares. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API. Slice 9: selected current official HTML fares verified 2026-09-14; retain conditional product scope and as-of dates.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
-      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Only selected adult products reviewed; no exhaustive product coverage or city default approved.",
+      "Historic commencement, future validity and refresh cadence not established for all products.",
+      "Operator-specific reuse/licensing unresolved; no fare-specific API verified."
+    ],
+    "sourceUrl": "https://www.firstbus.co.uk/bristol-bath-and-west/tickets/tap-tap",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "sourceStatus": "POPULATED_PARTIAL",
+    "licenceReference": "UNRESOLVED \u2014 no operator redistribution licence or OGL assumption"
   },
   {
     "sourceId": "SRC-EDINBURGH-TRANSPORT",
@@ -451,16 +481,21 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "organisation": "Lothian / Edinburgh Trams",
     "publicationTitle": "Lothian and Edinburgh Trams fare products",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 3 — Lothian / Edinburgh Trams",
+    "sourceReference": "Slice 9 \u2014 reviewed product-level URLs in transport controlled extracts",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Keep bus, tram and city/airport/network products separate. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Keep bus, tram and city/airport/network products separate. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API. Slice 9: selected current official HTML fares verified 2026-09-14; retain conditional product scope and as-of dates.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
-      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Only selected adult products reviewed; no exhaustive product coverage or city default approved.",
+      "Historic commencement, future validity and refresh cadence not established for all products.",
+      "Operator-specific reuse/licensing unresolved; no fare-specific API verified."
+    ],
+    "sourceUrl": "https://www.lothianbuses.com/fares-and-tickets/",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "sourceStatus": "POPULATED_PARTIAL",
+    "licenceReference": "UNRESOLVED \u2014 no operator redistribution licence or OGL assumption"
   },
   {
     "sourceId": "SRC-GLASGOW-TRANSPORT",
@@ -468,16 +503,21 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "organisation": "SPT / First Bus / ZoneCard",
     "publicationTitle": "Subway / First Bus / ZoneCard fare products",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 3 — SPT / First Bus / ZoneCard",
+    "sourceReference": "Slice 9 \u2014 reviewed product-level URLs in transport controlled extracts",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Keep Subway, First Bus and ZoneCard product systems separate. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Keep Subway, First Bus and ZoneCard product systems separate. Published products are OBSERVED_DATA; monthly equivalents/repeated travel arithmetic are CALCULATED. Occasional/hybrid/regular/frequent profiles remain MODELLED_ESTIMATE / DEV_ONLY until approved. Preserve operator network, authority area, zone or region; MVP-city applicability is a separate mapping. No universal UK transport API. Slice 9: selected current official HTML fares verified 2026-09-14; retain conditional product scope and as-of dates.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Exact product URLs, access formats and source-governance status were not verified in Batch 3.",
-      "Operator-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Only selected adult products reviewed; no exhaustive product coverage or city default approved.",
+      "Historic commencement, future validity and refresh cadence not established for all products.",
+      "Operator-specific reuse/licensing unresolved; no fare-specific API verified."
+    ],
+    "sourceUrl": "https://www.spt.co.uk/tickets/subway-tickets/",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "sourceStatus": "POPULATED_PARTIAL",
+    "licenceReference": "UNRESOLVED \u2014 no operator redistribution licence or OGL assumption"
   },
   {
     "sourceId": "SRC-011",

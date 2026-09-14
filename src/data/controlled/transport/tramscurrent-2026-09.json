@@ -1,0 +1,103 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "tramscurrent",
+  "sourceId": "SRC-EDINBURGH-TRANSPORT",
+  "organisation": "Edinburgh Trams",
+  "publicationTitle": "Farefinder \u2014 adult city and airport tickets",
+  "sourceReference": "Farefinder \u2014 adult city and airport tickets",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available."
+  ],
+  "rows": [
+    {
+      "rowId": "city-single",
+      "cityId": "LOC-EDI",
+      "operator": "Edinburgh Trams",
+      "network": "Edinburgh Trams",
+      "productName": "Adult Single (city zone)",
+      "rawAmount": "2.40",
+      "mode": "tram",
+      "includedModes": [
+        "tram"
+      ],
+      "fareType": "single",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "journey",
+      "validity": "One journey; purchase day; board within 30 minutes",
+      "zonesOrArea": "Edinburgh Trams city zone; excludes Airport",
+      "paymentMethod": "Tram-stop ticket vending machine",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "conditions": [
+        "Buy before boarding. Online pre-purchase discounts not applied to this machine price."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Farefinder \u2014 adult city and airport tickets \u2014 Adult Single (city zone); adult Edinburgh Trams city zone; excludes Airport"
+    },
+    {
+      "rowId": "airport-single",
+      "cityId": "LOC-EDI",
+      "operator": "Edinburgh Trams",
+      "network": "Edinburgh Trams",
+      "productName": "Adult Airport Single (airport & city zone)",
+      "rawAmount": "7.90",
+      "mode": "tram",
+      "includedModes": [
+        "tram"
+      ],
+      "fareType": "single",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "journey",
+      "validity": "One journey; purchase day; board within 30 minutes",
+      "zonesOrArea": "Edinburgh Trams airport and city zones",
+      "paymentMethod": "Tram-stop ticket vending machine",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "included",
+      "conditions": [
+        "Buy before boarding. Online pre-purchase discounts not applied to this machine price."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Farefinder \u2014 adult city and airport tickets \u2014 Adult Airport Single (airport & city zone); adult Edinburgh Trams airport and city zones"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-tramscurrent-20260914",
+    "sourceId": "SRC-EDINBURGH-TRANSPORT",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://edinburghtrams.com/tickets/farefinder",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git.",
+    "checksum": "sha256:a0f62ef0d7360303d1dab85bcf5b48376e670f4aea4a01e67095e9c5c76edb8e"
+  },
+  "captureFile": "ukmr-transport-tramscurrent.html",
+  "supportingEvidence": [
+    {
+      "sourceUrl": "https://edinburghtrams.com/news/changes-tram-fares-2026",
+      "sourceReference": "City single revision; airport single frozen, its original commencement not established",
+      "publishedEffectiveFrom": "2026-02-22",
+      "captureFile": "ukmr-transport-trams.html",
+      "checksum": "sha256:06c13aa9fa3d53fd19a18610f77b76c6fc1708f9c7a7cf7b7f5a7802f232e636",
+      "publicationDate": "2026-01-30"
+    }
+  ]
+}

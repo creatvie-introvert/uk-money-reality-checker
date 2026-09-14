@@ -1,0 +1,96 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "mcard",
+  "sourceId": "SRC-MCARD",
+  "organisation": "West Yorkshire Ticketing Company / MCard",
+  "publicationTitle": "Adults \u2014 MCard Ticket Prices",
+  "sourceReference": "Adults \u2014 MCard Ticket Prices",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum."
+  ],
+  "rows": [
+    {
+      "rowId": "bus-week",
+      "cityId": "LOC-LEE",
+      "operator": "Participating West Yorkshire bus operators",
+      "network": "MCard",
+      "productName": "Countywide Bus - Week ticket",
+      "rawAmount": "26",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "fareType": "weekly",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Seven consecutive days; final operational day ends at 03:59",
+      "zonesOrArea": "West Yorkshire countywide bus",
+      "paymentMethod": "MCard Mobile App",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "Special services excluded; ordinary stopping services within West Yorkshire.",
+        "Activate app ticket before travel; account-holder use only, no sharing between devices."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Adults \u2014 MCard Ticket Prices \u2014 Countywide Bus - Week ticket; adult West Yorkshire countywide bus"
+    },
+    {
+      "rowId": "bus-rail-week",
+      "cityId": "LOC-LEE",
+      "operator": "Participating West Yorkshire bus and rail operators",
+      "network": "MCard",
+      "productName": "Countywide Bus and Rail Zones 1-5 weekly ticket",
+      "rawAmount": "55.30",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "rail"
+      ],
+      "fareType": "weekly",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Seven consecutive days; final operational day ends at 03:59",
+      "zonesOrArea": "Countywide buses and rail zones 1-5",
+      "paymentMethod": "MCard Mobile App",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "Special services excluded. Rail zones 6-7 not included.",
+        "Activate app ticket before travel; account-holder use only, no sharing between devices."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Adults \u2014 MCard Ticket Prices \u2014 Countywide Bus and Rail Zones 1-5 weekly ticket; adult Countywide buses and rail zones 1-5"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-mcard-20260914",
+    "sourceId": "SRC-MCARD",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.m-card.co.uk/the-cards/mcard/",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git."
+  },
+  "supportingEvidence": []
+}

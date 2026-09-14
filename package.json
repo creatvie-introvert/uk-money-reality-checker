@@ -20,7 +20,9 @@
     "data:water": "node scripts/data/generate-water.mjs",
     "data:water:extract": "python3 scripts/data/extract-water.py",
     "data:spending:extract": "python3 scripts/data/extract-spending.py",
-    "data:spending": "node scripts/data/generate-spending.mjs"
+    "data:spending": "node scripts/data/generate-spending.mjs",
+    "data:transport:extract": "python3 scripts/data/extract-transport.py",
+    "data:transport": "node scripts/data/generate-transport.mjs"
   },
   "repository": {
     "type": "git",

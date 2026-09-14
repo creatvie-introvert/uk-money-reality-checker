@@ -1,0 +1,63 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "railpass",
+  "sourceId": "SRC-MERSEYTRAVEL",
+  "organisation": "Merseytravel",
+  "publicationTitle": "Railpass tickets and prices",
+  "sourceReference": "Railpass tickets and prices",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available."
+  ],
+  "rows": [
+    {
+      "rowId": "all-zones-week",
+      "cityId": "LOC-LIV",
+      "operator": "Participating Merseyside rail operators",
+      "network": "Merseytravel Railpass",
+      "productName": "Railpass \u2014 All zones across the county Week",
+      "rawAmount": "43.40",
+      "mode": "rail",
+      "includedModes": [
+        "rail"
+      ],
+      "fareType": "weekly",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Weekly; activates on purchase; anytime",
+      "zonesOrArea": "Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk",
+      "paymentMethod": "MetroCard; staffed Merseyrail station (except Chester)",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "\u00a31 initial MetroCard charge separately. This is standard Railpass; online Merseyrail Only Railpass excludes City line and is not substituted."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Railpass tickets and prices \u2014 Railpass \u2014 All zones across the county Week; adult Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-railpass-20260914",
+    "sourceId": "SRC-MERSEYTRAVEL",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/railpass-ticket/",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git."
+  },
+  "supportingEvidence": []
+}

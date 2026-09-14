@@ -1,0 +1,104 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "lothiancurrent",
+  "sourceId": "SRC-EDINBURGH-TRANSPORT",
+  "organisation": "Lothian Buses",
+  "publicationTitle": "Fares & Tickets \u2014 Lothian Buses",
+  "sourceReference": "Fares & Tickets \u2014 Lothian Buses",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available."
+  ],
+  "rows": [
+    {
+      "rowId": "single",
+      "cityId": "LOC-EDI",
+      "operator": "Lothian Buses",
+      "network": "Lothian Buses day services",
+      "productName": "SINGLE",
+      "rawAmount": "2.40",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "fareType": "single",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "journey",
+      "validity": "One journey on a day service",
+      "zonesOrArea": "Lothian Buses day service network",
+      "paymentMethod": "On-bus cash or contactless",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "conditions": [
+        "Airlink, night and special services are separate products."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Fares & Tickets \u2014 Lothian Buses \u2014 SINGLE; adult Lothian Buses day service network"
+    },
+    {
+      "rowId": "city-day",
+      "cityId": "LOC-EDI",
+      "operator": "Lothian Buses, Edinburgh Trams, East Coast Buses and Lothian Country",
+      "network": "Lothian City DAY",
+      "productName": "City DAY",
+      "rawAmount": "6",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "fareType": "day_ticket",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "day",
+      "validity": "Unlimited day-service journeys",
+      "zonesOrArea": "Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B",
+      "paymentMethod": "On-bus ticket purchase",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "conditions": [
+        "Airlink and special services excluded. Not the tram-only et app day product."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Fares & Tickets \u2014 Lothian Buses \u2014 City DAY; adult Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-lothiancurrent-20260914",
+    "sourceId": "SRC-EDINBURGH-TRANSPORT",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.lothianbuses.com/fares-and-tickets/",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git.",
+    "checksum": "sha256:5aac61fec5e889f1e7f11bad4af113b23e3eeb61d5c2c04eeb8d8f580d96b320"
+  },
+  "captureFile": "ukmr-transport-lothiancurrent.html",
+  "supportingEvidence": [
+    {
+      "sourceUrl": "https://www.lothianbuses.com/news/2026/01/fares-revision/",
+      "sourceReference": "Lothian revised SINGLE and City DAY prices",
+      "publishedEffectiveFrom": "2026-02-22",
+      "captureFile": "ukmr-transport-lothian.html",
+      "checksum": "sha256:e17c30b794792647a4d03b848fb8edb4b0a5b6769f9dd47e36d96d7e63477806",
+      "publicationDate": "2026-01-30"
+    }
+  ]
+}

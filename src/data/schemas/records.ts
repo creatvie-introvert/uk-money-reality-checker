@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { geographySchema } from "./geography";
-import { confidenceClassSchema, jurisdictionSchema, releaseStatusSchema } from "./enums";
+import { confidenceClassSchema, jurisdictionSchema, releaseStatusSchema, mvpCityIdSchema } from "./enums";
 import { provenanceSchema } from "../provenance/model";
 
 const recordBase = {
@@ -123,20 +123,46 @@ export const waterTariffRecordSchema = z.strictObject({
 
 export type WaterTariffRecord = z.infer<typeof waterTariffRecordSchema>;
 
-export const transportFareRecordSchema = z.object({
-  ...recordBase,
-  category: z.literal("transport_fare"),
+/** Published product facts only. Usage assumptions and arithmetic have separate contracts. */
+export const transportFareRecordSchema = z.strictObject({
+  ...recordBase, category: z.literal("transport_fare"),
+  valueType: z.literal("OBSERVED_DATA"), releaseStatus: z.literal("RELEASE_READY"),
   publishedGeography: geographySchema,
-  authorityOrOperator: z.string().min(1),
-  mode: z.string().min(1),
+  authorityOrOperator: z.string().min(1), operator: z.string().min(1), network: z.string().min(1),
+  mode: z.enum(["bus", "tram", "rail", "subway", "ferry", "multimodal"]),
+  includedModes: z.array(z.enum(["bus", "tram", "rail", "subway", "ferry"])).min(1),
   productName: z.string().min(1),
-  fareType: z.enum(["single", "return", "daily_cap", "weekly_cap", "monthly", "season", "multi_day"]),
-  fareGbp: z.number().finite().nonnegative(),
-  passengerType: z.string().min(1),
-  paymentMethod: z.string().min(1).optional(),
-  zonesOrArea: z.string().min(1).optional(),
-  effectiveFrom: z.iso.date(),
-  effectiveTo: z.iso.date().optional(),
+  fareType: z.enum(["single", "return", "day_ticket", "daily_cap", "weekly_cap", "weekly", "monthly", "annual", "season", "multi_day"]),
+  fareGbp: z.number().finite().positive(), fareUnit: z.enum(["GBP/ticket", "GBP/cap"]),
+  validityPeriod: z.enum(["journey", "hour", "day", "week", "monday_sunday", "rolling_week", "month", "year"]),
+  validity: z.string().min(1), passengerType: z.string().min(1), paymentMethod: z.string().min(1),
+  zonesOrArea: z.string().min(1), peakStatus: z.enum(["anytime", "off_peak", "restricted"]),
+  airportApplicability: z.enum(["included", "not_included", "not_established"]),
+  applicability: z.strictObject({ cityIds: z.array(mvpCityIdSchema), basis: z.literal("CONDITIONAL_NETWORK_PRODUCT"), conditions: z.array(z.string().min(1)).min(1), cityDefault: z.literal(false) }),
+  effectiveFrom: z.iso.date(), effectiveTo: z.iso.date().optional(), verifiedAsOf: z.iso.date(),
+  effectiveDateBasis: z.enum(["PUBLISHED_START", "VERIFIED_CURRENT_AS_OF"]),
+}).superRefine((r, ctx) => {
+  const issue = (path: string, message: string) => ctx.addIssue({ code: "custom", path: [path], message });
+  if (r.effectiveTo && r.effectiveFrom > r.effectiveTo) issue("effectiveTo", "Reversed effective dates");
+  if (r.effectiveFrom > r.verifiedAsOf || (r.effectiveTo && r.effectiveTo < r.verifiedAsOf)) issue("verifiedAsOf", "Review must fall within represented period");
+  if (r.effectiveDateBasis === "VERIFIED_CURRENT_AS_OF" && (r.effectiveFrom !== r.verifiedAsOf || r.effectiveTo !== r.verifiedAsOf)) issue("effectiveDateBasis", "As-of evidence covers only the verified date; no historical start or future validity inferred");
+  if (r.provenance.effectiveFrom !== r.effectiveFrom || r.provenance.effectiveTo !== r.effectiveTo) issue("provenance", "Provenance period must match");
+  if (new Set(r.includedModes).size !== r.includedModes.length || (r.mode === "multimodal" ? r.includedModes.length < 2 : r.includedModes.length !== 1 || r.includedModes[0] !== r.mode)) issue("includedModes", "Mode must match distinct included modes");
+  const periods: Record<string, string[]> = { single: ["journey", "hour"], return: ["journey"], day_ticket: ["day"], daily_cap: ["day"], weekly_cap: ["monday_sunday", "rolling_week"], weekly: ["week"], monthly: ["month"], annual: ["year"], season: ["week", "month", "year"], multi_day: ["week"] };
+  if (!periods[r.fareType].includes(r.validityPeriod)) issue("validityPeriod", "Product type and duration incompatible");
+  if (r.fareUnit !== (r.fareType.endsWith("_cap") ? "GBP/cap" : "GBP/ticket")) issue("fareUnit", "Caps and purchased tickets are distinct charge units");
+  if (r.publishedGeography.mvpCityId || r.publishedGeography.consumerLabel) issue("publishedGeography", "Consumer city applicability belongs in the separate conditional mapping");
+});
+export type TransportFareRecord = z.infer<typeof transportFareRecordSchema>;
+
+export const transportPeriodConversionRecordSchema = z.strictObject({
+  ...recordBase, category: z.literal("transport_period_conversion"), valueType: z.literal("CALCULATED"), releaseStatus: z.literal("REFERENCE_ONLY"),
+  observedRecordId: z.string().min(1), observedFareGbp: z.number().positive(), observedValidityPeriod: z.enum(["week", "year"]),
+  monthlyGbp: z.number().finite().positive(), unit: z.literal("GBP/month-equivalent"),
+  formula: z.enum(["fareGbp * 52 / 12", "fareGbp / 12"]), calculationVersion: z.literal("transport-monthly-v1"),
+}).superRefine((r, ctx) => {
+  const weekly = r.observedValidityPeriod === "week";
+  if (r.formula !== (weekly ? "fareGbp * 52 / 12" : "fareGbp / 12") || r.monthlyGbp !== (weekly ? r.observedFareGbp * 52 / 12 : r.observedFareGbp / 12)) ctx.addIssue({ code: "custom", message: "Formula/amount must preserve the unrounded parent period conversion" });
 });
 
 export const incomeTaxRuleRecordSchema = z.object({
@@ -260,6 +286,7 @@ export const auditRecordSchema = z.discriminatedUnion("category", [
   expenditurePeriodConversionRecordSchema,
   waterTariffRecordSchema,
   transportFareRecordSchema,
+  transportPeriodConversionRecordSchema,
   incomeTaxRuleRecordSchema,
   nationalInsuranceRuleRecordSchema,
   councilTaxRecordSchema,

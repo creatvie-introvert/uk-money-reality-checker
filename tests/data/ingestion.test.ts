@@ -64,11 +64,11 @@ describe("source catalogue", () => {
     const ofgem = sourceCatalog.find((entry) => entry.sourceId === "SRC-OFGEM-REGIONAL")!;
     const tfl = sourceCatalog.find((entry) => entry.sourceId === "SRC-TFL")!;
     expect(ofgem.accessMechanisms).toEqual(["HTML"]);
-    expect(tfl.accessMechanisms).toBeUndefined();
+    expect(tfl.accessMechanisms).toEqual(["HTML"]);
     expect(tfl.suitability).toBe("PRIMARY_CONTROLLED_IMPORT");
     for (const entry of sourceCatalog.filter((entry) => ["water", "transport", "energy_price"].includes(entry.category))) {
       expect(entry.accessMechanisms ?? []).not.toContain("API");
-      if (entry.sourceId === "SRC-OFGEM-REGIONAL" || entry.category === "water") {
+      if (entry.sourceId === "SRC-OFGEM-REGIONAL" || ["water", "transport"].includes(entry.category)) {
         expect(entry.licenceReference).toContain("UNRESOLVED");
         expect(entry.rawSnapshotPolicy).toBe("METADATA_ONLY");
       } else {

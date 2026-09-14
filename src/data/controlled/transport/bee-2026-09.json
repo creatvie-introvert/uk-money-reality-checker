@@ -1,0 +1,125 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "bee",
+  "sourceId": "SRC-TFGM",
+  "organisation": "Transport for Greater Manchester",
+  "publicationTitle": "Tap and go with contactless on bus and tram",
+  "sourceReference": "Tap and go with contactless on bus and tram",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available."
+  ],
+  "rows": [
+    {
+      "rowId": "bus-day",
+      "cityId": "LOC-MAN",
+      "operator": "Bee Network bus operators",
+      "network": "Bee Network",
+      "productName": "Daily Bee Bus adult cap",
+      "rawAmount": "5",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "fareType": "daily_cap",
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "day",
+      "validity": "Daily cap",
+      "zonesOrArea": "Bee Network buses",
+      "paymentMethod": "Contactless card or device",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "Same card/device for every trip; tap on bus, tap in and out on tram.",
+        "No National Rail entitlement. The operator implements capping; UKMR does not simulate it."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Tap and go with contactless on bus and tram \u2014 Daily Bee Bus adult cap; adult Bee Network buses"
+    },
+    {
+      "rowId": "bus-week",
+      "cityId": "LOC-MAN",
+      "operator": "Bee Network bus operators",
+      "network": "Bee Network",
+      "productName": "Weekly Bee Bus adult cap",
+      "rawAmount": "20",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "fareType": "weekly_cap",
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "monday_sunday",
+      "validity": "Monday to Sunday cap",
+      "zonesOrArea": "Bee Network buses",
+      "paymentMethod": "Contactless card or device",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "Same card/device for every trip; tap on bus, tap in and out on tram.",
+        "No National Rail entitlement. The operator implements capping; UKMR does not simulate it."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Tap and go with contactless on bus and tram \u2014 Weekly Bee Bus adult cap; adult Bee Network buses"
+    },
+    {
+      "rowId": "bus-tram-week",
+      "cityId": "LOC-MAN",
+      "operator": "Bee Network bus operators and Metrolink",
+      "network": "Bee Network",
+      "productName": "7-day Bus + Tram ticket price cap \u2014 all zones",
+      "rawAmount": "41",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "fareType": "weekly_cap",
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "monday_sunday",
+      "validity": "Monday to Sunday all-zones cap",
+      "zonesOrArea": "Bee Network buses and all Metrolink zones",
+      "paymentMethod": "Contactless card or device",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "Same card/device for every trip; tap on bus, tap in and out on tram.",
+        "No National Rail entitlement. The operator implements capping; UKMR does not simulate it."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Tap and go with contactless on bus and tram \u2014 7-day Bus + Tram ticket price cap \u2014 all zones; adult Bee Network buses and all Metrolink zones"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-bee-20260914",
+    "sourceId": "SRC-TFGM",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://tfgm.com/ways-to-pay/contactless",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git."
+  },
+  "supportingEvidence": []
+}

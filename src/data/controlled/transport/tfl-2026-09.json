@@ -1,0 +1,191 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "tfl",
+  "sourceId": "SRC-TFL",
+  "organisation": "Transport for London",
+  "publicationTitle": "Bus and tram fares",
+  "sourceReference": "Bus and tram fares",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available.",
+    "Official rendered page reviewed; no original byte capture/checksum available."
+  ],
+  "rows": [
+    {
+      "rowId": "hopper",
+      "cityId": "LOC-LON",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "productName": "Hopper fare",
+      "rawAmount": "1.75",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "fareType": "single",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "hour",
+      "validity": "Unlimited bus/tram journeys within one hour of first touch",
+      "zonesOrArea": "TfL buses and trams only",
+      "paymentMethod": "Contactless or Oyster PAYG",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+        "No Tube, DLR or rail entitlement inferred."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Bus and tram fares \u2014 Hopper fare; adult TfL buses and trams only"
+    },
+    {
+      "rowId": "daily",
+      "cityId": "LOC-LON",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "productName": "Daily cap",
+      "rawAmount": "5.25",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "fareType": "daily_cap",
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "day",
+      "validity": "Daily capping",
+      "zonesOrArea": "TfL buses and trams only",
+      "paymentMethod": "Contactless or Oyster PAYG",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+        "No Tube, DLR or rail entitlement inferred."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Bus and tram fares \u2014 Daily cap; adult TfL buses and trams only"
+    },
+    {
+      "rowId": "weekly-cap",
+      "cityId": "LOC-LON",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "productName": "Weekly cap (Monday to Sunday)",
+      "rawAmount": "24.70",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "fareType": "weekly_cap",
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "monday_sunday",
+      "validity": "Monday to Sunday cap",
+      "zonesOrArea": "TfL buses and trams only",
+      "paymentMethod": "Contactless or Oyster PAYG",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+        "No Tube, DLR or rail entitlement inferred."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Bus and tram fares \u2014 Weekly cap (Monday to Sunday); adult TfL buses and trams only"
+    },
+    {
+      "rowId": "seven-day",
+      "cityId": "LOC-LON",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "productName": "7 Day Bus & Tram Pass",
+      "rawAmount": "24.70",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "fareType": "weekly",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "week",
+      "validity": "Seven-day pass",
+      "zonesOrArea": "TfL buses and trams only",
+      "paymentMethod": "Oyster",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+        "No Tube, DLR or rail entitlement inferred."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Bus and tram fares \u2014 7 Day Bus & Tram Pass; adult TfL buses and trams only"
+    },
+    {
+      "rowId": "annual",
+      "cityId": "LOC-LON",
+      "operator": "TfL bus and tram operators",
+      "network": "TfL bus and tram network",
+      "productName": "Annual Bus & Tram Pass",
+      "rawAmount": "988",
+      "mode": "multimodal",
+      "includedModes": [
+        "bus",
+        "tram"
+      ],
+      "fareType": "annual",
+      "fareUnit": "GBP/ticket",
+      "validityPeriod": "year",
+      "validity": "Annual pass",
+      "zonesOrArea": "TfL buses and trams only",
+      "paymentMethod": "Oyster",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_established",
+      "conditions": [
+        "For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.",
+        "No Tube, DLR or rail entitlement inferred."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Bus and tram fares \u2014 Annual Bus & Tram Pass; adult TfL buses and trams only"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-tfl-20260914",
+    "sourceId": "SRC-TFL",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git.",
+    "checksum": "sha256:c66fe28e3003316f05c83df1818682cddd1c3db08a8551c2fd313831bea5469f"
+  },
+  "captureFile": "ukmr-transport-tfl.html",
+  "supportingEvidence": []
+}

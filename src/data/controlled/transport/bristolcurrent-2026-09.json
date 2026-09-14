@@ -1,0 +1,96 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "bristolcurrent",
+  "sourceId": "SRC-TRAVELWEST",
+  "organisation": "First Bus Bristol, Bath and the West",
+  "publicationTitle": "Tap On Tap Off \u2014 Bristol column",
+  "sourceReference": "Tap On Tap Off \u2014 Bristol column",
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "importedAt": "2026-09-14T17:49:38Z",
+  "importVersion": "transport-v1",
+  "releaseStatus": "RELEASE_READY",
+  "limitations": [
+    "Current page labels fares from 1 January 2026; upcoming-fare-changes page says 4 January 2026. Selected Bristol amounts agree; historical start date not asserted."
+  ],
+  "rows": [
+    {
+      "rowId": "day-cap",
+      "cityId": "LOC-BRS",
+      "operator": "First Bus Bristol, Bath and the West",
+      "network": "First Bus Bristol fare zone",
+      "productName": "Bristol \u2014 1 day capped price",
+      "rawAmount": "6.80",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "fareType": "daily_cap",
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "day",
+      "validity": "Daily cap",
+      "zonesOrArea": "Bristol fare zone",
+      "paymentMethod": "Contactless Visa/Mastercard, Apple Pay or Google Pay",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "conditions": [
+        "Tap on and off with same card/device. Other operators not included. Airport Flyer uses a separate fare/cap regime."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Tap On Tap Off \u2014 Bristol column \u2014 Bristol \u2014 1 day capped price; adult Bristol fare zone"
+    },
+    {
+      "rowId": "week-cap",
+      "cityId": "LOC-BRS",
+      "operator": "First Bus Bristol, Bath and the West",
+      "network": "First Bus Bristol fare zone",
+      "productName": "Bristol \u2014 7 day capped price",
+      "rawAmount": "28",
+      "mode": "bus",
+      "includedModes": [
+        "bus"
+      ],
+      "fareType": "weekly_cap",
+      "fareUnit": "GBP/cap",
+      "validityPeriod": "rolling_week",
+      "validity": "Capping week starts at first tap",
+      "zonesOrArea": "Bristol fare zone",
+      "paymentMethod": "Contactless Visa/Mastercard, Apple Pay or Google Pay",
+      "passengerType": "adult",
+      "peakStatus": "anytime",
+      "airportApplicability": "not_included",
+      "conditions": [
+        "Tap on and off with same card/device. Other operators not included. Airport Flyer uses a separate fare/cap regime."
+      ],
+      "effectiveFrom": "2026-09-14",
+      "effectiveTo": "2026-09-14",
+      "effectiveDateBasis": "VERIFIED_CURRENT_AS_OF",
+      "verifiedAsOf": "2026-09-14",
+      "sourceReference": "Tap On Tap Off \u2014 Bristol column \u2014 Bristol \u2014 7 day capped price; adult Bristol fare zone"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "transport-bristolcurrent-20260914",
+    "sourceId": "SRC-TRAVELWEST",
+    "retrievedAt": "2026-09-14T17:49:38Z",
+    "sourceFormat": "HTML",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.firstbus.co.uk/bristol-bath-and-west/tickets/tap-tap",
+    "nonRetentionReason": "Operator reuse permission unresolved; original website content not retained in Git.",
+    "checksum": "sha256:bbd53a9375c05699989bd9382b76ed8077ae7ed2fcbc053e8a87719ef2c07614"
+  },
+  "captureFile": "ukmr-transport-bristolcurrent.html",
+  "supportingEvidence": [
+    {
+      "sourceUrl": "https://www.firstbus.co.uk/bristol-bath-and-west/tickets/upcoming-fare-changes",
+      "sourceReference": "Change notice says 4 January; current Tap On Tap Off table says 1 January. Prices agree for selected Bristol caps; historical date unresolved.",
+      "publishedEffectiveFrom": "2026-01-04",
+      "captureFile": "ukmr-transport-bristol.html",
+      "checksum": "sha256:bd39f26e04818cc7f3fa5ef3430e3145e67b0dad111af1f12f711a814ee7d79a"
+    }
+  ]
+}
