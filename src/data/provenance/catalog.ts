@@ -438,11 +438,10 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "authority": "PRIMARY",
     "sourceReference": "Batch 4 — INCOME TAX — rUK",
     "suitability": "REFERENCE_INPUT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "rUK jurisdiction, tax year 2026/27. HTML reference input; no verified API. Tax arithmetic is later CALCULATED logic.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "rUK jurisdiction, tax year 2026/27. HTML reference input; no verified API. Tax arithmetic is later CALCULATED logic. Slice 3: verified official HTML on 2026-09-14; see docs/data/production-tax-ni.md for controlled extracts, linked HMRC allowance clarification and scope limitations.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+      "Refresh cadence not verified."
     ],
     "accessMechanisms": [
       "HTML"
@@ -457,21 +456,24 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "category": "income_tax",
     "organisation": "Scottish Government",
     "publicationTitle": "Scottish Income Tax rates and bands",
-    "sourceUrl": "https://www.gov.scot/publications/scottish-income-tax-rates-and-bands/",
+    "sourceUrl": "https://www.gov.scot/publications/scottish-income-tax-rates-and-bands/pages/2026-to-2027/",
     "sourceStatus": "POPULATED",
     "authority": "PRIMARY",
     "sourceReference": "Batch 4 — INCOME TAX — SCOTLAND",
     "suitability": "REFERENCE_INPUT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Scotland jurisdiction. Scottish Government rates/bands require the HMRC Personal Allowance/taper reference (SRC-011). HTML reference input; no verified API. Tax arithmetic is later CALCULATED logic.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Scotland jurisdiction. Scottish Government rates/bands require the HMRC Personal Allowance/taper reference (SRC-011). HTML reference input; no verified API. Tax arithmetic is later CALCULATED logic. Slice 3: verified official HTML on 2026-09-14; see docs/data/production-tax-ni.md for controlled extracts, linked HMRC allowance clarification and scope limitations. Scottish Government remains policy provenance. Current operational confirmation reviewed on 2026-09-14: https://www.gov.uk/scottish-income-tax confirms all six bands; https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027 corroborates the Scottish top rate above GBP 125140. The locked UKMR resolution treats Over GBP 125141 in the historical/current HMRC table as a presentation inconsistency; retain the continuous GBP 125140 boundary.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+      "Refresh cadence not verified.",
+      "Scottish policy page still says proposed; current operational confirmation is separately recorded in useNote and controlled-extract methodologyNotes."
     ],
     "accessMechanisms": [
       "HTML"
     ],
-    "licenceReference": "OGL v3.0 (Batch 4)"
+    "licenceReference": "OGL v3.0 (Batch 4)",
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-06",
+    "effectiveTo": "2027-04-05"
   },
   {
     "sourceId": "SRC-012",
@@ -482,17 +484,19 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "authority": "PRIMARY",
     "sourceReference": "Batch 4 — HMRC Rates and thresholds for employers 2026/27",
     "suitability": "REFERENCE_INPUT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Class 1 reference data must preserve the official category dimension. Category A is a later ordinary-employee scenario assumption, not a restriction on the reference dataset. Current mechanism is HTML; historical ODS exists but is not asserted as the current source format.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Class 1 reference data must preserve the official category dimension. Other official category letters remain outside the intentional Slice 3 category A MVP scope. Current mechanism is HTML; historical ODS exists but is not asserted as the current source format. Slice 3: verified official HTML on 2026-09-14; see docs/data/production-tax-ni.md for controlled extracts, linked HMRC allowance clarification and scope limitations. Category A only is the intentional Slice 3 MVP reference scope.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+      "Refresh cadence not verified."
     ],
     "sourcePeriod": "2026/27",
     "accessMechanisms": [
       "HTML"
     ],
-    "licenceReference": "OGL v3.0 (Batch 4)"
+    "licenceReference": "OGL v3.0 (Batch 4)",
+    "sourceUrl": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+    "effectiveFrom": "2026-04-06",
+    "effectiveTo": "2027-04-05"
   },
   {
     "sourceId": "SRC-HOUSEHOLD-EQUIVALENCE",

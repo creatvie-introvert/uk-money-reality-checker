@@ -1,6 +1,6 @@
 # Data layer
 
-Milestone 1 contains the canonical record contracts, source catalogue and offline ingestion framework. Production source importers, generated release datasets and typed runtime loaders are subsequent M1 work.
+Milestone 1 contains the canonical record contracts, source catalogue and offline ingestion framework. Slice 3 adds production tax/NI adapters and versioned reference artifacts. Typed runtime loaders remain deferred.
 
 Milestone 1 separates three artifact concepts:
 
@@ -12,6 +12,6 @@ Source snapshots may be retained or represented by source metadata and checksums
 
 Artifact parsing validates manifest record counts and source snapshot references. The artifact manifest's `releaseId` is the authoritative release-level identifier; records do not require a per-record release identifier.
 
-The ingestion flow is source catalogue → snapshot metadata → raw imported payload → category adapter → normalized audit records and diagnostics. The catalogue describes upstream evidence; adapters normalize it into the existing category-specific schemas. Release generation is a later slice, and calculator logic follows in M2.
+The ingestion flow is source catalogue → snapshot metadata → raw imported payload → category adapter → normalized audit records and diagnostics. The catalogue describes upstream evidence; adapters normalize it into the existing category-specific schemas. Tax/NI reference generation is implemented in Slice 3; calculator logic follows in M2.
 
-See `docs/data/README.md` for source verification limits, snapshot retention, row accounting and adapter responsibilities. The single synthetic tax adapter lives under `tests/data/fixtures`; it is not a production importer.
+See `docs/data/README.md` for source verification limits, snapshot retention, row accounting and adapter responsibilities. The synthetic fixture remains under `tests/data/fixtures`; production adapters are under `src/data/ingestion/production`. See `docs/data/production-tax-ni.md` for generation and source qualifications.

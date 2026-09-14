@@ -80,7 +80,7 @@ describe("source catalogue", () => {
     const ni = sourceCatalog.find((entry) => entry.sourceId === "SRC-012")!;
     expect(ni.publicationTitle).toBe("Rates and thresholds for employers 2026/27");
     expect(ni.accessMechanisms).toEqual(["HTML"]);
-    expect(ni.sourceUrl).toBeUndefined();
+    expect(ni.sourceUrl).toBe("https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027");
     expect(ni.sourceReference).toContain("Batch 4");
   });
 });

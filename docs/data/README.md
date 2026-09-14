@@ -34,3 +34,7 @@ Every parsed row has an outcome retaining the original raw value. Duplicate sour
 Diagnostics distinguish source parse failure, missing required field, unsupported value, duplicate identifier, invalid date, invalid numeric value, geography mapping failure and source review required. Adapter errors become explicit rejected outcomes. Payload parsers must expose all rows; the framework cannot recover rows silently discarded inside an adapter's own parser, so this is an adapter review requirement.
 
 The only proof adapter is a synthetic JSON tax-reference fixture under `tests/data/fixtures`. Its shape and numeric values are test data, not an HMRC API, downloaded source or executable tax calculation. Release generation, production importers, runtime loaders and calculator logic are later work.
+
+## Slice 3 production references
+
+Tax and NI production ingestion and reference generation now exist. The preceding Slice 2 description is the framework baseline; see [production tax and NI](production-tax-ni.md) for the four verified captures, source-catalogue updates, required coverage, generated artifacts and remaining source qualifications. Runtime calculators and loaders remain deferred.

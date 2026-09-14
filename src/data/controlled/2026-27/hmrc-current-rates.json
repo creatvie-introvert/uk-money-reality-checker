@@ -1,0 +1,90 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "description": "UKMR-controlled transcription of verified official HTML values; not an original official file or API response.",
+  "snapshot": {
+    "retention": "METADATA_ONLY",
+    "snapshotId": "hmrc-current-rates-2026-27-20260914-v1",
+    "sourceId": "SRC-011",
+    "sourceUrl": "https://www.gov.uk/income-tax-rates/current-rates-and-allowances",
+    "sourceReference": "2026/27 hmrc-current-rates",
+    "retrievedAt": "2026-09-14T13:59:29Z",
+    "sourceFormat": "HTML",
+    "nonRetentionReason": "Official HTML was reviewed through the browser retrieval tool but not retained in Git; this separately labelled UKMR-controlled transcription is retained for offline reproduction. No official-content checksum is claimed."
+  },
+  "importedAt": "2026-09-14T13:59:29Z",
+  "importVersion": "2026-27-v1",
+  "releaseStatus": "REFERENCE_ONLY",
+  "limitations": [
+    "Linked HMRC current-rates/allowances guidance explicitly states the zero-allowance point.",
+    "rUK published income illustrations assume the standard allowance; not executable taxable-income band widths.",
+    "Primary HMRC historical/current table says Over 125141 for additional rate; this linked current guidance says over 125140. These rows use the latter explicitly, with no inferred correction."
+  ],
+  "rows": [
+    {
+      "taxYear": "2026/27",
+      "effectiveFrom": "2026-04-06",
+      "effectiveTo": "2027-04-05",
+      "id": "rUK-zero-allowance",
+      "jurisdiction": "rUK",
+      "ruleType": "personal_allowance_zero_point",
+      "bandName": "zero-allowance",
+      "threshold": 125140,
+      "thresholdBasis": "adjusted_net_income"
+    },
+    {
+      "taxYear": "2026/27",
+      "effectiveFrom": "2026-04-06",
+      "effectiveTo": "2027-04-05",
+      "id": "Scotland-zero-allowance",
+      "jurisdiction": "Scotland",
+      "ruleType": "personal_allowance_zero_point",
+      "bandName": "zero-allowance",
+      "threshold": 125140,
+      "thresholdBasis": "adjusted_net_income"
+    },
+    {
+      "taxYear": "2026/27",
+      "effectiveFrom": "2026-04-06",
+      "effectiveTo": "2027-04-05",
+      "id": "rUK-basic",
+      "jurisdiction": "rUK",
+      "ruleType": "tax_band",
+      "bandName": "basic",
+      "lowerBound": 12571,
+      "lowerInclusive": true,
+      "rate": 0.2,
+      "thresholdBasis": "published_income_with_standard_allowance",
+      "upperBound": 50270,
+      "upperInclusive": true
+    },
+    {
+      "taxYear": "2026/27",
+      "effectiveFrom": "2026-04-06",
+      "effectiveTo": "2027-04-05",
+      "id": "rUK-higher",
+      "jurisdiction": "rUK",
+      "ruleType": "tax_band",
+      "bandName": "higher",
+      "lowerBound": 50271,
+      "lowerInclusive": true,
+      "rate": 0.4,
+      "thresholdBasis": "published_income_with_standard_allowance",
+      "upperBound": 125140,
+      "upperInclusive": true
+    },
+    {
+      "taxYear": "2026/27",
+      "effectiveFrom": "2026-04-06",
+      "effectiveTo": "2027-04-05",
+      "id": "rUK-additional",
+      "jurisdiction": "rUK",
+      "ruleType": "tax_band",
+      "bandName": "additional",
+      "lowerBound": 125140,
+      "lowerInclusive": false,
+      "rate": 0.45,
+      "thresholdBasis": "published_income_with_standard_allowance"
+    }
+  ]
+}
