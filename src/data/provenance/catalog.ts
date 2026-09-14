@@ -82,14 +82,16 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "sourceUrl": "https://www.gov.uk/government/statistics/national-energy-efficiency-data-framework-need-consumption-data-tables-2026",
     "sourceStatus": "MODELLED",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 1 — ENERGY CONSUMPTION",
+    "sourceReference": "NEED 2026 multiple-attribute workbooks; selected 2024 rows",
+    "publicationDate": "2026-06-11",
+    "sourcePeriod": "2024",
+    "refreshCadence": "Annual; workbook next update June 2027",
+    "licenceReference": "Open Government Licence v3.0 except where otherwise stated; GOV.UK publication checked 2026-09-14",
     "suitability": "REFERENCE_INPUT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
+    "rawSnapshotPolicy": "METADATA_ONLY",
     "useNote": "England/Wales multiple-attribute tables include region, property type, property age, bedrooms, gas present, electricity type and gas/electricity distributions. No adult-occupancy dimension or city/local-authority field exists at that joint dimensionality. Scotland has no sub-national geography at that joint dimensionality; property/age vocabularies differ. Existing UKMR profiles remain MODELLED_ESTIMATE and DEV_ONLY. MODELLED is the retained source-register governance label, not a promotion or a claim that source observations are modelled.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Reuse/licensing was not verified for this source in the supplied audits.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+      "Full joint-table coverage is outside the controlled selection; no city/adult-occupancy model is provided."
     ],
     "accessMechanisms": [
       "XLSX",
@@ -102,17 +104,22 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "organisation": "Ofgem",
     "publicationTitle": "Regional price-cap unit rates and standing charges",
     "authority": "PRIMARY",
-    "sourceReference": "Batch 1 — ENERGY PRICES",
+    "sourceReference": "Nine regional tables embedded by the official Ofgem page; July–September 2026 columns",
+    "sourceUrl": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges",
+    "sourceStatus": "POPULATED_PARTIAL",
+    "sourcePeriod": "2026-Q3",
+    "effectiveFrom": "2026-07-01",
+    "effectiveTo": "2026-09-30",
+    "licenceReference": "UNRESOLVED — no OGL assumption; raw captures not retained in Git",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Regional unit rates and standing charges vary by fuel, payment method, tariff type and effective period. Selection is fundamentally postcode-based; Ofgem references NESO DNO boundaries and OS Code-Point Open. No city-only mappings without authoritative postcode-boundary evidence. HTML/table export is the researched route, but the exact export mechanism is unresolved. No verified stable CSV/XLSX/JSON/API resource. Do not substitute SRC-004 national-average evidence or assume raw files are redistributable.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Regional unit rates and standing charges vary by fuel, payment method, tariff type and effective period. Selection is fundamentally postcode-based; Ofgem references NESO DNO boundaries and OS Code-Point Open. No city-only mappings without authoritative postcode-boundary evidence. Official HTML embeds nine public Everviz tables; exact embedded capture URLs and checksums verified 2026-09-14. These mutable embeds are not a stable API. Do not substitute SRC-004 national-average evidence or assume raw files are redistributable.",
     "unresolvedMetadata": [
       "Publication date and refresh cadence were not verified in Batch 1–4.",
       "Exact table export mechanism and stable download resource remain unresolved.",
       "Reuse/licensing remains unresolved; do not assume OGL.",
       "Authoritative postcode-boundary mapping remains required.",
-      "Source-governance status was not assigned by the audit; source discovery does not imply release readiness.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
+      "City applicability remains unresolved despite complete retained regional rows."
     ],
     "accessMechanisms": [
       "HTML"

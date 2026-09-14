@@ -155,8 +155,40 @@ export const councilTaxRecordSchema = z.object({
 
 export type CouncilTaxRecord = z.infer<typeof councilTaxRecordSchema>;
 
+// Energy evidence has source geography only. City applicability belongs to a future reviewed layer.
+const energyGeographySchema = z.strictObject({
+  official: z.strictObject({ geographyType: z.string().min(1), name: z.string().min(1), code: z.string().min(1).optional(), sourceId: z.string().min(1) }),
+});
+export const energyConsumptionRecordSchema = z.strictObject({
+  ...recordBase, category: z.literal("energy_consumption"),
+  valueType: z.literal("OBSERVED_DATA"), releaseStatus: z.literal("REFERENCE_ONLY"),
+  geography: energyGeographySchema, sourceYear: z.number().int().min(1900).max(2100),
+  sourceNationGroup: z.enum(["England and Wales", "Scotland"]),
+  propertyType: z.string().min(1), propertyAge: z.string().min(1), bedroomBand: z.string().min(1),
+  gasPresent: z.enum(["Yes", "No"]), electricityType: z.enum(["Standard", "E7"]),
+  fuel: z.enum(["gas", "electricity"]), statistic: z.enum(["mean", "lower_quartile", "median", "upper_quartile"]),
+  annualKwh: z.number().finite().positive(), sampleCount: z.number().int().nonnegative().optional(), unit: z.literal("kWh/year"),
+}).superRefine((r, ctx) => {
+  if (r.fuel === "gas" && r.gasPresent === "No") ctx.addIssue({ code: "custom", path: ["fuel"], message: "No observed gas consumption without a matched gas meter" });
+  if (r.provenance.sourcePeriod !== String(r.sourceYear)) ctx.addIssue({ code: "custom", path: ["sourceYear"], message: "Source year must match provenance" });
+});
+export const energyPriceRecordSchema = z.strictObject({
+  ...recordBase, category: z.literal("energy_price"), valueType: z.literal("OBSERVED_DATA"),
+  geography: energyGeographySchema, fuel: z.enum(["gas", "electricity"]),
+  paymentMethod: z.enum(["Direct Debit", "standard credit", "prepayment meter"]),
+  electricityTariffType: z.enum(["single rate", "multi-rate"]).optional(),
+  unitRateGbpPerKwh: z.number().finite().positive(), standingChargeGbpPerDay: z.number().finite().positive(),
+  rateBasis: z.literal("published_cap_rate"), effectiveFrom: z.iso.date(), effectiveTo: z.iso.date(),
+}).superRefine((r, ctx) => {
+  if (r.effectiveFrom > r.effectiveTo) ctx.addIssue({ code: "custom", path: ["effectiveTo"], message: "Reversed effective dates" });
+  if ((r.fuel === "gas" && r.electricityTariffType !== undefined) || (r.fuel === "electricity" && !r.electricityTariffType)) ctx.addIssue({ code: "custom", path: ["electricityTariffType"], message: "Electricity requires its source tariff type; gas has no electricity tariff type" });
+  if (r.provenance.effectiveFrom !== r.effectiveFrom || r.provenance.effectiveTo !== r.effectiveTo) ctx.addIssue({ code: "custom", path: ["effectiveFrom"], message: "Effective period must match provenance" });
+});
+
 export const auditRecordSchema = z.discriminatedUnion("category", [
   rentRecordSchema,
+  energyConsumptionRecordSchema,
+  energyPriceRecordSchema,
   coicopExpenditureRecordSchema,
   waterTariffRecordSchema,
   transportFareRecordSchema,

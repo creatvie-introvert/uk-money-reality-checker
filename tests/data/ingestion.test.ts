@@ -68,8 +68,13 @@ describe("source catalogue", () => {
     expect(tfl.suitability).toBe("PRIMARY_CONTROLLED_IMPORT");
     for (const entry of sourceCatalog.filter((entry) => ["water", "transport", "energy_price"].includes(entry.category))) {
       expect(entry.accessMechanisms ?? []).not.toContain("API");
-      expect(entry.licenceReference).toBeUndefined();
-      expect(entry.rawSnapshotPolicy).toBe("PENDING_REVIEW");
+      if (entry.sourceId === "SRC-OFGEM-REGIONAL") {
+        expect(entry.licenceReference).toContain("UNRESOLVED");
+        expect(entry.rawSnapshotPolicy).toBe("METADATA_ONLY");
+      } else {
+        expect(entry.licenceReference).toBeUndefined();
+        expect(entry.rawSnapshotPolicy).toBe("PENDING_REVIEW");
+      }
     }
   });
 
