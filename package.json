@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "data:references": "node scripts/data/generate-references.mjs"
+    "data:references": "node scripts/data/generate-references.mjs",
+    "data:council-tax": "node scripts/data/generate-council-tax.mjs"
   },
   "repository": {
     "type": "git",

@@ -114,6 +114,39 @@ export const nationalInsuranceRuleRecordSchema = z.object({
   }
 });
 
+export const councilTaxBandSchema = z.enum(["A", "B", "C", "D", "E", "F", "G", "H"]);
+
+export const councilTaxRecordSchema = z.object({
+  ...recordBase,
+  category: z.literal("council_tax"),
+  geography: geographySchema,
+  nation: z.enum(["England", "Scotland"]),
+  taxYear: z.string().regex(/^\d{4}\/\d{2}$/),
+  band: councilTaxBandSchema,
+  annualChargeGbp: z.number().finite().positive().refine((value) => Number(value.toFixed(2)) === value, "Annual charge must use two-decimal monetary precision"),
+  unit: z.literal("GBP/year"),
+  chargeScope: z.enum(["AREA_TWO_ADULTS_INCLUDING_PRECEPTS", "COUNCIL_TAX_EXCLUDING_WATER_SEWERAGE"]),
+  effectiveFrom: z.iso.date(),
+  effectiveTo: z.iso.date(),
+  qa: z.object({
+    rawSourceValue: z.string().regex(/^\d+(\.\d+)?$/),
+    displayedAnnualGbp: z.string().regex(/^\d+\.\d{2}$/),
+    sourceTable: z.string().min(1),
+    sourceCell: z.string().regex(/^[A-Z]+[1-9]\d*$/),
+    sourceNumberFormat: z.string().min(1),
+    sourceAuthorityName: z.string().min(1),
+  }),
+}).superRefine((record, context) => {
+  if (record.effectiveFrom > record.effectiveTo) context.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
+  if (record.annualChargeGbp !== Number(record.qa.displayedAnnualGbp)) context.addIssue({ code: "custom", path: ["annualChargeGbp"], message: "Annual charge must equal the source displayed GBP value" });
+  if (!Number.isFinite(Number(record.qa.rawSourceValue)) || Number(record.qa.rawSourceValue) <= 0) context.addIssue({ code: "custom", path: ["qa", "rawSourceValue"], message: "Raw source value must be finite and positive" });
+  if (record.nation === "England" && !/^E\d{8}$/.test(record.geography.official.code ?? "")) context.addIssue({ code: "custom", path: ["geography", "official", "code"], message: "England requires the official authority code" });
+  const scope = record.nation === "England" ? "AREA_TWO_ADULTS_INCLUDING_PRECEPTS" : "COUNCIL_TAX_EXCLUDING_WATER_SEWERAGE";
+  if (record.chargeScope !== scope) context.addIssue({ code: "custom", path: ["chargeScope"], message: "Source charge regime must match nation" });
+});
+
+export type CouncilTaxRecord = z.infer<typeof councilTaxRecordSchema>;
+
 export const auditRecordSchema = z.discriminatedUnion("category", [
   rentRecordSchema,
   coicopExpenditureRecordSchema,
@@ -121,6 +154,7 @@ export const auditRecordSchema = z.discriminatedUnion("category", [
   transportFareRecordSchema,
   incomeTaxRuleRecordSchema,
   nationalInsuranceRuleRecordSchema,
+  councilTaxRecordSchema,
 ]);
 
 export type AuditRecord = z.infer<typeof auditRecordSchema>;

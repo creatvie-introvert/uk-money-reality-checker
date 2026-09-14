@@ -36,17 +36,18 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "authority": "PRIMARY",
     "sourceReference": "Batch 1 — COUNCIL TAX — ENGLAND",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Official ODS controlled import. Verified authority codes: Birmingham E08000025, Manchester E08000003, Leeds E08000035, Liverpool E08000012, Bristol E06000023. Current Table 9 resolves the previous Bristol coverage gap. London is represented by individual authorities; no source-supported single London scalar or invented average.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Official ODS controlled import. Verified authority codes: Birmingham E08000025, Manchester E08000003, Leeds E08000035, Liverpool E08000012, Bristol E06000023. Current Table 9 resolves the previous Bristol coverage gap. London is represented by individual authorities; no source-supported single London scalar or invented average. Slice 4: official file inspected 2026-09-14; controlled cell extracts retain actual original-file SHA-256, source raw precision and displayed monetary values. See docs/data/production-council-tax.md.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Reuse/licensing was not verified for this source in the supplied audits.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+      "Refresh cadence not verified."
     ],
     "accessMechanisms": [
       "ODS"
     ],
-    "sourcePeriod": "2026/27"
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-01",
+    "effectiveTo": "2027-03-31",
+    "licenceReference": "Open Government Licence v3.0, except where otherwise stated (official publication page verified 2026-09-14)"
   },
   {
     "sourceId": "SRC-020",
@@ -58,17 +59,18 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "authority": "PRIMARY",
     "sourceReference": "Batch 1 — COUNCIL TAX — SCOTLAND",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Official XLSX controlled import verifies current City of Edinburgh and Glasgow City 2026/27 schedules. Retain ratio-derived raw precision for audit; normalized amounts follow the official two-decimal pounds/pence display without a different invented rounding rule.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Official XLSX controlled import verifies current City of Edinburgh and Glasgow City 2026/27 schedules. Retain ratio-derived raw precision for audit; normalized amounts follow the official two-decimal pounds/pence display without a different invented rounding rule. Slice 4: official file inspected 2026-09-14; controlled cell extracts retain actual original-file SHA-256, source raw precision and displayed monetary values. See docs/data/production-council-tax.md.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Reuse/licensing was not verified for this source in the supplied audits.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+      "Refresh cadence not verified."
     ],
     "accessMechanisms": [
       "XLSX"
     ],
-    "sourcePeriod": "2026/27"
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-01",
+    "effectiveTo": "2027-03-31",
+    "licenceReference": "Open Government Licence v3.0, except where otherwise stated (official publication page verified 2026-09-14)"
   },
   {
     "sourceId": "SRC-003",

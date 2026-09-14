@@ -38,3 +38,7 @@ The only proof adapter is a synthetic JSON tax-reference fixture under `tests/da
 ## Slice 3 production references
 
 Tax and NI production ingestion and reference generation now exist. The preceding Slice 2 description is the framework baseline; see [production tax and NI](production-tax-ni.md) for the four verified captures, source-catalogue updates, required coverage, generated artifacts and remaining source qualifications. Runtime calculators and loaders remain deferred.
+
+## Slice 4 council-tax direct evidence
+
+See [production council tax](production-council-tax.md) for verified ODS/XLSX extracts, 56 seven-authority charges, Scottish source precision, direct-release validation and explicitly incomplete London city-default coverage.

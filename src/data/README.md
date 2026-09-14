@@ -15,3 +15,5 @@ Artifact parsing validates manifest record counts and source snapshot references
 The ingestion flow is source catalogue → snapshot metadata → raw imported payload → category adapter → normalized audit records and diagnostics. The catalogue describes upstream evidence; adapters normalize it into the existing category-specific schemas. Tax/NI reference generation is implemented in Slice 3; calculator logic follows in M2.
 
 See `docs/data/README.md` for source verification limits, snapshot retention, row accounting and adapter responsibilities. The synthetic fixture remains under `tests/data/fixtures`; production adapters are under `src/data/ingestion/production`. See `docs/data/production-tax-ni.md` for generation and source qualifications.
+
+Slice 4 adds council-tax controlled extracts and production adapters under `ingestion/council-tax`, producing seven-authority direct evidence. London city-default coverage remains explicitly unresolved. See `docs/data/production-council-tax.md`.
