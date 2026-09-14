@@ -68,7 +68,7 @@ describe("source catalogue", () => {
     expect(tfl.suitability).toBe("PRIMARY_CONTROLLED_IMPORT");
     for (const entry of sourceCatalog.filter((entry) => ["water", "transport", "energy_price"].includes(entry.category))) {
       expect(entry.accessMechanisms ?? []).not.toContain("API");
-      if (entry.sourceId === "SRC-OFGEM-REGIONAL") {
+      if (entry.sourceId === "SRC-OFGEM-REGIONAL" || entry.category === "water") {
         expect(entry.licenceReference).toContain("UNRESOLVED");
         expect(entry.rawSnapshotPolicy).toBe("METADATA_ONLY");
       } else {

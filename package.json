@@ -16,7 +16,9 @@
     "data:rent": "node scripts/data/generate-rent.mjs",
     "data:rent:extract": "python3 scripts/data/extract-rent.py",
     "data:energy": "node scripts/data/generate-energy.mjs",
-    "data:energy:extract": "python3 scripts/data/extract-energy.py"
+    "data:energy:extract": "python3 scripts/data/extract-energy.py",
+    "data:water": "node scripts/data/generate-water.mjs",
+    "data:water:extract": "python3 scripts/data/extract-water.py"
   },
   "repository": {
     "type": "git",

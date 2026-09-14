@@ -42,3 +42,7 @@ Tax and NI production ingestion and reference generation now exist. The precedin
 ## Slice 4 council-tax direct evidence
 
 See [production council tax](production-council-tax.md) for verified ODS/XLSX extracts, 56 seven-authority charges, Scottish source precision, direct-release validation and explicitly incomplete London city-default coverage.
+
+### Slice 7 water tariffs
+
+See [production water ingestion](production-water.md) for 56 reviewed provider tariff facts, seven controlled extracts and conservative city/path applicability. Run `npm run data:water:extract` and `npm run data:water`; both support `-- --check`. Birmingham remains unresolved; Bristol is complete only for the verified standard metered split-provider path. No consumption model or bill arithmetic is implemented.

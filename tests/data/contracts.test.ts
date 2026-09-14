@@ -18,6 +18,7 @@ const provenance = {
   importedAt: "2026-09-09T00:00:00Z",
   snapshotId: "snapshot-test",
   limitations: [],
+  effectiveFrom: "2026-04-01", effectiveTo: "2027-03-31",
 };
 
 const manifest = {
@@ -40,6 +41,9 @@ describe("M1 data contracts", () => {
       releaseStatus, provenance,
       geography, providerId: "provider", billingRegime: "council_tax_band", serviceComponent: "combined",
       amount: 100, unit: "GBP/year", councilTaxBand: "D",
+      regulatedCompany: "Test provider", tariffComponent: "council_tax_band_charge", variant: "standard", aggregationRole: "alternative_total",
+      applicability: { sourceScope: "Test provider area", conditions: ["Unmetered band D"] },
+      effectiveFrom: "2026-04-01", effectiveTo: "2027-03-31",
     });
 
     expect(directEvidenceReleaseSchema.safeParse({ kind: "DIRECT_EVIDENCE_RELEASE", manifest, records: [record] }).success).toBe(false);
@@ -51,6 +55,9 @@ describe("M1 data contracts", () => {
       releaseStatus: "REFERENCE_ONLY", provenance,
       geography, providerId: "provider", billingRegime: "council_tax_band", serviceComponent: "combined",
       amount: 100, unit: "GBP/year", councilTaxBand: "D",
+      regulatedCompany: "Test provider", tariffComponent: "council_tax_band_charge", variant: "standard", aggregationRole: "alternative_total",
+      applicability: { sourceScope: "Test provider area", conditions: ["Unmetered band D"] },
+      effectiveFrom: "2026-04-01", effectiveTo: "2027-03-31",
     });
 
     expect(referenceArtifactSchema.safeParse({ kind: "REFERENCE_ARTIFACT", manifest, records: [record] }).success).toBe(true);
@@ -62,6 +69,9 @@ describe("M1 data contracts", () => {
       releaseStatus: "RELEASE_READY", provenance,
       geography, providerId: "provider", billingRegime: "council_tax_band", serviceComponent: "combined",
       amount: 100, unit: "GBP/year", councilTaxBand: "D",
+      regulatedCompany: "Test provider", tariffComponent: "council_tax_band_charge", variant: "standard", aggregationRole: "alternative_total",
+      applicability: { sourceScope: "Test provider area", conditions: ["Unmetered band D"] },
+      effectiveFrom: "2026-04-01", effectiveTo: "2027-03-31",
     });
 
     expect(directEvidenceReleaseSchema.safeParse({ kind: "DIRECT_EVIDENCE_RELEASE", manifest, records: [record] }).success).toBe(false);
@@ -85,6 +95,9 @@ const waterRecord = waterTariffRecordSchema.parse({
   releaseStatus: "RELEASE_READY", provenance,
   geography, providerId: "provider", billingRegime: "council_tax_band", serviceComponent: "combined",
   amount: 100, unit: "GBP/year", councilTaxBand: "D",
+      regulatedCompany: "Test provider", tariffComponent: "council_tax_band_charge", variant: "standard", aggregationRole: "alternative_total",
+      applicability: { sourceScope: "Test provider area", conditions: ["Unmetered band D"] },
+      effectiveFrom: "2026-04-01", effectiveTo: "2027-03-31",
 });
 
 describe.each([

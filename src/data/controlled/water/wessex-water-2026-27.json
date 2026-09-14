@@ -1,0 +1,85 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "wessex-water",
+  "providerId": "wessex-water",
+  "providerName": "Wessex Water",
+  "regulatedCompany": "Wessex Water",
+  "sourceId": "SRC-018",
+  "publicationTitle": "Wessex Water: household charges 2026/27",
+  "scope": "Wessex sewerage area; metered households including Bristol split supply",
+  "conditions": [
+    "Wastewater only in this selection; Wessex clean-water table deliberately excluded.",
+    "Standing charge includes rainwater and highway drainage. Full and reduced are alternatives.",
+    "Source allows 5% non-return to sewer; retained as a source condition, no calculation."
+  ],
+  "sourceReference": "Metered charges, 2026-27 column and sewerage standing-charge reduction paragraph",
+  "sourcePeriod": "2026/27",
+  "effectiveFrom": "2026-04-01",
+  "effectiveTo": "2027-03-31",
+  "importedAt": "2026-09-14T16:29:27Z",
+  "importVersion": "water-v1",
+  "releaseStatus": "RELEASE_READY",
+  "excludedSourceContent": "Only selected standard household tariff cells retained. Examples, concessions, other years and unselected regimes excluded; no household consumption assumptions.",
+  "rows": [
+    {
+      "rowId": "sewer-standing-full",
+      "providerId": "wessex-water",
+      "billingRegime": "metered_volumetric",
+      "serviceComponent": "wastewater",
+      "tariffComponent": "standing_charge",
+      "variant": "full",
+      "rawAmount": "71.00",
+      "unit": "GBP/year",
+      "effectiveFrom": "2026-04-01",
+      "effectiveTo": "2027-03-31",
+      "sourceReference": "Metered charges, 2026-27 column and sewerage standing-charge reduction paragraph; sewer-standing-full",
+      "conditions": [
+        "Property drains rainwater to public sewer; select full OR reduced."
+      ],
+      "aggregationRole": "component"
+    },
+    {
+      "rowId": "sewer-standing-reduced",
+      "providerId": "wessex-water",
+      "billingRegime": "metered_volumetric",
+      "serviceComponent": "wastewater",
+      "tariffComponent": "standing_charge",
+      "variant": "surface_water_abated",
+      "rawAmount": "43.00",
+      "unit": "GBP/year",
+      "effectiveFrom": "2026-04-01",
+      "effectiveTo": "2027-03-31",
+      "sourceReference": "Metered charges, 2026-27 column and sewerage standing-charge reduction paragraph; sewer-standing-reduced",
+      "conditions": [
+        "Only when none of the property is connected to public sewer for rainwater; select full OR reduced."
+      ],
+      "aggregationRole": "component"
+    },
+    {
+      "rowId": "sewer-volume",
+      "providerId": "wessex-water",
+      "billingRegime": "metered_volumetric",
+      "serviceComponent": "wastewater",
+      "tariffComponent": "volumetric_charge",
+      "variant": "standard",
+      "rawAmount": "3.1124",
+      "unit": "GBP/m3",
+      "effectiveFrom": "2026-04-01",
+      "effectiveTo": "2027-03-31",
+      "sourceReference": "Metered charges, 2026-27 column and sewerage standing-charge reduction paragraph; sewer-volume",
+      "conditions": [],
+      "aggregationRole": "component"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "SRC-018-2026-27-reviewed-20260914",
+    "sourceId": "SRC-018",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.wessexwater.co.uk/bills-and-accounts/our-charges/metered-charges",
+    "sourceFormat": "HTML",
+    "retrievedAt": "2026-09-14T16:29:27Z",
+    "nonRetentionReason": "Provider reuse/licensing unresolved; no OGL or raw redistribution permission assumed. Original content not retained in Git. Full official page reviewed in Chrome; original bytes could not be exported. No source-file checksum is available."
+  },
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW"
+}

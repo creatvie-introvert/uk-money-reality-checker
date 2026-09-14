@@ -45,17 +45,47 @@ export const coicopExpenditureRecordSchema = z.object({
   unit: z.literal("GBP/household/week"),
 });
 
-export const waterTariffRecordSchema = z.object({
+export const waterBillingRegimeSchema = z.enum(["metered_volumetric", "rateable_value", "assessed_household", "council_tax_band"]);
+export const waterServiceComponentSchema = z.enum(["clean_water", "wastewater", "surface_water_drainage", "highway_drainage", "combined"]);
+export const waterTariffComponentSchema = z.enum(["standing_charge", "fixed_charge", "volumetric_charge", "rateable_value_multiplier", "first_bedroom_charge", "additional_bedroom_charge", "council_tax_band_charge"]);
+export const waterChargeUnitSchema = z.enum(["GBP/year", "GBP/m3", "pence/m3", "GBP/GBP-rateable-value/year", "GBP/additional-bedroom/year"]);
+
+export const waterTariffRecordSchema = z.strictObject({
   ...recordBase,
   category: z.literal("water_tariff"),
   geography: geographySchema,
   providerId: z.string().min(1),
-  billingRegime: z.enum(["metered_volumetric", "rateable_value", "assessed_household", "council_tax_band"]),
-  serviceComponent: z.enum(["clean_water", "wastewater", "surface_water_drainage", "highway_drainage", "combined"]),
-  amount: z.number().finite().nonnegative().optional(),
-  unit: z.string().min(1),
+  regulatedCompany: z.string().min(1),
+  billingRegime: waterBillingRegimeSchema,
+  serviceComponent: waterServiceComponentSchema,
+  tariffComponent: waterTariffComponentSchema,
+  // Variant and band distinguish legitimate alternatives sharing a component.
+  variant: z.string().min(1),
+  aggregationRole: z.enum(["component", "alternative_total"]),
+  applicability: z.strictObject({ sourceScope: z.string().min(1), conditions: z.array(z.string().min(1)).min(1) }),
+  amount: z.number().finite().positive(),
+  unit: waterChargeUnitSchema,
   councilTaxBand: z.enum(["A", "B", "C", "D", "E", "F", "G", "H"]).optional(),
+  effectiveFrom: z.iso.date(),
+  effectiveTo: z.iso.date(),
+}).superRefine((r, ctx) => {
+  const issue = (path: string, message: string) => ctx.addIssue({ code: "custom", path: [path], message });
+  if (r.effectiveFrom > r.effectiveTo) issue("effectiveTo", "Reversed effective dates");
+  if (r.provenance.effectiveFrom !== r.effectiveFrom || r.provenance.effectiveTo !== r.effectiveTo) issue("effectiveFrom", "Water period must match provenance");
+  if ((r.billingRegime === "council_tax_band") !== Boolean(r.councilTaxBand) || (r.billingRegime === "council_tax_band") !== (r.tariffComponent === "council_tax_band_charge")) issue("councilTaxBand", "Council tax band and tariff component must match the band-based regime");
+  if ((r.serviceComponent === "combined") !== (r.aggregationRole === "alternative_total")) issue("aggregationRole", "Combined published total is an alternative, never additive");
+  const units: Record<string, string[]> = {
+    standing_charge: ["GBP/year"], fixed_charge: ["GBP/year"], volumetric_charge: ["GBP/m3", "pence/m3"],
+    rateable_value_multiplier: ["GBP/GBP-rateable-value/year"], first_bedroom_charge: ["GBP/year"],
+    additional_bedroom_charge: ["GBP/additional-bedroom/year"], council_tax_band_charge: ["GBP/year"],
+  };
+  if (!units[r.tariffComponent].includes(r.unit)) issue("unit", "Unit must preserve the source tariff component basis");
+  if (r.tariffComponent === "volumetric_charge" && r.billingRegime !== "metered_volumetric") issue("billingRegime", "Volumetric charge requires metered regime");
+  if (r.tariffComponent === "rateable_value_multiplier" && r.billingRegime !== "rateable_value") issue("billingRegime", "RV multiplier requires rateable-value regime");
+  if (["first_bedroom_charge", "additional_bedroom_charge"].includes(r.tariffComponent) && r.billingRegime !== "assessed_household") issue("billingRegime", "Assessed bedroom charge requires assessed regime");
 });
+
+export type WaterTariffRecord = z.infer<typeof waterTariffRecordSchema>;
 
 export const transportFareRecordSchema = z.object({
   ...recordBase,

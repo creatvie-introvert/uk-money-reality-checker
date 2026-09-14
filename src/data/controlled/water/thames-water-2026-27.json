@@ -1,0 +1,117 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "key": "thames-water",
+  "providerId": "thames-water",
+  "providerName": "Thames Water",
+  "regulatedCompany": "Thames Water",
+  "sourceId": "SRC-014",
+  "publicationTitle": "Thames Water: household charges 2026/27",
+  "scope": "Thames Water supply/sewerage area; single household measured tariff",
+  "conditions": [
+    "Confirm both service providers and standard single-household metered tariff; bulk meters, SmartSaver and social tariffs excluded.",
+    "Full and surface-water-abated wastewater fixed charges are alternatives.",
+    "Scheme section 6.1.3 bills wastewater on the same metered volume as water; the rate already allows for up to 10% non-return. Do not apply another 10% deduction."
+  ],
+  "sourceReference": "PDF page 26, Tables 1 and 2, 2026/27 single households",
+  "sourcePeriod": "2026/27",
+  "effectiveFrom": "2026-04-01",
+  "effectiveTo": "2027-03-31",
+  "importedAt": "2026-09-14T16:29:27Z",
+  "importVersion": "water-v1",
+  "releaseStatus": "RELEASE_READY",
+  "excludedSourceContent": "Only selected standard household tariff cells retained. Examples, concessions, other years and unselected regimes excluded; no household consumption assumptions.",
+  "rows": [
+    {
+      "rowId": "water-standing",
+      "providerId": "thames-water",
+      "billingRegime": "metered_volumetric",
+      "serviceComponent": "clean_water",
+      "tariffComponent": "fixed_charge",
+      "variant": "standard",
+      "rawAmount": "66.87",
+      "unit": "GBP/year",
+      "effectiveFrom": "2026-04-01",
+      "effectiveTo": "2027-03-31",
+      "sourceReference": "PDF page 26, Tables 1 and 2, 2026/27 single households; water-standing",
+      "conditions": [],
+      "aggregationRole": "component"
+    },
+    {
+      "rowId": "water-volume",
+      "providerId": "thames-water",
+      "billingRegime": "metered_volumetric",
+      "serviceComponent": "clean_water",
+      "tariffComponent": "volumetric_charge",
+      "variant": "standard",
+      "rawAmount": "273.46",
+      "unit": "pence/m3",
+      "effectiveFrom": "2026-04-01",
+      "effectiveTo": "2027-03-31",
+      "sourceReference": "PDF page 26, Tables 1 and 2, 2026/27 single households; water-volume",
+      "conditions": [],
+      "aggregationRole": "component"
+    },
+    {
+      "rowId": "sewer-standing-full",
+      "providerId": "thames-water",
+      "billingRegime": "metered_volumetric",
+      "serviceComponent": "wastewater",
+      "tariffComponent": "fixed_charge",
+      "variant": "full",
+      "rawAmount": "128.13",
+      "unit": "GBP/year",
+      "effectiveFrom": "2026-04-01",
+      "effectiveTo": "2027-03-31",
+      "sourceReference": "PDF page 26, Tables 1 and 2, 2026/27 single households; sewer-standing-full",
+      "conditions": [
+        "Includes surface water drainage; select full OR abated."
+      ],
+      "aggregationRole": "component"
+    },
+    {
+      "rowId": "sewer-standing-abated",
+      "providerId": "thames-water",
+      "billingRegime": "metered_volumetric",
+      "serviceComponent": "wastewater",
+      "tariffComponent": "fixed_charge",
+      "variant": "surface_water_abated",
+      "rawAmount": "80.43",
+      "unit": "GBP/year",
+      "effectiveFrom": "2026-04-01",
+      "effectiveTo": "2027-03-31",
+      "sourceReference": "PDF page 26, Tables 1 and 2, 2026/27 single households; sewer-standing-abated",
+      "conditions": [
+        "Only with surface water drainage rebate; select full OR abated."
+      ],
+      "aggregationRole": "component"
+    },
+    {
+      "rowId": "sewer-volume",
+      "providerId": "thames-water",
+      "billingRegime": "metered_volumetric",
+      "serviceComponent": "wastewater",
+      "tariffComponent": "volumetric_charge",
+      "variant": "standard",
+      "rawAmount": "147.21",
+      "unit": "pence/m3",
+      "effectiveFrom": "2026-04-01",
+      "effectiveTo": "2027-03-31",
+      "sourceReference": "PDF page 26, Tables 1 and 2, 2026/27 single households; sewer-volume",
+      "conditions": [],
+      "aggregationRole": "component"
+    }
+  ],
+  "snapshot": {
+    "snapshotId": "SRC-014-2026-27-reviewed-20260914",
+    "sourceId": "SRC-014",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.thameswater.co.uk/media-library/toecnx2l/charges-scheme-2026-27.pdf",
+    "sourceFormat": "PDF",
+    "retrievedAt": "2026-09-14T16:29:27Z",
+    "nonRetentionReason": "Provider reuse/licensing unresolved; no OGL or raw redistribution permission assumed. Original content not retained in Git.",
+    "checksum": "sha256:d7c98f5fc917dcba7e3e505f9fe473beadf94ab46e81ed168587a810756760c1"
+  },
+  "reviewMethod": "MANUAL_PRIMARY_SOURCE_CELL_REVIEW",
+  "captureFile": "ukmr-water-thames.pdf"
+}

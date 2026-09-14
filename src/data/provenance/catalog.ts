@@ -129,134 +129,170 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "sourceId": "SRC-014",
     "category": "water",
     "organisation": "Thames Water",
-    "publicationTitle": "Metered household charges",
-    "sourceUrl": "https://www.thameswater.co.uk/help/account-and-billing/understand-your-bill/metered-customers",
+    "publicationTitle": "Thames Water: household charges 2026/27",
+    "sourceUrl": "https://www.thameswater.co.uk/media-library/toecnx2l/charges-scheme-2026-27.pdf",
     "sourceStatus": "POPULATED",
     "authority": "PRIMARY",
     "sourceReference": "Batch 2 — WATER: Thames Water",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Verified London provider for clean water and wastewater. Preserve tariff regime and service components separately; source identification does not approve release readiness.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Slice 7 reviewed provider tariff facts; city eligibility is separate. Confirm both service providers and standard single-household metered tariff; bulk meters, SmartSaver and social tariffs excluded. Full and surface-water-abated wastewater fixed charges are alternatives.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
-    ]
+      "Publication date not independently verified; charge year/effective dates retained.",
+      "Provider-specific reuse/licensing unresolved. Only controlled tariff facts retained."
+    ],
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-01",
+    "effectiveTo": "2027-03-31",
+    "accessMechanisms": [
+      "PDF"
+    ],
+    "licenceReference": "UNRESOLVED: provider-specific reuse/redistribution; no OGL assumption"
   },
   {
     "sourceId": "SRC-SEVERN-TRENT",
     "category": "water",
     "organisation": "Severn Trent",
-    "publicationTitle": "Household charges",
+    "publicationTitle": "Severn Trent: household charges 2026/27",
     "authority": "PRIMARY",
     "sourceReference": "Batch 2 — WATER: Severn Trent",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Verified Birmingham clean-water and wastewater provider. Authoritative tariff evidence now resolves the previous source gap. Applicable zone/regime mapping still requires validation before RELEASE_READY; source found does not mean calculator-ready.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Slice 7 reviewed provider tariff facts; city eligibility is separate. Zone 1–8 and public sewer connection must be confirmed. Surface drainage tariff not selected: rateable-value zone or property-type basis unresolved. BIRMINGHAM_WATER_APPLICABILITY_UNRESOLVED: no city-default zone or drainage selection.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
-      "Applicable zone/regime mapping requires validation.",
-      "Source-governance status was not assigned by the audit; source discovery does not imply release readiness.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Publication date not independently verified; charge year/effective dates retained.",
+      "Provider-specific reuse/licensing unresolved. Only controlled tariff facts retained.",
+      "Birmingham charging zone and surface drainage basis unresolved."
+    ],
+    "sourceUrl": "https://www.stwater.co.uk/my-account/our-charges/metered-charges/",
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-01",
+    "effectiveTo": "2027-03-31",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "licenceReference": "UNRESOLVED: provider-specific reuse/redistribution; no OGL assumption",
+    "sourceStatus": "POPULATED_PARTIAL"
   },
   {
     "sourceId": "SRC-015",
     "category": "water",
     "organisation": "United Utilities",
-    "publicationTitle": "Metered household charges",
-    "sourceUrl": "https://corporate.unitedutilities.com/my-account/your-bill/our-household-charges-20262027/how-bills-for-households-with-a-meter-are-changing-for-20262027/",
+    "publicationTitle": "United Utilities: household charges 2026/27",
+    "sourceUrl": "https://www.unitedutilities.com/my-account/your-bill/our-household-charges-20262027/how-bills-for-households-with-a-meter-are-changing-for-20262027/",
     "sourceStatus": "POPULATED",
     "authority": "PRIMARY",
     "sourceReference": "Batch 2 — WATER: United Utilities",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Verified Manchester/Liverpool clean-water and wastewater provider. The United Utilities occupancy curve is supplier-specific evidence, not a national observed curve. Transfer to other suppliers requires UKMR_MODEL_REQUIRED methodology and remains MODELLED_ESTIMATE / DEV_ONLY.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Slice 7 reviewed provider tariff facts; city eligibility is separate. Confirm both services, standard metered tariff and drainage liability. Charges before any optional Direct Debit discount; source occupancy curve excluded and non-transferable.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
-    ]
+      "Publication date not independently verified; charge year/effective dates retained.",
+      "Provider-specific reuse/licensing unresolved. Only controlled tariff facts retained."
+    ],
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-01",
+    "effectiveTo": "2027-03-31",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "licenceReference": "UNRESOLVED: provider-specific reuse/redistribution; no OGL assumption"
   },
   {
     "sourceId": "SRC-017",
     "category": "water",
     "organisation": "Yorkshire Water",
-    "publicationTitle": "Metered household charges",
+    "publicationTitle": "Yorkshire Water: household charges 2026/27",
     "sourceUrl": "https://www.yorkshirewater.com/bill-account/how-we-work-out-your-bill/customers-with-a-meter/",
     "sourceStatus": "POPULATED",
     "authority": "PRIMARY",
     "sourceReference": "Batch 2 — WATER: Yorkshire Water",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Verified Leeds clean-water and wastewater provider. Preserve billing regime and service components; no assumed API/CSV/JSON.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Slice 7 reviewed provider tariff facts; city eligibility is separate. Confirm standard metered tariff, both services and surface-water drainage liability; York Waterworks rates excluded. Foul sewerage source basis is 95% of water supplied; no consumption adjustment calculated here.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
-    ]
+      "Publication date not independently verified; charge year/effective dates retained.",
+      "Provider-specific reuse/licensing unresolved. Only controlled tariff facts retained."
+    ],
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-01",
+    "effectiveTo": "2027-03-31",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "licenceReference": "UNRESOLVED: provider-specific reuse/redistribution; no OGL assumption"
   },
   {
     "sourceId": "SRC-BRISTOL-WATER",
     "category": "water",
     "organisation": "Bristol Water",
-    "publicationTitle": "Household charges",
+    "publicationTitle": "Bristol Water: household charges 2026/27",
     "authority": "PRIMARY",
     "sourceReference": "Batch 2 — WATER: Bristol Water",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Verified Bristol clean-water provider, separate from Wessex wastewater. Complete current Bristol Water tariff evidence was not fully verified. Bristol complete water tariff remains BLOCKED_FROM_RELEASE.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Slice 7 reviewed provider tariff facts; city eligibility is separate. Confirm Bristol Water supply area and standard domestic tariff. Appendix III seasonal tariff trial, social tariffs and non-domestic premises excluded. Assessed tariff only where a meter cannot be fitted and customer elects assessed charges; source bedroom rules apply. Wessex is the separate wastewater provider; neither company is substituted for the other. Regulated company: South West Water Limited, Bristol Water area/brand; appointment changed 1 February 2023 (scheme page 3).",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
-      "Complete current clean-water tariff evidence remains unverified.",
-      "Source-governance status was not assigned by the audit; source discovery does not imply release readiness.",
-      "Exact source URL remains unresolved; the audit source reference identifies the evidence."
-    ]
+      "Publication date not independently verified; charge year/effective dates retained.",
+      "Provider-specific reuse/licensing unresolved. Only controlled tariff facts retained."
+    ],
+    "sourceUrl": "https://www.bristolwater.co.uk/hubfs/BRL%20Household%20Charges%20Scheme%202026-27.pdf",
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-01",
+    "effectiveTo": "2027-03-31",
+    "accessMechanisms": [
+      "PDF"
+    ],
+    "licenceReference": "UNRESOLVED: provider-specific reuse/redistribution; no OGL assumption",
+    "sourceStatus": "POPULATED_PARTIAL"
   },
   {
     "sourceId": "SRC-018",
     "category": "water",
     "organisation": "Wessex Water",
-    "publicationTitle": "Metered household charges",
+    "publicationTitle": "Wessex Water: household charges 2026/27",
     "sourceUrl": "https://www.wessexwater.co.uk/bills-and-accounts/our-charges/metered-charges",
     "sourceStatus": "POPULATED_PARTIAL",
     "authority": "PRIMARY",
     "sourceReference": "Batch 2 — WATER: Wessex Water",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Verified Bristol wastewater provider with current tariff evidence available. Preserve POPULATED_PARTIAL governance; this does not resolve Bristol Water clean-water evidence or promote the complete Bristol tariff from BLOCKED_FROM_RELEASE.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Slice 7 reviewed provider tariff facts; city eligibility is separate. Wastewater only in this selection; Wessex clean-water table deliberately excluded. Standing charge includes rainwater and highway drainage. Full and reduced are alternatives. Source allows 5% non-return to sewer; retained as a source condition, no calculation.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
-    ]
+      "Publication date not independently verified; charge year/effective dates retained.",
+      "Provider-specific reuse/licensing unresolved. Only controlled tariff facts retained."
+    ],
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-01",
+    "effectiveTo": "2027-03-31",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "licenceReference": "UNRESOLVED: provider-specific reuse/redistribution; no OGL assumption"
   },
   {
     "sourceId": "SRC-010",
     "category": "water",
     "organisation": "Scottish Water",
-    "publicationTitle": "Unmetered household charges 2026/27",
-    "sourceUrl": "https://www.scottishwater.co.uk/-/media/scottishwater/document-hub/your-home/charges/2026/250226scottish-water-unmetered-household-charges-2026-27-leaflet.pdf",
+    "publicationTitle": "Scottish Water: household charges 2026/27",
+    "sourceUrl": "https://www.scottishwater.co.uk/your-home/your-charges/your-charges-2026-2027/unmetered-charges-2026-2027",
     "sourceStatus": "POPULATED",
     "authority": "PRIMARY",
     "sourceReference": "Batch 2 — WATER: Scottish Water",
     "suitability": "PRIMARY_CONTROLLED_IMPORT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Verified Edinburgh/Glasgow provider. Unmetered charges are Council Tax band based; metered charges are a separate regime. Effective periods generally run 1 April to 31 March; no specific effective dates are inferred from that general rule.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Slice 7 reviewed provider tariff facts; city eligibility is separate. Select actual council tax band and connected services; annual charges before eligible discounts/reductions. Combined total is an alternative published total, never an additional bill component. Scottish metered households are a separate unsupported path.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Provider-specific reuse/licensing remains unresolved; do not assume OGL.",
-      "Batch 2 identifies typical HTML pages and/or charge-scheme PDFs, but does not verify the exact access mechanism for this entry.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
-    ]
+      "Publication date not independently verified; charge year/effective dates retained.",
+      "Provider-specific reuse/licensing unresolved. Only controlled tariff facts retained."
+    ],
+    "sourcePeriod": "2026/27",
+    "effectiveFrom": "2026-04-01",
+    "effectiveTo": "2027-03-31",
+    "accessMechanisms": [
+      "HTML"
+    ],
+    "licenceReference": "UNRESOLVED: provider-specific reuse/redistribution; no OGL assumption"
   },
   {
     "sourceId": "SRC-005",
