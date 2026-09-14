@@ -46,3 +46,7 @@ See [production council tax](production-council-tax.md) for verified ODS/XLSX ex
 ### Slice 7 water tariffs
 
 See [production water ingestion](production-water.md) for 56 reviewed provider tariff facts, seven controlled extracts and conservative city/path applicability. Run `npm run data:water:extract` and `npm run data:water`; both support `-- --check`. Birmingham remains unresolved; Bristol is complete only for the verified standard metered split-provider path. No consumption model or bill arithmetic is implemented.
+
+### Slice 8 grocery and household-spending evidence
+
+See [production spending ingestion](production-spending.md) for Defra FYE 2024 per-person food evidence, ONS FYE 2025 source expenditure hierarchy, and separate calculated monthly equivalents. Run `npm run data:spending:extract` and `npm run data:spending`; both support `-- --check`. These are national reference artifacts, with no city budgets, household multipliers or approved Essentials/Lifestyle mapping.

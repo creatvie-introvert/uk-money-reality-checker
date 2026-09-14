@@ -1,0 +1,2834 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "family": "defra",
+  "snapshot": {
+    "snapshotId": "SRC-005-defra-20260914",
+    "sourceId": "SRC-005",
+    "sourceFormat": "ODS",
+    "retrievedAt": "2026-09-14T17:18:07Z",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+    "checksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+    "nonRetentionReason": "Only controlled source facts retained in Git; original official file captured in /tmp. OGL v3.0 except where otherwise stated."
+  },
+  "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+  "publicationDate": "2025-11-06",
+  "sourcePeriod": "FYE 2024",
+  "sourceYearLabel": "202324",
+  "importedAt": "2026-09-14T17:18:07Z",
+  "importVersion": "spending-v1",
+  "releaseStatus": "REFERENCE_ONLY",
+  "scope": "UK survey population; per-person household food and non-alcoholic drink purchases, selected category/group rows",
+  "limitations": [
+    "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+    "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+    "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+    "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+  ],
+  "supportingSources": [
+    {
+      "role": "FYE 2024 UK expenditure codebank",
+      "snapshot": {
+        "snapshotId": "SRC-005-codebank-20260914",
+        "sourceId": "SRC-005",
+        "sourceFormat": "CSV",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "retention": "METADATA_ONLY",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/68ff9e42d81972ecd2df5dca/Exp_UK_202324.csv",
+        "checksum": "sha256:aec480af434ff415aa29ce801352f55b409148ca0c3e6446702089a6cf9e0c67",
+        "nonRetentionReason": "Only controlled source facts retained in Git; original official file captured in /tmp. OGL v3.0 except where otherwise stated."
+      }
+    },
+    {
+      "role": "Official Food and drink codes definitions PDF (11 December 2014; still linked by current methodology)",
+      "snapshot": {
+        "snapshotId": "SRC-005-codebook-20260914",
+        "sourceId": "SRC-005",
+        "sourceFormat": "PDF",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "retention": "METADATA_ONLY",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/5a7ecd46ed915d74e62268be/familyfood-method-codes-11dec14.pdf",
+        "checksum": "sha256:d7e407a606248a5c6ce228ae5bd7d33c41f60852378670453b41fd33454264b6",
+        "nonRetentionReason": "Only controlled source facts retained in Git; original official file captured in /tmp. OGL v3.0 except where otherwise stated."
+      }
+    }
+  ],
+  "sourceHeaders": {
+    "table": "UK household and eating out expenditure on food and drink, Average pence per person per week [note 1]",
+    "columns": [
+      "Code",
+      "Code Level",
+      "Food Category",
+      "Food Group",
+      "Major Food Code",
+      "Minor Food Code",
+      "Units",
+      "1974",
+      "1975",
+      "1976",
+      "1977",
+      "1978",
+      "1979",
+      "1980",
+      "1981",
+      "1982",
+      "1983",
+      "1984",
+      "1985",
+      "1986",
+      "1987",
+      "1988",
+      "1989",
+      "1990",
+      "1991",
+      "1992",
+      "1993",
+      "1994",
+      "1995",
+      "1996",
+      "1997",
+      "1998",
+      "1999",
+      "2000",
+      "2001-02",
+      "2002-03",
+      "2003-04",
+      "2004-05",
+      "2005-06",
+      "2006",
+      "2007",
+      "2008",
+      "2009",
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "201516",
+      "201617",
+      "201718",
+      "201819",
+      "201920",
+      "202021",
+      "202122",
+      "202223",
+      "202324"
+    ],
+    "datasetUpdatedAt": "2026-06-19"
+  },
+  "selectionAccounting": {
+    "examinedRows": 355,
+    "selectedRows": 32,
+    "excludedRows": 323
+  },
+  "excludedRows": [
+    {
+      "sourceRow": 6,
+      "sourceCode": "t1",
+      "rawValue": "4719.4620367261596",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 7,
+      "sourceCode": "t2",
+      "rawValue": "4097.0425994451298",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 8,
+      "sourceCode": "t3",
+      "rawValue": "622.41943728103001",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 9,
+      "sourceCode": "eo90001",
+      "rawValue": "1125.4427786788001",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 10,
+      "sourceCode": "eo90002",
+      "rawValue": "867.37216016918899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 11,
+      "sourceCode": "eo90003",
+      "rawValue": "258.070618509616",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 12,
+      "sourceCode": "cat108",
+      "rawValue": "3594.0192580473599",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 14,
+      "sourceCode": "380389",
+      "rawValue": "364.34881877141402",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 15,
+      "sourceCode": "cat106",
+      "rawValue": "2945.7634690207401",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 18,
+      "sourceCode": "4",
+      "rawValue": "21.943708752050799",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 19,
+      "sourceCode": "402",
+      "rawValue": "0.220582818487598",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 20,
+      "sourceCode": "403",
+      "rawValue": "",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 21,
+      "sourceCode": "404",
+      "rawValue": "21.7231259335632",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 22,
+      "sourceCode": "501",
+      "rawValue": "",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 23,
+      "sourceCode": "601",
+      "rawValue": "",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 25,
+      "sourceCode": "15",
+      "rawValue": "62.487720888284102",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 26,
+      "sourceCode": "1502",
+      "rawValue": "7.8832182942496702",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 27,
+      "sourceCode": "1503",
+      "rawValue": "54.6045025940344",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 28,
+      "sourceCode": "901",
+      "rawValue": "1.32966462563753",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 29,
+      "sourceCode": "11",
+      "rawValue": "6.8582482127238196",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 30,
+      "sourceCode": "1102",
+      "rawValue": "0.182187250056596",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 31,
+      "sourceCode": "1103",
+      "rawValue": "6.6760609626672203",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 32,
+      "sourceCode": "1201",
+      "rawValue": "1.4641671497594699",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 33,
+      "sourceCode": "13",
+      "rawValue": "60.383168917693297",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 34,
+      "sourceCode": "1301",
+      "rawValue": "57.791275541988902",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 35,
+      "sourceCode": "1302",
+      "rawValue": "2.5918933757043798",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 36,
+      "sourceCode": "16",
+      "rawValue": "46.982062329239703",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 37,
+      "sourceCode": "1603",
+      "rawValue": "17.994013805256898",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 38,
+      "sourceCode": "1605",
+      "rawValue": "1.0809808409091599",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 39,
+      "sourceCode": "1607",
+      "rawValue": "13.129603235073899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 40,
+      "sourceCode": "1608",
+      "rawValue": "14.777464447999799",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 41,
+      "sourceCode": "17",
+      "rawValue": "10.5243322805216",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 43,
+      "sourceCode": "22",
+      "rawValue": "101.135657151597",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 44,
+      "sourceCode": "2201",
+      "rawValue": "52.317752832677797",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 45,
+      "sourceCode": "2202",
+      "rawValue": "9.2806031123177704",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 46,
+      "sourceCode": "2203",
+      "rawValue": "12.2333229494664",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 47,
+      "sourceCode": "2205",
+      "rawValue": "1.7170766250016001",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 48,
+      "sourceCode": "2206",
+      "rawValue": "25.5869016321335",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 49,
+      "sourceCode": "2301",
+      "rawValue": "9.5509153282883297",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 51,
+      "sourceCode": "31",
+      "rawValue": "88.109317379209301",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 52,
+      "sourceCode": "3102",
+      "rawValue": "0.93446099953504402",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 53,
+      "sourceCode": "3103",
+      "rawValue": "12.7148475982661",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 54,
+      "sourceCode": "3104",
+      "rawValue": "17.306368461584398",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 55,
+      "sourceCode": "3105",
+      "rawValue": "26.547538458764102",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 56,
+      "sourceCode": "3106",
+      "rawValue": "30.505846251772098",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 57,
+      "sourceCode": "3107",
+      "rawValue": "0.100255609287632",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 58,
+      "sourceCode": "36",
+      "rawValue": "22.086217149854701",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 59,
+      "sourceCode": "3601",
+      "rawValue": "9.7435952327353595E-2",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 60,
+      "sourceCode": "3602",
+      "rawValue": "10.185428761433201",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 61,
+      "sourceCode": "3603",
+      "rawValue": "6.6828908020917099",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 62,
+      "sourceCode": "3604",
+      "rawValue": "5.12046163400242",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 63,
+      "sourceCode": "41",
+      "rawValue": "25.4517086388583",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 64,
+      "sourceCode": "4101",
+      "rawValue": "7.2523123956512698",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 65,
+      "sourceCode": "4102",
+      "rawValue": "2.6660595931661502",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 66,
+      "sourceCode": "4103",
+      "rawValue": "8.1323603189078195",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 67,
+      "sourceCode": "4104",
+      "rawValue": "7.4009763311330801",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 69,
+      "sourceCode": "46",
+      "rawValue": "0.87587834731412895",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 70,
+      "sourceCode": "4603",
+      "rawValue": "7.3360879138082799E-2",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 71,
+      "sourceCode": "4604",
+      "rawValue": "0.244695561941495",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 72,
+      "sourceCode": "4605",
+      "rawValue": "5.3027857573426797E-2",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 73,
+      "sourceCode": "4607",
+      "rawValue": "0.50479404866112398",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 74,
+      "sourceCode": "51",
+      "rawValue": "1.0894139585178599",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 75,
+      "sourceCode": "55",
+      "rawValue": "37.881933492880897",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 76,
+      "sourceCode": "5502",
+      "rawValue": "10.490119002003899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 77,
+      "sourceCode": "5505",
+      "rawValue": "27.391814490877",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 78,
+      "sourceCode": "58",
+      "rawValue": "37.378190134527003",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 79,
+      "sourceCode": "59",
+      "rawValue": "32.550755183666098",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 80,
+      "sourceCode": "5903",
+      "rawValue": "21.187452172814702",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 81,
+      "sourceCode": "5904",
+      "rawValue": "11.3633030108514",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 82,
+      "sourceCode": "62",
+      "rawValue": "4.6110565881541596",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 83,
+      "sourceCode": "66",
+      "rawValue": "12.625731743858299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 84,
+      "sourceCode": "71",
+      "rawValue": "5.2744994645222398",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 85,
+      "sourceCode": "74",
+      "rawValue": "96.464647067633194",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 86,
+      "sourceCode": "77",
+      "rawValue": "11.276114007358499",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 87,
+      "sourceCode": "7703",
+      "rawValue": "8.3109342428259101",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 88,
+      "sourceCode": "7704",
+      "rawValue": "2.9651797645325702",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 89,
+      "sourceCode": "78",
+      "rawValue": "1.3176598923206799",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 90,
+      "sourceCode": "79",
+      "rawValue": "27.193158913740501",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 91,
+      "sourceCode": "80",
+      "rawValue": "1.95406252878085",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 92,
+      "sourceCode": "83",
+      "rawValue": "13.425279156053501",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 93,
+      "sourceCode": "8302",
+      "rawValue": "7.2154157461655597",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 94,
+      "sourceCode": "8303",
+      "rawValue": "6.2098634098879604",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 95,
+      "sourceCode": "84",
+      "rawValue": "28.354865645618901",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 96,
+      "sourceCode": "85",
+      "rawValue": "16.343071194591602",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 97,
+      "sourceCode": "89",
+      "rawValue": "148.20142684728401",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 98,
+      "sourceCode": "8901",
+      "rawValue": "72.170710619409604",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 99,
+      "sourceCode": "8902",
+      "rawValue": "76.030716227873995",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 100,
+      "sourceCode": "93",
+      "rawValue": "16.883574970725299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 101,
+      "sourceCode": "9301",
+      "rawValue": "2.5133194234525602",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 102,
+      "sourceCode": "9302",
+      "rawValue": "14.3702555472727",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 103,
+      "sourceCode": "94",
+      "rawValue": "0.394614563173734",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 104,
+      "sourceCode": "95",
+      "rawValue": "62.743272470602498",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 105,
+      "sourceCode": "9501",
+      "rawValue": "1.80549599969745",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 106,
+      "sourceCode": "9502",
+      "rawValue": "12.3426864076343",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 107,
+      "sourceCode": "9503",
+      "rawValue": "7.1833540589432099",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 108,
+      "sourceCode": "9504",
+      "rawValue": "3.2342834944795902",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 109,
+      "sourceCode": "9505",
+      "rawValue": "38.0822105569817",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 110,
+      "sourceCode": "9506",
+      "rawValue": "9.5241952866264204E-2",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 112,
+      "sourceCode": "102",
+      "rawValue": "14.5103857321966",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 113,
+      "sourceCode": "10201",
+      "rawValue": "11.6073429365038",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 114,
+      "sourceCode": "10202",
+      "rawValue": "2.90304279569281",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 115,
+      "sourceCode": "106",
+      "rawValue": "3.2849597795258401",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 116,
+      "sourceCode": "10601",
+      "rawValue": "2.7740612688827699",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 117,
+      "sourceCode": "10602",
+      "rawValue": "0.51089851064307701",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 118,
+      "sourceCode": "107",
+      "rawValue": "25.566999877076299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 119,
+      "sourceCode": "10701",
+      "rawValue": "23.369894818258899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 120,
+      "sourceCode": "10702",
+      "rawValue": "2.1971050588173702",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 121,
+      "sourceCode": "10801",
+      "rawValue": "12.3279700535074",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 122,
+      "sourceCode": "11401",
+      "rawValue": "1.7855389167006199",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 123,
+      "sourceCode": "117",
+      "rawValue": "14.540549360097",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 124,
+      "sourceCode": "11702",
+      "rawValue": "9.0334625605967602",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 125,
+      "sourceCode": "11703",
+      "rawValue": "5.5070867995002004",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 126,
+      "sourceCode": "118",
+      "rawValue": "11.323485526905801",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 127,
+      "sourceCode": "119",
+      "rawValue": "1.66933600751768",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 128,
+      "sourceCode": "120",
+      "rawValue": "15.1139870841318",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 129,
+      "sourceCode": "121",
+      "rawValue": "43.733527644280002",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 130,
+      "sourceCode": "123",
+      "rawValue": "6.8255452021630596",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 131,
+      "sourceCode": "12304",
+      "rawValue": "1.52897360209949",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 132,
+      "sourceCode": "12305",
+      "rawValue": "5.2965716000635696",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 135,
+      "sourceCode": "13501",
+      "rawValue": "24.2666849903075",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 136,
+      "sourceCode": "138",
+      "rawValue": "12.761131772681701",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 137,
+      "sourceCode": "13801",
+      "rawValue": "12.239619757953101",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 138,
+      "sourceCode": "13802",
+      "rawValue": "0.52151201472861497",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 139,
+      "sourceCode": "139",
+      "rawValue": "0.25113630670825998",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 140,
+      "sourceCode": "143",
+      "rawValue": "20.454632079766299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 141,
+      "sourceCode": "14304",
+      "rawValue": "11.0638019388182",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 142,
+      "sourceCode": "14305",
+      "rawValue": "9.3908301409480508",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 143,
+      "sourceCode": "148",
+      "rawValue": "12.1793374336736",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 144,
+      "sourceCode": "14802",
+      "rawValue": "5.8547899563599204",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 145,
+      "sourceCode": "14803",
+      "rawValue": "2.24756018578893",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 146,
+      "sourceCode": "14805",
+      "rawValue": "0.66571024331778605",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 147,
+      "sourceCode": "14807",
+      "rawValue": "3.4112770482069701",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 149,
+      "sourceCode": "150",
+      "rawValue": "8.6356275049234501",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 150,
+      "sourceCode": "151",
+      "rawValue": "6.0083330457824999",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 151,
+      "sourceCode": "152",
+      "rawValue": "1.56885492316909",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 152,
+      "sourceCode": "153",
+      "rawValue": "2.5990052533879",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 153,
+      "sourceCode": "154",
+      "rawValue": "5.3999529165561997",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 157,
+      "sourceCode": "155155",
+      "rawValue": "28.031097120163199",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 158,
+      "sourceCode": "15505",
+      "rawValue": "5.52191656186735",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 159,
+      "sourceCode": "15506",
+      "rawValue": "5.52485366289803",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 160,
+      "sourceCode": "15504",
+      "rawValue": "16.9843268953978",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 162,
+      "sourceCode": "197",
+      "rawValue": "40.449086210139299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 163,
+      "sourceCode": "19702",
+      "rawValue": "21.030922858484001",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 164,
+      "sourceCode": "19703",
+      "rawValue": "19.418163351655402",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 165,
+      "sourceCode": "198",
+      "rawValue": "0.247608247954026",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 166,
+      "sourceCode": "199",
+      "rawValue": "0.32919156891304402",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 167,
+      "sourceCode": "200",
+      "rawValue": "61.575850431097798",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 168,
+      "sourceCode": "201",
+      "rawValue": "16.4662735295075",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 172,
+      "sourceCode": "16201",
+      "rawValue": "5.4309869324375404",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 173,
+      "sourceCode": "16301",
+      "rawValue": "1.8241824650907299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 174,
+      "sourceCode": "16401",
+      "rawValue": "11.342576459480201",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 175,
+      "sourceCode": "167",
+      "rawValue": "19.4343457969219",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 176,
+      "sourceCode": "16701",
+      "rawValue": "8.3474229501546997",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 177,
+      "sourceCode": "16702",
+      "rawValue": "11.0869228467672",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 178,
+      "sourceCode": "168",
+      "rawValue": "1.57093186419009",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 179,
+      "sourceCode": "169",
+      "rawValue": "5.49921053390905",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 180,
+      "sourceCode": "171",
+      "rawValue": "6.7243342323673998",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 182,
+      "sourceCode": "172",
+      "rawValue": "6.9776762270785397",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 183,
+      "sourceCode": "173",
+      "rawValue": "0.91893640849369496",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 184,
+      "sourceCode": "174",
+      "rawValue": "9.0125488475759994",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 185,
+      "sourceCode": "175",
+      "rawValue": "17.247820222667102",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 186,
+      "sourceCode": "176",
+      "rawValue": "9.9258997841751793",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 187,
+      "sourceCode": "177",
+      "rawValue": "11.4333252543629",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 188,
+      "sourceCode": "178",
+      "rawValue": "26.0444677797569",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 189,
+      "sourceCode": "183",
+      "rawValue": "53.727374028612601",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 190,
+      "sourceCode": "18301",
+      "rawValue": "7.3877591145832904",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 191,
+      "sourceCode": "18302",
+      "rawValue": "10.211908917911099",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 192,
+      "sourceCode": "18303",
+      "rawValue": "26.671065361379998",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 193,
+      "sourceCode": "18304",
+      "rawValue": "9.4566406347381609",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 195,
+      "sourceCode": "184",
+      "rawValue": "7.1578214761321002",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 196,
+      "sourceCode": "185",
+      "rawValue": "1.44800146501247",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 197,
+      "sourceCode": "188",
+      "rawValue": "15.001919822134701",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 198,
+      "sourceCode": "18802",
+      "rawValue": "10.3625176555331",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 199,
+      "sourceCode": "18803",
+      "rawValue": "4.6394021666016201",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 200,
+      "sourceCode": "191",
+      "rawValue": "6.0970906928788802",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 201,
+      "sourceCode": "192",
+      "rawValue": "2.6027140185657802",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 202,
+      "sourceCode": "195",
+      "rawValue": "0.44245595153691503",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 203,
+      "sourceCode": "196",
+      "rawValue": "3.4029711627412702",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 204,
+      "sourceCode": "19602",
+      "rawValue": "2.5605511644396901",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 205,
+      "sourceCode": "19603",
+      "rawValue": "0.84241999830158298",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 206,
+      "sourceCode": "203",
+      "rawValue": "4.0586798718066097",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 207,
+      "sourceCode": "204",
+      "rawValue": "0.31708751482791298",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 208,
+      "sourceCode": "206",
+      "rawValue": "59.4001076354917",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 209,
+      "sourceCode": "20601",
+      "rawValue": "47.608202219617603",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 210,
+      "sourceCode": "20604",
+      "rawValue": "11.791905415874",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 211,
+      "sourceCode": "208",
+      "rawValue": "7.8377327376227202",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 214,
+      "sourceCode": "210",
+      "rawValue": "8.0324609233526907",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 215,
+      "sourceCode": "214",
+      "rawValue": "16.9909608526605",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 216,
+      "sourceCode": "217",
+      "rawValue": "23.3959431013838",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 217,
+      "sourceCode": "218",
+      "rawValue": "6.2095772992515403",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 218,
+      "sourceCode": "221",
+      "rawValue": "26.807292844288899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 219,
+      "sourceCode": "222",
+      "rawValue": "20.687521656802399",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 220,
+      "sourceCode": "227",
+      "rawValue": "54.239911575523998",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 221,
+      "sourceCode": "228",
+      "rawValue": "21.482826164315",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 222,
+      "sourceCode": "229",
+      "rawValue": "6.4776793443368996",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 223,
+      "sourceCode": "231",
+      "rawValue": "11.1346859397882",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 225,
+      "sourceCode": "233",
+      "rawValue": "1.682554261058",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 226,
+      "sourceCode": "236",
+      "rawValue": "4.8457018413985704",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 227,
+      "sourceCode": "240",
+      "rawValue": "7.3740900689862796",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 228,
+      "sourceCode": "241",
+      "rawValue": "3.4963057002389002",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 229,
+      "sourceCode": "245",
+      "rawValue": "36.1627899500293",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 230,
+      "sourceCode": "24502",
+      "rawValue": "31.640146386243099",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 231,
+      "sourceCode": "24503",
+      "rawValue": "4.5226435637861604",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 232,
+      "sourceCode": "248",
+      "rawValue": "34.067775836870602",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 234,
+      "sourceCode": "cat850",
+      "rawValue": "26.232868182227001",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 235,
+      "sourceCode": "251",
+      "rawValue": "2.1717513243208901",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 236,
+      "sourceCode": "252",
+      "rawValue": "21.899481747214601",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 237,
+      "sourceCode": "257",
+      "rawValue": "1.2646544068648899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 238,
+      "sourceCode": "258",
+      "rawValue": "0.89698070382657302",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 239,
+      "sourceCode": "cat851",
+      "rawValue": "17.755703823309801",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 240,
+      "sourceCode": "259",
+      "rawValue": "3.8576884558482698",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 241,
+      "sourceCode": "260",
+      "rawValue": "13.8980153674615",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 242,
+      "sourceCode": "263",
+      "rawValue": "91.351905803146806",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 243,
+      "sourceCode": "26302",
+      "rawValue": "12.7302980211193",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 244,
+      "sourceCode": "26303",
+      "rawValue": "2.9825311419934102",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 245,
+      "sourceCode": "26304",
+      "rawValue": "9.0224366673867102",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 246,
+      "sourceCode": "26305",
+      "rawValue": "1.04364129905517",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 247,
+      "sourceCode": "26308",
+      "rawValue": "33.434680124637303",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 248,
+      "sourceCode": "26309",
+      "rawValue": "20.551280183865799",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 249,
+      "sourceCode": "26310",
+      "rawValue": "7.4159462025644203",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 250,
+      "sourceCode": "26311",
+      "rawValue": "4.1710921625247401",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 253,
+      "sourceCode": "267",
+      "rawValue": "28.0229962609647",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 254,
+      "sourceCode": "270",
+      "rawValue": "75.263202196836303",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 255,
+      "sourceCode": "27001",
+      "rawValue": "71.563162254717994",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 256,
+      "sourceCode": "27002",
+      "rawValue": "3.7000399421182602",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 258,
+      "sourceCode": "27101",
+      "rawValue": "4.7984997285990101",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 259,
+      "sourceCode": "274",
+      "rawValue": "54.307346019081898",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 260,
+      "sourceCode": "27402",
+      "rawValue": "45.265846624610901",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 261,
+      "sourceCode": "27403",
+      "rawValue": "9.0414993944709607",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 262,
+      "sourceCode": "277",
+      "rawValue": "39.863499553653703",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 264,
+      "sourceCode": "281",
+      "rawValue": "5.9973146865632101",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 265,
+      "sourceCode": "282",
+      "rawValue": "44.046014367370098",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 266,
+      "sourceCode": "28202",
+      "rawValue": "9.0910400921441994",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 267,
+      "sourceCode": "28203",
+      "rawValue": "15.1821750401971",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 268,
+      "sourceCode": "28204",
+      "rawValue": "13.2029703210516",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 269,
+      "sourceCode": "28205",
+      "rawValue": "6.5698289139771902",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 270,
+      "sourceCode": "285",
+      "rawValue": "5.51922790986798",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 271,
+      "sourceCode": "28502",
+      "rawValue": "3.7658135514619802",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 272,
+      "sourceCode": "28503",
+      "rawValue": "1.753414358406",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 273,
+      "sourceCode": "286",
+      "rawValue": "7.5375853589641304",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 274,
+      "sourceCode": "287",
+      "rawValue": "30.5527682122115",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 275,
+      "sourceCode": "28702",
+      "rawValue": "11.616089714223101",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 276,
+      "sourceCode": "28703",
+      "rawValue": "9.6474306180084195",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 277,
+      "sourceCode": "28704",
+      "rawValue": "9.2892478799800298",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 278,
+      "sourceCode": "290",
+      "rawValue": "16.9175836933161",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 279,
+      "sourceCode": "291",
+      "rawValue": "1.57243519414874",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 280,
+      "sourceCode": "294",
+      "rawValue": "3.0129282727576601",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 281,
+      "sourceCode": "295",
+      "rawValue": "26.198270614902",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 282,
+      "sourceCode": "29501",
+      "rawValue": "2.88620647483584",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 283,
+      "sourceCode": "29502",
+      "rawValue": "21.671424294902799",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 284,
+      "sourceCode": "29503",
+      "rawValue": "1.6406398451633899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 285,
+      "sourceCode": "296",
+      "rawValue": "76.129422062730896",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 286,
+      "sourceCode": "29601",
+      "rawValue": "42.550231077948702",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 287,
+      "sourceCode": "29602",
+      "rawValue": "33.579190984782102",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 288,
+      "sourceCode": "299",
+      "rawValue": "70.598848456262004",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 289,
+      "sourceCode": "29907",
+      "rawValue": "2.1972837148529498",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 290,
+      "sourceCode": "29909",
+      "rawValue": "25.774454150370001",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 291,
+      "sourceCode": "29915",
+      "rawValue": "6.4885061184911903",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 292,
+      "sourceCode": "29916",
+      "rawValue": "1.22296823471908",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 293,
+      "sourceCode": "29919",
+      "rawValue": "34.915636237828799",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 294,
+      "sourceCode": "301",
+      "rawValue": "2.6905535398349301",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 296,
+      "sourceCode": "304",
+      "rawValue": "18.3070050385559",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 297,
+      "sourceCode": "307",
+      "rawValue": "22.6360809141032",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 298,
+      "sourceCode": "308",
+      "rawValue": "22.893191059271999",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 299,
+      "sourceCode": "309",
+      "rawValue": "5.5042239042542497E-2",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 300,
+      "sourceCode": "310",
+      "rawValue": "2.6277570422557899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 301,
+      "sourceCode": "312",
+      "rawValue": "5.1396221227679604",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 302,
+      "sourceCode": "313",
+      "rawValue": "0.83327945085924404",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 304,
+      "sourceCode": "314",
+      "rawValue": "18.633003759541602",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 305,
+      "sourceCode": "315",
+      "rawValue": "3.8961104140856899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 306,
+      "sourceCode": "318",
+      "rawValue": "13.924486775289701",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 307,
+      "sourceCode": "319",
+      "rawValue": "2.0894511167231302",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 308,
+      "sourceCode": "320",
+      "rawValue": "0.51200776327397401",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 309,
+      "sourceCode": "321",
+      "rawValue": "0.73125241033588095",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 310,
+      "sourceCode": "322",
+      "rawValue": "4.8585938453350803E-2",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 311,
+      "sourceCode": "323",
+      "rawValue": "24.981926969585299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 312,
+      "sourceCode": "32302",
+      "rawValue": "18.568639204999901",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 313,
+      "sourceCode": "32303",
+      "rawValue": "6.4132877645853803",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 314,
+      "sourceCode": "327",
+      "rawValue": "55.397099302605",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 315,
+      "sourceCode": "32702",
+      "rawValue": "4.1906121362345496",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 316,
+      "sourceCode": "32703",
+      "rawValue": "49.078816799207701",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 317,
+      "sourceCode": "32704",
+      "rawValue": "2.1276703671627302",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 318,
+      "sourceCode": "328",
+      "rawValue": "4.4052996008232803",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 319,
+      "sourceCode": "329",
+      "rawValue": "1.8278297395515199",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 320,
+      "sourceCode": "332",
+      "rawValue": "12.7699769686003",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 321,
+      "sourceCode": "333",
+      "rawValue": "25.799878477834898",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 322,
+      "sourceCode": "33302",
+      "rawValue": "17.0537765325663",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 323,
+      "sourceCode": "33303",
+      "rawValue": "6.4443541831191897",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 324,
+      "sourceCode": "33304",
+      "rawValue": "2.3017477621493398",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 325,
+      "sourceCode": "334",
+      "rawValue": "2.8680072955788698",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 326,
+      "sourceCode": "335",
+      "rawValue": "1.09312913572603",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 327,
+      "sourceCode": "336",
+      "rawValue": "35.159168531313199",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 328,
+      "sourceCode": "33602",
+      "rawValue": "1.94065669240882",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 329,
+      "sourceCode": "33603",
+      "rawValue": "13.7500246090736",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 330,
+      "sourceCode": "33604",
+      "rawValue": "10.372360655399101",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 331,
+      "sourceCode": "33605",
+      "rawValue": "1.50456733918226",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 332,
+      "sourceCode": "33606",
+      "rawValue": "2.9812529781111299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 333,
+      "sourceCode": "33607",
+      "rawValue": "4.6103062571382099",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 334,
+      "sourceCode": "339",
+      "rawValue": "8.3973826891147194",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 336,
+      "sourceCode": "340",
+      "rawValue": "6.4819816544889299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 337,
+      "sourceCode": "341",
+      "rawValue": "53.762305636670199",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 338,
+      "sourceCode": "343",
+      "rawValue": "10.43901051374",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 339,
+      "sourceCode": "344",
+      "rawValue": "69.942089897332394",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 341,
+      "sourceCode": "350",
+      "rawValue": "45.869699356799103",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 342,
+      "sourceCode": "351",
+      "rawValue": "57.666601512291699",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 343,
+      "sourceCode": "352",
+      "rawValue": "4.4743623219894602",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 344,
+      "sourceCode": "353",
+      "rawValue": "32.319013428789702",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 345,
+      "sourceCode": "35301",
+      "rawValue": "2.1240922838526499",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 346,
+      "sourceCode": "35302",
+      "rawValue": "30.194921144937101",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 347,
+      "sourceCode": "354",
+      "rawValue": "2.7760070292288899",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 348,
+      "sourceCode": "355",
+      "rawValue": "0.175898903867478",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 349,
+      "sourceCode": "380389",
+      "rawValue": "364.34881877141402",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 350,
+      "sourceCode": "381",
+      "rawValue": "31.4527430776571",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 351,
+      "sourceCode": "382",
+      "rawValue": "53.640366993176599",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 352,
+      "sourceCode": "383",
+      "rawValue": "16.865032598785",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 353,
+      "sourceCode": "384",
+      "rawValue": "175.00393262174299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 354,
+      "sourceCode": "38402",
+      "rawValue": "22.329133646609598",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 355,
+      "sourceCode": "38403",
+      "rawValue": "152.674798975133",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 356,
+      "sourceCode": "385",
+      "rawValue": "2.8197629657902299",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 357,
+      "sourceCode": "386",
+      "rawValue": "3.5393586699786499",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 358,
+      "sourceCode": "387",
+      "rawValue": "68.006160206092204",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 359,
+      "sourceCode": "388",
+      "rawValue": "12.230146401077301",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    },
+    {
+      "sourceRow": 360,
+      "sourceCode": "389",
+      "rawValue": "0.79131523711438101",
+      "reason": "OUTSIDE_SELECTED_CATEGORY_GROUP_SCOPE"
+    }
+  ],
+  "rows": [
+    {
+      "sourceCategoryCode": "cat105",
+      "sourceCategoryLabel": "Food and non-alcoholic drinks purchases for household supplies",
+      "codeLevel": 1,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Food and non-alcoholic drinks purchases for household supplies",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "3229.6704392759402",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 13,
+      "sourceCell": "BF13",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 463,
+        "codeDescription": "Food and drink excluding alcoholic drinks",
+        "rawEstimate": "3229.670439275942"
+      }
+    },
+    {
+      "sourceCategoryCode": "cat520",
+      "sourceCategoryLabel": "Milk and milk products excluding cheese",
+      "codeLevel": 1,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Milk and milk products excluding cheese",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "211.97307315590999",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 16,
+      "sourceCell": "BF16",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 469,
+        "codeDescription": "Milk and cream",
+        "rawEstimate": "211.9730731559103"
+      }
+    },
+    {
+      "sourceCategoryCode": "4006",
+      "sourceCategoryLabel": "Liquid wholemilk, including school and welfare",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Liquid wholemilk, including school and welfare",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "21.943708752050799",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 17,
+      "sourceCell": "BF17",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 435,
+        "codeDescription": "Liquid whole milk (including welfare and school milk)",
+        "rawEstimate": "21.94370875205081"
+      }
+    },
+    {
+      "sourceCategoryCode": "9017",
+      "sourceCategoryLabel": "Other milk and cream",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Other milk and cream",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "190.02936440385901",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 24,
+      "sourceCell": "BF24",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 436,
+        "codeDescription": "Other milk and cream",
+        "rawEstimate": "190.0293644038595"
+      }
+    },
+    {
+      "sourceCategoryCode": "22023",
+      "sourceCategoryLabel": "Cheese",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Cheese",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "110.686572479885",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 42,
+      "sourceCell": "BF42",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 437,
+        "codeDescription": "Cheese",
+        "rawEstimate": "110.68657247988531"
+      }
+    },
+    {
+      "sourceCategoryCode": "31041",
+      "sourceCategoryLabel": "Carcase meat",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Carcase meat",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "135.647243167922",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 50,
+      "sourceCell": "BF50",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 438,
+        "codeDescription": "Carcase meat",
+        "rawEstimate": "135.6472431679223"
+      }
+    },
+    {
+      "sourceCategoryCode": "46095",
+      "sourceCategoryLabel": "Non-carcase meat and meat products",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Non-carcase meat and meat products",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "556.83920617132401",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 68,
+      "sourceCell": "BF68",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 439,
+        "codeDescription": "Non-carcase meat and meat products",
+        "rawEstimate": "556.8392061713236"
+      }
+    },
+    {
+      "sourceCategoryCode": "100123",
+      "sourceCategoryLabel": "Fish",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Fish",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "150.682285184102",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 111,
+      "sourceCell": "BF111",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 440,
+        "codeDescription": "Fish",
+        "rawEstimate": "150.68228518410208"
+      }
+    },
+    {
+      "sourceCategoryCode": "12901",
+      "sourceCategoryLabel": "Eggs",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Eggs",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "42.807644211712699",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 133,
+      "sourceCell": "BF133",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 87,
+        "codeDescription": "Eggs",
+        "rawEstimate": "42.80764421171274"
+      }
+    },
+    {
+      "sourceCategoryCode": "135148",
+      "sourceCategoryLabel": "Fats",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Fats",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "69.912922583137401",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 134,
+      "sourceCell": "BF134",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 442,
+        "codeDescription": "Fats",
+        "rawEstimate": "69.91292258313737"
+      }
+    },
+    {
+      "sourceCategoryCode": "150154",
+      "sourceCategoryLabel": "Sugar and preserves",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Sugar and preserves",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "24.2117736438191",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 148,
+      "sourceCell": "BF148",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 443,
+        "codeDescription": "Sugar and preserves",
+        "rawEstimate": "24.21177364381914"
+      }
+    },
+    {
+      "sourceCategoryCode": "t4",
+      "sourceCategoryLabel": "Fresh and processed fruit and vegetables, including potatoes",
+      "codeLevel": 1,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Fresh and processed fruit and vegetables, including potatoes",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "725.06838365393105",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 154,
+      "sourceCell": "BF154",
+      "codebank": {
+        "status": "ODS_PUBLISHED_COMPOSITE",
+        "explanation": "Published ODS t4 aggregate has no corresponding UK codebank row; retained directly from ODS, not calculated by UKMR."
+      }
+    },
+    {
+      "sourceCategoryCode": "cat730",
+      "sourceCategoryLabel": "Fresh and processed vegetables, including potatoes",
+      "codeLevel": 1,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Fresh and processed vegetables, including potatoes",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "441.98030629364598",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 155,
+      "sourceCell": "BF155",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 489,
+        "codeDescription": "ALL VEGETABLES (INCLUDING POTATOES)",
+        "rawEstimate": "441.98030629364575"
+      }
+    },
+    {
+      "sourceCategoryCode": "cat701",
+      "sourceCategoryLabel": "Fresh and processed potatoes",
+      "codeLevel": 1,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Fresh and processed potatoes",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "147.09910710777501",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 156,
+      "sourceCell": "BF156",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 482,
+        "codeDescription": "Fresh and processed potatoes",
+        "rawEstimate": "147.09910710777493"
+      }
+    },
+    {
+      "sourceCategoryCode": "cat710",
+      "sourceCategoryLabel": "Processed potatoes",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Processed potatoes",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "119.068009987612",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 161,
+      "sourceCell": "BF161",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 487,
+        "codeDescription": "TOTAL PROCESSED POTATOES (EXC FRESH)",
+        "rawEstimate": "119.06800998761176"
+      }
+    },
+    {
+      "sourceCategoryCode": "cat811",
+      "sourceCategoryLabel": "Fresh and processed fruit and vegetables, excluding potatoes",
+      "codeLevel": 1,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Fresh and processed fruit and vegetables, excluding potatoes",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "577.96927654615604",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 169,
+      "sourceCell": "BF169",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 496,
+        "codeDescription": "ALL FRUIT AND VEGETABLES (EXC FRESH AND PROCESSED POTATOES)",
+        "rawEstimate": "577.9692765461564"
+      }
+    },
+    {
+      "sourceCategoryCode": "cat720",
+      "sourceCategoryLabel": "Fresh and processed vegetables, excluding potatoes",
+      "codeLevel": 1,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Fresh and processed vegetables, excluding potatoes",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "294.88119918587103",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 170,
+      "sourceCell": "BF170",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 488,
+        "codeDescription": "TOTAL OTHER VEGETABLES (EXC FRESH & PROCESSED POTATOES)",
+        "rawEstimate": "294.8811991858708"
+      }
+    },
+    {
+      "sourceCategoryCode": "162171",
+      "sourceCategoryLabel": "Fresh green vegetables",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Fresh green vegetables",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "51.826568284396899",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 171,
+      "sourceCell": "BF171",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 445,
+        "codeDescription": "Fresh green vegetables",
+        "rawEstimate": "51.82656828439693"
+      }
+    },
+    {
+      "sourceCategoryCode": "172183",
+      "sourceCategoryLabel": "Other fresh vegetables",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Other fresh vegetables",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "135.28804855272301",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 181,
+      "sourceCell": "BF181",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 446,
+        "codeDescription": "Other fresh vegetables",
+        "rawEstimate": "135.2880485527228"
+      }
+    },
+    {
+      "sourceCategoryCode": "cat702",
+      "sourceCategoryLabel": "Processed vegetables excluding processed potatoes",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Processed vegetables excluding processed potatoes",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "107.766582348751",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 194,
+      "sourceCell": "BF194",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 483,
+        "codeDescription": "PROCESSED VEGETABLES EXCLUDING PROCESSED POTATOES",
+        "rawEstimate": "107.76658234875109"
+      }
+    },
+    {
+      "sourceCategoryCode": "cat810",
+      "sourceCategoryLabel": "Fresh and processed fruit",
+      "codeLevel": 1,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Fresh and processed fruit",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "283.08807736028598",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 212,
+      "sourceCell": "BF212",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 495,
+        "codeDescription": "TOTAL FRUIT (FRESH & PROCESSED)",
+        "rawEstimate": "283.0880773602856"
+      }
+    },
+    {
+      "sourceCategoryCode": "210231",
+      "sourceCategoryLabel": "Fresh fruit",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Fresh fruit",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "195.458859701704",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 213,
+      "sourceCell": "BF213",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 448,
+        "codeDescription": "Fresh fruit",
+        "rawEstimate": "195.458859701704"
+      }
+    },
+    {
+      "sourceCategoryCode": "233248",
+      "sourceCategoryLabel": "Processed fruit and fruit products",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Processed fruit and fruit products",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "87.629217658581595",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 224,
+      "sourceCell": "BF224",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 449,
+        "codeDescription": "Processed fruit and fruit products",
+        "rawEstimate": "87.62921765858161"
+      }
+    },
+    {
+      "sourceCategoryCode": "251263",
+      "sourceCategoryLabel": "Bread",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "Bread",
+        "foodGroup": "",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "135.340477808684",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 233,
+      "sourceCell": "BF233",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 450,
+        "codeDescription": "Bread",
+        "rawEstimate": "135.3404778086836"
+      }
+    },
+    {
+      "sourceCategoryCode": "26401",
+      "sourceCategoryLabel": "Flour",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Flour",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "4.5388160769583203",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 251,
+      "sourceCell": "BF251",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 176,
+        "codeDescription": "Flour",
+        "rawEstimate": "4.538816076958322"
+      }
+    },
+    {
+      "sourceCategoryCode": "267270",
+      "sourceCategoryLabel": "Cakes, buns and pastries",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Cakes, buns and pastries",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "103.28619845780101",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 252,
+      "sourceCell": "BF252",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 452,
+        "codeDescription": "Cakes, buns and pastries",
+        "rawEstimate": "103.28619845780094"
+      }
+    },
+    {
+      "sourceCategoryCode": "271277",
+      "sourceCategoryLabel": "Biscuits and crispbreads",
+      "codeLevel": 1,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Biscuits and crispbreads",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "98.969345301334599",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 257,
+      "sourceCell": "BF257",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 453,
+        "codeDescription": "Biscuits and crispbreads",
+        "rawEstimate": "98.96934530133457"
+      }
+    },
+    {
+      "sourceCategoryCode": "281301",
+      "sourceCategoryLabel": "Other cereals and cereal products",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Other cereals and cereal products",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "290.772952368929",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 263,
+      "sourceCell": "BF263",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 454,
+        "codeDescription": "Other cereals and cereal products",
+        "rawEstimate": "290.7729523689292"
+      }
+    },
+    {
+      "sourceCategoryCode": "304313",
+      "sourceCategoryLabel": "Beverages",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Beverages",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "72.491977866856701",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 295,
+      "sourceCell": "BF295",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 455,
+        "codeDescription": "Beverages",
+        "rawEstimate": "72.49197786685667"
+      }
+    },
+    {
+      "sourceCategoryCode": "314339",
+      "sourceCategoryLabel": "Other food and drink",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Other food and drink",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "212.534596888436",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 303,
+      "sourceCell": "BF303",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 456,
+        "codeDescription": "Other foods",
+        "rawEstimate": "212.5345968884363"
+      }
+    },
+    {
+      "sourceCategoryCode": "340344",
+      "sourceCategoryLabel": "Soft drinks",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Soft drinks",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "140.62538770223199",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 335,
+      "sourceCell": "BF335",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 457,
+        "codeDescription": "Soft drinks",
+        "rawEstimate": "140.62538770223156"
+      }
+    },
+    {
+      "sourceCategoryCode": "350355",
+      "sourceCategoryLabel": "Confectionery",
+      "codeLevel": 2,
+      "sourceHierarchyLabels": {
+        "foodCategory": "",
+        "foodGroup": "Confectionery",
+        "majorFoodCode": "",
+        "minorFoodCode": ""
+      },
+      "rawWeeklyValue": "143.281582552966",
+      "sourceUnit": "pence/person/week",
+      "sourcePeriod": "FYE 2024",
+      "population": "UK survey population",
+      "sourceSheet": "expenditure",
+      "sourceRow": 340,
+      "sourceCell": "BF340",
+      "codebank": {
+        "status": "RECONCILED",
+        "sourceRow": 458,
+        "codeDescription": "Confectionery",
+        "rawEstimate": "143.28158255296637"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3724 @@
+{
+  "kind": "REFERENCE_ARTIFACT",
+  "manifest": {
+    "releaseId": "ukmr-household-spending-fye2025-v1",
+    "schemaVersion": "1.6.0",
+    "generatedAt": "2026-09-14T17:18:07Z",
+    "sourceSnapshotIds": [
+      "SRC-006-ons-20260914"
+    ],
+    "recordCount": 53
+  },
+  "records": [
+    {
+      "recordId": "SRC-006:A1:1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G17; sequential item 1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "1",
+        "sourceCategoryLabel": "Food & non-alcoholic drinks",
+        "rawWeeklyValue": "73.70",
+        "sourceSheet": "A1",
+        "sourceRow": 17,
+        "sourceCell": "G17",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "1",
+      "coicopLabel": "Food & non-alcoholic drinks",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 73.7,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:1.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G19; sequential item 1.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "1.1",
+        "sourceCategoryLabel": "Food ",
+        "rawWeeklyValue": "67.30",
+        "sourceSheet": "A1",
+        "sourceRow": 19,
+        "sourceCell": "G19",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "1",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "1.1000000000000001",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "1.1",
+      "coicopLabel": "Food ",
+      "parentSourceCategoryCode": "1",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 67.3,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:1.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G130; sequential item 1.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "1.2",
+        "sourceCategoryLabel": "Non-alcoholic drinks",
+        "rawWeeklyValue": "6.40",
+        "sourceSheet": "A1",
+        "sourceRow": 130,
+        "sourceCell": "G130",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "1",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "1.2",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "1.2",
+      "coicopLabel": "Non-alcoholic drinks",
+      "parentSourceCategoryCode": "1",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 6.4,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:10:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G606; sequential item 10",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "10",
+        "sourceCategoryLabel": "Education",
+        "rawWeeklyValue": "8.70",
+        "sourceSheet": "A1",
+        "sourceRow": 606,
+        "sourceCell": "G606",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "10",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "10",
+      "coicopLabel": "Education",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 8.7,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:10.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G608; sequential item 10.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "10.1",
+        "sourceCategoryLabel": "Education fees",
+        "rawWeeklyValue": "8.20",
+        "sourceSheet": "A1",
+        "sourceRow": 608,
+        "sourceCell": "G608",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "10",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "10.1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "10.1",
+      "coicopLabel": "Education fees",
+      "parentSourceCategoryCode": "10",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 8.2,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:10.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G615; sequential item 10.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "10.2",
+        "sourceCategoryLabel": "Payments for school trips, other ad-hoc expenditure",
+        "rawWeeklyValue": "0.50",
+        "sourceSheet": "A1",
+        "sourceRow": 615,
+        "sourceCell": "G615",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "10",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "10.199999999999999",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "10.2",
+      "coicopLabel": "Payments for school trips, other ad-hoc expenditure",
+      "parentSourceCategoryCode": "10",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 0.5,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:11:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G647; sequential item 11",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "11",
+        "sourceCategoryLabel": "Restaurants & hotels",
+        "rawWeeklyValue": "49.20",
+        "sourceSheet": "A1",
+        "sourceRow": 647,
+        "sourceCell": "G647",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "11",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "11",
+      "coicopLabel": "Restaurants & hotels",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 49.2,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:11.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G649; sequential item 11.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "11.1",
+        "sourceCategoryLabel": "Catering services",
+        "rawWeeklyValue": "34.60",
+        "sourceSheet": "A1",
+        "sourceRow": 649,
+        "sourceCell": "G649",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "11",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "11.1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "11.1",
+      "coicopLabel": "Catering services",
+      "parentSourceCategoryCode": "11",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 34.6,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:11.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G666; sequential item 11.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "11.2",
+        "sourceCategoryLabel": "Accommodation services",
+        "rawWeeklyValue": "14.60",
+        "sourceSheet": "A1",
+        "sourceRow": 666,
+        "sourceCell": "G666",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "11",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "11.2",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "11.2",
+      "coicopLabel": "Accommodation services",
+      "parentSourceCategoryCode": "11",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 14.6,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:12:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G672; sequential item 12",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "12",
+        "sourceCategoryLabel": "Miscellaneous goods and services",
+        "rawWeeklyValue": "49.80",
+        "sourceSheet": "A1",
+        "sourceRow": 672,
+        "sourceCell": "G672",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "12",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "12",
+      "coicopLabel": "Miscellaneous goods and services",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 49.8,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:12.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G674; sequential item 12.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "12.1",
+        "sourceCategoryLabel": "Personal care",
+        "rawWeeklyValue": "13.20",
+        "sourceSheet": "A1",
+        "sourceRow": 674,
+        "sourceCell": "G674",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "12",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "12.1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "12.1",
+      "coicopLabel": "Personal care",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 13.2,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:12.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G690; sequential item 12.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "12.2",
+        "sourceCategoryLabel": "Personal effects ",
+        "rawWeeklyValue": "3.50",
+        "sourceSheet": "A1",
+        "sourceRow": 690,
+        "sourceCell": "G690",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "12",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "12.2",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "12.2",
+      "coicopLabel": "Personal effects ",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 3.5,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:12.3:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G698; sequential item 12.3",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "12.3",
+        "sourceCategoryLabel": "Social protection",
+        "rawWeeklyValue": "2.50",
+        "sourceSheet": "A1",
+        "sourceRow": 698,
+        "sourceCell": "G698",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "12",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "12.3",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "12.3",
+      "coicopLabel": "Social protection",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 2.5,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:12.4:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G727; sequential item 12.4",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "12.4",
+        "sourceCategoryLabel": "Insurance",
+        "rawWeeklyValue": "25.10",
+        "sourceSheet": "A1",
+        "sourceRow": 727,
+        "sourceCell": "G727",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "12",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "12.4",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "12.4",
+      "coicopLabel": "Insurance",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 25.1,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:12.5:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G741; sequential item 12.5",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "12.5",
+        "sourceCategoryLabel": "Other services",
+        "rawWeeklyValue": "5.50",
+        "sourceSheet": "A1",
+        "sourceRow": 741,
+        "sourceCell": "G741",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "12",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "12.5",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "12.5",
+      "coicopLabel": "Other services",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 5.5,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G139; sequential item 2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "2",
+        "sourceCategoryLabel": "Alcoholic drink, tobacco & narcotics",
+        "rawWeeklyValue": "11.30",
+        "sourceSheet": "A1",
+        "sourceRow": 139,
+        "sourceCell": "G139",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "2",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "2",
+      "coicopLabel": "Alcoholic drink, tobacco & narcotics",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 11.3,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:2.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G141; sequential item 2.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "2.1",
+        "sourceCategoryLabel": "Alcoholic drinks",
+        "rawWeeklyValue": "9.00",
+        "sourceSheet": "A1",
+        "sourceRow": 141,
+        "sourceCell": "G141",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "2",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "2.1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "2.1",
+      "coicopLabel": "Alcoholic drinks",
+      "parentSourceCategoryCode": "2",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 9,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:2.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G155; sequential item 2.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "2.2",
+        "sourceCategoryLabel": "Tobacco and narcotics",
+        "rawWeeklyValue": "2.30",
+        "sourceSheet": "A1",
+        "sourceRow": 155,
+        "sourceCell": "G155",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "2",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "2.2000000000000002",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "2.2",
+      "coicopLabel": "Tobacco and narcotics",
+      "parentSourceCategoryCode": "2",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 2.3,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:3:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G164; sequential item 3",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "3",
+        "sourceCategoryLabel": "Clothing & footwear",
+        "rawWeeklyValue": "18.00",
+        "sourceSheet": "A1",
+        "sourceRow": 164,
+        "sourceCell": "G164",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "3",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "3",
+      "coicopLabel": "Clothing & footwear",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 18,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:3.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G166; sequential item 3.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "3.1",
+        "sourceCategoryLabel": "Clothing",
+        "rawWeeklyValue": "14.60",
+        "sourceSheet": "A1",
+        "sourceRow": 166,
+        "sourceCell": "G166",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "3",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "3.1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "3.1",
+      "coicopLabel": "Clothing",
+      "parentSourceCategoryCode": "3",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 14.6,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:3.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G211; sequential item 3.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "3.2",
+        "sourceCategoryLabel": "Footwear",
+        "rawWeeklyValue": "3.30",
+        "sourceSheet": "A1",
+        "sourceRow": 211,
+        "sourceCell": "G211",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "3",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "3.2",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "3.2",
+      "coicopLabel": "Footwear",
+      "parentSourceCategoryCode": "3",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 3.3,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:4:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G218; sequential item 4",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "4",
+        "sourceCategoryLabel": "Housing(net)2, fuel & power",
+        "rawWeeklyValue": "118.40",
+        "sourceSheet": "A1",
+        "sourceRow": 218,
+        "sourceCell": "G218",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "4",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "4",
+      "coicopLabel": "Housing(net)2, fuel & power",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 118.4,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:4.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G220; sequential item 4.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "4.1",
+        "sourceCategoryLabel": "Actual rentals for housing",
+        "rawWeeklyValue": "66.80",
+        "sourceSheet": "A1",
+        "sourceRow": 220,
+        "sourceCell": "G220",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "4",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "4.0999999999999996",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "4.1",
+      "coicopLabel": "Actual rentals for housing",
+      "parentSourceCategoryCode": "4",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 66.8,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:4.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G226; sequential item 4.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "4.2",
+        "sourceCategoryLabel": "Maintenance and repair of dwelling",
+        "rawWeeklyValue": "11.90",
+        "sourceSheet": "A1",
+        "sourceRow": 226,
+        "sourceCell": "G226",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "4",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "4.2",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "4.2",
+      "coicopLabel": "Maintenance and repair of dwelling",
+      "parentSourceCategoryCode": "4",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 11.9,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:4.3:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G232; sequential item 4.3",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "4.3",
+        "sourceCategoryLabel": "Water supply and miscellaneous services relating to the dwelling",
+        "rawWeeklyValue": "12.90",
+        "sourceSheet": "A1",
+        "sourceRow": 232,
+        "sourceCell": "G232",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "4",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "4.3",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "4.3",
+      "coicopLabel": "Water supply and miscellaneous services relating to the dwelling",
+      "parentSourceCategoryCode": "4",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 12.9,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:4.4:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G237; sequential item 4.4",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "4.4",
+        "sourceCategoryLabel": "Electricity, gas and other fuels",
+        "rawWeeklyValue": "35.90",
+        "sourceSheet": "A1",
+        "sourceRow": 237,
+        "sourceCell": "G237",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "4",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "4.4000000000000004",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "4.4",
+      "coicopLabel": "Electricity, gas and other fuels",
+      "parentSourceCategoryCode": "4",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 35.9,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:5:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G247; sequential item 5",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "5",
+        "sourceCategoryLabel": "Household goods & services ",
+        "rawWeeklyValue": "40.60",
+        "sourceSheet": "A1",
+        "sourceRow": 247,
+        "sourceCell": "G247",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "5",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "5",
+      "coicopLabel": "Household goods & services ",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 40.6,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:5.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G249; sequential item 5.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "5.1",
+        "sourceCategoryLabel": "Furniture and furnishings, carpets and other floor coverings",
+        "rawWeeklyValue": "21.70",
+        "sourceSheet": "A1",
+        "sourceRow": 249,
+        "sourceCell": "G249",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "5",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "5.0999999999999996",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "5.1",
+      "coicopLabel": "Furniture and furnishings, carpets and other floor coverings",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 21.7,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:5.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G259; sequential item 5.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "5.2",
+        "sourceCategoryLabel": "Household textiles",
+        "rawWeeklyValue": "2.40",
+        "sourceSheet": "A1",
+        "sourceRow": 259,
+        "sourceCell": "G259",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "5",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "5.2",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "5.2",
+      "coicopLabel": "Household textiles",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 2.4,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:5.3:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G288; sequential item 5.3",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "5.3",
+        "sourceCategoryLabel": "Household appliances",
+        "rawWeeklyValue": "4.00",
+        "sourceSheet": "A1",
+        "sourceRow": 288,
+        "sourceCell": "G288",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "5",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "5.3",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "5.3",
+      "coicopLabel": "Household appliances",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 4,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:5.4:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G300; sequential item 5.4",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "5.4",
+        "sourceCategoryLabel": "Glassware, tableware and household utensils",
+        "rawWeeklyValue": "2.00",
+        "sourceSheet": "A1",
+        "sourceRow": 300,
+        "sourceCell": "G300",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "5",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "5.4",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "5.4",
+      "coicopLabel": "Glassware, tableware and household utensils",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 2,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:5.5:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G306; sequential item 5.5",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "5.5",
+        "sourceCategoryLabel": "Tools and equipment for house and garden",
+        "rawWeeklyValue": "2.80",
+        "sourceSheet": "A1",
+        "sourceRow": 306,
+        "sourceCell": "G306",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "5",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "5.5",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "5.5",
+      "coicopLabel": "Tools and equipment for house and garden",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 2.8,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:5.6:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G313; sequential item 5.6",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "5.6",
+        "sourceCategoryLabel": "Goods and services for routine household maintenance",
+        "rawWeeklyValue": "7.70",
+        "sourceSheet": "A1",
+        "sourceRow": 313,
+        "sourceCell": "G313",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "5",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "5.6",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "5.6",
+      "coicopLabel": "Goods and services for routine household maintenance",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 7.7,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:6:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G330; sequential item 6",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "6",
+        "sourceCategoryLabel": "Health",
+        "rawWeeklyValue": "11.90",
+        "sourceSheet": "A1",
+        "sourceRow": 330,
+        "sourceCell": "G330",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "6",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "6",
+      "coicopLabel": "Health",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 11.9,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:6.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G332; sequential item 6.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "6.1",
+        "sourceCategoryLabel": "Medical products, appliances and equipment",
+        "rawWeeklyValue": "5.60",
+        "sourceSheet": "A1",
+        "sourceRow": 332,
+        "sourceCell": "G332",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "6",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "6.1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "6.1",
+      "coicopLabel": "Medical products, appliances and equipment",
+      "parentSourceCategoryCode": "6",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 5.6,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:6.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G344; sequential item 6.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "6.2",
+        "sourceCategoryLabel": "Hospital services",
+        "rawWeeklyValue": "6.30",
+        "sourceSheet": "A1",
+        "sourceRow": 344,
+        "sourceCell": "G344",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "6",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "6.2",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "6.2",
+      "coicopLabel": "Hospital services",
+      "parentSourceCategoryCode": "6",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 6.3,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:7:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G373; sequential item 7",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "7",
+        "sourceCategoryLabel": "Transport",
+        "rawWeeklyValue": "96.40",
+        "sourceSheet": "A1",
+        "sourceRow": 373,
+        "sourceCell": "G373",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "7",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "7",
+      "coicopLabel": "Transport",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 96.4,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:7.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G375; sequential item 7.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "7.1",
+        "sourceCategoryLabel": "Purchase of vehicles",
+        "rawWeeklyValue": "37.70",
+        "sourceSheet": "A1",
+        "sourceRow": 375,
+        "sourceCell": "G375",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "7",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "7.1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "7.1",
+      "coicopLabel": "Purchase of vehicles",
+      "parentSourceCategoryCode": "7",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 37.7,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:7.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G389; sequential item 7.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "7.2",
+        "sourceCategoryLabel": "Operation of personal transport",
+        "rawWeeklyValue": "33.70",
+        "sourceSheet": "A1",
+        "sourceRow": 389,
+        "sourceCell": "G389",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "7",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "7.2",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "7.2",
+      "coicopLabel": "Operation of personal transport",
+      "parentSourceCategoryCode": "7",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 33.7,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:7.3:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G412; sequential item 7.3",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "7.3",
+        "sourceCategoryLabel": "Transport services",
+        "rawWeeklyValue": "25.00",
+        "sourceSheet": "A1",
+        "sourceRow": 412,
+        "sourceCell": "G412",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "7",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "7.3",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "7.3",
+      "coicopLabel": "Transport services",
+      "parentSourceCategoryCode": "7",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 25,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:8:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G456; sequential item 8",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "8",
+        "sourceCategoryLabel": "Communication4",
+        "rawWeeklyValue": "22.40",
+        "sourceSheet": "A1",
+        "sourceRow": 456,
+        "sourceCell": "G456",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "8",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "8",
+      "coicopLabel": "Communication4",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 22.4,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:8.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G458; sequential item 8.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "8.1",
+        "sourceCategoryLabel": "Postal services",
+        "rawWeeklyValue": "0.60",
+        "sourceSheet": "A1",
+        "sourceRow": 458,
+        "sourceCell": "G458",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "8",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "8.1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "8.1",
+      "coicopLabel": "Postal services",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 0.6,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:8.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G460; sequential item 8.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "8.2",
+        "sourceCategoryLabel": "Telephone and telefax equipment",
+        "rawWeeklyValue": "1.20",
+        "sourceSheet": "A1",
+        "sourceRow": 460,
+        "sourceCell": "G460",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "8",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "8.1999999999999993",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "8.2",
+      "coicopLabel": "Telephone and telefax equipment",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 1.2,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:8.3:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G465; sequential item 8.3",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "8.3",
+        "sourceCategoryLabel": "Telephone and telefax services",
+        "rawWeeklyValue": "9.20",
+        "sourceSheet": "A1",
+        "sourceRow": 465,
+        "sourceCell": "G465",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "8",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "8.3000000000000007",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "8.3",
+      "coicopLabel": "Telephone and telefax services",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 9.2,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:8.4:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G471; sequential item 8.4",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "8.4",
+        "sourceCategoryLabel": "Internet subscription fees (ex. combined packages)7",
+        "rawWeeklyValue": "2.70",
+        "sourceSheet": "A1",
+        "sourceRow": 471,
+        "sourceCell": "G471",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "8",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "8.4",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "8.4",
+      "coicopLabel": "Internet subscription fees (ex. combined packages)7",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 2.7,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:8.5:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G473; sequential item 8.5",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "8.5",
+        "sourceCategoryLabel": "Combined telecom services8",
+        "rawWeeklyValue": "8.70",
+        "sourceSheet": "A1",
+        "sourceRow": 473,
+        "sourceCell": "G473",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "8",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "8.5",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "8.5",
+      "coicopLabel": "Combined telecom services8",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 8.7,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:9:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G476; sequential item 9",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "9",
+        "sourceCategoryLabel": "Recreation & culture",
+        "rawWeeklyValue": "82.10",
+        "sourceSheet": "A1",
+        "sourceRow": 476,
+        "sourceCell": "G476",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": null,
+        "hierarchyLevel": 1,
+        "rawSourceCode": "9",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "9",
+      "coicopLabel": "Recreation & culture",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "profile": "All households",
+      "weeklyGbp": 82.1,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:9.1:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G478; sequential item 9.1",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "9.1",
+        "sourceCategoryLabel": "Audio-visual, photographic and information processing equipment",
+        "rawWeeklyValue": "3.90",
+        "sourceSheet": "A1",
+        "sourceRow": 478,
+        "sourceCell": "G478",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "9",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "9.1",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "9.1",
+      "coicopLabel": "Audio-visual, photographic and information processing equipment",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 3.9,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:9.2:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G499; sequential item 9.2",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "9.2",
+        "sourceCategoryLabel": "Other major durables for recreation and culture",
+        "rawWeeklyValue": "3.20",
+        "sourceSheet": "A1",
+        "sourceRow": 499,
+        "sourceCell": "G499",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "9",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "9.1999999999999993",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "9.2",
+      "coicopLabel": "Other major durables for recreation and culture",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 3.2,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:9.3:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G509; sequential item 9.3",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "9.3",
+        "sourceCategoryLabel": "Other recreational items and equipment, gardens and pets",
+        "rawWeeklyValue": "14.80",
+        "sourceSheet": "A1",
+        "sourceRow": 509,
+        "sourceCell": "G509",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "9",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "9.3000000000000007",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "9.3",
+      "coicopLabel": "Other recreational items and equipment, gardens and pets",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 14.8,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:9.4:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G559; sequential item 9.4",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "9.4",
+        "sourceCategoryLabel": "Recreational and cultural services",
+        "rawWeeklyValue": "20.80",
+        "sourceSheet": "A1",
+        "sourceRow": 559,
+        "sourceCell": "G559",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "9",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "9.4",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "9.4",
+      "coicopLabel": "Recreational and cultural services",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 20.8,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:9.5:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G594; sequential item 9.5",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "9.5",
+        "sourceCategoryLabel": "Newspapers, books and stationery",
+        "rawWeeklyValue": "4.00",
+        "sourceSheet": "A1",
+        "sourceRow": 594,
+        "sourceCell": "G594",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "9",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "9.5",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "9.5",
+      "coicopLabel": "Newspapers, books and stationery",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 4,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    },
+    {
+      "recordId": "SRC-006:A1:9.6:fye2025",
+      "dataset": "family-spending-a1-fye2025-selected",
+      "valueType": "OBSERVED_DATA",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-006",
+        "organisation": "ONS",
+        "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+        "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+        "sourceReference": "A1!G601; sequential item 9.6",
+        "sourceFormat": "XLSX",
+        "publicationDate": "2026-06-11",
+        "sourcePeriod": "FYE 2025",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-006-ons-20260914",
+        "snapshotChecksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "Published all-households weekly GBP retained at source precision. A1 identifiers are sequential, not actual COICOP codes. Parent labels/amounts are source observations, not UKMR category sums. No household-profile mapping or period arithmetic in this record.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+          "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+          "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+          "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+        ]
+      },
+      "qa": {
+        "sourceCategoryCode": "9.6",
+        "sourceCategoryLabel": "Package holidays12",
+        "rawWeeklyValue": "35.40",
+        "sourceSheet": "A1",
+        "sourceRow": 601,
+        "sourceCell": "G601",
+        "sourceUnit": "GBP/household/week",
+        "sourcePeriod": "FYE 2025",
+        "population": "All households",
+        "parentSourceCategoryCode": "9",
+        "hierarchyLevel": 2,
+        "rawSourceCode": "9.6",
+        "supportingSources": [],
+        "sourceHeaders": {
+          "table": "Detailed expenditure with full-method standard errors",
+          "period": "UK, financial year ending 2025",
+          "measure": "Average weekly expenditure all house- holds (£)",
+          "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+        }
+      },
+      "category": "coicop_expenditure",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-006"
+        }
+      },
+      "codeSystem": "ONS_A1_SEQUENTIAL",
+      "sourceCategoryCode": "9.6",
+      "coicopLabel": "Package holidays12",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "profile": "All households",
+      "weeklyGbp": 35.4,
+      "sourcePeriod": "FYE 2025",
+      "unit": "GBP/household/week"
+    }
+  ]
+}

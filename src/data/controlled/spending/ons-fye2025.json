@@ -1,0 +1,3067 @@
+{
+  "extractKind": "UKMR_CONTROLLED_EXTRACT",
+  "extractVersion": "1.0.0",
+  "family": "ons",
+  "snapshot": {
+    "snapshotId": "SRC-006-ons-20260914",
+    "sourceId": "SRC-006",
+    "sourceFormat": "XLSX",
+    "retrievedAt": "2026-09-14T17:18:07Z",
+    "retention": "METADATA_ONLY",
+    "sourceUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends/fye2025/workbook1detailedexpenditureandtrends.xlsx",
+    "checksum": "sha256:af8d4a4464c0cc0a49195495a6e665667234379ac08293037a69e065d8931076",
+    "nonRetentionReason": "Only controlled source facts retained in Git; original official file captured in /tmp. OGL v3.0 except where otherwise stated."
+  },
+  "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
+  "publicationDate": "2026-06-11",
+  "sourcePeriod": "FYE 2025",
+  "sourceYearLabel": "UK, financial year ending 2025",
+  "importedAt": "2026-09-14T17:18:07Z",
+  "importVersion": "spending-v1",
+  "releaseStatus": "REFERENCE_ONLY",
+  "scope": "UK all households; Table A1 top two sequential-numbering levels of expenditure groups 1–12",
+  "limitations": [
+    "Table A1 numbering is sequential, not actual COICOP codes. Category remains coicop_expenditure, code system is explicitly ONS_A1_SEQUENTIAL.",
+    "Parent totals and subgroups overlap and are rounded independently by ONS. Do not sum all records or substitute detailed sums for published parents.",
+    "Essentials/Lifestyle mapping is unapproved and not emitted. No OECD scale, household composition or city multiplier.",
+    "Lower-level rows, including suppressed values, and groups 13–14 are outside this selected scope, not converted to zero."
+  ],
+  "supportingSources": [],
+  "sourceHeaders": {
+    "table": "Detailed expenditure with full-method standard errors",
+    "period": "UK, financial year ending 2025",
+    "measure": "Average weekly expenditure all house- holds (£)",
+    "codeNote": "The numbering is sequential, it does not use actual COICOP codes."
+  },
+  "selectionAccounting": {
+    "examinedRows": 433,
+    "selectedRows": 53,
+    "excludedRows": 380
+  },
+  "excludedRows": [
+    {
+      "sourceRow": 20,
+      "sourceCode": "1.1.1",
+      "rawValue": "6.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 21,
+      "sourceCode": "1.1.1.1",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 22,
+      "sourceCode": "1.1.1.2",
+      "rawValue": "2.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 23,
+      "sourceCode": "1.1.1.3",
+      "rawValue": "2.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 25,
+      "sourceCode": "1.1.2",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 27,
+      "sourceCode": "1.1.3",
+      "rawValue": "5.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 28,
+      "sourceCode": "1.1.3.1",
+      "rawValue": "3.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 29,
+      "sourceCode": "1.1.3.2",
+      "rawValue": "2.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 31,
+      "sourceCode": "1.1.4",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 32,
+      "sourceCode": "1.1.5",
+      "rawValue": "2.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 33,
+      "sourceCode": "1.1.6",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 34,
+      "sourceCode": "1.1.7",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 35,
+      "sourceCode": "1.1.8",
+      "rawValue": "2.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 36,
+      "sourceCode": "1.1.9",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 38,
+      "sourceCode": "1.1.10",
+      "rawValue": "7.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 39,
+      "sourceCode": "1.1.10.1",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 40,
+      "sourceCode": "1.1.10.2",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 41,
+      "sourceCode": "1.1.10.3",
+      "rawValue": "6.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 42,
+      "sourceCode": "1.1.10.4",
+      "rawValue": "0.00~",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 44,
+      "sourceCode": "1.1.11",
+      "rawValue": "3.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 45,
+      "sourceCode": "1.1.11.1",
+      "rawValue": "1.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 46,
+      "sourceCode": "1.1.11.2",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 47,
+      "sourceCode": "1.1.11.3",
+      "rawValue": "1.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 49,
+      "sourceCode": "1.1.12",
+      "rawValue": "2.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 50,
+      "sourceCode": "1.1.12.1",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 51,
+      "sourceCode": "1.1.12.2",
+      "rawValue": "1.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 52,
+      "sourceCode": "1.1.12.3",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 54,
+      "sourceCode": "1.1.13",
+      "rawValue": "2.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 55,
+      "sourceCode": "1.1.14",
+      "rawValue": "1.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 57,
+      "sourceCode": "1.1.15",
+      "rawValue": "2.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 58,
+      "sourceCode": "1.1.15.1",
+      "rawValue": "1.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 59,
+      "sourceCode": "1.1.15.2",
+      "rawValue": "1.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 61,
+      "sourceCode": "1.1.16",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 62,
+      "sourceCode": "1.1.17",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 64,
+      "sourceCode": "1.1.18",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 65,
+      "sourceCode": "1.1.18.1",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 66,
+      "sourceCode": "1.1.18.2",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 68,
+      "sourceCode": "1.1.19",
+      "rawValue": "4.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 69,
+      "sourceCode": "1.1.19.1",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 70,
+      "sourceCode": "1.1.19.2",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 71,
+      "sourceCode": "1.1.19.3",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 72,
+      "sourceCode": "1.1.19.4",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 73,
+      "sourceCode": "1.1.19.5",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 74,
+      "sourceCode": "1.1.19.6",
+      "rawValue": "1.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 76,
+      "sourceCode": "1.1.20",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 77,
+      "sourceCode": "1.1.21",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 78,
+      "sourceCode": "1.1.22",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 80,
+      "sourceCode": "1.1.23",
+      "rawValue": "4.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 81,
+      "sourceCode": "1.1.23.1",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 82,
+      "sourceCode": "1.1.23.2",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 83,
+      "sourceCode": "1.1.23.3",
+      "rawValue": "1.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 84,
+      "sourceCode": "1.1.23.4",
+      "rawValue": "1.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 109,
+      "sourceCode": "1",
+      "rawValue": "",
+      "reason": "CONTINUATION_HEADING"
+    },
+    {
+      "sourceRow": 111,
+      "sourceCode": "1.1.24",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 112,
+      "sourceCode": "1.1.25",
+      "rawValue": "2.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 113,
+      "sourceCode": "1.1.26",
+      "rawValue": "0.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 114,
+      "sourceCode": "1.1.27",
+      "rawValue": "2.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 116,
+      "sourceCode": "1.1.28",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 117,
+      "sourceCode": "1.1.28.1",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 118,
+      "sourceCode": "1.1.28.2",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 120,
+      "sourceCode": "1.1.29",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 121,
+      "sourceCode": "1.1.30",
+      "rawValue": "2.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 122,
+      "sourceCode": "1.1.31",
+      "rawValue": "1.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 123,
+      "sourceCode": "1.1.32",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 125,
+      "sourceCode": "1.1.33",
+      "rawValue": "3.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 126,
+      "sourceCode": "1.1.33.1",
+      "rawValue": "1.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 127,
+      "sourceCode": "1.1.33.2",
+      "rawValue": "1.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 128,
+      "sourceCode": "1.1.33.3",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 131,
+      "sourceCode": "1.2.1",
+      "rawValue": "1.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 132,
+      "sourceCode": "1.2.2",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 133,
+      "sourceCode": "1.2.3",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 134,
+      "sourceCode": "1.2.4",
+      "rawValue": "1.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 135,
+      "sourceCode": "1.2.5",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 136,
+      "sourceCode": "1.2.6",
+      "rawValue": "2.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 142,
+      "sourceCode": "2.1.1",
+      "rawValue": "2.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 144,
+      "sourceCode": "2.1.2",
+      "rawValue": "4.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 145,
+      "sourceCode": "2.1.2.1",
+      "rawValue": "3.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 146,
+      "sourceCode": "2.1.2.2",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 147,
+      "sourceCode": "2.1.2.3",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 149,
+      "sourceCode": "2.1.3",
+      "rawValue": "2.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 150,
+      "sourceCode": "2.1.3.1",
+      "rawValue": "1.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 151,
+      "sourceCode": "2.1.3.2",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 153,
+      "sourceCode": "2.1.4",
+      "rawValue": "0.00~",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 156,
+      "sourceCode": "2.2.1",
+      "rawValue": "1.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 158,
+      "sourceCode": "2.2.2",
+      "rawValue": "1.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 159,
+      "sourceCode": "2.2.2.1",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 160,
+      "sourceCode": "2.2.2.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 161,
+      "sourceCode": "2.2.2.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 167,
+      "sourceCode": "3.1.1",
+      "rawValue": "3.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 168,
+      "sourceCode": "3.1.2",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 169,
+      "sourceCode": "3.1.3",
+      "rawValue": "6.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 170,
+      "sourceCode": "3.1.4",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 171,
+      "sourceCode": "3.1.5",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 172,
+      "sourceCode": "3.1.6",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 173,
+      "sourceCode": "3.1.7",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 174,
+      "sourceCode": "3.1.8",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 197,
+      "sourceCode": "3",
+      "rawValue": "",
+      "reason": "CONTINUATION_HEADING"
+    },
+    {
+      "sourceRow": 199,
+      "sourceCode": "3.1.9",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 200,
+      "sourceCode": "3.1.9.1",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 201,
+      "sourceCode": "3.1.9.2",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 202,
+      "sourceCode": "3.1.9.3",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 203,
+      "sourceCode": "3.1.9.4",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 205,
+      "sourceCode": "3.1.10",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 207,
+      "sourceCode": "3.1.11",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 208,
+      "sourceCode": "3.1.11.1",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 209,
+      "sourceCode": "3.1.11.2",
+      "rawValue": "0.1",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 212,
+      "sourceCode": "3.2.1",
+      "rawValue": "1.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 213,
+      "sourceCode": "3.2.2",
+      "rawValue": "1.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 214,
+      "sourceCode": "3.2.3",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 215,
+      "sourceCode": "3.2.4",
+      "rawValue": "[0.00~]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 221,
+      "sourceCode": "4.1.1",
+      "rawValue": "66.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 222,
+      "sourceCode": "4.1.2",
+      "rawValue": "9.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 223,
+      "sourceCode": "4.1.3",
+      "rawValue": "57.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 224,
+      "sourceCode": "4.1.4",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 227,
+      "sourceCode": "4.2.1",
+      "rawValue": "1.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 228,
+      "sourceCode": "4.2.2",
+      "rawValue": "7.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 229,
+      "sourceCode": "4.2.3",
+      "rawValue": "1.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 230,
+      "sourceCode": "4.2.4",
+      "rawValue": "1.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 233,
+      "sourceCode": "4.3.1",
+      "rawValue": "9.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 234,
+      "sourceCode": "4.3.2",
+      "rawValue": "3.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 235,
+      "sourceCode": "4.3.3",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 238,
+      "sourceCode": "4.4.1",
+      "rawValue": "20.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 239,
+      "sourceCode": "4.4.2",
+      "rawValue": "14.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 241,
+      "sourceCode": "4.4.3",
+      "rawValue": "1.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 242,
+      "sourceCode": "4.4.3.1",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 243,
+      "sourceCode": "4.4.3.2",
+      "rawValue": "1.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 244,
+      "sourceCode": "4.4.3.3",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 250,
+      "sourceCode": "5.1.1",
+      "rawValue": "18.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 251,
+      "sourceCode": "5.1.1.1",
+      "rawValue": "16.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 252,
+      "sourceCode": "5.1.1.2",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 253,
+      "sourceCode": "5.1.1.3",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 255,
+      "sourceCode": "5.1.2",
+      "rawValue": "3.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 256,
+      "sourceCode": "5.1.2.1",
+      "rawValue": "3.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 257,
+      "sourceCode": "5.1.2.2",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 260,
+      "sourceCode": "5.2.1",
+      "rawValue": "1.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 261,
+      "sourceCode": "5.2.2",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 286,
+      "sourceCode": "5",
+      "rawValue": "",
+      "reason": "CONTINUATION_HEADING"
+    },
+    {
+      "sourceRow": 289,
+      "sourceCode": "5.3.1",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 290,
+      "sourceCode": "5.3.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 291,
+      "sourceCode": "5.3.3",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 292,
+      "sourceCode": "5.3.4",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 293,
+      "sourceCode": "5.3.5",
+      "rawValue": "",
+      "reason": "CONTINUATION_HEADING"
+    },
+    {
+      "sourceRow": 295,
+      "sourceCode": "5.3.6",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 296,
+      "sourceCode": "5.3.7",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 297,
+      "sourceCode": "5.3.8",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 298,
+      "sourceCode": "5.3.9",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 301,
+      "sourceCode": "5.4.1",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 302,
+      "sourceCode": "5.4.2",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 303,
+      "sourceCode": "5.4.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 304,
+      "sourceCode": "5.4.4",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 307,
+      "sourceCode": "5.5.1",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 308,
+      "sourceCode": "5.5.2",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 309,
+      "sourceCode": "5.5.3",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 310,
+      "sourceCode": "5.5.4",
+      "rawValue": "0.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 311,
+      "sourceCode": "5.5.5",
+      "rawValue": "0.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 314,
+      "sourceCode": "5.6.1",
+      "rawValue": "3.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 315,
+      "sourceCode": "5.6.1.1",
+      "rawValue": "1.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 316,
+      "sourceCode": "5.6.1.2",
+      "rawValue": "1.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 318,
+      "sourceCode": "5.6.2",
+      "rawValue": "2.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 319,
+      "sourceCode": "5.6.2.1",
+      "rawValue": "1.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 320,
+      "sourceCode": "5.6.2.2",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 321,
+      "sourceCode": "5.6.2.3",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 322,
+      "sourceCode": "5.6.2.4",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 324,
+      "sourceCode": "5.6.3",
+      "rawValue": "2.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 325,
+      "sourceCode": "5.6.3.1",
+      "rawValue": "2.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 326,
+      "sourceCode": "5.6.3.2",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 327,
+      "sourceCode": "5.6.3.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 333,
+      "sourceCode": "6.1.1",
+      "rawValue": "3.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 334,
+      "sourceCode": "6.1.1.1",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 335,
+      "sourceCode": "6.1.1.2",
+      "rawValue": "2.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 336,
+      "sourceCode": "6.1.1.3",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 337,
+      "sourceCode": "6.1.1.4",
+      "rawValue": "",
+      "reason": "CONTINUATION_HEADING"
+    },
+    {
+      "sourceRow": 340,
+      "sourceCode": "6.1.2",
+      "rawValue": "2.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 341,
+      "sourceCode": "6.1.2.1",
+      "rawValue": "2.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 342,
+      "sourceCode": "6.1.2.2",
+      "rawValue": "0.00~",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 345,
+      "sourceCode": "6.2.1",
+      "rawValue": "5.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 346,
+      "sourceCode": "6.2.1.1",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 347,
+      "sourceCode": "6.2.1.2",
+      "rawValue": "4.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 348,
+      "sourceCode": "6.2.1.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 350,
+      "sourceCode": "6.2.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 376,
+      "sourceCode": "7.1.1",
+      "rawValue": "9.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 377,
+      "sourceCode": "7.1.1.1",
+      "rawValue": "3.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 378,
+      "sourceCode": "7.1.1.2",
+      "rawValue": "6.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 380,
+      "sourceCode": "7.1.2",
+      "rawValue": "27.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 381,
+      "sourceCode": "7.1.2.1",
+      "rawValue": "14.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 382,
+      "sourceCode": "7.1.2.2",
+      "rawValue": "12.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 384,
+      "sourceCode": "7.1.3",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 385,
+      "sourceCode": "7.1.3.1",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 386,
+      "sourceCode": "7.1.3.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 387,
+      "sourceCode": "7.1.3.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 390,
+      "sourceCode": "7.2.1",
+      "rawValue": "2.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 391,
+      "sourceCode": "7.2.1.1",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 392,
+      "sourceCode": "7.2.1.2",
+      "rawValue": "2.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 393,
+      "sourceCode": "7.2.1.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 394,
+      "sourceCode": "7.2.1.4",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 396,
+      "sourceCode": "7.2.2",
+      "rawValue": "18.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 397,
+      "sourceCode": "7.2.2.1",
+      "rawValue": "11.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 398,
+      "sourceCode": "7.2.2.2",
+      "rawValue": "6.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 399,
+      "sourceCode": "7.2.2.3",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 401,
+      "sourceCode": "7.2.3",
+      "rawValue": "9.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 402,
+      "sourceCode": "7.2.3.1",
+      "rawValue": "9.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 403,
+      "sourceCode": "7.2.3.2",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 405,
+      "sourceCode": "7.2.4",
+      "rawValue": "3.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 406,
+      "sourceCode": "7.2.4.1",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 407,
+      "sourceCode": "7.2.4.2",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 408,
+      "sourceCode": "7.2.4.3",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 409,
+      "sourceCode": "7.2.4.4",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 410,
+      "sourceCode": "7.2.4.5",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 413,
+      "sourceCode": "7.3.1",
+      "rawValue": "4.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 414,
+      "sourceCode": "7.3.1.1",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 415,
+      "sourceCode": "7.3.1.2",
+      "rawValue": "3.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 417,
+      "sourceCode": "7.3.2",
+      "rawValue": "1.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 418,
+      "sourceCode": "7.3.2.1",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 419,
+      "sourceCode": "7.3.2.2",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 421,
+      "sourceCode": "7.3.3",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 422,
+      "sourceCode": "7.3.3.1",
+      "rawValue": "[0.10]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 423,
+      "sourceCode": "7.3.3.2",
+      "rawValue": "[0.10]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 425,
+      "sourceCode": "7.3.4",
+      "rawValue": "19.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 426,
+      "sourceCode": "7.3.4.1",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 427,
+      "sourceCode": "7.3.4.2",
+      "rawValue": "9.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 428,
+      "sourceCode": "7.3.4.3",
+      "rawValue": "[0.00~]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 429,
+      "sourceCode": "7.3.4.4",
+      "rawValue": "1.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 430,
+      "sourceCode": "7.3.4.5",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 431,
+      "sourceCode": "7.3.4.6",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 432,
+      "sourceCode": "7.3.4.7",
+      "rawValue": "6.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 433,
+      "sourceCode": "7.3.4.8",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 461,
+      "sourceCode": "8.2.1",
+      "rawValue": "[0.00~]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 462,
+      "sourceCode": "8.2.2",
+      "rawValue": "1.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 463,
+      "sourceCode": "8.2.3",
+      "rawValue": ":",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 466,
+      "sourceCode": "8.3.1",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 467,
+      "sourceCode": "8.3.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 468,
+      "sourceCode": "8.3.3",
+      "rawValue": "8.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 469,
+      "sourceCode": "8.3.4",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 479,
+      "sourceCode": "9.1.1",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 480,
+      "sourceCode": "9.1.1.1",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 481,
+      "sourceCode": "9.1.1.2",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 483,
+      "sourceCode": "9.1.2",
+      "rawValue": "2.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 484,
+      "sourceCode": "9.1.2.1",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 485,
+      "sourceCode": "9.1.2.2",
+      "rawValue": ":",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 486,
+      "sourceCode": "9.1.2.3",
+      "rawValue": ":",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 487,
+      "sourceCode": "9.1.2.4",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 488,
+      "sourceCode": "9.1.2.5",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 489,
+      "sourceCode": "9.1.2.6",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 490,
+      "sourceCode": "9.1.2.7",
+      "rawValue": "1.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 491,
+      "sourceCode": "9.1.2.8",
+      "rawValue": "[0.00~]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 492,
+      "sourceCode": "9.1.2.9",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 494,
+      "sourceCode": "9.1.3",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 495,
+      "sourceCode": "9.1.3.1",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 496,
+      "sourceCode": "9.1.3.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 497,
+      "sourceCode": "9.1.3.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 500,
+      "sourceCode": "9.2.1",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 501,
+      "sourceCode": "9.2.2",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 502,
+      "sourceCode": "9.2.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 503,
+      "sourceCode": "9.2.4",
+      "rawValue": "0.3",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 504,
+      "sourceCode": "9.2.5",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 505,
+      "sourceCode": "9.2.6",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 506,
+      "sourceCode": "9.2.7",
+      "rawValue": "[1.10]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 507,
+      "sourceCode": "9.2.8",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 510,
+      "sourceCode": "9.3.1",
+      "rawValue": "2.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 512,
+      "sourceCode": "9.3.2",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 513,
+      "sourceCode": "9.3.2.1",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 514,
+      "sourceCode": "9.3.2.2",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 516,
+      "sourceCode": "9.3.3",
+      "rawValue": "1.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 518,
+      "sourceCode": "9.3.4",
+      "rawValue": "3.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 519,
+      "sourceCode": "9.3.4.1",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 520,
+      "sourceCode": "9.3.4.2",
+      "rawValue": "2.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 521,
+      "sourceCode": "9.3.4.3",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 522,
+      "sourceCode": "9.3.4.4",
+      "rawValue": "0.00~",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 524,
+      "sourceCode": "9.3.5",
+      "rawValue": "6.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 525,
+      "sourceCode": "9.3.5.1",
+      "rawValue": "3.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 526,
+      "sourceCode": "9.3.5.2",
+      "rawValue": "1.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 527,
+      "sourceCode": "9.3.5.3",
+      "rawValue": "2.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 557,
+      "sourceCode": "9",
+      "rawValue": "",
+      "reason": "CONTINUATION_HEADING"
+    },
+    {
+      "sourceRow": 560,
+      "sourceCode": "9.4.1",
+      "rawValue": "8.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 561,
+      "sourceCode": "9.4.1.1",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 562,
+      "sourceCode": "9.4.1.2",
+      "rawValue": "1.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 563,
+      "sourceCode": "9.4.1.3",
+      "rawValue": "3.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 564,
+      "sourceCode": "9.4.1.4",
+      "rawValue": "3.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 565,
+      "sourceCode": "9.4.1.5",
+      "rawValue": "[0.00~]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 567,
+      "sourceCode": "9.4.2",
+      "rawValue": "2.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 568,
+      "sourceCode": "9.4.2.1",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 569,
+      "sourceCode": "9.4.2.2",
+      "rawValue": "1.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 570,
+      "sourceCode": "9.4.2.3",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 572,
+      "sourceCode": "9.4.3",
+      "rawValue": "6.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 573,
+      "sourceCode": "9.4.3.1",
+      "rawValue": "2.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 574,
+      "sourceCode": "9.4.3.2",
+      "rawValue": "1.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 575,
+      "sourceCode": "9.4.3.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 576,
+      "sourceCode": "9.4.3.4",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 577,
+      "sourceCode": "9.4.3.5",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 578,
+      "sourceCode": "9.4.3.6",
+      "rawValue": "2.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 580,
+      "sourceCode": "9.4.4",
+      "rawValue": "1.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 581,
+      "sourceCode": "9.4.4.1",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 582,
+      "sourceCode": "9.4.4.2",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 583,
+      "sourceCode": "9.4.4.3",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 585,
+      "sourceCode": "9.4.5",
+      "rawValue": "",
+      "reason": "CONTINUATION_HEADING"
+    },
+    {
+      "sourceRow": 588,
+      "sourceCode": "9.4.6",
+      "rawValue": "1.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 589,
+      "sourceCode": "9.4.6.1",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 590,
+      "sourceCode": "9.4.6.2",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 591,
+      "sourceCode": "9.4.6.3",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 592,
+      "sourceCode": "9.4.6.4",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 595,
+      "sourceCode": "9.5.1",
+      "rawValue": "1.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 596,
+      "sourceCode": "9.5.2",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 597,
+      "sourceCode": "9.5.3",
+      "rawValue": "1.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 598,
+      "sourceCode": "9.5.4",
+      "rawValue": "0.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 599,
+      "sourceCode": "9.5.5",
+      "rawValue": "0.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 602,
+      "sourceCode": "9.6.1",
+      "rawValue": "2.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 603,
+      "sourceCode": "9.6.2",
+      "rawValue": "33.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 609,
+      "sourceCode": "10.1.1",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 610,
+      "sourceCode": "10.1.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 611,
+      "sourceCode": "10.1.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 612,
+      "sourceCode": "10.1.4",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 613,
+      "sourceCode": "10.1.5",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 616,
+      "sourceCode": "10.2.1",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 617,
+      "sourceCode": "10.2.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 618,
+      "sourceCode": "10.2.3",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 619,
+      "sourceCode": "10.2.4",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 620,
+      "sourceCode": "10.2.5",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 650,
+      "sourceCode": "11.1.1",
+      "rawValue": "17.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 651,
+      "sourceCode": "11.1.2",
+      "rawValue": "6.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 652,
+      "sourceCode": "11.1.3",
+      "rawValue": "4.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 654,
+      "sourceCode": "11.1.4",
+      "rawValue": "4.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 655,
+      "sourceCode": "11.1.4.1",
+      "rawValue": "3.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 656,
+      "sourceCode": "11.1.4.2",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 657,
+      "sourceCode": "11.1.4.3",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 658,
+      "sourceCode": "11.1.4.4",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 660,
+      "sourceCode": "11.1.5",
+      "rawValue": "0.2",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 662,
+      "sourceCode": "11.1.6",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 663,
+      "sourceCode": "11.1.6.1",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 664,
+      "sourceCode": "11.1.6.2",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 667,
+      "sourceCode": "11.2.1",
+      "rawValue": "7.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 668,
+      "sourceCode": "11.2.2",
+      "rawValue": "6.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 669,
+      "sourceCode": "11.2.3",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 675,
+      "sourceCode": "12.1.1",
+      "rawValue": "4.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 676,
+      "sourceCode": "12.1.2",
+      "rawValue": "1.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 678,
+      "sourceCode": "12.1.3",
+      "rawValue": "2.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 679,
+      "sourceCode": "12.1.3.1",
+      "rawValue": "1.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 680,
+      "sourceCode": "12.1.3.2",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 681,
+      "sourceCode": "12.1.3.3",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 683,
+      "sourceCode": "12.1.4",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 685,
+      "sourceCode": "12.1.5",
+      "rawValue": "4.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 686,
+      "sourceCode": "12.1.5.1",
+      "rawValue": "1.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 687,
+      "sourceCode": "12.1.5.2",
+      "rawValue": "3.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 688,
+      "sourceCode": "12.1.5.3",
+      "rawValue": "0.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 691,
+      "sourceCode": "12.2.1",
+      "rawValue": "2.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 692,
+      "sourceCode": "12.2.2",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 693,
+      "sourceCode": "12.2.3",
+      "rawValue": "0.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 694,
+      "sourceCode": "12.2.4",
+      "rawValue": "0.1",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 695,
+      "sourceCode": "12.2.5",
+      "rawValue": "[0.10]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 696,
+      "sourceCode": "12.2.6",
+      "rawValue": "[0.20]",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 699,
+      "sourceCode": "12.3.1",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 700,
+      "sourceCode": "12.3.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 701,
+      "sourceCode": "12.3.3",
+      "rawValue": "0.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 702,
+      "sourceCode": "12.3.4",
+      "rawValue": "0.90",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 725,
+      "sourceCode": "12",
+      "rawValue": "",
+      "reason": "CONTINUATION_HEADING"
+    },
+    {
+      "sourceRow": 728,
+      "sourceCode": "12.4.1",
+      "rawValue": "6.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 729,
+      "sourceCode": "12.4.1.1",
+      "rawValue": "3.10",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 730,
+      "sourceCode": "12.4.1.2",
+      "rawValue": "2.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 731,
+      "sourceCode": "12.4.1.3",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 733,
+      "sourceCode": "12.4.2",
+      "rawValue": "3.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 735,
+      "sourceCode": "12.4.3",
+      "rawValue": "14.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 736,
+      "sourceCode": "12.4.3.1",
+      "rawValue": "14.30",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 737,
+      "sourceCode": "12.4.3.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 739,
+      "sourceCode": "12.4.4",
+      "rawValue": "1.00",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 742,
+      "sourceCode": "12.5.1",
+      "rawValue": "2.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 743,
+      "sourceCode": "12.5.1.1",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 744,
+      "sourceCode": "12.5.1.2",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 745,
+      "sourceCode": "12.5.1.3",
+      "rawValue": "0.3",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 746,
+      "sourceCode": "12.5.1.4",
+      "rawValue": "0.60",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 747,
+      "sourceCode": "12.5.1.5",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 749,
+      "sourceCode": "12.5.2",
+      "rawValue": "0.70",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 750,
+      "sourceCode": "12.5.2.1",
+      "rawValue": "0.50",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 751,
+      "sourceCode": "12.5.2.2",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 752,
+      "sourceCode": "12.5.2.3",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 753,
+      "sourceCode": "12.5.2.4",
+      "rawValue": "..",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 755,
+      "sourceCode": "12.5.3",
+      "rawValue": "2.40",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 756,
+      "sourceCode": "12.5.3.1",
+      "rawValue": "0.20",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 757,
+      "sourceCode": "12.5.3.2",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 758,
+      "sourceCode": "12.5.3.3",
+      "rawValue": "0.5",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 759,
+      "sourceCode": "12.5.3.4",
+      "rawValue": "0.80",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    },
+    {
+      "sourceRow": 760,
+      "sourceCode": "12.5.3.5",
+      "rawValue": "0.00~",
+      "reason": "OUTSIDE_SELECTED_HIERARCHY_DEPTH"
+    }
+  ],
+  "rows": [
+    {
+      "sourceCategoryCode": "1",
+      "sourceCategoryLabel": "Food & non-alcoholic drinks",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "1",
+      "rawWeeklyValue": "73.70",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 17,
+      "sourceCell": "G17"
+    },
+    {
+      "sourceCategoryCode": "1.1",
+      "sourceCategoryLabel": "Food ",
+      "parentSourceCategoryCode": "1",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "1.1000000000000001",
+      "rawWeeklyValue": "67.30",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 19,
+      "sourceCell": "G19"
+    },
+    {
+      "sourceCategoryCode": "1.2",
+      "sourceCategoryLabel": "Non-alcoholic drinks",
+      "parentSourceCategoryCode": "1",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "1.2",
+      "rawWeeklyValue": "6.40",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 130,
+      "sourceCell": "G130"
+    },
+    {
+      "sourceCategoryCode": "2",
+      "sourceCategoryLabel": "Alcoholic drink, tobacco & narcotics",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "2",
+      "rawWeeklyValue": "11.30",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 139,
+      "sourceCell": "G139"
+    },
+    {
+      "sourceCategoryCode": "2.1",
+      "sourceCategoryLabel": "Alcoholic drinks",
+      "parentSourceCategoryCode": "2",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "2.1",
+      "rawWeeklyValue": "9.00",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 141,
+      "sourceCell": "G141"
+    },
+    {
+      "sourceCategoryCode": "2.2",
+      "sourceCategoryLabel": "Tobacco and narcotics",
+      "parentSourceCategoryCode": "2",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "2.2000000000000002",
+      "rawWeeklyValue": "2.30",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 155,
+      "sourceCell": "G155"
+    },
+    {
+      "sourceCategoryCode": "3",
+      "sourceCategoryLabel": "Clothing & footwear",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "3",
+      "rawWeeklyValue": "18.00",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 164,
+      "sourceCell": "G164"
+    },
+    {
+      "sourceCategoryCode": "3.1",
+      "sourceCategoryLabel": "Clothing",
+      "parentSourceCategoryCode": "3",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "3.1",
+      "rawWeeklyValue": "14.60",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 166,
+      "sourceCell": "G166"
+    },
+    {
+      "sourceCategoryCode": "3.2",
+      "sourceCategoryLabel": "Footwear",
+      "parentSourceCategoryCode": "3",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "3.2",
+      "rawWeeklyValue": "3.30",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 211,
+      "sourceCell": "G211"
+    },
+    {
+      "sourceCategoryCode": "4",
+      "sourceCategoryLabel": "Housing(net)2, fuel & power",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "4",
+      "rawWeeklyValue": "118.40",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 218,
+      "sourceCell": "G218"
+    },
+    {
+      "sourceCategoryCode": "4.1",
+      "sourceCategoryLabel": "Actual rentals for housing",
+      "parentSourceCategoryCode": "4",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "4.0999999999999996",
+      "rawWeeklyValue": "66.80",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 220,
+      "sourceCell": "G220"
+    },
+    {
+      "sourceCategoryCode": "4.2",
+      "sourceCategoryLabel": "Maintenance and repair of dwelling",
+      "parentSourceCategoryCode": "4",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "4.2",
+      "rawWeeklyValue": "11.90",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 226,
+      "sourceCell": "G226"
+    },
+    {
+      "sourceCategoryCode": "4.3",
+      "sourceCategoryLabel": "Water supply and miscellaneous services relating to the dwelling",
+      "parentSourceCategoryCode": "4",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "4.3",
+      "rawWeeklyValue": "12.90",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 232,
+      "sourceCell": "G232"
+    },
+    {
+      "sourceCategoryCode": "4.4",
+      "sourceCategoryLabel": "Electricity, gas and other fuels",
+      "parentSourceCategoryCode": "4",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "4.4000000000000004",
+      "rawWeeklyValue": "35.90",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 237,
+      "sourceCell": "G237"
+    },
+    {
+      "sourceCategoryCode": "5",
+      "sourceCategoryLabel": "Household goods & services ",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "5",
+      "rawWeeklyValue": "40.60",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 247,
+      "sourceCell": "G247"
+    },
+    {
+      "sourceCategoryCode": "5.1",
+      "sourceCategoryLabel": "Furniture and furnishings, carpets and other floor coverings",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "5.0999999999999996",
+      "rawWeeklyValue": "21.70",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 249,
+      "sourceCell": "G249"
+    },
+    {
+      "sourceCategoryCode": "5.2",
+      "sourceCategoryLabel": "Household textiles",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "5.2",
+      "rawWeeklyValue": "2.40",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 259,
+      "sourceCell": "G259"
+    },
+    {
+      "sourceCategoryCode": "5.3",
+      "sourceCategoryLabel": "Household appliances",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "5.3",
+      "rawWeeklyValue": "4.00",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 288,
+      "sourceCell": "G288"
+    },
+    {
+      "sourceCategoryCode": "5.4",
+      "sourceCategoryLabel": "Glassware, tableware and household utensils",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "5.4",
+      "rawWeeklyValue": "2.00",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 300,
+      "sourceCell": "G300"
+    },
+    {
+      "sourceCategoryCode": "5.5",
+      "sourceCategoryLabel": "Tools and equipment for house and garden",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "5.5",
+      "rawWeeklyValue": "2.80",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 306,
+      "sourceCell": "G306"
+    },
+    {
+      "sourceCategoryCode": "5.6",
+      "sourceCategoryLabel": "Goods and services for routine household maintenance",
+      "parentSourceCategoryCode": "5",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "5.6",
+      "rawWeeklyValue": "7.70",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 313,
+      "sourceCell": "G313"
+    },
+    {
+      "sourceCategoryCode": "6",
+      "sourceCategoryLabel": "Health",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "6",
+      "rawWeeklyValue": "11.90",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 330,
+      "sourceCell": "G330"
+    },
+    {
+      "sourceCategoryCode": "6.1",
+      "sourceCategoryLabel": "Medical products, appliances and equipment",
+      "parentSourceCategoryCode": "6",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "6.1",
+      "rawWeeklyValue": "5.60",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 332,
+      "sourceCell": "G332"
+    },
+    {
+      "sourceCategoryCode": "6.2",
+      "sourceCategoryLabel": "Hospital services",
+      "parentSourceCategoryCode": "6",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "6.2",
+      "rawWeeklyValue": "6.30",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 344,
+      "sourceCell": "G344"
+    },
+    {
+      "sourceCategoryCode": "7",
+      "sourceCategoryLabel": "Transport",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "7",
+      "rawWeeklyValue": "96.40",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 373,
+      "sourceCell": "G373"
+    },
+    {
+      "sourceCategoryCode": "7.1",
+      "sourceCategoryLabel": "Purchase of vehicles",
+      "parentSourceCategoryCode": "7",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "7.1",
+      "rawWeeklyValue": "37.70",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 375,
+      "sourceCell": "G375"
+    },
+    {
+      "sourceCategoryCode": "7.2",
+      "sourceCategoryLabel": "Operation of personal transport",
+      "parentSourceCategoryCode": "7",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "7.2",
+      "rawWeeklyValue": "33.70",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 389,
+      "sourceCell": "G389"
+    },
+    {
+      "sourceCategoryCode": "7.3",
+      "sourceCategoryLabel": "Transport services",
+      "parentSourceCategoryCode": "7",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "7.3",
+      "rawWeeklyValue": "25.00",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 412,
+      "sourceCell": "G412"
+    },
+    {
+      "sourceCategoryCode": "8",
+      "sourceCategoryLabel": "Communication4",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "8",
+      "rawWeeklyValue": "22.40",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 456,
+      "sourceCell": "G456"
+    },
+    {
+      "sourceCategoryCode": "8.1",
+      "sourceCategoryLabel": "Postal services",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "8.1",
+      "rawWeeklyValue": "0.60",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 458,
+      "sourceCell": "G458"
+    },
+    {
+      "sourceCategoryCode": "8.2",
+      "sourceCategoryLabel": "Telephone and telefax equipment",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "8.1999999999999993",
+      "rawWeeklyValue": "1.20",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 460,
+      "sourceCell": "G460"
+    },
+    {
+      "sourceCategoryCode": "8.3",
+      "sourceCategoryLabel": "Telephone and telefax services",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "8.3000000000000007",
+      "rawWeeklyValue": "9.20",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 465,
+      "sourceCell": "G465"
+    },
+    {
+      "sourceCategoryCode": "8.4",
+      "sourceCategoryLabel": "Internet subscription fees (ex. combined packages)7",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "8.4",
+      "rawWeeklyValue": "2.70",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 471,
+      "sourceCell": "G471"
+    },
+    {
+      "sourceCategoryCode": "8.5",
+      "sourceCategoryLabel": "Combined telecom services8",
+      "parentSourceCategoryCode": "8",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "8.5",
+      "rawWeeklyValue": "8.70",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 473,
+      "sourceCell": "G473"
+    },
+    {
+      "sourceCategoryCode": "9",
+      "sourceCategoryLabel": "Recreation & culture",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "9",
+      "rawWeeklyValue": "82.10",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 476,
+      "sourceCell": "G476"
+    },
+    {
+      "sourceCategoryCode": "9.1",
+      "sourceCategoryLabel": "Audio-visual, photographic and information processing equipment",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "9.1",
+      "rawWeeklyValue": "3.90",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 478,
+      "sourceCell": "G478"
+    },
+    {
+      "sourceCategoryCode": "9.2",
+      "sourceCategoryLabel": "Other major durables for recreation and culture",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "9.1999999999999993",
+      "rawWeeklyValue": "3.20",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 499,
+      "sourceCell": "G499"
+    },
+    {
+      "sourceCategoryCode": "9.3",
+      "sourceCategoryLabel": "Other recreational items and equipment, gardens and pets",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "9.3000000000000007",
+      "rawWeeklyValue": "14.80",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 509,
+      "sourceCell": "G509"
+    },
+    {
+      "sourceCategoryCode": "9.4",
+      "sourceCategoryLabel": "Recreational and cultural services",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "9.4",
+      "rawWeeklyValue": "20.80",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 559,
+      "sourceCell": "G559"
+    },
+    {
+      "sourceCategoryCode": "9.5",
+      "sourceCategoryLabel": "Newspapers, books and stationery",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "9.5",
+      "rawWeeklyValue": "4.00",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 594,
+      "sourceCell": "G594"
+    },
+    {
+      "sourceCategoryCode": "9.6",
+      "sourceCategoryLabel": "Package holidays12",
+      "parentSourceCategoryCode": "9",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "9.6",
+      "rawWeeklyValue": "35.40",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 601,
+      "sourceCell": "G601"
+    },
+    {
+      "sourceCategoryCode": "10",
+      "sourceCategoryLabel": "Education",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "10",
+      "rawWeeklyValue": "8.70",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 606,
+      "sourceCell": "G606"
+    },
+    {
+      "sourceCategoryCode": "10.1",
+      "sourceCategoryLabel": "Education fees",
+      "parentSourceCategoryCode": "10",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "10.1",
+      "rawWeeklyValue": "8.20",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 608,
+      "sourceCell": "G608"
+    },
+    {
+      "sourceCategoryCode": "10.2",
+      "sourceCategoryLabel": "Payments for school trips, other ad-hoc expenditure",
+      "parentSourceCategoryCode": "10",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "10.199999999999999",
+      "rawWeeklyValue": "0.50",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 615,
+      "sourceCell": "G615"
+    },
+    {
+      "sourceCategoryCode": "11",
+      "sourceCategoryLabel": "Restaurants & hotels",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "11",
+      "rawWeeklyValue": "49.20",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 647,
+      "sourceCell": "G647"
+    },
+    {
+      "sourceCategoryCode": "11.1",
+      "sourceCategoryLabel": "Catering services",
+      "parentSourceCategoryCode": "11",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "11.1",
+      "rawWeeklyValue": "34.60",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 649,
+      "sourceCell": "G649"
+    },
+    {
+      "sourceCategoryCode": "11.2",
+      "sourceCategoryLabel": "Accommodation services",
+      "parentSourceCategoryCode": "11",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "11.2",
+      "rawWeeklyValue": "14.60",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 666,
+      "sourceCell": "G666"
+    },
+    {
+      "sourceCategoryCode": "12",
+      "sourceCategoryLabel": "Miscellaneous goods and services",
+      "parentSourceCategoryCode": null,
+      "hierarchyLevel": 1,
+      "rawSourceCode": "12",
+      "rawWeeklyValue": "49.80",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 672,
+      "sourceCell": "G672"
+    },
+    {
+      "sourceCategoryCode": "12.1",
+      "sourceCategoryLabel": "Personal care",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "12.1",
+      "rawWeeklyValue": "13.20",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 674,
+      "sourceCell": "G674"
+    },
+    {
+      "sourceCategoryCode": "12.2",
+      "sourceCategoryLabel": "Personal effects ",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "12.2",
+      "rawWeeklyValue": "3.50",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 690,
+      "sourceCell": "G690"
+    },
+    {
+      "sourceCategoryCode": "12.3",
+      "sourceCategoryLabel": "Social protection",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "12.3",
+      "rawWeeklyValue": "2.50",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 698,
+      "sourceCell": "G698"
+    },
+    {
+      "sourceCategoryCode": "12.4",
+      "sourceCategoryLabel": "Insurance",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "12.4",
+      "rawWeeklyValue": "25.10",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 727,
+      "sourceCell": "G727"
+    },
+    {
+      "sourceCategoryCode": "12.5",
+      "sourceCategoryLabel": "Other services",
+      "parentSourceCategoryCode": "12",
+      "hierarchyLevel": 2,
+      "rawSourceCode": "12.5",
+      "rawWeeklyValue": "5.50",
+      "sourceUnit": "GBP/household/week",
+      "sourcePeriod": "FYE 2025",
+      "population": "All households",
+      "sourceSheet": "A1",
+      "sourceRow": 741,
+      "sourceCell": "G741"
+    }
+  ]
+}

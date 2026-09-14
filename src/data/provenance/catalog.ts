@@ -298,46 +298,50 @@ export const sourceCatalog = sourceCatalogSchema.parse([
     "sourceId": "SRC-005",
     "category": "groceries",
     "organisation": "Defra",
-    "publicationTitle": "Family Food household composition expenditure",
+    "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
     "sourceUrl": "https://www.gov.uk/government/statistical-data-sets/family-food-datasets",
     "sourceStatus": "POPULATED_DEV",
     "authority": "PRIMARY",
     "sourceReference": "Batch 2 — GROCERIES",
     "suitability": "REFERENCE_INPUT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "ODS expenditure data plus CSV codebank. Source expenditure is observed per-person/per-week input; suitability depends on record layer. Weekly-to-monthly conversion is CALCULATED; household-profile mapping may be MODELLED_ESTIMATE. Never invent people counts for open-ended household groups; unsupported open-ended totals remain blocked.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "ODS expenditure data plus CSV codebank. Source expenditure is observed per-person/per-week input; suitability depends on record layer. Weekly-to-monthly conversion is CALCULATED; household-profile mapping may be MODELLED_ESTIMATE. Never invent people counts for open-ended household groups; unsupported open-ended totals remain blocked. Slice 8: verified current primary workbook and metadata on 2026-09-14. Observed facts and separate CALCULATED monthly equivalents remain REFERENCE_ONLY. See docs/data/production-spending.md. Latest source period FYE 2024; release 2025-11-06, dataset page updated 2026-06-19. ODS pence/person/week divided by 100 for GBP/person/week; original precision preserved. Retain POPULATED_DEV source-register governance; no household model promoted.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Current source edition/period was not identified by the supplied audit.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+      "National source evidence does not establish city budgets or UKMR household profiles.",
+      "Essentials/Lifestyle mapping is not approved; no household spending multiplier is supplied."
     ],
     "accessMechanisms": [
       "ODS",
       "CSV"
     ],
-    "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)"
+    "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+    "publicationDate": "2025-11-06",
+    "sourcePeriod": "FYE 2024",
+    "refreshCadence": "Annual release; pinned source capture requires review before refresh"
   },
   {
     "sourceId": "SRC-006",
     "category": "coicop_expenditure",
     "organisation": "ONS",
-    "publicationTitle": "Family Spending FYE 2025 — Workbook 1",
+    "publicationTitle": "Family Spending FYE 2025 — Workbook 1, Table A1: Detailed expenditure with full-method standard errors",
     "sourceUrl": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends",
     "sourceStatus": "POPULATED",
     "authority": "PRIMARY",
     "sourceReference": "Batch 2 — ESSENTIALS / LIFESTYLE",
     "suitability": "OBSERVED_SOURCE_INPUT",
-    "rawSnapshotPolicy": "PENDING_REVIEW",
-    "useNote": "Source-level COICOP expenditure rows are OBSERVED_DATA. Period conversion and category summation are CALCULATED. UKMR household-profile mapping may be MODELLED_ESTIMATE. Essentials/lifestyle are later UKMR views and mappings, not native observed ONS categories.",
+    "rawSnapshotPolicy": "METADATA_ONLY",
+    "useNote": "Source-level COICOP expenditure rows are OBSERVED_DATA. Period conversion and category summation are CALCULATED. UKMR household-profile mapping may be MODELLED_ESTIMATE. Essentials/lifestyle are later UKMR views and mappings, not native observed ONS categories. Slice 8: verified current primary workbook and metadata on 2026-09-14. Observed facts and separate CALCULATED monthly equivalents remain REFERENCE_ONLY. See docs/data/production-spending.md. Table A1 explicitly uses sequential numbering, not actual COICOP codes. Preserve sourceCategoryCode with ONS_A1_SEQUENTIAL; do not populate coicopCode from it.",
     "unresolvedMetadata": [
-      "Publication date and refresh cadence were not verified in Batch 1–4.",
-      "Existing reference URL retained from Slice 2; Batch 1–4 did not verify this exact URL as a current download endpoint."
+      "National source evidence does not establish city budgets or UKMR household profiles.",
+      "Essentials/Lifestyle mapping is not approved; no household spending multiplier is supplied."
     ],
     "sourcePeriod": "FYE 2025",
     "accessMechanisms": [
       "XLSX"
     ],
-    "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)"
+    "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+    "publicationDate": "2026-06-11",
+    "refreshCadence": "Annual release; pinned source capture requires review before refresh"
   },
   {
     "sourceId": "SRC-TFL",

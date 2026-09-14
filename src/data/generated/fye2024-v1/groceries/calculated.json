@@ -1,0 +1,1678 @@
+{
+  "kind": "REFERENCE_ARTIFACT",
+  "manifest": {
+    "releaseId": "ukmr-groceries-fye2024-v1-monthly",
+    "schemaVersion": "1.6.0",
+    "generatedAt": "2026-09-14T17:18:07Z",
+    "sourceSnapshotIds": [
+      "SRC-005-defra-20260914"
+    ],
+    "recordCount": 32
+  },
+  "records": [
+    {
+      "recordId": "SRC-005:100123:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF111; code 100123",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF111",
+        "observedSourceCode": "100123"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:100123:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.50682285184102,
+      "monthlyGbp": 6.529565691311087,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:12901:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF133; code 12901",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF133",
+        "observedSourceCode": "12901"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:12901:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 0.428076442117127,
+      "monthlyGbp": 1.8549979158408834,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:135148:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF134; code 135148",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF134",
+        "observedSourceCode": "135148"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:135148:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 0.699129225831374,
+      "monthlyGbp": 3.0295599786026206,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:150154:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF148; code 150154",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF148",
+        "observedSourceCode": "150154"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:150154:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 0.242117736438191,
+      "monthlyGbp": 1.0491768578988276,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:162171:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF171; code 162171",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF171",
+        "observedSourceCode": "162171"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:162171:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 0.518265682843969,
+      "monthlyGbp": 2.2458179589905325,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:172183:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF181; code 172183",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF181",
+        "observedSourceCode": "172183"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:172183:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.35288048552723,
+      "monthlyGbp": 5.86248210395133,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:210231:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF213; code 210231",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF213",
+        "observedSourceCode": "210231"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:210231:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.95458859701704,
+      "monthlyGbp": 8.469883920407174,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:22023:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF42; code 22023",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF42",
+        "observedSourceCode": "22023"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:22023:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.10686572479885,
+      "monthlyGbp": 4.796418140795017,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:233248:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF224; code 233248",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF224",
+        "observedSourceCode": "233248"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:233248:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 0.8762921765858159,
+      "monthlyGbp": 3.7972660985385356,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:251263:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF233; code 251263",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF233",
+        "observedSourceCode": "251263"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:251263:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.35340477808684,
+      "monthlyGbp": 5.864754038376307,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:26401:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF251; code 26401",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF251",
+        "observedSourceCode": "26401"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:26401:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 0.045388160769583206,
+      "monthlyGbp": 0.1966820300015272,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:267270:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF252; code 267270",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF252",
+        "observedSourceCode": "267270"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:267270:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.03286198457801,
+      "monthlyGbp": 4.47573526650471,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:271277:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF257; code 271277",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF257",
+        "observedSourceCode": "271277"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:271277:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 0.989693453013346,
+      "monthlyGbp": 4.288671629724499,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:281301:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF263; code 281301",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF263",
+        "observedSourceCode": "281301"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:281301:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 2.90772952368929,
+      "monthlyGbp": 12.600161269320255,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:304313:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF295; code 304313",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF295",
+        "observedSourceCode": "304313"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:304313:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 0.724919778668567,
+      "monthlyGbp": 3.1413190408971237,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:31041:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF50; code 31041",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF50",
+        "observedSourceCode": "31041"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:31041:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.35647243167922,
+      "monthlyGbp": 5.878047203943287,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:314339:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF303; code 314339",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF303",
+        "observedSourceCode": "314339"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:314339:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 2.12534596888436,
+      "monthlyGbp": 9.209832531832227,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:340344:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF335; code 340344",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF335",
+        "observedSourceCode": "340344"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:340344:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.4062538770223199,
+      "monthlyGbp": 6.0937668004300525,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:350355:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF340; code 350355",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF340",
+        "observedSourceCode": "350355"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:350355:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.43281582552966,
+      "monthlyGbp": 6.208868577295193,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:4006:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF17; code 4006",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF17",
+        "observedSourceCode": "4006"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:4006:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 0.219437087520508,
+      "monthlyGbp": 0.9508940459222014,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:46095:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF68; code 46095",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF68",
+        "observedSourceCode": "46095"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:46095:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 5.56839206171324,
+      "monthlyGbp": 24.129698934090708,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:9017:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF24; code 9017",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF24",
+        "observedSourceCode": "9017"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:9017:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.90029364403859,
+      "monthlyGbp": 8.234605790833891,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:cat105:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF13; code cat105",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF13",
+        "observedSourceCode": "cat105"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:cat105:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 32.2967043927594,
+      "monthlyGbp": 139.9523857019574,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:cat520:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF16; code cat520",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF16",
+        "observedSourceCode": "cat520"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:cat520:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 2.1197307315591,
+      "monthlyGbp": 9.185499836756101,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:cat701:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF156; code cat701",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF156",
+        "observedSourceCode": "cat701"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:cat701:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.47099107107775,
+      "monthlyGbp": 6.374294641336917,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:cat702:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF194; code cat702",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF194",
+        "observedSourceCode": "cat702"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:cat702:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.07766582348751,
+      "monthlyGbp": 4.6698852351125435,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:cat710:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF161; code cat710",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF161",
+        "observedSourceCode": "cat710"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:cat710:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 1.19068009987612,
+      "monthlyGbp": 5.159613766129853,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:cat720:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF170; code cat720",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF170",
+        "observedSourceCode": "cat720"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:cat720:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 2.9488119918587103,
+      "monthlyGbp": 12.778185298054412,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:cat730:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF155; code cat730",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF155",
+        "observedSourceCode": "cat730"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:cat730:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 4.4198030629364595,
+      "monthlyGbp": 19.152479939391323,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:cat810:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF212; code cat810",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF212",
+        "observedSourceCode": "cat810"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:cat810:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 2.8308807736028596,
+      "monthlyGbp": 12.267150018945726,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:cat811:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF169; code cat811",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF169",
+        "observedSourceCode": "cat811"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:cat811:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 5.779692765461561,
+      "monthlyGbp": 25.045335317000095,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    },
+    {
+      "recordId": "SRC-005:t4:fye2024:monthly",
+      "dataset": "family-food-fye2024-selected-monthly",
+      "valueType": "CALCULATED",
+      "releaseStatus": "REFERENCE_ONLY",
+      "provenance": {
+        "sourceId": "SRC-005",
+        "organisation": "Defra",
+        "publicationTitle": "Family Food FYE 2024 — UK household and eating out expenditure on food and drink",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a350dac25c5199bda117822/UKExp_17Mar26.ods",
+        "sourceReference": "expenditure!BF154; code t4",
+        "sourceFormat": "ODS",
+        "publicationDate": "2025-11-06",
+        "sourcePeriod": "FYE 2024",
+        "retrievedAt": "2026-09-14T17:18:07Z",
+        "importedAt": "2026-09-14T17:18:07Z",
+        "snapshotId": "SRC-005-defra-20260914",
+        "snapshotChecksum": "sha256:4dce07fce18085ec483e3485c8af9dc047b2ba853a4ca00a4e6b6b0f2e76d5e6",
+        "parserVersion": "1.0.0",
+        "importVersion": "spending-v1",
+        "licenceReference": "OGL v3.0 unless otherwise stated (Batch 2)",
+        "methodologyNotes": "UKMR deterministic average monthly equivalent: observed weekly GBP * 52 / 12. No rounding before storage; IEEE-754 precision. Display rounding is separate. Denominator and source period unchanged; not an observed calendar-month amount.",
+        "limitations": [
+          "National survey evidence, not city budgets or a household composition model.",
+          "Selected source totals and subgroups overlap; no additive UKMR Essentials/Lifestyle mapping is approved.",
+          "No household composition or fixed headcount is assigned; no city scope or household total is inferred.",
+          "Selected category/group totals overlap. Code levels/label columns are source-native; do not sum all rows.",
+          "Diary survey estimates are subject to sampling error and under-reporting. No inflation or behaviour adjustment.",
+          "Original release 6 November 2025; current dataset page updated 19 June 2026. FYE 2024 is the source period, not 2026."
+        ]
+      },
+      "qa": {
+        "observedSourceCell": "BF154",
+        "observedSourceCode": "t4"
+      },
+      "category": "expenditure_period_conversion",
+      "geography": {
+        "official": {
+          "geographyType": "country",
+          "name": "United Kingdom",
+          "sourceId": "SRC-005"
+        }
+      },
+      "sourcePeriod": "FYE 2024",
+      "observedRecordId": "SRC-005:t4:fye2024",
+      "observedCategory": "grocery_expenditure",
+      "observedWeeklyGbp": 7.25068383653931,
+      "monthlyGbp": 31.419629958337012,
+      "unit": "GBP/person/month",
+      "formula": "weeklyGbp * 52 / 12",
+      "calculationVersion": "weekly-to-monthly-v1"
+    }
+  ]
+}

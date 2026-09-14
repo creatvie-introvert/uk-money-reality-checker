@@ -33,17 +33,53 @@ export const rentRecordSchema = z.object({
   }
 });
 
-export const coicopExpenditureRecordSchema = z.object({
-  ...recordBase,
-  category: z.literal("coicop_expenditure"),
-  geography: geographySchema.optional(),
-  coicopCode: z.string().min(1),
-  coicopLabel: z.string().min(1),
-  profile: z.string().min(1),
-  weeklyGbp: z.number().finite().nonnegative(),
-  sourcePeriod: z.string().min(1),
-  unit: z.literal("GBP/household/week"),
+// National survey evidence has no city/applicability/profile multiplier fields.
+const spendingGeographySchema = z.strictObject({
+  official: z.strictObject({ geographyType: z.literal("country"), name: z.literal("United Kingdom"), sourceId: z.string().min(1) }),
 });
+const spendingPeriodSchema = z.string().regex(/^FYE \d{4}$/);
+const validateSpendingPeriod = (r: { sourcePeriod: string; provenance: z.infer<typeof provenanceSchema> }, ctx: z.RefinementCtx) => {
+  if (r.sourcePeriod !== r.provenance.sourcePeriod) ctx.addIssue({ code: "custom", path: ["sourcePeriod"], message: "Source period must match provenance" });
+};
+export const groceryExpenditureRecordSchema = z.strictObject({
+  ...recordBase, category: z.literal("grocery_expenditure"), valueType: z.literal("OBSERVED_DATA"), releaseStatus: z.literal("REFERENCE_ONLY"),
+  geography: spendingGeographySchema, population: z.literal("UK survey population"),
+  sourceCategoryCode: z.string().min(1), sourceCategoryLabel: z.string().min(1),
+  codeLevel: z.number().int().min(1).max(4),
+  sourceHierarchyLabels: z.strictObject({ foodCategory: z.string(), foodGroup: z.string(), majorFoodCode: z.string(), minorFoodCode: z.string() }),
+  weeklyGbp: z.number().finite().nonnegative(), unit: z.literal("GBP/person/week"), sourcePeriod: spendingPeriodSchema,
+}).superRefine(validateSpendingPeriod);
+
+export const coicopExpenditureRecordSchema = z.strictObject({
+  ...recordBase, category: z.literal("coicop_expenditure"), valueType: z.literal("OBSERVED_DATA"), releaseStatus: z.literal("REFERENCE_ONLY"),
+  geography: spendingGeographySchema,
+  // A1 explicitly says these are sequential identifiers, not actual COICOP codes.
+  codeSystem: z.literal("ONS_A1_SEQUENTIAL"), sourceCategoryCode: z.string().regex(/^\d+(\.\d+)?$/),
+  coicopCode: z.never().optional(), coicopLabel: z.string().min(1),
+  parentSourceCategoryCode: z.string().regex(/^\d+$/).nullable(), hierarchyLevel: z.union([z.literal(1), z.literal(2)]),
+  profile: z.literal("All households"), weeklyGbp: z.number().finite().nonnegative(),
+  sourcePeriod: spendingPeriodSchema, unit: z.literal("GBP/household/week"),
+}).superRefine((r, ctx) => {
+  validateSpendingPeriod(r, ctx);
+  const parent = r.sourceCategoryCode.includes(".") ? r.sourceCategoryCode.split(".")[0] : null;
+  if (r.parentSourceCategoryCode !== parent || r.hierarchyLevel !== (parent ? 2 : 1)) ctx.addIssue({ code: "custom", path: ["parentSourceCategoryCode"], message: "Hierarchy must match the source's sequential numbering" });
+});
+
+export const expenditurePeriodConversionRecordSchema = z.strictObject({
+  ...recordBase, category: z.literal("expenditure_period_conversion"), valueType: z.literal("CALCULATED"), releaseStatus: z.literal("REFERENCE_ONLY"),
+  geography: spendingGeographySchema, sourcePeriod: spendingPeriodSchema,
+  observedRecordId: z.string().min(1), observedCategory: z.enum(["grocery_expenditure", "coicop_expenditure"]),
+  observedWeeklyGbp: z.number().finite().nonnegative(), monthlyGbp: z.number().finite().nonnegative(),
+  unit: z.enum(["GBP/person/month", "GBP/household/month"]),
+  formula: z.literal("weeklyGbp * 52 / 12"), calculationVersion: z.literal("weekly-to-monthly-v1"),
+}).superRefine((r, ctx) => {
+  validateSpendingPeriod(r, ctx);
+  if (r.monthlyGbp !== r.observedWeeklyGbp * 52 / 12) ctx.addIssue({ code: "custom", path: ["monthlyGbp"], message: "Monthly equivalent must use weekly * 52 / 12 without intermediate rounding" });
+  if (r.unit !== (r.observedCategory === "grocery_expenditure" ? "GBP/person/month" : "GBP/household/month")) ctx.addIssue({ code: "custom", path: ["unit"], message: "Period conversion cannot change the person/household basis" });
+});
+export type GroceryExpenditureRecord = z.infer<typeof groceryExpenditureRecordSchema>;
+export type CoicopExpenditureRecord = z.infer<typeof coicopExpenditureRecordSchema>;
+export type ExpenditurePeriodConversionRecord = z.infer<typeof expenditurePeriodConversionRecordSchema>;
 
 export const waterBillingRegimeSchema = z.enum(["metered_volumetric", "rateable_value", "assessed_household", "council_tax_band"]);
 export const waterServiceComponentSchema = z.enum(["clean_water", "wastewater", "surface_water_drainage", "highway_drainage", "combined"]);
@@ -220,6 +256,8 @@ export const auditRecordSchema = z.discriminatedUnion("category", [
   energyConsumptionRecordSchema,
   energyPriceRecordSchema,
   coicopExpenditureRecordSchema,
+  groceryExpenditureRecordSchema,
+  expenditurePeriodConversionRecordSchema,
   waterTariffRecordSchema,
   transportFareRecordSchema,
   incomeTaxRuleRecordSchema,
