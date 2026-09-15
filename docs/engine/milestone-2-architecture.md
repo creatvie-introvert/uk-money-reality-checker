@@ -1,5 +1,11 @@
 # Milestone 2: calculator engine architecture and core contracts
 
+## Slice 2 update
+
+Income tax, category-A annual employee NI and standalone net employment income are now implemented. See [income tax and NI](income-tax-ni.md) for contracts, source-reviewed rounding, band conversion, diagnostics and tests. The scenario now requires `income.calculationBasis: "ANNUAL_COMPARISON"`. The category registry has four implemented calculators and five remaining stubs. Net override application and household aggregation remain deferred. New standalone income APIs return structured validation diagnostics rather than throwing for invalid business input.
+
+The sections below preserve the committed kickoff architecture and its validation snapshot; statements about tax/NI stubs and future statutory rounding describe that earlier slice and are superseded by the income document.
+
 ## Scope and starting state
 
 Kickoff reviewed on 15 September 2026. Branch `rebuild/next-production`, starting commit `b9a3f82ea9d5620da3c0d95fcc2e369d2ba0e326` (Close Milestone 1 data foundation), matched live origin and local tracking reference (0 ahead / 0 behind). The raw v3.1 workbook was the only untracked file.

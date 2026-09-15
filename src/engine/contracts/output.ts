@@ -2,6 +2,7 @@ import type { ConfidenceClass, MvpCityId } from "../../data/schemas/enums";
 import type { AuditRecord } from "../../data/schemas/records";
 import type { Category, Diagnostic } from "../diagnostics";
 import type { DataReleaseMetadata, DeepReadonly } from "../loaders";
+import type { IncomeTaxResolved, EmployeeNiResolved } from "./income";
 import type { Money } from "../money";
 
 export type EngineEvidence = DeepReadonly<AuditRecord>;
@@ -35,6 +36,7 @@ export type CategoryResult =
       baselineEvidence: BaselineEvidence<EngineEvidence>;
       amountBasis: "SOURCE_MONTH" | "MATHEMATICAL_MONTHLY_EQUIVALENT" | "USER_DECLARED_MONTHLY";
       formula?: { expression: string; version: string };
+      incomeBreakdown?: DeepReadonly<IncomeTaxResolved | EmployeeNiResolved>;
     })
   | (CategoryResultBase & { status: "UNRESOLVED"; canResolveWithUserInput: boolean; monthlyAmount?: never })
   | (CategoryResultBase & { status: "NOT_APPLICABLE"; reason: string; monthlyAmount?: never });

@@ -5,6 +5,9 @@ export const categorySchema = z.enum(["income_tax", "national_insurance", "rent"
 export type Category = z.infer<typeof categorySchema>;
 export const diagnosticCodeSchema = z.enum([
   "INVALID_INPUT", "INVALID_ARTIFACT", "INCOMPATIBLE_DATA_RELEASE",
+  "TAX_JURISDICTION_UNSUPPORTED", "TAX_REFERENCE_MISSING", "TAX_REFERENCE_AMBIGUOUS", "TAX_REFERENCE_INVALID",
+  "NI_CATEGORY_UNSUPPORTED", "NI_REFERENCE_MISSING", "NI_REFERENCE_AMBIGUOUS", "NI_REFERENCE_INVALID",
+  "INCOME_OUT_OF_SCOPE", "ANI_EQUALS_GROSS_SCOPE", "ANNUALISED_NI_COMPARISON", "PERSONAL_ALLOWANCE_STATUTORY_ROUNDING",
   "EDINBURGH_RENT_SOURCE_UNRESOLVED", "LONDON_CITY_DEFAULT_UNRESOLVED", "AUTHORITY_SELECTION_REQUIRED",
   "NO_EXACT_EVIDENCE", "EVIDENCE_PERIOD_UNSUPPORTED", "RENT_PROPERTY_CROSS_UNSUPPORTED",
   "TAX_JURISDICTION_REQUIRED", "NI_SCOPE_UNSUPPORTED", "USER_OVERRIDE_APPLIED",
@@ -15,7 +18,7 @@ export const diagnosticCodeSchema = z.enum([
 export const diagnosticSchema = z.strictObject({
   code: diagnosticCodeSchema,
   severity: z.enum(["info", "warning", "blocking"]),
-  kind: z.enum(["validation", "evidence_gap", "applicability_unresolved", "source_age", "user_override", "model_required", "unsupported_combination"]),
+  kind: z.enum(["calculation_policy", "validation", "evidence_gap", "applicability_unresolved", "source_age", "user_override", "model_required", "unsupported_combination"]),
   category: categorySchema.optional(), cityId: mvpCityIdSchema.optional(),
   message: z.string().min(1), path: z.array(z.union([z.string(), z.number()])).optional(),
 });

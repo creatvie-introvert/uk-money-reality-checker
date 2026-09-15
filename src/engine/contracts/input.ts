@@ -5,7 +5,7 @@ import type { EvidenceLoader } from "../loaders";
 import { yearMonthSchema } from "../loaders";
 import type { Diagnostic } from "../diagnostics";
 
-const gbpText = z.string().max(128).regex(/^\d+(\.\d{1,2})?$/);
+export const gbpText = z.string().max(128).regex(/^\d+(\.\d{1,2})?$/);
 export const monthlyOverrideSchema = z.strictObject({
   amountGbp: gbpText.refine((s) => /[1-9]/.test(s), "Override must be positive; no implicit free-cost assumption"),
   period: z.literal("MONTHLY"), note: z.string().max(1000).optional(),
@@ -33,6 +33,7 @@ export const locationInputSchema = z.strictObject({
   }),
   income: z.strictObject({
     grossAnnualSalaryGbp: gbpText,
+    calculationBasis: z.literal("ANNUAL_COMPARISON"),
     scope: z.literal("ONE_EMPLOYEE_ONE_EMPLOYMENT"),
     taxYear: z.string().regex(/^\d{4}\/\d{2}$/), taxJurisdiction: jurisdictionSchema.optional(),
     // This is net disposable income, never a replacement gross salary or tax rule.

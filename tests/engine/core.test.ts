@@ -13,7 +13,7 @@ import { activeDatasets, type DatasetKey } from "@/engine/loaders/datasets";
 const loader = createEvidenceLoader();
 const location = (cityId: CalculatorInput["currentLocation"]["cityId"]): CalculatorInput["currentLocation"] => ({
   cityId, effectiveOn: "2026-09-14", housing: { bedrooms: 2, rentSourceMonth: "2026-07", overrides: {} },
-  income: { grossAnnualSalaryGbp: "40000.00", scope: "ONE_EMPLOYEE_ONE_EMPLOYMENT", taxYear: "2026/27", niCategory: "A", payPeriod: "monthly" },
+  income: { grossAnnualSalaryGbp: "40000.00", calculationBasis: "ANNUAL_COMPARISON", scope: "ONE_EMPLOYEE_ONE_EMPLOYMENT", taxYear: "2026/27", niCategory: "A", payPeriod: "monthly" },
   transport: { status: "UNRESOLVED" }, spending: {},
 });
 const input = (): CalculatorInput => ({ household: { adults: 2, children: 0 }, currentLocation: location("LOC-LON"), destinationLocation: location("LOC-EDI") });
@@ -235,7 +235,7 @@ describe("no-fallback evidence resolution and lineage", () => {
 });
 
 describe("explicit calculator extension points", () => {
-  it.each(["income_tax","national_insurance","energy","water","groceries","household_spending","transport"] as const)("returns %s unresolved without a fake zero", (category) => {
+  it.each(["energy","water","groceries","household_spending","transport"] as const)("returns %s unresolved without a fake zero", (category) => {
     const parsed=normalizeCalculatorInput(input(),loader);if(parsed.status!=="VALID") throw new Error("bad fixture");
     const context: CategoryCalculatorContext={household:parsed.input.household,location:parsed.input.currentLocation,evidence:loader};
     const result=categoryCalculators[category](context);

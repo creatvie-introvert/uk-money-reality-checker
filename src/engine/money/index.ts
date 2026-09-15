@@ -52,3 +52,26 @@ export function formatGbp(value: Money): string {
   const rounded = (abs(n) * BigInt(2) + d) / (d * BigInt(2));
   return `${n < zero && rounded !== zero ? "-" : ""}${rounded / BigInt(100)}.${String(rounded % BigInt(100)).padStart(2, "0")}`;
 }
+
+export function subtractMoney(left: Money, right: Money): Money {
+  return addMoney(left, multiplyMoney(right, -one));
+}
+export function compareMoney(left: Money, right: Money): -1 | 0 | 1 {
+  const a = moneySchema.parse(left), b = moneySchema.parse(right);
+  const difference = BigInt(a.numerator) * BigInt(b.denominator) - BigInt(b.numerator) * BigInt(a.denominator);
+  return difference < zero ? -1 : difference > zero ? 1 : 0;
+}
+export function minMoney(left: Money, right: Money): Money { return compareMoney(left, right) <= 0 ? left : right; }
+export function maxMoney(left: Money, right: Money): Money { return compareMoney(left, right) >= 0 ? left : right; }
+/** A dimensionless decimal rate, parsed exactly; never binary multiplication of GBP. */
+export function applyDecimalRate(amount: Money, rate: string): Money {
+  if (!/^\d+(\.\d+)?$/.test(rate) || rate.length > 128) throw new Error("Rate requires nonnegative decimal text");
+  const [whole, decimal = ""] = rate.split(".");
+  return multiplyMoney(amount, BigInt(`${whole}${decimal}`), BigInt(10) ** BigInt(decimal.length));
+}
+/** Explicit statutory boundary helper; callers must document why whole-pound ceiling applies. */
+export function ceilWholeGbp(amount: Money): Money {
+  const m = moneySchema.parse(amount), n = BigInt(m.numerator), d = BigInt(m.denominator) * BigInt(100);
+  if (n < zero) throw new Error("Whole-pound allowance ceiling requires a nonnegative amount");
+  return fromGbp(String((n + d - one) / d));
+}

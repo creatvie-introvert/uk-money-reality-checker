@@ -7,3 +7,6 @@ export { engineDatasetVersion } from "./loaders/datasets";
 export * from "./resolution";
 export * from "./calculators";
 export type { ComparisonEngine, ComparisonResult } from "./comparison";
+
+export * from "./contracts/income";
+export { calculateIncomeTax, calculateEmployeeNi, calculateNetEmploymentIncome } from "./calculators/income";
