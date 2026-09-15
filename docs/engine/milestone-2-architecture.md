@@ -1,5 +1,11 @@
 # Milestone 2: calculator engine architecture and core contracts
 
+## Slice 4 update
+
+`calculateScenario(evidence, input)` now evaluates one `{ household, location }` request, resolves effective monthly net income, preserves the employment baseline and composes household costs with a discriminated complete/partial/unresolved residual. Net-only income is supported without fabricated gross salary; explicit zero net overrides are valid. See [scenario calculation](scenario-calculation.md) for contracts, diagnostics, examples and mixed-source-period lineage. The household context no longer requires income fields; existing normalized category contexts remain compatible. No comparison or salary solver is implemented.
+
+The prior slice snapshots below are historical. Statements deferring effective net-income overrides and single-scenario residuals are superseded by Slice 4; their underlying income and household arithmetic remains unchanged.
+
 ## Slice 3 update
 
 The household monthly-cost layer now resolves eight required categories and emits COMPLETE, PARTIAL or UNRESOLVED with exact subtotals. See [household monthly costs](household-monthly-costs.md) for input additions, override/zero policies, Scottish water, explicit period-ticket transport, provenance and completeness contracts. `LocationResult.monthlyTotals.expenditure` uses `HouseholdMonthlyCosts`; only COMPLETE exposes `totalMonthlyCost`. The registry includes essentials/lifestyle individually; the legacy household_spending stub never enters household aggregation. No UI, comparison, residual or salary solver is implemented.

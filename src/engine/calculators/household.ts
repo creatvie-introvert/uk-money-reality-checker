@@ -1,14 +1,13 @@
 import { locationInputSchema, monthlyOverrideSchema, nonnegativeMonthlyOverrideSchema, type MonthlyOverride } from "../contracts/input";
 import type { BaselineEvidence, CategoryResult, EngineEvidence } from "../contracts/output";
-import { householdCostCategorySchema, requiredHouseholdCostCategories, type HouseholdCostCategory, type HouseholdMonthlyCosts, type MonthlyCostResult, type ProductionCostClassification } from "../contracts/household";
+import { householdCostCategorySchema, requiredHouseholdCostCategories, type HouseholdCostCategory, type HouseholdMonthlyCosts, type MonthlyCostResult, type ProductionCostClassification, type HouseholdCostContext } from "../contracts/household";
 import type { Diagnostic, DiagnosticCode } from "../diagnostics";
 import { addMoney, compareMoney, fromGbp, monthlyEquivalent, type Money } from "../money";
-import type { CategoryCalculatorContext } from "./index";
 import { calculateRent, calculateCouncilTax } from "./housing";
 
 const version = "household-monthly-v1" as const;
 const costScenarioSchema = locationInputSchema.omit({ income: true });
-type Context = Pick<CategoryCalculatorContext, "evidence"> & { location: ReturnType<typeof costScenarioSchema.parse> };
+type Context = Pick<HouseholdCostContext, "evidence"> & { location: ReturnType<typeof costScenarioSchema.parse> };
 const unique = <T>(values: readonly T[]) => [...new Set(values)];
 function sourceMetadata(records: readonly EngineEvidence[]) {
   return {
@@ -118,10 +117,10 @@ function transport(context: Context): MonthlyCostResult {
   ]);
 }
 /** Typed normalized scenario boundary; malformed direct calls throw ZodError as in housing resolvers. */
-export function calculateMonthlyCostCategory(context: CategoryCalculatorContext, rawCategory: HouseholdCostCategory): MonthlyCostResult {
+export function calculateMonthlyCostCategory(context: HouseholdCostContext, rawCategory: HouseholdCostCategory): MonthlyCostResult {
   const category = householdCostCategorySchema.parse(rawCategory);
-  const { income, grossAnnualSalary, ...scenario } = context.location;
-  void income; void grossAnnualSalary;
+  const { cityId, effectiveOn, housing, spending } = context.location;
+  const scenario = { cityId, effectiveOn, housing, transport: context.location.transport, spending };
   const location = costScenarioSchema.parse(scenario);
   const ctx = { location, evidence: context.evidence };
   if (category === "rent") return housingResult(calculateRent(ctx.evidence, { cityId: location.cityId, bedrooms: location.housing.bedrooms, sourcePeriod: location.housing.rentSourceMonth, propertyType: location.housing.propertyType, override: location.housing.overrides.rent }), category);
@@ -136,7 +135,7 @@ export function calculateMonthlyCostCategory(context: CategoryCalculatorContext,
 }
 
 /** Reject malformed category sets rather than silently omitting, duplicating or mixing cities. */
-export function aggregateHouseholdMonthlyCosts(context: Pick<CategoryCalculatorContext, "location" | "evidence">, results: readonly MonthlyCostResult[]): HouseholdMonthlyCosts {
+export function aggregateHouseholdMonthlyCosts(context: HouseholdCostContext, results: readonly MonthlyCostResult[]): HouseholdMonthlyCosts {
   const categories = requiredHouseholdCostCategories;
   if (results.length !== categories.length || new Set(results.map((r) => r.category)).size !== categories.length || results.some((r) => !categories.includes(r.category) || r.cityId !== context.location.cityId)) throw new Error("Household aggregation requires exactly one result per canonical cost category for one city");
   for (const r of results) {
@@ -161,6 +160,6 @@ export function aggregateHouseholdMonthlyCosts(context: Pick<CategoryCalculatorC
   if (unresolvedCategories.length) return { ...base, completeness: "PARTIAL", resolvedSubtotalMonthly: subtotal, classification: "CALCULATED", diagnostics: [...base.diagnostics, { code: "HOUSEHOLD_COST_PARTIAL", cityId: base.cityId, severity: "warning", kind: "evidence_gap", message: "Resolved subtotal only; required household costs remain unresolved.", canResolveWithUserInput: true }] };
   return { ...base, completeness: "COMPLETE", resolvedSubtotalMonthly: subtotal, totalMonthlyCost: subtotal, classification: "CALCULATED" };
 }
-export function calculateHouseholdMonthlyCosts(context: CategoryCalculatorContext): HouseholdMonthlyCosts {
+export function calculateHouseholdMonthlyCosts(context: HouseholdCostContext): HouseholdMonthlyCosts {
   return aggregateHouseholdMonthlyCosts(context, requiredHouseholdCostCategories.map((category) => calculateMonthlyCostCategory(context, category)));
 }

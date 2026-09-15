@@ -1,13 +1,19 @@
 import { z } from "zod";
 import type { MvpCityId } from "../../data/schemas/enums";
 import type { Diagnostic } from "../diagnostics";
-import type { DataReleaseMetadata } from "../loaders";
+import type { LocationInput } from "./input";
+import type { DataReleaseMetadata, EvidenceLoader } from "../loaders";
 import type { Money } from "../money";
 import type { BaselineEvidence, CategoryResult, EngineEvidence } from "./output";
 
 export const householdCostCategorySchema = z.enum([
   "rent", "council_tax", "energy", "water", "groceries", "essentials", "lifestyle", "transport",
 ]);
+/** Costs require no income fields; existing normalized contexts remain compatible. */
+export interface HouseholdCostContext {
+  location: Pick<LocationInput, "cityId" | "effectiveOn" | "housing" | "transport" | "spending">;
+  evidence: EvidenceLoader;
+}
 export type HouseholdCostCategory = z.infer<typeof householdCostCategorySchema>;
 export const requiredHouseholdCostCategories = Object.freeze(householdCostCategorySchema.options);
 export type ProductionCostClassification = "OBSERVED_DATA" | "CALCULATED" | "USER_ENTERED";

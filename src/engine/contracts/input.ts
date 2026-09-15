@@ -10,7 +10,7 @@ export const monthlyOverrideSchema = z.strictObject({
   amountGbp: gbpText.refine((s) => /[1-9]/.test(s), "Override must be positive; no implicit free-cost assumption"),
   period: z.literal("MONTHLY"), note: z.string().max(1000).optional(),
 });
-/** Explicit zero is supported only by discretionary spending and transport inputs. */
+/** Explicit zero is supported for net income, discretionary spending and transport inputs. */
 export const nonnegativeMonthlyOverrideSchema = monthlyOverrideSchema.extend({ amountGbp: gbpText });
 export type MonthlyOverride = z.infer<typeof monthlyOverrideSchema>;
 export const authoritySelectionSchema = z.strictObject({
@@ -45,7 +45,7 @@ export const locationInputSchema = z.strictObject({
     scope: z.literal("ONE_EMPLOYEE_ONE_EMPLOYMENT"),
     taxYear: z.string().regex(/^\d{4}\/\d{2}$/), taxJurisdiction: jurisdictionSchema.optional(),
     // This is net disposable income, never a replacement gross salary or tax rule.
-    netMonthlyIncomeOverride: monthlyOverrideSchema.optional(),
+    netMonthlyIncomeOverride: nonnegativeMonthlyOverrideSchema.optional(),
     niCategory: z.string().regex(/^[A-Z]$/), payPeriod: z.enum(["weekly", "monthly", "annual"]),
   }),
   transport: transportSchema,

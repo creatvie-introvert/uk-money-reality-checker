@@ -4,6 +4,8 @@ import { mvpCityIdSchema } from "../../data/schemas/enums";
 export const categorySchema = z.enum(["income_tax", "national_insurance", "rent", "council_tax", "energy", "water", "groceries", "household_spending", "essentials", "lifestyle", "transport"]);
 export type Category = z.infer<typeof categorySchema>;
 export const diagnosticCodeSchema = z.enum([
+  "SCENARIO_INCOME_UNRESOLVED", "SCENARIO_COSTS_PARTIAL", "SCENARIO_COSTS_UNRESOLVED",
+  "SCENARIO_RESIDUAL_PARTIAL", "NET_INCOME_OVERRIDE_APPLIED", "BASELINE_INCOME_UNAVAILABLE",
   "HOUSEHOLD_COST_PARTIAL", "HOUSEHOLD_COST_UNRESOLVED",
   "ENERGY_MODEL_REQUIRED", "GROCERIES_MODEL_REQUIRED", "SPENDING_MODEL_REQUIRED",
   "WATER_USAGE_REQUIRED", "WATER_SELECTION_CONFLICT", "TRANSPORT_PERIOD_UNSUPPORTED",

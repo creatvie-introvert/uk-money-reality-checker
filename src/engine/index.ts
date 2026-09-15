@@ -12,3 +12,5 @@ export * from "./contracts/income";
 export { calculateIncomeTax, calculateEmployeeNi, calculateNetEmploymentIncome } from "./calculators/income";
 export * from "./contracts/household";
 export { calculateMonthlyCostCategory, calculateHouseholdMonthlyCosts, aggregateHouseholdMonthlyCosts } from "./calculators/household";
+export * from "./contracts/scenario";
+export { calculateScenario } from "./calculators/scenario";
