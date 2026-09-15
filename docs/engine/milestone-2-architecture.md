@@ -1,5 +1,11 @@
 # Milestone 2: calculator engine architecture and core contracts
 
+## Slice 7 update
+
+`evaluateSalaryPreservationEligibility(evidence, current, destination)` and `solveSalaryPreservation(evidence, current, destination, options?)` now preserve a complete current residual against complete destination household costs using the existing forward employment engine. Missing destination gross is permitted; a destination net override is an explicit conflict. See [salary preservation](salary-preservation.md) for eligibility, exact target/overshoot contracts, compact lineage and diagnostics.
+
+Search uses integer annual gross pennies, binary search over certified £2 block maxima and at most 200 ascending local penny checks. This guarantees the global minimum despite allowance-rounding net decreases. The inclusive default/hard operational cap is £10 million; lower caps and finite no-solution results are supported. All existing income, household, scenario, comparison and ranking arithmetic remains unchanged. Earlier statements deferring the salary solver are historical and superseded by Slice 7. No UI, affordability judgement or new evidence model is added.
+
 ## Slice 6 update
 
 `rankCostDrivers(comparison)` now ranks eligible household category deltas by exact absolute monthly impact, retaining signed directions, canonical tie-breaking, unchanged entries and explicit exclusions. See [cost-driver ranking](cost-driver-ranking.md) for coverage semantics and separate increase/decrease views. Ranking completeness is independent of core comparison completeness; no earlier result is mutated. All eligible entries are returned. No solver, affordability score, UI or new model is implemented.

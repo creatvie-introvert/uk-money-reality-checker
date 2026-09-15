@@ -17,3 +17,5 @@ export * from "./contracts/scenario";
 export { calculateScenario } from "./calculators/scenario";
 export * from "./contracts/cost-drivers";
 export { rankCostDrivers } from "./comparison/cost-drivers";
+export * from "./contracts/salary-preservation";
+export { evaluateSalaryPreservationEligibility, solveSalaryPreservation, SALARY_PRESERVATION_MAX_GROSS_GBP } from "./comparison/salary-preservation";

@@ -4,6 +4,11 @@ import { mvpCityIdSchema } from "../../data/schemas/enums";
 export const categorySchema = z.enum(["income_tax", "national_insurance", "rent", "council_tax", "energy", "water", "groceries", "household_spending", "essentials", "lifestyle", "transport"]);
 export type Category = z.infer<typeof categorySchema>;
 export const diagnosticCodeSchema = z.enum([
+  "SALARY_PRESERVATION_INELIGIBLE", "SALARY_PRESERVATION_SOLVED", "SALARY_PRESERVATION_NO_SOLUTION",
+  "CURRENT_RESIDUAL_INCOMPLETE", "CURRENT_INCOME_UNRESOLVED", "CURRENT_COSTS_INCOMPLETE",
+  "DESTINATION_COSTS_INCOMPLETE", "DESTINATION_SCENARIO_UNRESOLVED",
+  "DESTINATION_TAX_JURISDICTION_UNSUPPORTED", "DESTINATION_NI_UNSUPPORTED",
+  "DESTINATION_EMPLOYMENT_UNSUPPORTED", "DESTINATION_NET_OVERRIDE_CONFLICT", "SALARY_SEARCH_REFERENCE_UNSUPPORTED",
   "COST_DRIVER_RANKING_PARTIAL", "COST_DRIVER_RANKING_UNRESOLVED", "COST_DRIVER_CATEGORY_EXCLUDED",
   "COMPARISON_PARTIAL", "COMPARISON_UNRESOLVED", "TAKE_HOME_COMPARISON_UNRESOLVED",
   "HOUSEHOLD_COST_COMPARISON_PARTIAL", "HOUSEHOLD_COST_COMPARISON_UNRESOLVED",
@@ -30,7 +35,7 @@ export const diagnosticSchema = z.strictObject({
   severity: z.enum(["info", "warning", "blocking"]),
   kind: z.enum(["calculation_policy", "validation", "evidence_gap", "applicability_unresolved", "source_age", "user_override", "model_required", "unsupported_combination"]),
   category: categorySchema.optional(), cityId: mvpCityIdSchema.optional(),
-  metric: z.enum(["take_home", "household_cost", "residual", "category", "comparison", "cost_driver_ranking"]).optional(),
+  metric: z.enum(["take_home", "household_cost", "residual", "category", "comparison", "cost_driver_ranking", "salary_preservation"]).optional(),
   scenarioRole: z.enum(["current", "destination"]).optional(),
   currentState: z.string().min(1).optional(), destinationState: z.string().min(1).optional(),
   canResolveWithUserInput: z.boolean().optional(),
