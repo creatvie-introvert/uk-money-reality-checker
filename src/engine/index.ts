@@ -15,3 +15,5 @@ export * from "./contracts/household";
 export { calculateMonthlyCostCategory, calculateHouseholdMonthlyCosts, aggregateHouseholdMonthlyCosts } from "./calculators/household";
 export * from "./contracts/scenario";
 export { calculateScenario } from "./calculators/scenario";
+export * from "./contracts/cost-drivers";
+export { rankCostDrivers } from "./comparison/cost-drivers";

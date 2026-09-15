@@ -1,5 +1,11 @@
 # Milestone 2: calculator engine architecture and core contracts
 
+## Slice 6 update
+
+`rankCostDrivers(comparison)` now ranks eligible household category deltas by exact absolute monthly impact, retaining signed directions, canonical tie-breaking, unchanged entries and explicit exclusions. See [cost-driver ranking](cost-driver-ranking.md) for coverage semantics and separate increase/decrease views. Ranking completeness is independent of core comparison completeness; no earlier result is mutated. All eligible entries are returned. No solver, affordability score, UI or new model is implemented.
+
+Earlier statements deferring cost-driver ranking are historical and superseded by Slice 6. Prior comparison, scenario and category arithmetic remain unchanged.
+
 ## Slice 5 update
 
 `compareScenarios(current, destination)` now consumes two independently evaluated scenario results. It compares effective monthly take-home, complete household costs and complete residuals, always destination minus current, and exposes unranked category deltas. Incomplete total/residual metrics retain side context with no delta. See [scenario comparison](scenario-comparison.md) for completeness, N/A, lineage and diagnostic policies. The kickoff ComparisonEngine placeholder now takes two scenario results. No ranking, solver, UI or new evidence model is implemented.

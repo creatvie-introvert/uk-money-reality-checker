@@ -75,3 +75,8 @@ export function ceilWholeGbp(amount: Money): Money {
   if (n < zero) throw new Error("Whole-pound allowance ceiling requires a nonnegative amount");
   return fromGbp(String((n + d - one) / d));
 }
+/** Exact magnitude in the existing rational-pence representation. */
+export function absoluteMoney(value: Money): Money {
+  const parsed = moneySchema.parse(value);
+  return multiplyMoney(parsed, BigInt(parsed.numerator) < zero ? -one : one);
+}
