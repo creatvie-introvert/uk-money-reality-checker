@@ -14,7 +14,7 @@ export interface CategoryCalculatorContext {
 }
 export type CategoryCalculator<C extends Category> = (context: CategoryCalculatorContext) => CategoryResult & { category: C };
 export type CategoryCalculators = { [C in Category]: CategoryCalculator<C> };
-export function unsupportedCategory(category: Category, context: CategoryCalculatorContext): CategoryResult {
+function unsupportedCategory(category: Category, context: CategoryCalculatorContext): CategoryResult {
   categorySchema.parse(category);
   const cityId = context.location.cityId;
   const code: DiagnosticCode = category === "energy" ? "ENERGY_CITY_REGION_MAPPING_UNRESOLVED"

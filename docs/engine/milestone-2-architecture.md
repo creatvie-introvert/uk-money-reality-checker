@@ -1,5 +1,9 @@
 # Milestone 2: calculator engine architecture and core contracts
 
+## Milestone 2 closure update
+
+The [closure audit](milestone-2-closure.md) records the final supported scope, contract/API audit, eight integrated release fixtures and GO recommendation for product-result composition/UI integration. The public pipeline is covered by `tests/engine/milestone-2-acceptance.test.ts`. The internal `unsupportedCategory` placeholder is now private; registry behavior and all arithmetic are unchanged. Historical slice descriptions below remain snapshots, superseded by the closure report where they describe deferred work now completed.
+
 ## Slice 7 update
 
 `evaluateSalaryPreservationEligibility(evidence, current, destination)` and `solveSalaryPreservation(evidence, current, destination, options?)` now preserve a complete current residual against complete destination household costs using the existing forward employment engine. Missing destination gross is permitted; a destination net override is an explicit conflict. See [salary preservation](salary-preservation.md) for eligibility, exact target/overshoot contracts, compact lineage and diagnostics.
