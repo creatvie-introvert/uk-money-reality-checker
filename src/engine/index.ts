@@ -10,3 +10,5 @@ export type { ComparisonEngine, ComparisonResult } from "./comparison";
 
 export * from "./contracts/income";
 export { calculateIncomeTax, calculateEmployeeNi, calculateNetEmploymentIncome } from "./calculators/income";
+export * from "./contracts/household";
+export { calculateMonthlyCostCategory, calculateHouseholdMonthlyCosts, aggregateHouseholdMonthlyCosts } from "./calculators/household";

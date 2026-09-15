@@ -3,6 +3,7 @@ import type { AuditRecord } from "../../data/schemas/records";
 import type { Category, Diagnostic } from "../diagnostics";
 import type { DataReleaseMetadata, DeepReadonly } from "../loaders";
 import type { IncomeTaxResolved, EmployeeNiResolved } from "./income";
+import type { HouseholdMonthlyCosts } from "./household";
 import type { Money } from "../money";
 
 export type EngineEvidence = DeepReadonly<AuditRecord>;
@@ -40,14 +41,14 @@ export type CategoryResult =
     })
   | (CategoryResultBase & { status: "UNRESOLVED"; canResolveWithUserInput: boolean; monthlyAmount?: never })
   | (CategoryResultBase & { status: "NOT_APPLICABLE"; reason: string; monthlyAmount?: never });
-/** No partial total is exposed as a complete budget. Aggregation is a later slice. */
+/** Simple total state retained for the future net-income orchestration boundary. */
 export type MonthlyTotal =
   | { status: "RESOLVED"; amount: Money; includedCategories: readonly Category[] }
   | { status: "UNRESOLVED"; unresolvedCategories: readonly Category[]; amount?: never };
 export interface LocationResult {
   cityId: MvpCityId;
   categoryResults: readonly CategoryResult[];
-  monthlyTotals: { expenditure: MonthlyTotal; netIncome: MonthlyTotal };
+  monthlyTotals: { expenditure: HouseholdMonthlyCosts; netIncome: MonthlyTotal };
   diagnostics: readonly Diagnostic[];
   unresolvedCategories: readonly Category[];
 }

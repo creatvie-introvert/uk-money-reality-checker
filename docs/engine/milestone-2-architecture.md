@@ -1,5 +1,11 @@
 # Milestone 2: calculator engine architecture and core contracts
 
+## Slice 3 update
+
+The household monthly-cost layer now resolves eight required categories and emits COMPLETE, PARTIAL or UNRESOLVED with exact subtotals. See [household monthly costs](household-monthly-costs.md) for input additions, override/zero policies, Scottish water, explicit period-ticket transport, provenance and completeness contracts. `LocationResult.monthlyTotals.expenditure` uses `HouseholdMonthlyCosts`; only COMPLETE exposes `totalMonthlyCost`. The registry includes essentials/lifestyle individually; the legacy household_spending stub never enters household aggregation. No UI, comparison, residual or salary solver is implemented.
+
+The historical sections below describe their original slice. Their deferred override and aggregation statements are superseded by the Slice 3 document; income scope is described by Slice 2.
+
 ## Slice 2 update
 
 Income tax, category-A annual employee NI and standalone net employment income are now implemented. See [income tax and NI](income-tax-ni.md) for contracts, source-reviewed rounding, band conversion, diagnostics and tests. The scenario now requires `income.calculationBasis: "ANNUAL_COMPARISON"`. The category registry has four implemented calculators and five remaining stubs. Net override application and household aggregation remain deferred. New standalone income APIs return structured validation diagnostics rather than throwing for invalid business input.

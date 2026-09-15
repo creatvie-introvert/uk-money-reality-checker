@@ -1,27 +1,12 @@
 import { calculateIncomeTax, calculateEmployeeNi } from "./income";
-import type { EvidenceLoader, EvidenceRecord } from "../loaders";
+import type { EvidenceLoader } from "../loaders";
 import type { NormalizedInput, NormalizedLocation } from "../contracts/input";
-import type { CategoryResult, EvidenceResolution, EngineEvidence } from "../contracts/output";
+import type { CategoryResult } from "../contracts/output";
 import { categorySchema, type Category, type DiagnosticCode } from "../diagnostics";
-import { fromGbp, monthlyEquivalent } from "../money";
-import { resolveRent, resolveCouncilTax, type RentRequest, type CouncilTaxRequest } from "../resolution";
+import { monthlyEquivalent } from "../money";
+export { calculateRent, calculateCouncilTax } from "./housing";
+import { calculateMonthlyCostCategory } from "./household";
 
-function monthlyResult<T extends EngineEvidence>(resolution: EvidenceResolution<T>, inputUsed: unknown, amount: (r: T) => { amount: ReturnType<typeof fromGbp>; converted: boolean }): CategoryResult {
-  const base = { category: resolution.category, cityId: resolution.cityId, inputUsed: structuredClone(inputUsed), evidenceLineage: resolution.baselineEvidence.records, diagnostics: resolution.diagnostics, limitations: resolution.limitations };
-  if (resolution.status === "UNRESOLVED") return { ...base, status: "UNRESOLVED", canResolveWithUserInput: resolution.canResolveWithUserInput };
-  if (resolution.status === "USER_OVERRIDE") return { ...base, status: "RESOLVED", monthlyAmount: resolution.effectiveInput.amount, classification: "USER_ENTERED", lineageClassifications: [...resolution.baselineEvidence.records.map((r) => r.valueType), "USER_ENTERED"], overrideStatus: "USER_OVERRIDE", baselineEvidence: resolution.baselineEvidence, amountBasis: "USER_DECLARED_MONTHLY" };
-  const value = amount(resolution.effectiveInput.records[0]);
-  return { ...base, status: "RESOLVED", monthlyAmount: value.amount, classification: value.converted ? "CALCULATED" : "OBSERVED_DATA", lineageClassifications: value.converted ? ["OBSERVED_DATA", "CALCULATED"] : ["OBSERVED_DATA"], overrideStatus: "NONE", baselineEvidence: resolution.baselineEvidence, amountBasis: value.converted ? "MATHEMATICAL_MONTHLY_EQUIVALENT" : "SOURCE_MONTH", ...(value.converted ? { formula: { expression: "annualGbp / 12", version: "annual-monthly-equivalent-v1" } } : {}) };
-}
-/** Published monthly rent; source month and source geography remain in lineage. */
-export function calculateRent(loader: EvidenceLoader, request: RentRequest): CategoryResult {
-  return monthlyResult(resolveRent(loader, request), request, (r: EvidenceRecord<"rent">) => ({ amount: fromGbp(String(r.valueGbp)), converted: false }));
-}
-/** Equivalent of published annual band charge, not an assessed household bill or instalment. */
-export function calculateCouncilTax(loader: EvidenceLoader, request: CouncilTaxRequest): CategoryResult {
-  const result = monthlyResult(resolveCouncilTax(loader, request), request, (r: EvidenceRecord<"councilTax">) => ({ amount: monthlyEquivalent(fromGbp(r.qa.displayedAnnualGbp), "ANNUAL"), converted: true }));
-  return { ...result, limitations: [...result.limitations, "Annual published authority/band charge divided by 12; discounts, exemptions, parish/address applicability and actual instalment schedules are not calculated."] };
-}
 export interface CategoryCalculatorContext {
   household: NormalizedInput["household"];
   location: NormalizedLocation;
@@ -60,13 +45,15 @@ function incomeCategory(context: CategoryCalculatorContext, category: "income_ta
 
 // Full calculator implementations will satisfy this same registry interface.
 export const categoryCalculators: CategoryCalculators = {
-  rent: ({ location, evidence }) => calculateRent(evidence, { cityId: location.cityId, bedrooms: location.housing.bedrooms, sourcePeriod: location.housing.rentSourceMonth, propertyType: location.housing.propertyType, override: location.housing.overrides.rent }) as CategoryResult & { category: "rent" },
-  council_tax: ({ location, evidence }) => calculateCouncilTax(evidence, { cityId: location.cityId, effectiveOn: location.effectiveOn, selection: location.housing.councilTax, override: location.housing.overrides.councilTax }) as CategoryResult & { category: "council_tax" },
+  rent: (c) => calculateMonthlyCostCategory(c, "rent") as CategoryResult & { category: "rent" },
+  council_tax: (c) => calculateMonthlyCostCategory(c, "council_tax") as CategoryResult & { category: "council_tax" },
   income_tax: (c) => incomeCategory(c, "income_tax") as CategoryResult & { category: "income_tax" },
   national_insurance: (c) => incomeCategory(c, "national_insurance") as CategoryResult & { category: "national_insurance" },
-  energy: (c) => unsupportedCategory("energy", c) as CategoryResult & { category: "energy" },
-  water: (c) => unsupportedCategory("water", c) as CategoryResult & { category: "water" },
-  groceries: (c) => unsupportedCategory("groceries", c) as CategoryResult & { category: "groceries" },
+  energy: (c) => calculateMonthlyCostCategory(c, "energy") as CategoryResult & { category: "energy" },
+  water: (c) => calculateMonthlyCostCategory(c, "water") as CategoryResult & { category: "water" },
+  groceries: (c) => calculateMonthlyCostCategory(c, "groceries") as CategoryResult & { category: "groceries" },
+  essentials: (c) => calculateMonthlyCostCategory(c, "essentials") as CategoryResult & { category: "essentials" },
+  lifestyle: (c) => calculateMonthlyCostCategory(c, "lifestyle") as CategoryResult & { category: "lifestyle" },
   household_spending: (c) => unsupportedCategory("household_spending", c) as CategoryResult & { category: "household_spending" },
-  transport: (c) => unsupportedCategory("transport", c) as CategoryResult & { category: "transport" },
+  transport: (c) => calculateMonthlyCostCategory(c, "transport") as CategoryResult & { category: "transport" },
 };

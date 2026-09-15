@@ -1,9 +1,13 @@
 import { z } from "zod";
 import { mvpCityIdSchema } from "../../data/schemas/enums";
 
-export const categorySchema = z.enum(["income_tax", "national_insurance", "rent", "council_tax", "energy", "water", "groceries", "household_spending", "transport"]);
+export const categorySchema = z.enum(["income_tax", "national_insurance", "rent", "council_tax", "energy", "water", "groceries", "household_spending", "essentials", "lifestyle", "transport"]);
 export type Category = z.infer<typeof categorySchema>;
 export const diagnosticCodeSchema = z.enum([
+  "HOUSEHOLD_COST_PARTIAL", "HOUSEHOLD_COST_UNRESOLVED",
+  "ENERGY_MODEL_REQUIRED", "GROCERIES_MODEL_REQUIRED", "SPENDING_MODEL_REQUIRED",
+  "WATER_USAGE_REQUIRED", "WATER_SELECTION_CONFLICT", "TRANSPORT_PERIOD_UNSUPPORTED",
+  "TRANSPORT_FREQUENCY_MODEL_UNSUPPORTED", "TRANSPORT_NOT_APPLICABLE",
   "INVALID_INPUT", "INVALID_ARTIFACT", "INCOMPATIBLE_DATA_RELEASE",
   "TAX_JURISDICTION_UNSUPPORTED", "TAX_REFERENCE_MISSING", "TAX_REFERENCE_AMBIGUOUS", "TAX_REFERENCE_INVALID",
   "NI_CATEGORY_UNSUPPORTED", "NI_REFERENCE_MISSING", "NI_REFERENCE_AMBIGUOUS", "NI_REFERENCE_INVALID",
@@ -20,6 +24,7 @@ export const diagnosticSchema = z.strictObject({
   severity: z.enum(["info", "warning", "blocking"]),
   kind: z.enum(["calculation_policy", "validation", "evidence_gap", "applicability_unresolved", "source_age", "user_override", "model_required", "unsupported_combination"]),
   category: categorySchema.optional(), cityId: mvpCityIdSchema.optional(),
+  canResolveWithUserInput: z.boolean().optional(),
   message: z.string().min(1), path: z.array(z.union([z.string(), z.number()])).optional(),
 });
 export type Diagnostic = z.infer<typeof diagnosticSchema>;

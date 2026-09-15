@@ -10,6 +10,8 @@ export const monthlyOverrideSchema = z.strictObject({
   amountGbp: gbpText.refine((s) => /[1-9]/.test(s), "Override must be positive; no implicit free-cost assumption"),
   period: z.literal("MONTHLY"), note: z.string().max(1000).optional(),
 });
+/** Explicit zero is supported only by discretionary spending and transport inputs. */
+export const nonnegativeMonthlyOverrideSchema = monthlyOverrideSchema.extend({ amountGbp: gbpText });
 export type MonthlyOverride = z.infer<typeof monthlyOverrideSchema>;
 export const authoritySelectionSchema = z.strictObject({
   authorityName: z.string().min(1), authorityCode: z.string().regex(/^[ESW]\d{8}$/).optional(),
@@ -18,8 +20,9 @@ export const authoritySelectionSchema = z.strictObject({
 export const bedroomSchema = z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]);
 export const propertyTypeSchema = z.enum(["detached", "semidetached", "terraced", "flat maisonette"]);
 const transportSchema = z.discriminatedUnion("status", [
-  z.strictObject({ status: z.literal("UNRESOLVED") }),
-  z.strictObject({ status: z.literal("SELECTED"), productId: z.string().min(1),
+  z.strictObject({ status: z.literal("UNRESOLVED"), override: nonnegativeMonthlyOverrideSchema.optional() }),
+  z.strictObject({ status: z.literal("NOT_APPLICABLE"), reason: z.literal("NO_TRANSPORT_COST") }),
+  z.strictObject({ status: z.literal("SELECTED"), productId: z.string().min(1), override: nonnegativeMonthlyOverrideSchema.optional(),
     frequency: z.strictObject({ daysPerWeek: z.number().finite().min(0).max(7), valueType: z.literal("MODELLED_ESTIMATE"), releaseStatus: z.literal("DEV_ONLY") }).optional(),
   }),
 ]);
@@ -29,6 +32,11 @@ export const locationInputSchema = z.strictObject({
   housing: z.strictObject({
     bedrooms: bedroomSchema, rentSourceMonth: yearMonthSchema, propertyType: propertyTypeSchema.optional(),
     councilTax: authoritySelectionSchema.optional(),
+    water: z.strictObject({
+      billingRegime: z.literal("council_tax_band"),
+      band: authoritySelectionSchema.shape.band,
+      connectedServices: z.enum(["clean_water", "wastewater", "combined"]),
+    }).optional(),
     overrides: z.strictObject({ rent: monthlyOverrideSchema.optional(), councilTax: monthlyOverrideSchema.optional(), water: monthlyOverrideSchema.optional(), energy: monthlyOverrideSchema.optional() }),
   }),
   income: z.strictObject({
@@ -41,7 +49,7 @@ export const locationInputSchema = z.strictObject({
     niCategory: z.string().regex(/^[A-Z]$/), payPeriod: z.enum(["weekly", "monthly", "annual"]),
   }),
   transport: transportSchema,
-  spending: z.strictObject({ groceries: monthlyOverrideSchema.optional(), essentials: monthlyOverrideSchema.optional(), lifestyle: monthlyOverrideSchema.optional() }),
+  spending: z.strictObject({ groceries: monthlyOverrideSchema.optional(), essentials: nonnegativeMonthlyOverrideSchema.optional(), lifestyle: nonnegativeMonthlyOverrideSchema.optional() }),
 });
 export const calculatorInputSchema = z.strictObject({
   household: z.strictObject({ adults: z.number().int().min(1).max(Number.MAX_SAFE_INTEGER), children: z.number().int().min(0).max(Number.MAX_SAFE_INTEGER), childAges: z.array(z.number().int().min(0).max(17)).optional() }).superRefine((h, ctx) => {
@@ -62,7 +70,7 @@ export function normalizeCalculatorInput(raw: unknown, loader: EvidenceLoader): 
   const diagnostics: Diagnostic[] = [];
   for (const key of ["currentLocation", "destinationLocation"] as const) {
     const location = input[key], selection = location.transport;
-    if (selection.status === "SELECTED" && (!loader.hasTransportProduct(selection.productId) || !loader.getTransportProducts({ cityId: location.cityId, effectiveOn: location.effectiveOn }).some((p) => p.recordId === selection.productId))) {
+    if (selection.status === "SELECTED" && !selection.override && (!loader.hasTransportProduct(selection.productId) || !loader.getTransportProducts({ cityId: location.cityId, effectiveOn: location.effectiveOn }).some((p) => p.recordId === selection.productId))) {
       diagnostics.push({ code: "INVALID_PRODUCT_SELECTION", severity: "blocking", kind: "validation", category: "transport", cityId: location.cityId, message: "Product ID must exist and match the selected city and evidence date; route eligibility still requires confirmation", path: [key, "transport", "productId"] });
     }
   }
