@@ -1,5 +1,7 @@
 # Source catalogue reconciliation
 
+> Historical Slice 2 ledger. Later production slices supersede the period, licensing, Bristol water and source-access findings below. For current pinned evidence, use the `production-*.md` methodology documents and [Milestone 1 closure](milestone-1-closure.md). The current catalogue is `src/data/provenance/catalog.ts`.
+
 The user-supplied “Milestone 1 Slice 2 Reconciliation Pass: Source Catalogue Verification”, Batches 1–4, is the authoritative research record for this pass. This ledger records its application without a new source audit, source fetch or workbook modification. All 26 entries were updated because each previously carried a blanket missing-audit note. Existing IDs and source-governance labels remain unchanged.
 
 ## Entry decisions

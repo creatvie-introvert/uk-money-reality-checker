@@ -10,15 +10,7 @@
   "importedAt": "2026-09-14T17:49:38Z",
   "importVersion": "transport-v1",
   "releaseStatus": "RELEASE_READY",
-  "limitations": [
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available."
-  ],
+  "limitations": [],
   "rows": [
     {
       "rowId": "smartcard-single",

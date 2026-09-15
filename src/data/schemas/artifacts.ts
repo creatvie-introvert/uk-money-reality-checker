@@ -43,8 +43,8 @@ export const directEvidenceReleaseSchema = z.object({
       if (record.releaseStatus !== "RELEASE_READY") {
         context.addIssue({ code: "custom", path: [index, "releaseStatus"], message: "Direct evidence releases require RELEASE_READY records" });
       }
-      if (record.valueType === "USER_ENTERED") {
-        context.addIssue({ code: "custom", path: [index, "valueType"], message: "Direct evidence releases cannot contain USER_ENTERED records" });
+      if (record.valueType === "USER_ENTERED" || record.valueType === "MODELLED_ESTIMATE") {
+        context.addIssue({ code: "custom", path: [index, "valueType"], message: "Direct evidence releases cannot contain USER_ENTERED or MODELLED_ESTIMATE records" });
       }
     });
   }),

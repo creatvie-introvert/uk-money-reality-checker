@@ -60,9 +60,15 @@ export function runIngestion<Row, Record extends AuditRecord>(
     return result;
   }
   result.counts.inputRows = rawRows.length;
-  const parsedRows = rawRows.map((raw) => adapter.rowSchema.safeParse(raw, { reportInput: true }));
-  const identifiers = parsedRows.map((row) => {
-    if (!row.success) return undefined;
+  const parsedRows = rawRows.map((raw) => {
+    try {
+      return { parsed: adapter.rowSchema.safeParse(raw, { reportInput: true }) };
+    } catch (error) {
+      return { failure: error instanceof Error ? error.message : "Row schema failed" };
+    }
+  });
+  const identifiers = parsedRows.map(({ parsed: row }) => {
+    if (!row?.success) return undefined;
     try { return adapter.sourceIdentifier(row.data); } catch { return undefined; }
   });
   const occurrences = new Map<string, number>();
@@ -72,7 +78,8 @@ export function runIngestion<Row, Record extends AuditRecord>(
     result.diagnostics.push(...diagnostics);
     result.counts.rejectedRows += 1;
   };
-  parsedRows.forEach((row, rowIndex) => {
+  parsedRows.forEach(({ parsed: row, failure }, rowIndex) => {
+    if (!row) return reject(rowIndex, [{ code: "SOURCE_PARSE_FAILURE", rowIndex, message: failure! }]);
     if (!row.success) return reject(rowIndex, validationDiagnostics(row.error, rowIndex));
     const id = identifiers[rowIndex];
     if (!id) return reject(rowIndex, [{ code: "MISSING_REQUIRED_SOURCE_FIELD", rowIndex, message: "Source identifier is missing" }]);

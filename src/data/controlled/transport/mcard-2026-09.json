@@ -12,12 +12,6 @@
   "releaseStatus": "RELEASE_READY",
   "limitations": [
     "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
     "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum."
   ],
   "rows": [

@@ -237,3 +237,16 @@ describe("offline ingestion", () => {
     }
   });
 });
+
+
+it("accounts for a throwing row transform and continues processing subsequent rows", () => {
+  const adapter = { ...taxReferenceAdapter, rowSchema: taxReferenceAdapter.rowSchema.transform((row) => {
+    if (row.id === taxReferenceRow.id) throw new Error("custom transform failed");
+    return row;
+  }) };
+  const result = runIngestion(adapter, source, { ...input, payload: JSON.stringify([taxReferenceRow, { ...taxReferenceRow, id: "accepted-after-transform-error" }]) });
+  expect(result.status).toBe("FAILED");
+  expect(result.counts).toEqual({ inputRows: 2, acceptedRows: 1, rejectedRows: 1 });
+  expect(result.rows.map((row) => row.rowIndex)).toEqual([0, 1]);
+  expect(result.diagnostics.every((d) => d.code === "SOURCE_PARSE_FAILURE")).toBe(true);
+});

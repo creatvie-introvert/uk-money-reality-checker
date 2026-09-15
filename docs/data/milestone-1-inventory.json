@@ -1,0 +1,1337 @@
+{
+  "scope": "Milestone 1 pinned evidence audit; no latest-price or public redistribution approval",
+  "productionArtifactCount": 32,
+  "observedRecords": 1191,
+  "calculatedRecords": 93,
+  "inputRows": 1191,
+  "rejectedRows": 0,
+  "inventory": [
+    {
+      "path": "src/data/generated/2024-v1/energy-consumption/audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "6f2319e4f9be636b2b94bc704e5a73f428d62401e16b54f04b3a8fc0dddd35fd",
+      "releaseId": "ukmr-need-2024-v1",
+      "schemaVersion": "1.4.0",
+      "recordCount": 784,
+      "categoryIds": [
+        "energy_consumption"
+      ],
+      "sourceIds": [
+        "SRC-003"
+      ],
+      "snapshotIds": [
+        "need-ew-2026-release-2024",
+        "need-scotland-2026-release-2024"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2024-v1/energy-consumption/ingestion-report.json",
+      "artifactType": "INGESTION_REPORT",
+      "sha256": "f274aeea0899da9c0c6e218d71802ce56d2a45f125bdbe7f5db60b949f95da92",
+      "sourceIds": [
+        "SRC-003"
+      ],
+      "snapshotIds": [
+        "need-ew-2026-release-2024",
+        "need-scotland-2026-release-2024"
+      ],
+      "inputRows": 784,
+      "emittedRecords": 784
+    },
+    {
+      "path": "src/data/generated/2024-v1/energy-consumption/reference.json",
+      "artifactType": "REFERENCE_ARTIFACT",
+      "sha256": "c81427d59c32aeb26b82abd83ae8176033123c29a34fcab7bce1530a20db2cf3",
+      "releaseId": "ukmr-need-2024-v1",
+      "schemaVersion": "1.4.0",
+      "recordCount": 784,
+      "categoryIds": [
+        "energy_consumption"
+      ],
+      "sourceIds": [
+        "SRC-003"
+      ],
+      "snapshotIds": [
+        "need-ew-2026-release-2024",
+        "need-scotland-2026-release-2024"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-07-v1/rent/audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "22ae5dfbdb225e44b622bb8d06cde8bed61f6cc725520931e193d2ae04875ef4",
+      "releaseId": "ukmr-rent-2026-07-v1",
+      "schemaVersion": "1.3.0",
+      "recordCount": 35,
+      "categoryIds": [
+        "rent"
+      ],
+      "sourceIds": [
+        "SRC-001"
+      ],
+      "snapshotIds": [
+        "ons-pipr-2026-08-19-sha256-9e172e7d32a4"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-07-v1/rent/ingestion-report.json",
+      "artifactType": "INGESTION_REPORT",
+      "sha256": "d4163ab2bc7ba41402e4203634512d3be83c35f0ac5e6d182893928e63aff761",
+      "sourceIds": [
+        "SRC-001"
+      ],
+      "snapshotIds": [
+        "ons-pipr-2026-08-19-sha256-9e172e7d32a4"
+      ],
+      "inputRows": 35,
+      "emittedRecords": 35
+    },
+    {
+      "path": "src/data/generated/2026-07-v1/rent/release.json",
+      "artifactType": "DIRECT_EVIDENCE_RELEASE",
+      "sha256": "67b784091625668ea07375289e20b62e80bce7f4359c4a3cab40871a2e5d4250",
+      "releaseId": "ukmr-rent-2026-07-v1",
+      "schemaVersion": "1.3.0",
+      "recordCount": 35,
+      "categoryIds": [
+        "rent"
+      ],
+      "sourceIds": [
+        "SRC-001"
+      ],
+      "snapshotIds": [
+        "ons-pipr-2026-08-19-sha256-9e172e7d32a4"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-09-v1/transport/audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "abb3fcb796844467352f0c1f601a097f647374755613b97618d6051401543d65",
+      "releaseId": "ukmr-transport-2026-09-v1",
+      "schemaVersion": "1.7.0",
+      "recordCount": 25,
+      "categoryIds": [
+        "transport_fare"
+      ],
+      "sourceIds": [
+        "SRC-EDINBURGH-TRANSPORT",
+        "SRC-GLASGOW-TRANSPORT",
+        "SRC-MCARD",
+        "SRC-MERSEYTRAVEL",
+        "SRC-TFGM",
+        "SRC-TFL",
+        "SRC-TFWM",
+        "SRC-TRAVELWEST"
+      ],
+      "snapshotIds": [
+        "transport-bee-20260914",
+        "transport-bristolcurrent-20260914",
+        "transport-firstglasgow-20260914",
+        "transport-lothiancurrent-20260914",
+        "transport-mcard-20260914",
+        "transport-railpass-20260914",
+        "transport-saveaway-20260914",
+        "transport-solo-20260914",
+        "transport-subwaycurrent-20260914",
+        "transport-tfl-20260914",
+        "transport-tfwmbus-20260914",
+        "transport-tfwmnetwork-20260914",
+        "transport-tramscurrent-20260914",
+        "transport-trio-20260914",
+        "transport-zonecard-20260914"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-09-v1/transport/calculated.json",
+      "artifactType": "REFERENCE_ARTIFACT",
+      "sha256": "d2be6ce14f4b1eac5658eea6f895fd7f8de2ec27cc197d4e69d64d2e7b46c69f",
+      "releaseId": "ukmr-transport-2026-09-v1-calculated",
+      "schemaVersion": "1.7.0",
+      "recordCount": 8,
+      "categoryIds": [
+        "transport_period_conversion"
+      ],
+      "sourceIds": [
+        "SRC-GLASGOW-TRANSPORT",
+        "SRC-MCARD",
+        "SRC-MERSEYTRAVEL",
+        "SRC-TFL"
+      ],
+      "snapshotIds": [
+        "transport-mcard-20260914",
+        "transport-railpass-20260914",
+        "transport-solo-20260914",
+        "transport-tfl-20260914",
+        "transport-trio-20260914",
+        "transport-zonecard-20260914"
+      ],
+      "classifications": [
+        "CALCULATED"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-09-v1/transport/ingestion-report.json",
+      "artifactType": "INGESTION_REPORT",
+      "sha256": "f9818fd97e51de3c63d7bb84caa30e912ff81e0d4a8dbeca2e6f092aed7fbe4d",
+      "sourceIds": [
+        "SRC-EDINBURGH-TRANSPORT",
+        "SRC-GLASGOW-TRANSPORT",
+        "SRC-MCARD",
+        "SRC-MERSEYTRAVEL",
+        "SRC-TFGM",
+        "SRC-TFL",
+        "SRC-TFWM",
+        "SRC-TRAVELWEST"
+      ],
+      "snapshotIds": [
+        "transport-bee-20260914",
+        "transport-bristolcurrent-20260914",
+        "transport-firstglasgow-20260914",
+        "transport-lothiancurrent-20260914",
+        "transport-mcard-20260914",
+        "transport-railpass-20260914",
+        "transport-saveaway-20260914",
+        "transport-solo-20260914",
+        "transport-subwaycurrent-20260914",
+        "transport-tfl-20260914",
+        "transport-tfwmbus-20260914",
+        "transport-tfwmnetwork-20260914",
+        "transport-tramscurrent-20260914",
+        "transport-trio-20260914",
+        "transport-zonecard-20260914"
+      ],
+      "inputRows": 25,
+      "emittedRecords": 25
+    },
+    {
+      "path": "src/data/generated/2026-09-v1/transport/release.json",
+      "artifactType": "DIRECT_EVIDENCE_RELEASE",
+      "sha256": "0fa7e1131bdb0ed3ca6eae70098a394e11b1967eaacc694deead74325cb1a653",
+      "releaseId": "ukmr-transport-2026-09-v1",
+      "schemaVersion": "1.7.0",
+      "recordCount": 25,
+      "categoryIds": [
+        "transport_fare"
+      ],
+      "sourceIds": [
+        "SRC-EDINBURGH-TRANSPORT",
+        "SRC-GLASGOW-TRANSPORT",
+        "SRC-MCARD",
+        "SRC-MERSEYTRAVEL",
+        "SRC-TFGM",
+        "SRC-TFL",
+        "SRC-TFWM",
+        "SRC-TRAVELWEST"
+      ],
+      "snapshotIds": [
+        "transport-bee-20260914",
+        "transport-bristolcurrent-20260914",
+        "transport-firstglasgow-20260914",
+        "transport-lothiancurrent-20260914",
+        "transport-mcard-20260914",
+        "transport-railpass-20260914",
+        "transport-saveaway-20260914",
+        "transport-solo-20260914",
+        "transport-subwaycurrent-20260914",
+        "transport-tfl-20260914",
+        "transport-tfwmbus-20260914",
+        "transport-tfwmnetwork-20260914",
+        "transport-tramscurrent-20260914",
+        "transport-trio-20260914",
+        "transport-zonecard-20260914"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/council-tax/audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "72f435008dadfc01853eba07fc5e580464134832755bc33776101bfb6e32ef81",
+      "releaseId": "ukmr-council-tax-2026-27-v1",
+      "schemaVersion": "1.2.0",
+      "recordCount": 56,
+      "categoryIds": [
+        "council_tax"
+      ],
+      "sourceIds": [
+        "SRC-002",
+        "SRC-020"
+      ],
+      "snapshotIds": [
+        "SRC-002-council-tax-2026-27-20260914-v1",
+        "SRC-020-council-tax-2026-27-20260914-v1"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/council-tax/ingestion-report.json",
+      "artifactType": "INGESTION_REPORT",
+      "sha256": "f569ee0db0c6d5959a5dc9b6ec3ece09e861541bf076ee5ac09c564f721b1aae",
+      "sourceIds": [
+        "SRC-002",
+        "SRC-020"
+      ],
+      "snapshotIds": [
+        "SRC-002-council-tax-2026-27-20260914-v1",
+        "SRC-020-council-tax-2026-27-20260914-v1"
+      ],
+      "inputRows": 56,
+      "emittedRecords": 56
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/council-tax/release.json",
+      "artifactType": "DIRECT_EVIDENCE_RELEASE",
+      "sha256": "8cb68957b8028ff12ae04af15b9d26d8431f68dc3d542bf5ae587187e67e11f3",
+      "releaseId": "ukmr-council-tax-2026-27-v1",
+      "schemaVersion": "1.2.0",
+      "recordCount": 56,
+      "categoryIds": [
+        "council_tax"
+      ],
+      "sourceIds": [
+        "SRC-002",
+        "SRC-020"
+      ],
+      "snapshotIds": [
+        "SRC-002-council-tax-2026-27-20260914-v1",
+        "SRC-020-council-tax-2026-27-20260914-v1"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/income-tax.audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "e2acfe5c56bbb134c342ad4c2c46069dfc031f3ef7a87a27b790c72f90dafe3d",
+      "releaseId": "ukmr-income-tax-2026-27-v1",
+      "schemaVersion": "1.1.0",
+      "recordCount": 15,
+      "categoryIds": [
+        "income_tax_rule"
+      ],
+      "sourceIds": [
+        "SRC-011",
+        "SRC-013"
+      ],
+      "snapshotIds": [
+        "hmrc-allowances-2026-27-20260914-v1",
+        "hmrc-current-rates-2026-27-20260914-v1",
+        "scottish-bands-2026-27-20260914-v1"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/income-tax.reference.json",
+      "artifactType": "REFERENCE_ARTIFACT",
+      "sha256": "63f0ae5a334a4741c72836fc350ca374e18f815ea4edf5f628d15c1109244556",
+      "releaseId": "ukmr-income-tax-2026-27-v1",
+      "schemaVersion": "1.1.0",
+      "recordCount": 15,
+      "categoryIds": [
+        "income_tax_rule"
+      ],
+      "sourceIds": [
+        "SRC-011",
+        "SRC-013"
+      ],
+      "snapshotIds": [
+        "hmrc-allowances-2026-27-20260914-v1",
+        "hmrc-current-rates-2026-27-20260914-v1",
+        "scottish-bands-2026-27-20260914-v1"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/ingestion-report.json",
+      "artifactType": "INGESTION_REPORT",
+      "sha256": "85e334e805f820eb65372fe6919c4ba155e2872c923cf76136f45851032f6c86",
+      "sourceIds": [
+        "SRC-011",
+        "SRC-012",
+        "SRC-013"
+      ],
+      "snapshotIds": [
+        "hmrc-allowances-2026-27-20260914-v1",
+        "hmrc-current-rates-2026-27-20260914-v1",
+        "hmrc-ni-category-a-2026-27-20260914-v1",
+        "scottish-bands-2026-27-20260914-v1"
+      ],
+      "inputRows": 24,
+      "emittedRecords": 24
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/national-insurance.audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "a932b84e077df44b09a6f0d83ed6e67c8aa81626d66016a375d3ee6727d5c0d3",
+      "releaseId": "ukmr-national-insurance-2026-27-v1",
+      "schemaVersion": "1.1.0",
+      "recordCount": 9,
+      "categoryIds": [
+        "national_insurance_rule"
+      ],
+      "sourceIds": [
+        "SRC-012"
+      ],
+      "snapshotIds": [
+        "hmrc-ni-category-a-2026-27-20260914-v1"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/national-insurance.reference.json",
+      "artifactType": "REFERENCE_ARTIFACT",
+      "sha256": "c91676c3c9bc82f54ae56d0e06a62cd480d75cd34a4446d4964ce96eed39d589",
+      "releaseId": "ukmr-national-insurance-2026-27-v1",
+      "schemaVersion": "1.1.0",
+      "recordCount": 9,
+      "categoryIds": [
+        "national_insurance_rule"
+      ],
+      "sourceIds": [
+        "SRC-012"
+      ],
+      "snapshotIds": [
+        "hmrc-ni-category-a-2026-27-20260914-v1"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/water/audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "cb974d836aa22655885e7d94f45960b0eff9c194356b3df9535473f570e873d7",
+      "releaseId": "ukmr-water-2026-27-v1",
+      "schemaVersion": "1.5.0",
+      "recordCount": 56,
+      "categoryIds": [
+        "water_tariff"
+      ],
+      "sourceIds": [
+        "SRC-010",
+        "SRC-014",
+        "SRC-015",
+        "SRC-017",
+        "SRC-018",
+        "SRC-BRISTOL-WATER",
+        "SRC-SEVERN-TRENT"
+      ],
+      "snapshotIds": [
+        "SRC-010-2026-27-reviewed-20260914",
+        "SRC-014-2026-27-reviewed-20260914",
+        "SRC-015-2026-27-reviewed-20260914",
+        "SRC-017-2026-27-reviewed-20260914",
+        "SRC-018-2026-27-reviewed-20260914",
+        "SRC-BRISTOL-WATER-2026-27-reviewed-20260914",
+        "SRC-SEVERN-TRENT-2026-27-reviewed-20260914"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/water/ingestion-report.json",
+      "artifactType": "INGESTION_REPORT",
+      "sha256": "c6881e9d1f0b2cc91d1b392c7bd24796b59bf8205a971d4c23d7214a97156da1",
+      "sourceIds": [
+        "SRC-010",
+        "SRC-014",
+        "SRC-015",
+        "SRC-017",
+        "SRC-018",
+        "SRC-BRISTOL-WATER",
+        "SRC-SEVERN-TRENT"
+      ],
+      "snapshotIds": [
+        "SRC-010-2026-27-reviewed-20260914",
+        "SRC-014-2026-27-reviewed-20260914",
+        "SRC-015-2026-27-reviewed-20260914",
+        "SRC-017-2026-27-reviewed-20260914",
+        "SRC-018-2026-27-reviewed-20260914",
+        "SRC-BRISTOL-WATER-2026-27-reviewed-20260914",
+        "SRC-SEVERN-TRENT-2026-27-reviewed-20260914"
+      ],
+      "inputRows": 56,
+      "emittedRecords": 56
+    },
+    {
+      "path": "src/data/generated/2026-27-v1/water/release.json",
+      "artifactType": "DIRECT_EVIDENCE_RELEASE",
+      "sha256": "f04cf522c24e6abecd5f8fb62fe4edff7a77c043c4f5a2a8f318b3d2e8fcd1fb",
+      "releaseId": "ukmr-water-2026-27-v1",
+      "schemaVersion": "1.5.0",
+      "recordCount": 56,
+      "categoryIds": [
+        "water_tariff"
+      ],
+      "sourceIds": [
+        "SRC-010",
+        "SRC-014",
+        "SRC-015",
+        "SRC-017",
+        "SRC-018",
+        "SRC-BRISTOL-WATER",
+        "SRC-SEVERN-TRENT"
+      ],
+      "snapshotIds": [
+        "SRC-010-2026-27-reviewed-20260914",
+        "SRC-014-2026-27-reviewed-20260914",
+        "SRC-015-2026-27-reviewed-20260914",
+        "SRC-017-2026-27-reviewed-20260914",
+        "SRC-018-2026-27-reviewed-20260914",
+        "SRC-BRISTOL-WATER-2026-27-reviewed-20260914",
+        "SRC-SEVERN-TRENT-2026-27-reviewed-20260914"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-q3-v1/energy-prices/audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "862b4a45c67368b21a9c24aefea714085c37263be1fe77baef66bffbc264aa7a",
+      "releaseId": "ukmr-ofgem-2026-q3-v1",
+      "schemaVersion": "1.4.0",
+      "recordCount": 126,
+      "categoryIds": [
+        "energy_price"
+      ],
+      "sourceIds": [
+        "SRC-OFGEM-REGIONAL"
+      ],
+      "snapshotIds": [
+        "ofgem-BaxoQZl5b-2026-q3",
+        "ofgem-FuJ6m75Bz-2026-q3",
+        "ofgem-NCvaUoTBE-2026-q3",
+        "ofgem-PycvOxwAP-2026-q3",
+        "ofgem-YS_arnkBg-2026-q3",
+        "ofgem-Zvawaw6Ne-2026-q3",
+        "ofgem-aWhUPruYc-2026-q3",
+        "ofgem-rtmtZo3eD-2026-q3",
+        "ofgem-xbjzMWceX-2026-q3"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/2026-q3-v1/energy-prices/ingestion-report.json",
+      "artifactType": "INGESTION_REPORT",
+      "sha256": "8bd54345d8f23461d2bd84bc660bc5dc7f28835c956fd1770ec210472e5b20cb",
+      "sourceIds": [
+        "SRC-OFGEM-REGIONAL"
+      ],
+      "snapshotIds": [
+        "ofgem-BaxoQZl5b-2026-q3",
+        "ofgem-FuJ6m75Bz-2026-q3",
+        "ofgem-NCvaUoTBE-2026-q3",
+        "ofgem-PycvOxwAP-2026-q3",
+        "ofgem-YS_arnkBg-2026-q3",
+        "ofgem-Zvawaw6Ne-2026-q3",
+        "ofgem-aWhUPruYc-2026-q3",
+        "ofgem-rtmtZo3eD-2026-q3",
+        "ofgem-xbjzMWceX-2026-q3"
+      ],
+      "inputRows": 126,
+      "emittedRecords": 126
+    },
+    {
+      "path": "src/data/generated/2026-q3-v1/energy-prices/release.json",
+      "artifactType": "DIRECT_EVIDENCE_RELEASE",
+      "sha256": "866f97228a5758ffab33dea31a9494ee46a147701a69bd7cbf5bf865336c0878",
+      "releaseId": "ukmr-ofgem-2026-q3-v1",
+      "schemaVersion": "1.4.0",
+      "recordCount": 126,
+      "categoryIds": [
+        "energy_price"
+      ],
+      "sourceIds": [
+        "SRC-OFGEM-REGIONAL"
+      ],
+      "snapshotIds": [
+        "ofgem-BaxoQZl5b-2026-q3",
+        "ofgem-FuJ6m75Bz-2026-q3",
+        "ofgem-NCvaUoTBE-2026-q3",
+        "ofgem-PycvOxwAP-2026-q3",
+        "ofgem-YS_arnkBg-2026-q3",
+        "ofgem-Zvawaw6Ne-2026-q3",
+        "ofgem-aWhUPruYc-2026-q3",
+        "ofgem-rtmtZo3eD-2026-q3",
+        "ofgem-xbjzMWceX-2026-q3"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "RELEASE_READY"
+      ]
+    },
+    {
+      "path": "src/data/generated/fye2024-v1/groceries/audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "451752846c9852eede5f670a103ad942131cf1a40cad8eb90f64641e069211e3",
+      "releaseId": "ukmr-groceries-fye2024-v1",
+      "schemaVersion": "1.6.0",
+      "recordCount": 32,
+      "categoryIds": [
+        "grocery_expenditure"
+      ],
+      "sourceIds": [
+        "SRC-005"
+      ],
+      "snapshotIds": [
+        "SRC-005-defra-20260914"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/fye2024-v1/groceries/calculated.json",
+      "artifactType": "REFERENCE_ARTIFACT",
+      "sha256": "f7b431c204fd0761356429e23dc0d5eadf7467a674f7a7a5f864fe6d0106e23b",
+      "releaseId": "ukmr-groceries-fye2024-v1-monthly",
+      "schemaVersion": "1.6.0",
+      "recordCount": 32,
+      "categoryIds": [
+        "expenditure_period_conversion"
+      ],
+      "sourceIds": [
+        "SRC-005"
+      ],
+      "snapshotIds": [
+        "SRC-005-defra-20260914"
+      ],
+      "classifications": [
+        "CALCULATED"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/fye2024-v1/groceries/ingestion-report.json",
+      "artifactType": "INGESTION_REPORT",
+      "sha256": "8d18c0a358c5057098450e80f8b5203f368e5a0db4ab079ed55d4bc3a585bf48",
+      "sourceIds": [
+        "SRC-005"
+      ],
+      "snapshotIds": [
+        "SRC-005-defra-20260914"
+      ],
+      "inputRows": 32,
+      "emittedRecords": 32
+    },
+    {
+      "path": "src/data/generated/fye2024-v1/groceries/reference.json",
+      "artifactType": "REFERENCE_ARTIFACT",
+      "sha256": "abb9c759d16358e368e52037c8641b369a39697a907789789116bd931b7fa857",
+      "releaseId": "ukmr-groceries-fye2024-v1",
+      "schemaVersion": "1.6.0",
+      "recordCount": 32,
+      "categoryIds": [
+        "grocery_expenditure"
+      ],
+      "sourceIds": [
+        "SRC-005"
+      ],
+      "snapshotIds": [
+        "SRC-005-defra-20260914"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/fye2025-v1/household-spending/audit.json",
+      "artifactType": "AUDIT",
+      "sha256": "74b9306b9339025121144e431ec8d1e1fa471f91a5045da3c5c32c7f2d7253c6",
+      "releaseId": "ukmr-household-spending-fye2025-v1",
+      "schemaVersion": "1.6.0",
+      "recordCount": 53,
+      "categoryIds": [
+        "coicop_expenditure"
+      ],
+      "sourceIds": [
+        "SRC-006"
+      ],
+      "snapshotIds": [
+        "SRC-006-ons-20260914"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/fye2025-v1/household-spending/calculated.json",
+      "artifactType": "REFERENCE_ARTIFACT",
+      "sha256": "6428d292fc449bddfb13650f62af51dfdcfebfb065cdb8a5eca6248aed2957c0",
+      "releaseId": "ukmr-household-spending-fye2025-v1-monthly",
+      "schemaVersion": "1.6.0",
+      "recordCount": 53,
+      "categoryIds": [
+        "expenditure_period_conversion"
+      ],
+      "sourceIds": [
+        "SRC-006"
+      ],
+      "snapshotIds": [
+        "SRC-006-ons-20260914"
+      ],
+      "classifications": [
+        "CALCULATED"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    },
+    {
+      "path": "src/data/generated/fye2025-v1/household-spending/ingestion-report.json",
+      "artifactType": "INGESTION_REPORT",
+      "sha256": "7c44585374e43950d428499c3d6d2c17675deb127c8275f3512fa048b08db668",
+      "sourceIds": [
+        "SRC-006"
+      ],
+      "snapshotIds": [
+        "SRC-006-ons-20260914"
+      ],
+      "inputRows": 53,
+      "emittedRecords": 53
+    },
+    {
+      "path": "src/data/generated/fye2025-v1/household-spending/reference.json",
+      "artifactType": "REFERENCE_ARTIFACT",
+      "sha256": "0f5db001ba0fddd95a2225c19b79ef275549f4a735b8a16eee1fbdc0623743b0",
+      "releaseId": "ukmr-household-spending-fye2025-v1",
+      "schemaVersion": "1.6.0",
+      "recordCount": 53,
+      "categoryIds": [
+        "coicop_expenditure"
+      ],
+      "sourceIds": [
+        "SRC-006"
+      ],
+      "snapshotIds": [
+        "SRC-006-ons-20260914"
+      ],
+      "classifications": [
+        "OBSERVED_DATA"
+      ],
+      "releaseStatuses": [
+        "REFERENCE_ONLY"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "cityId": "LOC-LON",
+      "city": "London",
+      "cells": [
+        {
+          "category": "income_tax",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "rUK rules; 2026/27; actual tax jurisdiction required.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "national_insurance",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "UK employee Class 1 category A only; published weekly/monthly/annual thresholds.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "rent",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "ONS region E12000007; July 2026.",
+          "report": "src/data/generated/2026-07-v1/rent/ingestion-report.json"
+        },
+        {
+          "category": "council_tax",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "LONDON_CITY_DEFAULT_UNRESOLVED; no borough selection or scalar.",
+          "report": "src/data/generated/2026-27-v1/council-tax/ingestion-report.json"
+        },
+        {
+          "category": "energy_consumption",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Selected 2024 NEED joint profiles; NOT_CITY_SPECIFIC; MODEL_REQUIRED for household application; no adult occupancy joint evidence.",
+          "report": "src/data/generated/2024-v1/energy-consumption/ingestion-report.json"
+        },
+        {
+          "category": "energy_price",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "126 regional Q3 2026 facts; ENERGY_CITY_REGION_MAPPING_UNRESOLVED; postcode/DNO mapping and reuse review required.",
+          "report": "src/data/generated/2026-q3-v1/energy-prices/ingestion-report.json"
+        },
+        {
+          "category": "water",
+          "status": "PARTIAL",
+          "qualification": "thames-water clean water / thames-water wastewater; metered_volumetric; Confirm both providers, standard single-household metered tariff and full/abated drainage option; bulk, SmartSaver and social tariffs excluded. Address default NOT_ESTABLISHED.",
+          "report": "src/data/generated/2026-27-v1/water/ingestion-report.json"
+        },
+        {
+          "category": "groceries",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2024 UK per-person reference; MODEL_REQUIRED; no city budget; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2024-v1/groceries/ingestion-report.json"
+        },
+        {
+          "category": "household_spending",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2025 UK all-households reference; MODEL_REQUIRED; no household-profile model; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2025-v1/household-spending/ingestion-report.json"
+        },
+        {
+          "category": "transport",
+          "status": "SELECTED_PRODUCTS_ONLY",
+          "qualification": "Conditional operator/network products; every city default unresolved; some prices valid only as verified 2026-09-14; no optimizer.",
+          "report": "src/data/generated/2026-09-v1/transport/ingestion-report.json"
+        }
+      ]
+    },
+    {
+      "cityId": "LOC-BIR",
+      "city": "Birmingham",
+      "cells": [
+        {
+          "category": "income_tax",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "rUK rules; 2026/27; actual tax jurisdiction required.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "national_insurance",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "UK employee Class 1 category A only; published weekly/monthly/annual thresholds.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "rent",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Reviewed local-authority July 2026 observations; separate bedroom measures.",
+          "report": "src/data/generated/2026-07-v1/rent/ingestion-report.json"
+        },
+        {
+          "category": "council_tax",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Authority bands A–H, 2026/27; actual band and household applicability required.",
+          "report": "src/data/generated/2026-27-v1/council-tax/ingestion-report.json"
+        },
+        {
+          "category": "energy_consumption",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Selected 2024 NEED joint profiles; NOT_CITY_SPECIFIC; MODEL_REQUIRED for household application; no adult occupancy joint evidence.",
+          "report": "src/data/generated/2024-v1/energy-consumption/ingestion-report.json"
+        },
+        {
+          "category": "energy_price",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "126 regional Q3 2026 facts; ENERGY_CITY_REGION_MAPPING_UNRESOLVED; postcode/DNO mapping and reuse review required.",
+          "report": "src/data/generated/2026-q3-v1/energy-prices/ingestion-report.json"
+        },
+        {
+          "category": "water",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "severn-trent clean water / severn-trent wastewater; metered_volumetric; Charging zone and surface drainage basis unresolved; source existence does not approve a Birmingham tariff path. Address default NOT_ESTABLISHED.",
+          "report": "src/data/generated/2026-27-v1/water/ingestion-report.json"
+        },
+        {
+          "category": "groceries",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2024 UK per-person reference; MODEL_REQUIRED; no city budget; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2024-v1/groceries/ingestion-report.json"
+        },
+        {
+          "category": "household_spending",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2025 UK all-households reference; MODEL_REQUIRED; no household-profile model; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2025-v1/household-spending/ingestion-report.json"
+        },
+        {
+          "category": "transport",
+          "status": "SELECTED_PRODUCTS_ONLY",
+          "qualification": "Conditional operator/network products; every city default unresolved; some prices valid only as verified 2026-09-14; no optimizer.",
+          "report": "src/data/generated/2026-09-v1/transport/ingestion-report.json"
+        }
+      ]
+    },
+    {
+      "cityId": "LOC-MAN",
+      "city": "Manchester",
+      "cells": [
+        {
+          "category": "income_tax",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "rUK rules; 2026/27; actual tax jurisdiction required.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "national_insurance",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "UK employee Class 1 category A only; published weekly/monthly/annual thresholds.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "rent",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Reviewed local-authority July 2026 observations; separate bedroom measures.",
+          "report": "src/data/generated/2026-07-v1/rent/ingestion-report.json"
+        },
+        {
+          "category": "council_tax",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Authority bands A–H, 2026/27; actual band and household applicability required.",
+          "report": "src/data/generated/2026-27-v1/council-tax/ingestion-report.json"
+        },
+        {
+          "category": "energy_consumption",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Selected 2024 NEED joint profiles; NOT_CITY_SPECIFIC; MODEL_REQUIRED for household application; no adult occupancy joint evidence.",
+          "report": "src/data/generated/2024-v1/energy-consumption/ingestion-report.json"
+        },
+        {
+          "category": "energy_price",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "126 regional Q3 2026 facts; ENERGY_CITY_REGION_MAPPING_UNRESOLVED; postcode/DNO mapping and reuse review required.",
+          "report": "src/data/generated/2026-q3-v1/energy-prices/ingestion-report.json"
+        },
+        {
+          "category": "water",
+          "status": "PARTIAL",
+          "qualification": "united-utilities clean water / united-utilities wastewater; metered_volumetric; Confirm both providers, standard metered tariff and surface/highway drainage liability; optional discount not applied. Address default NOT_ESTABLISHED.",
+          "report": "src/data/generated/2026-27-v1/water/ingestion-report.json"
+        },
+        {
+          "category": "groceries",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2024 UK per-person reference; MODEL_REQUIRED; no city budget; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2024-v1/groceries/ingestion-report.json"
+        },
+        {
+          "category": "household_spending",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2025 UK all-households reference; MODEL_REQUIRED; no household-profile model; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2025-v1/household-spending/ingestion-report.json"
+        },
+        {
+          "category": "transport",
+          "status": "SELECTED_PRODUCTS_ONLY",
+          "qualification": "Conditional operator/network products; every city default unresolved; some prices valid only as verified 2026-09-14; no optimizer.",
+          "report": "src/data/generated/2026-09-v1/transport/ingestion-report.json"
+        }
+      ]
+    },
+    {
+      "cityId": "LOC-LEE",
+      "city": "Leeds",
+      "cells": [
+        {
+          "category": "income_tax",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "rUK rules; 2026/27; actual tax jurisdiction required.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "national_insurance",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "UK employee Class 1 category A only; published weekly/monthly/annual thresholds.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "rent",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Reviewed local-authority July 2026 observations; separate bedroom measures.",
+          "report": "src/data/generated/2026-07-v1/rent/ingestion-report.json"
+        },
+        {
+          "category": "council_tax",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Authority bands A–H, 2026/27; actual band and household applicability required.",
+          "report": "src/data/generated/2026-27-v1/council-tax/ingestion-report.json"
+        },
+        {
+          "category": "energy_consumption",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Selected 2024 NEED joint profiles; NOT_CITY_SPECIFIC; MODEL_REQUIRED for household application; no adult occupancy joint evidence.",
+          "report": "src/data/generated/2024-v1/energy-consumption/ingestion-report.json"
+        },
+        {
+          "category": "energy_price",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "126 regional Q3 2026 facts; ENERGY_CITY_REGION_MAPPING_UNRESOLVED; postcode/DNO mapping and reuse review required.",
+          "report": "src/data/generated/2026-q3-v1/energy-prices/ingestion-report.json"
+        },
+        {
+          "category": "water",
+          "status": "PARTIAL",
+          "qualification": "yorkshire-water clean water / yorkshire-water wastewater; metered_volumetric; Confirm both providers, standard Yorkshire tariff outside York Waterworks, metering and surface drainage liability. Address default NOT_ESTABLISHED.",
+          "report": "src/data/generated/2026-27-v1/water/ingestion-report.json"
+        },
+        {
+          "category": "groceries",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2024 UK per-person reference; MODEL_REQUIRED; no city budget; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2024-v1/groceries/ingestion-report.json"
+        },
+        {
+          "category": "household_spending",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2025 UK all-households reference; MODEL_REQUIRED; no household-profile model; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2025-v1/household-spending/ingestion-report.json"
+        },
+        {
+          "category": "transport",
+          "status": "SELECTED_PRODUCTS_ONLY",
+          "qualification": "Conditional operator/network products; every city default unresolved; some prices valid only as verified 2026-09-14; no optimizer.",
+          "report": "src/data/generated/2026-09-v1/transport/ingestion-report.json"
+        }
+      ]
+    },
+    {
+      "cityId": "LOC-LIV",
+      "city": "Liverpool",
+      "cells": [
+        {
+          "category": "income_tax",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "rUK rules; 2026/27; actual tax jurisdiction required.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "national_insurance",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "UK employee Class 1 category A only; published weekly/monthly/annual thresholds.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "rent",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Reviewed local-authority July 2026 observations; separate bedroom measures.",
+          "report": "src/data/generated/2026-07-v1/rent/ingestion-report.json"
+        },
+        {
+          "category": "council_tax",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Authority bands A–H, 2026/27; actual band and household applicability required.",
+          "report": "src/data/generated/2026-27-v1/council-tax/ingestion-report.json"
+        },
+        {
+          "category": "energy_consumption",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Selected 2024 NEED joint profiles; NOT_CITY_SPECIFIC; MODEL_REQUIRED for household application; no adult occupancy joint evidence.",
+          "report": "src/data/generated/2024-v1/energy-consumption/ingestion-report.json"
+        },
+        {
+          "category": "energy_price",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "126 regional Q3 2026 facts; ENERGY_CITY_REGION_MAPPING_UNRESOLVED; postcode/DNO mapping and reuse review required.",
+          "report": "src/data/generated/2026-q3-v1/energy-prices/ingestion-report.json"
+        },
+        {
+          "category": "water",
+          "status": "PARTIAL",
+          "qualification": "united-utilities clean water / united-utilities wastewater; metered_volumetric; Confirm both providers, standard metered tariff and surface/highway drainage liability; optional discount not applied. Address default NOT_ESTABLISHED.",
+          "report": "src/data/generated/2026-27-v1/water/ingestion-report.json"
+        },
+        {
+          "category": "groceries",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2024 UK per-person reference; MODEL_REQUIRED; no city budget; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2024-v1/groceries/ingestion-report.json"
+        },
+        {
+          "category": "household_spending",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2025 UK all-households reference; MODEL_REQUIRED; no household-profile model; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2025-v1/household-spending/ingestion-report.json"
+        },
+        {
+          "category": "transport",
+          "status": "SELECTED_PRODUCTS_ONLY",
+          "qualification": "Conditional operator/network products; every city default unresolved; some prices valid only as verified 2026-09-14; no optimizer.",
+          "report": "src/data/generated/2026-09-v1/transport/ingestion-report.json"
+        }
+      ]
+    },
+    {
+      "cityId": "LOC-BRS",
+      "city": "Bristol",
+      "cells": [
+        {
+          "category": "income_tax",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "rUK rules; 2026/27; actual tax jurisdiction required.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "national_insurance",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "UK employee Class 1 category A only; published weekly/monthly/annual thresholds.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "rent",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Reviewed local-authority July 2026 observations; separate bedroom measures.",
+          "report": "src/data/generated/2026-07-v1/rent/ingestion-report.json"
+        },
+        {
+          "category": "council_tax",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Authority bands A–H, 2026/27; actual band and household applicability required.",
+          "report": "src/data/generated/2026-27-v1/council-tax/ingestion-report.json"
+        },
+        {
+          "category": "energy_consumption",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Selected 2024 NEED joint profiles; NOT_CITY_SPECIFIC; MODEL_REQUIRED for household application; no adult occupancy joint evidence.",
+          "report": "src/data/generated/2024-v1/energy-consumption/ingestion-report.json"
+        },
+        {
+          "category": "energy_price",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "126 regional Q3 2026 facts; ENERGY_CITY_REGION_MAPPING_UNRESOLVED; postcode/DNO mapping and reuse review required.",
+          "report": "src/data/generated/2026-q3-v1/energy-prices/ingestion-report.json"
+        },
+        {
+          "category": "water",
+          "status": "PARTIAL",
+          "qualification": "bristol-water clean water / wessex-water wastewater; metered_volumetric; Confirm Bristol Water clean supply area, standard domestic metered tariff (not seasonal trial), Wessex wastewater service and full/reduced drainage option. Bristol Water brand is the South West Water regulated Bristol area. RV/assessed clean-water facts do not establish corresponding wastewater paths. Address default NOT_ESTABLISHED.",
+          "report": "src/data/generated/2026-27-v1/water/ingestion-report.json"
+        },
+        {
+          "category": "groceries",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2024 UK per-person reference; MODEL_REQUIRED; no city budget; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2024-v1/groceries/ingestion-report.json"
+        },
+        {
+          "category": "household_spending",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2025 UK all-households reference; MODEL_REQUIRED; no household-profile model; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2025-v1/household-spending/ingestion-report.json"
+        },
+        {
+          "category": "transport",
+          "status": "SELECTED_PRODUCTS_ONLY",
+          "qualification": "Conditional operator/network products; every city default unresolved; some prices valid only as verified 2026-09-14; no optimizer.",
+          "report": "src/data/generated/2026-09-v1/transport/ingestion-report.json"
+        }
+      ]
+    },
+    {
+      "cityId": "LOC-EDI",
+      "city": "Edinburgh",
+      "cells": [
+        {
+          "category": "income_tax",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Scotland rules; 2026/27; actual tax jurisdiction required.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "national_insurance",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "UK employee Class 1 category A only; published weekly/monthly/annual thresholds.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "rent",
+          "status": "SOURCE_GAP",
+          "qualification": "EDINBURGH_RENT_SOURCE_UNRESOLVED; no substitute.",
+          "report": "src/data/generated/2026-07-v1/rent/ingestion-report.json"
+        },
+        {
+          "category": "council_tax",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Authority bands A–H, 2026/27; actual band and household applicability required.",
+          "report": "src/data/generated/2026-27-v1/council-tax/ingestion-report.json"
+        },
+        {
+          "category": "energy_consumption",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Selected 2024 NEED joint profiles; NOT_CITY_SPECIFIC; MODEL_REQUIRED for household application; no adult occupancy joint evidence.",
+          "report": "src/data/generated/2024-v1/energy-consumption/ingestion-report.json"
+        },
+        {
+          "category": "energy_price",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "126 regional Q3 2026 facts; ENERGY_CITY_REGION_MAPPING_UNRESOLVED; postcode/DNO mapping and reuse review required.",
+          "report": "src/data/generated/2026-q3-v1/energy-prices/ingestion-report.json"
+        },
+        {
+          "category": "water",
+          "status": "PARTIAL",
+          "qualification": "scottish-water clean water / scottish-water wastewater; council_tax_band; Unmetered household connected to public water/sewerage; select actual council tax band A–H and applicable discounts separately. Metered regime excluded. Address default NOT_ESTABLISHED.",
+          "report": "src/data/generated/2026-27-v1/water/ingestion-report.json"
+        },
+        {
+          "category": "groceries",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2024 UK per-person reference; MODEL_REQUIRED; no city budget; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2024-v1/groceries/ingestion-report.json"
+        },
+        {
+          "category": "household_spending",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2025 UK all-households reference; MODEL_REQUIRED; no household-profile model; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2025-v1/household-spending/ingestion-report.json"
+        },
+        {
+          "category": "transport",
+          "status": "SELECTED_PRODUCTS_ONLY",
+          "qualification": "Conditional operator/network products; every city default unresolved; some prices valid only as verified 2026-09-14; no optimizer.",
+          "report": "src/data/generated/2026-09-v1/transport/ingestion-report.json"
+        }
+      ]
+    },
+    {
+      "cityId": "LOC-GLA",
+      "city": "Glasgow",
+      "cells": [
+        {
+          "category": "income_tax",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Scotland rules; 2026/27; actual tax jurisdiction required.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "national_insurance",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "UK employee Class 1 category A only; published weekly/monthly/annual thresholds.",
+          "report": "src/data/generated/2026-27-v1/ingestion-report.json"
+        },
+        {
+          "category": "rent",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Greater Glasgow S33000009, not Glasgow City; July 2026.",
+          "report": "src/data/generated/2026-07-v1/rent/ingestion-report.json"
+        },
+        {
+          "category": "council_tax",
+          "status": "DIRECT_EVIDENCE_AVAILABLE",
+          "qualification": "Authority bands A–H, 2026/27; actual band and household applicability required.",
+          "report": "src/data/generated/2026-27-v1/council-tax/ingestion-report.json"
+        },
+        {
+          "category": "energy_consumption",
+          "status": "REFERENCE_INPUT_AVAILABLE",
+          "qualification": "Selected 2024 NEED joint profiles; NOT_CITY_SPECIFIC; MODEL_REQUIRED for household application; no adult occupancy joint evidence.",
+          "report": "src/data/generated/2024-v1/energy-consumption/ingestion-report.json"
+        },
+        {
+          "category": "energy_price",
+          "status": "APPLICABILITY_UNRESOLVED",
+          "qualification": "126 regional Q3 2026 facts; ENERGY_CITY_REGION_MAPPING_UNRESOLVED; postcode/DNO mapping and reuse review required.",
+          "report": "src/data/generated/2026-q3-v1/energy-prices/ingestion-report.json"
+        },
+        {
+          "category": "water",
+          "status": "PARTIAL",
+          "qualification": "scottish-water clean water / scottish-water wastewater; council_tax_band; Unmetered household connected to public water/sewerage; select actual council tax band A–H and applicable discounts separately. Metered regime excluded. Address default NOT_ESTABLISHED.",
+          "report": "src/data/generated/2026-27-v1/water/ingestion-report.json"
+        },
+        {
+          "category": "groceries",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2024 UK per-person reference; MODEL_REQUIRED; no city budget; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2024-v1/groceries/ingestion-report.json"
+        },
+        {
+          "category": "household_spending",
+          "status": "NOT_CITY_SPECIFIC",
+          "qualification": "FYE 2025 UK all-households reference; MODEL_REQUIRED; no household-profile model; Essentials/Lifestyle mapping unapproved.",
+          "report": "src/data/generated/fye2025-v1/household-spending/ingestion-report.json"
+        },
+        {
+          "category": "transport",
+          "status": "SELECTED_PRODUCTS_ONLY",
+          "qualification": "Conditional operator/network products; every city default unresolved; some prices valid only as verified 2026-09-14; no optimizer.",
+          "report": "src/data/generated/2026-09-v1/transport/ingestion-report.json"
+        }
+      ]
+    }
+  ]
+}

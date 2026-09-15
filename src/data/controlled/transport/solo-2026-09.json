@@ -11,12 +11,6 @@
   "importVersion": "transport-v1",
   "releaseStatus": "RELEASE_READY",
   "limitations": [
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
-    "Official rendered page reviewed; no original byte capture/checksum available.",
     "Official rendered page reviewed; no original byte capture/checksum available."
   ],
   "rows": [

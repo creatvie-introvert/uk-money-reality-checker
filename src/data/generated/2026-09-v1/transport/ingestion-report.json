@@ -15,7 +15,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"tfl\",\"sourceId\":\"SRC-TFL\",\"organisation\":\"Transport for London\",\"publicationTitle\":\"Bus and tram fares\",\"sourceReference\":\"Bus and tram fares\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-tfl-20260914\",\"sourceId\":\"SRC-TFL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares\",\"checksum\":\"sha256:c66fe28e3003316f05c83df1818682cddd1c3db08a8551c2fd313831bea5469f\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-tfl.html\",\"rows\":[{\"rowId\":\"hopper\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"Hopper fare\",\"rawAmount\":\"1.75\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"hour\",\"validity\":\"Unlimited bus/tram journeys within one hour of first touch\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Contactless or Oyster PAYG\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — Hopper fare; adult TfL buses and trams only\"},{\"rowId\":\"daily\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"Daily cap\",\"rawAmount\":\"5.25\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"daily_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"day\",\"validity\":\"Daily capping\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Contactless or Oyster PAYG\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — Daily cap; adult TfL buses and trams only\"},{\"rowId\":\"weekly-cap\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"Weekly cap (Monday to Sunday)\",\"rawAmount\":\"24.70\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"weekly_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"monday_sunday\",\"validity\":\"Monday to Sunday cap\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Contactless or Oyster PAYG\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — Weekly cap (Monday to Sunday); adult TfL buses and trams only\"},{\"rowId\":\"seven-day\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"7 Day Bus & Tram Pass\",\"rawAmount\":\"24.70\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Seven-day pass\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Oyster\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — 7 Day Bus & Tram Pass; adult TfL buses and trams only\"},{\"rowId\":\"annual\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"Annual Bus & Tram Pass\",\"rawAmount\":\"988\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"annual\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"year\",\"validity\":\"Annual pass\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Oyster\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — Annual Bus & Tram Pass; adult TfL buses and trams only\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"tfl\",\"sourceId\":\"SRC-TFL\",\"organisation\":\"Transport for London\",\"publicationTitle\":\"Bus and tram fares\",\"sourceReference\":\"Bus and tram fares\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[],\"snapshot\":{\"snapshotId\":\"transport-tfl-20260914\",\"sourceId\":\"SRC-TFL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares\",\"checksum\":\"sha256:c66fe28e3003316f05c83df1818682cddd1c3db08a8551c2fd313831bea5469f\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-tfl.html\",\"rows\":[{\"rowId\":\"hopper\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"Hopper fare\",\"rawAmount\":\"1.75\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"hour\",\"validity\":\"Unlimited bus/tram journeys within one hour of first touch\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Contactless or Oyster PAYG\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — Hopper fare; adult TfL buses and trams only\"},{\"rowId\":\"daily\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"Daily cap\",\"rawAmount\":\"5.25\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"daily_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"day\",\"validity\":\"Daily capping\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Contactless or Oyster PAYG\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — Daily cap; adult TfL buses and trams only\"},{\"rowId\":\"weekly-cap\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"Weekly cap (Monday to Sunday)\",\"rawAmount\":\"24.70\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"weekly_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"monday_sunday\",\"validity\":\"Monday to Sunday cap\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Contactless or Oyster PAYG\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — Weekly cap (Monday to Sunday); adult TfL buses and trams only\"},{\"rowId\":\"seven-day\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"7 Day Bus & Tram Pass\",\"rawAmount\":\"24.70\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Seven-day pass\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Oyster\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — 7 Day Bus & Tram Pass; adult TfL buses and trams only\"},{\"rowId\":\"annual\",\"cityId\":\"LOC-LON\",\"operator\":\"TfL bus and tram operators\",\"network\":\"TfL bus and tram network\",\"productName\":\"Annual Bus & Tram Pass\",\"rawAmount\":\"988\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"annual\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"year\",\"validity\":\"Annual pass\",\"zonesOrArea\":\"TfL buses and trams only\",\"paymentMethod\":\"Oyster\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"For PAYG use the same card/device. If Oyster goes negative, top up within one hour of first touch to qualify for Hopper transfers.\",\"No Tube, DLR or rail entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Bus and tram fares — Annual Bus & Tram Pass; adult TfL buses and trams only\"}]}"
     },
     {
       "snapshot": {
@@ -31,7 +31,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"tfwmbus\",\"sourceId\":\"SRC-TFWM\",\"organisation\":\"Transport for West Midlands\",\"publicationTitle\":\"1 day bus\",\"sourceReference\":\"1 day bus\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-tfwmbus-20260914\",\"sourceId\":\"SRC-TFWM\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://ticketing.tfwm.org.uk/Home/ShowTicket/63\",\"checksum\":\"sha256:8d0bcc50383dfbf0c89a186159faa655c2058442da6d378354f0034241827d91\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-tfwmbus.html\",\"rows\":[{\"rowId\":\"day-bus\",\"cityId\":\"LOC-BIR\",\"operator\":\"Participating nbus operators\",\"network\":\"West Midlands nbus\",\"productName\":\"1 day bus\",\"rawAmount\":\"5.50\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"Date shown until end of daytime services\",\"zonesOrArea\":\"West Midlands county bus ticket scheme\",\"paymentMethod\":\"On-bus ticket or Swift PAYG\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Adult 16+. Excludes night buses and certain special services. Metro requires a separate add-on.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"1 day bus — 1 day bus; adult West Midlands county bus ticket scheme\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"tfwmbus\",\"sourceId\":\"SRC-TFWM\",\"organisation\":\"Transport for West Midlands\",\"publicationTitle\":\"1 day bus\",\"sourceReference\":\"1 day bus\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[],\"snapshot\":{\"snapshotId\":\"transport-tfwmbus-20260914\",\"sourceId\":\"SRC-TFWM\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://ticketing.tfwm.org.uk/Home/ShowTicket/63\",\"checksum\":\"sha256:8d0bcc50383dfbf0c89a186159faa655c2058442da6d378354f0034241827d91\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-tfwmbus.html\",\"rows\":[{\"rowId\":\"day-bus\",\"cityId\":\"LOC-BIR\",\"operator\":\"Participating nbus operators\",\"network\":\"West Midlands nbus\",\"productName\":\"1 day bus\",\"rawAmount\":\"5.50\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"Date shown until end of daytime services\",\"zonesOrArea\":\"West Midlands county bus ticket scheme\",\"paymentMethod\":\"On-bus ticket or Swift PAYG\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Adult 16+. Excludes night buses and certain special services. Metro requires a separate add-on.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"1 day bus — 1 day bus; adult West Midlands county bus ticket scheme\"}]}"
     },
     {
       "snapshot": {
@@ -47,7 +47,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"tfwmnetwork\",\"sourceId\":\"SRC-TFWM\",\"organisation\":\"Transport for West Midlands\",\"publicationTitle\":\"1 day network Zones 1-5\",\"sourceReference\":\"1 day network Zones 1-5\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-tfwmnetwork-20260914\",\"sourceId\":\"SRC-TFWM\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://ticketing.tfwm.org.uk/Home/ShowTicket/38\",\"checksum\":\"sha256:8fb202fc73003bbfc83328806e8d0450211f112db53fb09362f22ee00b6f3506\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-tfwmnetwork.html\",\"rows\":[{\"rowId\":\"day-network\",\"cityId\":\"LOC-BIR\",\"operator\":\"Participating Centrocard bus/rail operators and Midland Metro\",\"network\":\"West Midlands network\",\"productName\":\"1 day network Zones 1-5\",\"rawAmount\":\"11.10\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\",\"rail\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"One day; peak travel allowed\",\"zonesOrArea\":\"West Midlands county; rail zones 1-5\",\"paymentMethod\":\"Published ticket price; bus, Metro or staffed rail station purchase\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Rail standard class. Excludes night buses and certain special services.\",\"Swift PAYG amount is also displayed, but this record makes no claim that PAYG credit alone grants rail entry.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"1 day network Zones 1-5 — 1 day network Zones 1-5; adult West Midlands county; rail zones 1-5\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"tfwmnetwork\",\"sourceId\":\"SRC-TFWM\",\"organisation\":\"Transport for West Midlands\",\"publicationTitle\":\"1 day network Zones 1-5\",\"sourceReference\":\"1 day network Zones 1-5\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[],\"snapshot\":{\"snapshotId\":\"transport-tfwmnetwork-20260914\",\"sourceId\":\"SRC-TFWM\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://ticketing.tfwm.org.uk/Home/ShowTicket/38\",\"checksum\":\"sha256:8fb202fc73003bbfc83328806e8d0450211f112db53fb09362f22ee00b6f3506\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-tfwmnetwork.html\",\"rows\":[{\"rowId\":\"day-network\",\"cityId\":\"LOC-BIR\",\"operator\":\"Participating Centrocard bus/rail operators and Midland Metro\",\"network\":\"West Midlands network\",\"productName\":\"1 day network Zones 1-5\",\"rawAmount\":\"11.10\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\",\"rail\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"One day; peak travel allowed\",\"zonesOrArea\":\"West Midlands county; rail zones 1-5\",\"paymentMethod\":\"Published ticket price; bus, Metro or staffed rail station purchase\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Rail standard class. Excludes night buses and certain special services.\",\"Swift PAYG amount is also displayed, but this record makes no claim that PAYG credit alone grants rail entry.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"1 day network Zones 1-5 — 1 day network Zones 1-5; adult West Midlands county; rail zones 1-5\"}]}"
     },
     {
       "snapshot": {
@@ -62,7 +62,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"bee\",\"sourceId\":\"SRC-TFGM\",\"organisation\":\"Transport for Greater Manchester\",\"publicationTitle\":\"Tap and go with contactless on bus and tram\",\"sourceReference\":\"Tap and go with contactless on bus and tram\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-bee-20260914\",\"sourceId\":\"SRC-TFGM\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://tfgm.com/ways-to-pay/contactless\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"bus-day\",\"cityId\":\"LOC-MAN\",\"operator\":\"Bee Network bus operators\",\"network\":\"Bee Network\",\"productName\":\"Daily Bee Bus adult cap\",\"rawAmount\":\"5\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"daily_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"day\",\"validity\":\"Daily cap\",\"zonesOrArea\":\"Bee Network buses\",\"paymentMethod\":\"Contactless card or device\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Same card/device for every trip; tap on bus, tap in and out on tram.\",\"No National Rail entitlement. The operator implements capping; UKMR does not simulate it.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Tap and go with contactless on bus and tram — Daily Bee Bus adult cap; adult Bee Network buses\"},{\"rowId\":\"bus-week\",\"cityId\":\"LOC-MAN\",\"operator\":\"Bee Network bus operators\",\"network\":\"Bee Network\",\"productName\":\"Weekly Bee Bus adult cap\",\"rawAmount\":\"20\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"weekly_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"monday_sunday\",\"validity\":\"Monday to Sunday cap\",\"zonesOrArea\":\"Bee Network buses\",\"paymentMethod\":\"Contactless card or device\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Same card/device for every trip; tap on bus, tap in and out on tram.\",\"No National Rail entitlement. The operator implements capping; UKMR does not simulate it.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Tap and go with contactless on bus and tram — Weekly Bee Bus adult cap; adult Bee Network buses\"},{\"rowId\":\"bus-tram-week\",\"cityId\":\"LOC-MAN\",\"operator\":\"Bee Network bus operators and Metrolink\",\"network\":\"Bee Network\",\"productName\":\"7-day Bus + Tram ticket price cap — all zones\",\"rawAmount\":\"41\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"weekly_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"monday_sunday\",\"validity\":\"Monday to Sunday all-zones cap\",\"zonesOrArea\":\"Bee Network buses and all Metrolink zones\",\"paymentMethod\":\"Contactless card or device\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Same card/device for every trip; tap on bus, tap in and out on tram.\",\"No National Rail entitlement. The operator implements capping; UKMR does not simulate it.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Tap and go with contactless on bus and tram — 7-day Bus + Tram ticket price cap — all zones; adult Bee Network buses and all Metrolink zones\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"bee\",\"sourceId\":\"SRC-TFGM\",\"organisation\":\"Transport for Greater Manchester\",\"publicationTitle\":\"Tap and go with contactless on bus and tram\",\"sourceReference\":\"Tap and go with contactless on bus and tram\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-bee-20260914\",\"sourceId\":\"SRC-TFGM\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://tfgm.com/ways-to-pay/contactless\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"bus-day\",\"cityId\":\"LOC-MAN\",\"operator\":\"Bee Network bus operators\",\"network\":\"Bee Network\",\"productName\":\"Daily Bee Bus adult cap\",\"rawAmount\":\"5\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"daily_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"day\",\"validity\":\"Daily cap\",\"zonesOrArea\":\"Bee Network buses\",\"paymentMethod\":\"Contactless card or device\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Same card/device for every trip; tap on bus, tap in and out on tram.\",\"No National Rail entitlement. The operator implements capping; UKMR does not simulate it.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Tap and go with contactless on bus and tram — Daily Bee Bus adult cap; adult Bee Network buses\"},{\"rowId\":\"bus-week\",\"cityId\":\"LOC-MAN\",\"operator\":\"Bee Network bus operators\",\"network\":\"Bee Network\",\"productName\":\"Weekly Bee Bus adult cap\",\"rawAmount\":\"20\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"weekly_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"monday_sunday\",\"validity\":\"Monday to Sunday cap\",\"zonesOrArea\":\"Bee Network buses\",\"paymentMethod\":\"Contactless card or device\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Same card/device for every trip; tap on bus, tap in and out on tram.\",\"No National Rail entitlement. The operator implements capping; UKMR does not simulate it.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Tap and go with contactless on bus and tram — Weekly Bee Bus adult cap; adult Bee Network buses\"},{\"rowId\":\"bus-tram-week\",\"cityId\":\"LOC-MAN\",\"operator\":\"Bee Network bus operators and Metrolink\",\"network\":\"Bee Network\",\"productName\":\"7-day Bus + Tram ticket price cap — all zones\",\"rawAmount\":\"41\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"weekly_cap\",\"fareUnit\":\"GBP/cap\",\"validityPeriod\":\"monday_sunday\",\"validity\":\"Monday to Sunday all-zones cap\",\"zonesOrArea\":\"Bee Network buses and all Metrolink zones\",\"paymentMethod\":\"Contactless card or device\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Same card/device for every trip; tap on bus, tap in and out on tram.\",\"No National Rail entitlement. The operator implements capping; UKMR does not simulate it.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Tap and go with contactless on bus and tram — 7-day Bus + Tram ticket price cap — all zones; adult Bee Network buses and all Metrolink zones\"}]}"
     },
     {
       "snapshot": {
@@ -77,7 +77,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"mcard\",\"sourceId\":\"SRC-MCARD\",\"organisation\":\"West Yorkshire Ticketing Company / MCard\",\"publicationTitle\":\"Adults — MCard Ticket Prices\",\"sourceReference\":\"Adults — MCard Ticket Prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.\"],\"snapshot\":{\"snapshotId\":\"transport-mcard-20260914\",\"sourceId\":\"SRC-MCARD\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.m-card.co.uk/the-cards/mcard/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"bus-week\",\"cityId\":\"LOC-LEE\",\"operator\":\"Participating West Yorkshire bus operators\",\"network\":\"MCard\",\"productName\":\"Countywide Bus - Week ticket\",\"rawAmount\":\"26\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Seven consecutive days; final operational day ends at 03:59\",\"zonesOrArea\":\"West Yorkshire countywide bus\",\"paymentMethod\":\"MCard Mobile App\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Special services excluded; ordinary stopping services within West Yorkshire.\",\"Activate app ticket before travel; account-holder use only, no sharing between devices.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Adults — MCard Ticket Prices — Countywide Bus - Week ticket; adult West Yorkshire countywide bus\"},{\"rowId\":\"bus-rail-week\",\"cityId\":\"LOC-LEE\",\"operator\":\"Participating West Yorkshire bus and rail operators\",\"network\":\"MCard\",\"productName\":\"Countywide Bus and Rail Zones 1-5 weekly ticket\",\"rawAmount\":\"55.30\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"rail\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Seven consecutive days; final operational day ends at 03:59\",\"zonesOrArea\":\"Countywide buses and rail zones 1-5\",\"paymentMethod\":\"MCard Mobile App\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Special services excluded. Rail zones 6-7 not included.\",\"Activate app ticket before travel; account-holder use only, no sharing between devices.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Adults — MCard Ticket Prices — Countywide Bus and Rail Zones 1-5 weekly ticket; adult Countywide buses and rail zones 1-5\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"mcard\",\"sourceId\":\"SRC-MCARD\",\"organisation\":\"West Yorkshire Ticketing Company / MCard\",\"publicationTitle\":\"Adults — MCard Ticket Prices\",\"sourceReference\":\"Adults — MCard Ticket Prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.\"],\"snapshot\":{\"snapshotId\":\"transport-mcard-20260914\",\"sourceId\":\"SRC-MCARD\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.m-card.co.uk/the-cards/mcard/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"bus-week\",\"cityId\":\"LOC-LEE\",\"operator\":\"Participating West Yorkshire bus operators\",\"network\":\"MCard\",\"productName\":\"Countywide Bus - Week ticket\",\"rawAmount\":\"26\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Seven consecutive days; final operational day ends at 03:59\",\"zonesOrArea\":\"West Yorkshire countywide bus\",\"paymentMethod\":\"MCard Mobile App\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Special services excluded; ordinary stopping services within West Yorkshire.\",\"Activate app ticket before travel; account-holder use only, no sharing between devices.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Adults — MCard Ticket Prices — Countywide Bus - Week ticket; adult West Yorkshire countywide bus\"},{\"rowId\":\"bus-rail-week\",\"cityId\":\"LOC-LEE\",\"operator\":\"Participating West Yorkshire bus and rail operators\",\"network\":\"MCard\",\"productName\":\"Countywide Bus and Rail Zones 1-5 weekly ticket\",\"rawAmount\":\"55.30\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"rail\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Seven consecutive days; final operational day ends at 03:59\",\"zonesOrArea\":\"Countywide buses and rail zones 1-5\",\"paymentMethod\":\"MCard Mobile App\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Special services excluded. Rail zones 6-7 not included.\",\"Activate app ticket before travel; account-holder use only, no sharing between devices.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Adults — MCard Ticket Prices — Countywide Bus and Rail Zones 1-5 weekly ticket; adult Countywide buses and rail zones 1-5\"}]}"
     },
     {
       "snapshot": {
@@ -92,7 +92,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"solo\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"organisation\":\"Merseytravel\",\"publicationTitle\":\"Solo tickets and prices\",\"sourceReference\":\"Solo tickets and prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-solo-20260914\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/solo-ticket/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"all-areas-week\",\"cityId\":\"LOC-LIV\",\"operator\":\"Merseyside bus operators\",\"network\":\"Merseytravel Solo\",\"productName\":\"Solo — All areas Week\",\"rawAmount\":\"23.60\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Weekly; first use within 28 days of purchase\",\"zonesOrArea\":\"All Merseyside bus areas\",\"paymentMethod\":\"MetroCard; online, PayPoint or Merseytravel Centre\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Anytime. Outside Merseyside requires extra fare. New MetroCard activation costs £1 separately.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Solo tickets and prices — Solo — All areas Week; adult All Merseyside bus areas\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"solo\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"organisation\":\"Merseytravel\",\"publicationTitle\":\"Solo tickets and prices\",\"sourceReference\":\"Solo tickets and prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-solo-20260914\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/solo-ticket/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"all-areas-week\",\"cityId\":\"LOC-LIV\",\"operator\":\"Merseyside bus operators\",\"network\":\"Merseytravel Solo\",\"productName\":\"Solo — All areas Week\",\"rawAmount\":\"23.60\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Weekly; first use within 28 days of purchase\",\"zonesOrArea\":\"All Merseyside bus areas\",\"paymentMethod\":\"MetroCard; online, PayPoint or Merseytravel Centre\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Anytime. Outside Merseyside requires extra fare. New MetroCard activation costs £1 separately.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Solo tickets and prices — Solo — All areas Week; adult All Merseyside bus areas\"}]}"
     },
     {
       "snapshot": {
@@ -107,7 +107,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"railpass\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"organisation\":\"Merseytravel\",\"publicationTitle\":\"Railpass tickets and prices\",\"sourceReference\":\"Railpass tickets and prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-railpass-20260914\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/railpass-ticket/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"all-zones-week\",\"cityId\":\"LOC-LIV\",\"operator\":\"Participating Merseyside rail operators\",\"network\":\"Merseytravel Railpass\",\"productName\":\"Railpass — All zones across the county Week\",\"rawAmount\":\"43.40\",\"mode\":\"rail\",\"includedModes\":[\"rail\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Weekly; activates on purchase; anytime\",\"zonesOrArea\":\"Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk\",\"paymentMethod\":\"MetroCard; staffed Merseyrail station (except Chester)\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"£1 initial MetroCard charge separately. This is standard Railpass; online Merseyrail Only Railpass excludes City line and is not substituted.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Railpass tickets and prices — Railpass — All zones across the county Week; adult Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"railpass\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"organisation\":\"Merseytravel\",\"publicationTitle\":\"Railpass tickets and prices\",\"sourceReference\":\"Railpass tickets and prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-railpass-20260914\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/railpass-ticket/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"all-zones-week\",\"cityId\":\"LOC-LIV\",\"operator\":\"Participating Merseyside rail operators\",\"network\":\"Merseytravel Railpass\",\"productName\":\"Railpass — All zones across the county Week\",\"rawAmount\":\"43.40\",\"mode\":\"rail\",\"includedModes\":[\"rail\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Weekly; activates on purchase; anytime\",\"zonesOrArea\":\"Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk\",\"paymentMethod\":\"MetroCard; staffed Merseyrail station (except Chester)\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"£1 initial MetroCard charge separately. This is standard Railpass; online Merseyrail Only Railpass excludes City line and is not substituted.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Railpass tickets and prices — Railpass — All zones across the county Week; adult Merseyside rail zones including extensions to Chester, Ellesmere Port and Ormskirk\"}]}"
     },
     {
       "snapshot": {
@@ -122,7 +122,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"trio\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"organisation\":\"Merseytravel\",\"publicationTitle\":\"Trio tickets and prices\",\"sourceReference\":\"Trio tickets and prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-trio-20260914\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/trio-ticket/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"all-zones-week\",\"cityId\":\"LOC-LIV\",\"operator\":\"Participating buses, trains and Mersey Ferries\",\"network\":\"Merseytravel Trio\",\"productName\":\"Trio — All zones across the county Week\",\"rawAmount\":\"50\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"rail\",\"ferry\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Weekly; activates on purchase; anytime\",\"zonesOrArea\":\"All Merseyside zones; direct cross-river ferries\",\"paymentMethod\":\"Ticket with passport photograph; cash or card at staffed outlet\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"River Explorer cruise requires supplement; cross-river validity requires C1 and B1 (included). Outside selected zones needs additional fare.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Trio tickets and prices — Trio — All zones across the county Week; adult All Merseyside zones; direct cross-river ferries\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"trio\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"organisation\":\"Merseytravel\",\"publicationTitle\":\"Trio tickets and prices\",\"sourceReference\":\"Trio tickets and prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-trio-20260914\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/trio-ticket/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"all-zones-week\",\"cityId\":\"LOC-LIV\",\"operator\":\"Participating buses, trains and Mersey Ferries\",\"network\":\"Merseytravel Trio\",\"productName\":\"Trio — All zones across the county Week\",\"rawAmount\":\"50\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"rail\",\"ferry\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"Weekly; activates on purchase; anytime\",\"zonesOrArea\":\"All Merseyside zones; direct cross-river ferries\",\"paymentMethod\":\"Ticket with passport photograph; cash or card at staffed outlet\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"River Explorer cruise requires supplement; cross-river validity requires C1 and B1 (included). Outside selected zones needs additional fare.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Trio tickets and prices — Trio — All zones across the county Week; adult All Merseyside zones; direct cross-river ferries\"}]}"
     },
     {
       "snapshot": {
@@ -137,7 +137,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"saveaway\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"organisation\":\"Merseytravel\",\"publicationTitle\":\"Saveaway tickets and prices\",\"sourceReference\":\"Saveaway tickets and prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-saveaway-20260914\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/saveaway-ticket/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"all-areas-day\",\"cityId\":\"LOC-LIV\",\"operator\":\"Participating buses, trains and Mersey Ferries\",\"network\":\"Merseytravel Saveaway\",\"productName\":\"Saveaway — All areas across the county 1 day\",\"rawAmount\":\"6.80\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"rail\",\"ferry\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"One specified day; paper City line ticket valid on purchase day\",\"zonesOrArea\":\"Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings\",\"paymentMethod\":\"MetroCard or City line paper ticket; cash or card\",\"passengerType\":\"adult\",\"peakStatus\":\"off_peak\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Every separate journey must start off peak: excludes 06:31–09:29 Monday–Friday; all day weekends/bank holidays.\",\"River Explorer cruise needs supplement; first MetroCard adds £1.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Saveaway tickets and prices — Saveaway — All areas across the county 1 day; adult Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"saveaway\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"organisation\":\"Merseytravel\",\"publicationTitle\":\"Saveaway tickets and prices\",\"sourceReference\":\"Saveaway tickets and prices\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-saveaway-20260914\",\"sourceId\":\"SRC-MERSEYTRAVEL\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.merseytravel.gov.uk/tickets-and-pricing/ticket-types/saveaway-ticket/\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"all-areas-day\",\"cityId\":\"LOC-LIV\",\"operator\":\"Participating buses, trains and Mersey Ferries\",\"network\":\"Merseytravel Saveaway\",\"productName\":\"Saveaway — All areas across the county 1 day\",\"rawAmount\":\"6.80\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"rail\",\"ferry\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"One specified day; paper City line ticket valid on purchase day\",\"zonesOrArea\":\"Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings\",\"paymentMethod\":\"MetroCard or City line paper ticket; cash or card\",\"passengerType\":\"adult\",\"peakStatus\":\"off_peak\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Every separate journey must start off peak: excludes 06:31–09:29 Monday–Friday; all day weekends/bank holidays.\",\"River Explorer cruise needs supplement; first MetroCard adds £1.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Saveaway tickets and prices — Saveaway — All areas across the county 1 day; adult Merseyside; rail extensions to Chester, Ellesmere Port and Ormskirk; direct river crossings\"}]}"
     },
     {
       "snapshot": {
@@ -169,7 +169,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"lothiancurrent\",\"sourceId\":\"SRC-EDINBURGH-TRANSPORT\",\"organisation\":\"Lothian Buses\",\"publicationTitle\":\"Fares & Tickets — Lothian Buses\",\"sourceReference\":\"Fares & Tickets — Lothian Buses\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[{\"sourceUrl\":\"https://www.lothianbuses.com/news/2026/01/fares-revision/\",\"sourceReference\":\"Lothian revised SINGLE and City DAY prices\",\"publicationDate\":\"2026-01-30\",\"publishedEffectiveFrom\":\"2026-02-22\",\"captureFile\":\"ukmr-transport-lothian.html\",\"checksum\":\"sha256:e17c30b794792647a4d03b848fb8edb4b0a5b6769f9dd47e36d96d7e63477806\"}],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-lothiancurrent-20260914\",\"sourceId\":\"SRC-EDINBURGH-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.lothianbuses.com/fares-and-tickets/\",\"checksum\":\"sha256:5aac61fec5e889f1e7f11bad4af113b23e3eeb61d5c2c04eeb8d8f580d96b320\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-lothiancurrent.html\",\"rows\":[{\"rowId\":\"single\",\"cityId\":\"LOC-EDI\",\"operator\":\"Lothian Buses\",\"network\":\"Lothian Buses day services\",\"productName\":\"SINGLE\",\"rawAmount\":\"2.40\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"journey\",\"validity\":\"One journey on a day service\",\"zonesOrArea\":\"Lothian Buses day service network\",\"paymentMethod\":\"On-bus cash or contactless\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_included\",\"conditions\":[\"Airlink, night and special services are separate products.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Fares & Tickets — Lothian Buses — SINGLE; adult Lothian Buses day service network\"},{\"rowId\":\"city-day\",\"cityId\":\"LOC-EDI\",\"operator\":\"Lothian Buses, Edinburgh Trams, East Coast Buses and Lothian Country\",\"network\":\"Lothian City DAY\",\"productName\":\"City DAY\",\"rawAmount\":\"6\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"Unlimited day-service journeys\",\"zonesOrArea\":\"Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B\",\"paymentMethod\":\"On-bus ticket purchase\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_included\",\"conditions\":[\"Airlink and special services excluded. Not the tram-only et app day product.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Fares & Tickets — Lothian Buses — City DAY; adult Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"lothiancurrent\",\"sourceId\":\"SRC-EDINBURGH-TRANSPORT\",\"organisation\":\"Lothian Buses\",\"publicationTitle\":\"Fares & Tickets — Lothian Buses\",\"sourceReference\":\"Fares & Tickets — Lothian Buses\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[{\"sourceUrl\":\"https://www.lothianbuses.com/news/2026/01/fares-revision/\",\"sourceReference\":\"Lothian revised SINGLE and City DAY prices\",\"publicationDate\":\"2026-01-30\",\"publishedEffectiveFrom\":\"2026-02-22\",\"captureFile\":\"ukmr-transport-lothian.html\",\"checksum\":\"sha256:e17c30b794792647a4d03b848fb8edb4b0a5b6769f9dd47e36d96d7e63477806\"}],\"limitations\":[],\"snapshot\":{\"snapshotId\":\"transport-lothiancurrent-20260914\",\"sourceId\":\"SRC-EDINBURGH-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.lothianbuses.com/fares-and-tickets/\",\"checksum\":\"sha256:5aac61fec5e889f1e7f11bad4af113b23e3eeb61d5c2c04eeb8d8f580d96b320\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-lothiancurrent.html\",\"rows\":[{\"rowId\":\"single\",\"cityId\":\"LOC-EDI\",\"operator\":\"Lothian Buses\",\"network\":\"Lothian Buses day services\",\"productName\":\"SINGLE\",\"rawAmount\":\"2.40\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"journey\",\"validity\":\"One journey on a day service\",\"zonesOrArea\":\"Lothian Buses day service network\",\"paymentMethod\":\"On-bus cash or contactless\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_included\",\"conditions\":[\"Airlink, night and special services are separate products.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Fares & Tickets — Lothian Buses — SINGLE; adult Lothian Buses day service network\"},{\"rowId\":\"city-day\",\"cityId\":\"LOC-EDI\",\"operator\":\"Lothian Buses, Edinburgh Trams, East Coast Buses and Lothian Country\",\"network\":\"Lothian City DAY\",\"productName\":\"City DAY\",\"rawAmount\":\"6\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"tram\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"Unlimited day-service journeys\",\"zonesOrArea\":\"Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B\",\"paymentMethod\":\"On-bus ticket purchase\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_included\",\"conditions\":[\"Airlink and special services excluded. Not the tram-only et app day product.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Fares & Tickets — Lothian Buses — City DAY; adult Lothian day buses; trams excluding Airport; East Coast/Lothian Country zones A-B\"}]}"
     },
     {
       "snapshot": {
@@ -185,7 +185,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"tramscurrent\",\"sourceId\":\"SRC-EDINBURGH-TRANSPORT\",\"organisation\":\"Edinburgh Trams\",\"publicationTitle\":\"Farefinder — adult city and airport tickets\",\"sourceReference\":\"Farefinder — adult city and airport tickets\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[{\"sourceUrl\":\"https://edinburghtrams.com/news/changes-tram-fares-2026\",\"sourceReference\":\"City single revision; airport single frozen, its original commencement not established\",\"publicationDate\":\"2026-01-30\",\"publishedEffectiveFrom\":\"2026-02-22\",\"captureFile\":\"ukmr-transport-trams.html\",\"checksum\":\"sha256:06c13aa9fa3d53fd19a18610f77b76c6fc1708f9c7a7cf7b7f5a7802f232e636\"}],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-tramscurrent-20260914\",\"sourceId\":\"SRC-EDINBURGH-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://edinburghtrams.com/tickets/farefinder\",\"checksum\":\"sha256:a0f62ef0d7360303d1dab85bcf5b48376e670f4aea4a01e67095e9c5c76edb8e\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-tramscurrent.html\",\"rows\":[{\"rowId\":\"city-single\",\"cityId\":\"LOC-EDI\",\"operator\":\"Edinburgh Trams\",\"network\":\"Edinburgh Trams\",\"productName\":\"Adult Single (city zone)\",\"rawAmount\":\"2.40\",\"mode\":\"tram\",\"includedModes\":[\"tram\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"journey\",\"validity\":\"One journey; purchase day; board within 30 minutes\",\"zonesOrArea\":\"Edinburgh Trams city zone; excludes Airport\",\"paymentMethod\":\"Tram-stop ticket vending machine\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_included\",\"conditions\":[\"Buy before boarding. Online pre-purchase discounts not applied to this machine price.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Farefinder — adult city and airport tickets — Adult Single (city zone); adult Edinburgh Trams city zone; excludes Airport\"},{\"rowId\":\"airport-single\",\"cityId\":\"LOC-EDI\",\"operator\":\"Edinburgh Trams\",\"network\":\"Edinburgh Trams\",\"productName\":\"Adult Airport Single (airport & city zone)\",\"rawAmount\":\"7.90\",\"mode\":\"tram\",\"includedModes\":[\"tram\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"journey\",\"validity\":\"One journey; purchase day; board within 30 minutes\",\"zonesOrArea\":\"Edinburgh Trams airport and city zones\",\"paymentMethod\":\"Tram-stop ticket vending machine\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"included\",\"conditions\":[\"Buy before boarding. Online pre-purchase discounts not applied to this machine price.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Farefinder — adult city and airport tickets — Adult Airport Single (airport & city zone); adult Edinburgh Trams airport and city zones\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"tramscurrent\",\"sourceId\":\"SRC-EDINBURGH-TRANSPORT\",\"organisation\":\"Edinburgh Trams\",\"publicationTitle\":\"Farefinder — adult city and airport tickets\",\"sourceReference\":\"Farefinder — adult city and airport tickets\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[{\"sourceUrl\":\"https://edinburghtrams.com/news/changes-tram-fares-2026\",\"sourceReference\":\"City single revision; airport single frozen, its original commencement not established\",\"publicationDate\":\"2026-01-30\",\"publishedEffectiveFrom\":\"2026-02-22\",\"captureFile\":\"ukmr-transport-trams.html\",\"checksum\":\"sha256:06c13aa9fa3d53fd19a18610f77b76c6fc1708f9c7a7cf7b7f5a7802f232e636\"}],\"limitations\":[],\"snapshot\":{\"snapshotId\":\"transport-tramscurrent-20260914\",\"sourceId\":\"SRC-EDINBURGH-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://edinburghtrams.com/tickets/farefinder\",\"checksum\":\"sha256:a0f62ef0d7360303d1dab85bcf5b48376e670f4aea4a01e67095e9c5c76edb8e\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-tramscurrent.html\",\"rows\":[{\"rowId\":\"city-single\",\"cityId\":\"LOC-EDI\",\"operator\":\"Edinburgh Trams\",\"network\":\"Edinburgh Trams\",\"productName\":\"Adult Single (city zone)\",\"rawAmount\":\"2.40\",\"mode\":\"tram\",\"includedModes\":[\"tram\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"journey\",\"validity\":\"One journey; purchase day; board within 30 minutes\",\"zonesOrArea\":\"Edinburgh Trams city zone; excludes Airport\",\"paymentMethod\":\"Tram-stop ticket vending machine\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_included\",\"conditions\":[\"Buy before boarding. Online pre-purchase discounts not applied to this machine price.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Farefinder — adult city and airport tickets — Adult Single (city zone); adult Edinburgh Trams city zone; excludes Airport\"},{\"rowId\":\"airport-single\",\"cityId\":\"LOC-EDI\",\"operator\":\"Edinburgh Trams\",\"network\":\"Edinburgh Trams\",\"productName\":\"Adult Airport Single (airport & city zone)\",\"rawAmount\":\"7.90\",\"mode\":\"tram\",\"includedModes\":[\"tram\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"journey\",\"validity\":\"One journey; purchase day; board within 30 minutes\",\"zonesOrArea\":\"Edinburgh Trams airport and city zones\",\"paymentMethod\":\"Tram-stop ticket vending machine\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"included\",\"conditions\":[\"Buy before boarding. Online pre-purchase discounts not applied to this machine price.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Farefinder — adult city and airport tickets — Adult Airport Single (airport & city zone); adult Edinburgh Trams airport and city zones\"}]}"
     },
     {
       "snapshot": {
@@ -201,7 +201,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"subwaycurrent\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"organisation\":\"Strathclyde Partnership for Transport\",\"publicationTitle\":\"Subway tickets\",\"sourceReference\":\"Subway tickets\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[{\"sourceUrl\":\"https://www.spt.co.uk/about-us/news/subway-fares-revised-for-2026/\",\"sourceReference\":\"Adult Smartcard Single revision\",\"publicationDate\":\"2025-12-19\",\"publishedEffectiveFrom\":\"2026-01-05\",\"captureFile\":\"ukmr-transport-subway.html\",\"checksum\":\"sha256:33c2de525042b481057f51565b4f0cd2544b7f8f598cfebea9b57190409e4986\"}],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-subwaycurrent-20260914\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.spt.co.uk/tickets/subway-tickets/\",\"checksum\":\"sha256:cb47c973e73a17c32b00b71d2ebffd9e33040a477bb3144e019bbe410cc43d71\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-subwaycurrent.html\",\"rows\":[{\"rowId\":\"smartcard-single\",\"cityId\":\"LOC-GLA\",\"operator\":\"SPT Subway\",\"network\":\"Glasgow Subway\",\"productName\":\"Adult Smartcard Single\",\"rawAmount\":\"1.80\",\"mode\":\"subway\",\"includedModes\":[\"subway\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"journey\",\"validity\":\"One Subway journey\",\"zonesOrArea\":\"Glasgow Subway network\",\"paymentMethod\":\"Subway Smartcard\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Disposable ticket and contactless variants are not substituted.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Subway tickets — Adult Smartcard Single; adult Glasgow Subway network\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"subwaycurrent\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"organisation\":\"Strathclyde Partnership for Transport\",\"publicationTitle\":\"Subway tickets\",\"sourceReference\":\"Subway tickets\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[{\"sourceUrl\":\"https://www.spt.co.uk/about-us/news/subway-fares-revised-for-2026/\",\"sourceReference\":\"Adult Smartcard Single revision\",\"publicationDate\":\"2025-12-19\",\"publishedEffectiveFrom\":\"2026-01-05\",\"captureFile\":\"ukmr-transport-subway.html\",\"checksum\":\"sha256:33c2de525042b481057f51565b4f0cd2544b7f8f598cfebea9b57190409e4986\"}],\"limitations\":[],\"snapshot\":{\"snapshotId\":\"transport-subwaycurrent-20260914\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.spt.co.uk/tickets/subway-tickets/\",\"checksum\":\"sha256:cb47c973e73a17c32b00b71d2ebffd9e33040a477bb3144e019bbe410cc43d71\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-subwaycurrent.html\",\"rows\":[{\"rowId\":\"smartcard-single\",\"cityId\":\"LOC-GLA\",\"operator\":\"SPT Subway\",\"network\":\"Glasgow Subway\",\"productName\":\"Adult Smartcard Single\",\"rawAmount\":\"1.80\",\"mode\":\"subway\",\"includedModes\":[\"subway\"],\"fareType\":\"single\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"journey\",\"validity\":\"One Subway journey\",\"zonesOrArea\":\"Glasgow Subway network\",\"paymentMethod\":\"Subway Smartcard\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Disposable ticket and contactless variants are not substituted.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Subway tickets — Adult Smartcard Single; adult Glasgow Subway network\"}]}"
     },
     {
       "snapshot": {
@@ -217,7 +217,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"zonecard\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"organisation\":\"Strathclyde Partnership for Transport\",\"publicationTitle\":\"ZoneCard — Adult Fares\",\"sourceReference\":\"ZoneCard — Adult Fares\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-zonecard-20260914\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.spt.co.uk/tickets/zonecard/\",\"checksum\":\"sha256:c590c674f1f1648eb04369133172aa7f69f2602d4d2cbe80f8378ef399aeaed9\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-zonecard.html\",\"rows\":[{\"rowId\":\"zone1-week\",\"cityId\":\"LOC-GLA\",\"operator\":\"ScotRail, SPT Subway and participating bus operators\",\"network\":\"ZoneCard\",\"productName\":\"Zone 1 — One week\",\"rawAmount\":\"31\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"rail\",\"subway\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"One week\",\"zonesOrArea\":\"ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)\",\"paymentMethod\":\"ZoneCard on smartcard; online/app/Payzone\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Only participating services within zone 1. Other zones need a different ticket. No airport or universal operator entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"ZoneCard — Adult Fares — Zone 1 — One week; adult ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"zonecard\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"organisation\":\"Strathclyde Partnership for Transport\",\"publicationTitle\":\"ZoneCard — Adult Fares\",\"sourceReference\":\"ZoneCard — Adult Fares\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[],\"snapshot\":{\"snapshotId\":\"transport-zonecard-20260914\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.spt.co.uk/tickets/zonecard/\",\"checksum\":\"sha256:c590c674f1f1648eb04369133172aa7f69f2602d4d2cbe80f8378ef399aeaed9\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"captureFile\":\"ukmr-transport-zonecard.html\",\"rows\":[{\"rowId\":\"zone1-week\",\"cityId\":\"LOC-GLA\",\"operator\":\"ScotRail, SPT Subway and participating bus operators\",\"network\":\"ZoneCard\",\"productName\":\"Zone 1 — One week\",\"rawAmount\":\"31\",\"mode\":\"multimodal\",\"includedModes\":[\"bus\",\"rail\",\"subway\"],\"fareType\":\"weekly\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"week\",\"validity\":\"One week\",\"zonesOrArea\":\"ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)\",\"paymentMethod\":\"ZoneCard on smartcard; online/app/Payzone\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_established\",\"conditions\":[\"Only participating services within zone 1. Other zones need a different ticket. No airport or universal operator entitlement inferred.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"ZoneCard — Adult Fares — Zone 1 — One week; adult ZoneCard zone 1 (includes Glasgow City Centre; not all Glasgow)\"}]}"
     },
     {
       "snapshot": {
@@ -232,7 +232,7 @@
       "importedAt": "2026-09-14T17:49:38Z",
       "importVersion": "transport-v1",
       "releaseStatus": "RELEASE_READY",
-      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"firstglasgow\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"organisation\":\"First Glasgow\",\"publicationTitle\":\"Ticket prices — City / Adult / FirstDay selection\",\"sourceReference\":\"Ticket prices — City / Adult / FirstDay selection\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\",\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-firstglasgow-20260914\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.firstbus.co.uk/greater-glasgow/tickets/ticket-prices\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"city-day\",\"cityId\":\"LOC-GLA\",\"operator\":\"First Glasgow\",\"network\":\"First Glasgow City fare zone\",\"productName\":\"City Adult FirstDay\",\"rawAmount\":\"6.60\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"Unlimited journeys for one day\",\"zonesOrArea\":\"First Glasgow City zone\",\"paymentMethod\":\"First Bus App or on-bus ticket\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_included\",\"conditions\":[\"Adult 16+. Excludes Glasgow Airport Express, airport journeys, Night Bus and First Scotland East beyond area validity.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Ticket prices — City / Adult / FirstDay selection — City Adult FirstDay; adult First Glasgow City zone\"}]}"
+      "payload": "{\"extractKind\":\"UKMR_CONTROLLED_EXTRACT\",\"extractVersion\":\"1.0.0\",\"key\":\"firstglasgow\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"organisation\":\"First Glasgow\",\"publicationTitle\":\"Ticket prices — City / Adult / FirstDay selection\",\"sourceReference\":\"Ticket prices — City / Adult / FirstDay selection\",\"reviewMethod\":\"MANUAL_PRIMARY_SOURCE_CELL_REVIEW\",\"importedAt\":\"2026-09-14T17:49:38Z\",\"importVersion\":\"transport-v1\",\"releaseStatus\":\"RELEASE_READY\",\"supportingEvidence\":[],\"limitations\":[\"Official rendered page reviewed; no original byte capture/checksum available.\"],\"snapshot\":{\"snapshotId\":\"transport-firstglasgow-20260914\",\"sourceId\":\"SRC-GLASGOW-TRANSPORT\",\"retrievedAt\":\"2026-09-14T17:49:38Z\",\"sourceFormat\":\"HTML\",\"retention\":\"METADATA_ONLY\",\"sourceUrl\":\"https://www.firstbus.co.uk/greater-glasgow/tickets/ticket-prices\",\"nonRetentionReason\":\"Operator reuse permission unresolved; original website content not retained in Git.\"},\"rows\":[{\"rowId\":\"city-day\",\"cityId\":\"LOC-GLA\",\"operator\":\"First Glasgow\",\"network\":\"First Glasgow City fare zone\",\"productName\":\"City Adult FirstDay\",\"rawAmount\":\"6.60\",\"mode\":\"bus\",\"includedModes\":[\"bus\"],\"fareType\":\"day_ticket\",\"fareUnit\":\"GBP/ticket\",\"validityPeriod\":\"day\",\"validity\":\"Unlimited journeys for one day\",\"zonesOrArea\":\"First Glasgow City zone\",\"paymentMethod\":\"First Bus App or on-bus ticket\",\"passengerType\":\"adult\",\"peakStatus\":\"anytime\",\"airportApplicability\":\"not_included\",\"conditions\":[\"Adult 16+. Excludes Glasgow Airport Express, airport journeys, Night Bus and First Scotland East beyond area validity.\"],\"effectiveFrom\":\"2026-09-14\",\"effectiveTo\":\"2026-09-14\",\"effectiveDateBasis\":\"VERIFIED_CURRENT_AS_OF\",\"verifiedAsOf\":\"2026-09-14\",\"sourceReference\":\"Ticket prices — City / Adult / FirstDay selection — City Adult FirstDay; adult First Glasgow City zone\"}]}"
     }
   ],
   "runs": [
@@ -269,13 +269,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -354,13 +347,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -439,13 +425,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -524,13 +503,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -609,13 +581,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -730,13 +695,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -850,13 +808,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -970,13 +921,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -1090,13 +1034,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -1210,13 +1147,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -1313,13 +1243,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -1430,13 +1353,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -1531,13 +1447,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -1654,13 +1563,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -1758,12 +1660,6 @@
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
               "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -1841,12 +1737,6 @@
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
               "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -1923,12 +1813,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -2043,12 +1927,6 @@
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
                 "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -2159,12 +2037,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -2278,12 +2150,6 @@
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
                 "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -2380,12 +2246,6 @@
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
               "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -2463,12 +2323,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Official rendered page reviewed; no original byte capture/checksum available.",
               "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
@@ -2584,12 +2438,6 @@
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
                 "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -2703,12 +2551,6 @@
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
                 "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -2805,12 +2647,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -2922,12 +2758,6 @@
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
                 "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -3021,12 +2851,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -3138,12 +2962,6 @@
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
                 "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -3237,12 +3055,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -3358,12 +3170,6 @@
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
                 "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -3459,12 +3265,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -3581,12 +3381,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -4110,13 +3904,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -4202,13 +3989,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -4329,13 +4109,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -4455,13 +4228,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -4566,13 +4332,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -4658,13 +4417,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -4784,13 +4536,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -4909,13 +4654,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -5019,13 +4757,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -5145,13 +4876,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -5255,13 +4979,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
             ]
@@ -5376,13 +5093,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."
               ]
@@ -5478,12 +5188,6 @@
             "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
             "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
             "limitations": [
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
-              "Official rendered page reviewed; no original byte capture/checksum available.",
               "Official rendered page reviewed; no original byte capture/checksum available.",
               "Original redistribution/licensing unresolved; metadata-only snapshot.",
               "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -5594,12 +5298,6 @@
               "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
               "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
               "limitations": [
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
-                "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Official rendered page reviewed; no original byte capture/checksum available.",
                 "Original redistribution/licensing unresolved; metadata-only snapshot.",
                 "Historic fare commencement and future validity are not asserted by this as-of extract."

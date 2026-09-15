@@ -50,3 +50,7 @@ See [production water ingestion](production-water.md) for 56 reviewed provider t
 ### Slice 8 grocery and household-spending evidence
 
 See [production spending ingestion](production-spending.md) for Defra FYE 2024 per-person food evidence, ONS FYE 2025 source expenditure hierarchy, and separate calculated monthly equivalents. Run `npm run data:spending:extract` and `npm run data:spending`; both support `-- --check`. These are national reference artifacts, with no city budgets, household multipliers or approved Essentials/Lifestyle mapping.
+
+## Milestone 1 closure
+
+See [closure audit and Milestone 2 decision](milestone-1-closure.md) and the [machine-readable inventory and 80-cell coverage matrix](milestone-1-inventory.json). `npm run data:generate` regenerates all production artifacts and the closure inventory; `npm run data:verify` compares their complete bytes and checks global integrity offline. Original-source extraction/checksum replay requires the separately captured source files described in each production methodology.

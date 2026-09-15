@@ -22,7 +22,9 @@
     "data:spending:extract": "python3 scripts/data/extract-spending.py",
     "data:spending": "node scripts/data/generate-spending.mjs",
     "data:transport:extract": "python3 scripts/data/extract-transport.py",
-    "data:transport": "node scripts/data/generate-transport.mjs"
+    "data:transport": "node scripts/data/generate-transport.mjs",
+    "data:generate": "node scripts/data/milestone-1.mjs",
+    "data:verify": "node scripts/data/milestone-1.mjs --check"
   },
   "repository": {
     "type": "git",

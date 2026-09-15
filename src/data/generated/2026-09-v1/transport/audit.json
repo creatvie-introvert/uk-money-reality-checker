@@ -48,13 +48,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -141,13 +134,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -233,13 +219,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -325,13 +304,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -417,12 +389,6 @@
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
           "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -499,13 +465,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -591,13 +550,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -675,12 +627,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Official rendered page reviewed; no original byte capture/checksum available.",
           "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
@@ -761,12 +707,6 @@
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
           "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Weekly duration and operational-day ending time verified from https://www.m-card.co.uk/terms-of-use/ (updated 22 May 2025); rendered page only, no source bytes/checksum.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -845,12 +785,6 @@
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
           "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -926,12 +860,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -1012,12 +940,6 @@
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
           "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -1093,12 +1015,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -1178,12 +1094,6 @@
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
           "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -1260,12 +1170,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
@@ -1345,12 +1249,6 @@
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
           "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -1428,13 +1326,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -1513,13 +1404,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -1598,13 +1482,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -1683,13 +1560,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -1768,13 +1638,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -1853,13 +1716,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
@@ -1936,13 +1792,6 @@
         "licenceReference": "UNRESOLVED — no operator redistribution licence or OGL assumption",
         "methodologyNotes": "Manual review of current official product facts. Bounds represent the verified date only, not fare commencement or withdrawal. No city default, fare optimization, trip count, or frequency arithmetic.",
         "limitations": [
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
-          "Official rendered page reviewed; no original byte capture/checksum available.",
           "Original redistribution/licensing unresolved; metadata-only snapshot.",
           "Historic fare commencement and future validity are not asserted by this as-of extract."
         ]
