@@ -1,3 +1,13 @@
 # Calculator engine
 
-M2 owns the framework-independent calculator engine. It will consume typed release data and explicit user-entered values, preserve distinctions between observed, calculated, modelled and user-entered values, and return transparent outputs without an arbitrary affordability score. M1 establishes the validated data and typed-loader inputs only; M3 adds scenario comparison, cost-driver ranking and salary-preservation calculation.
+Pure TypeScript M2 boundary; no React, filesystem, source spreadsheet or ingestion dependency.
+
+- `contracts/`: validated scenario inputs and discriminated output/resolution types.
+- `loaders/`: centrally pinned generated releases, immutable validated records and exact queries.
+- `resolution/`: override → exact source evidence → structured unresolved.
+- `money/`: exact rational pence, explicit period equivalents and display rounding.
+- `calculators/`: rent/council-tax proofs and explicit unsupported category interfaces.
+- `diagnostics/`: stable codes, severities and categories.
+- `comparison/`: M3 interface only.
+
+See [Milestone 2 architecture](../../docs/engine/milestone-2-architecture.md) for the supported scope, precision policy, release configuration, gaps and validation. Full tax/NI arithmetic, household totals/models, comparison and salary preservation remain later slices.
