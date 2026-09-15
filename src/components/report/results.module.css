@@ -97,3 +97,8 @@
 .kpi.negative > strong { color: #b42318; }
 
 .header nav button { background: transparent; border: 0; color: #233c68; font: inherit; }
+
+.page button { font: inherit; cursor: pointer; }
+.next > div > button { display: block; text-align: left; border: 0; background: white; padding: 17px; border-radius: 5px; font-size: 12px; color: #005be3; }
+.textButton { border: 0; padding: 0; background: transparent; color: #005be3; text-decoration: underline; }
+.header nav .outlineButton { border: 1px solid #0068ff; padding: 9px 15px; background: white; color: #005be3; }

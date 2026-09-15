@@ -1,8 +1,8 @@
-# Milestone 3 Slice 1: product boundary and results integration
+# Milestone 3: product boundary and calculator journey
 
 ## Scope and references
 
-Implements the pure product pipeline and a development-only React results proof. The full form journey is intentionally not connected. Follow the [locked design handoff](milestone-3-design-handoff.md) and [audited Milestone 2 contracts](../engine/milestone-2-closure.md). Engine truth takes priority over screenshot values and prototype structure. Prototype arithmetic and example results are never imported.
+Slice 1 implemented the pure product pipeline and a development-only React proof. Slice 2 now connects the production seven-step calculator, review/edit flow and in-memory results handoff. See [calculator journey](calculator-journey.md) for current form behavior, validation and privacy. Follow the [locked design handoff](milestone-3-design-handoff.md) and [audited Milestone 2 contracts](../engine/milestone-2-closure.md). Engine truth takes priority over screenshot values and prototype structure. Prototype arithmetic and example results are never imported.
 
 Starting state: `rebuild/next-production`, `c110a843a6d9c1f92d3e587d5cba55e4ccac213a`, matching the live origin branch. Tracked files were clean; only `src/data/raw/ukmr_data_pack_and_source_register_v3_1.xlsx` was untracked. No engine, generated evidence, raw workbook, dependencies or API endpoints are changed by this slice.
 
@@ -65,7 +65,7 @@ Compact explanations retain source organisation, title/link, publication period,
 
 Source releases retain their own periods: July rent, fiscal-year tax/council/water, quarterly energy, FYE spending and September transport. “Sources use different publication and effective periods” replaces a fabricated universal updated date. Available background releases are labelled as such; they do not necessarily determine entered amounts.
 
-Issues preserve engine code, category, scenario role, severity, action possibility and suggested action. Copy is centrally mapped with original engine text as a fallback. Supported suggestions are ENTER_AMOUNT, SELECT_AUTHORITY, SELECT_BAND, SELECT_TRANSPORT_PRODUCT, SELECT_WATER_OPTION and REVIEW_INPUT. Suggestions are descriptive until the matching form controls exist; the proof does not pretend that an unwired edit action works.
+Issues preserve engine code, category, scenario role, severity, action possibility and suggested action. Copy is centrally mapped with original engine text as a fallback. Supported suggestions are ENTER_AMOUNT, SELECT_AUTHORITY, SELECT_BAND, SELECT_TRANSPORT_PRODUCT, SELECT_WATER_OPTION and REVIEW_INPUT. Production result suggestions return to the relevant form step, or review when no category target exists. The development proof keeps suggestions descriptive.
 
 Cost coverage uses engine required/resolved/unresolved/not-applicable counts. It is not confidence or accuracy. An unevaluated scenario has no invented count. There are eight supported categories; childcare is not a ninth zero-cost row. A complete result means complete within that scope, not every possible household expense.
 
@@ -79,10 +79,10 @@ Local component state retains only the selected development fixture and latest r
 
 - Run `npm run dev`; visit `/dev/calculator-results`; choose a labelled fixture and press **Calculate preview**. Fixtures live only in `src/features/calculator/development/fixtures.ts`. All result numbers are computed at runtime.
 - `/dev/calculator-results` returns 404 outside development; confirmed in production prerender metadata.
-- `/calculator/results` is the production entry's empty state. It contains no fixture results and explains that the form is not connected.
+- `/calculator/results` renders the latest in-memory production calculation, or offers Start calculator when no result exists. It never consumes development fixtures.
 - `ResultsPage` accepts only the view model. It preserves the approved mint summary, four KPIs, notice/tab strip, cost table plus ranked bars, dark-blue salary panel, coverage/methodology and next-action grouping. Additional qualification serves real engine states.
 - Keyboard focus, table labels, details disclosures, textual status and signed changes are present. Mobile cards stack and the table scrolls within its labelled region. No page-width overflow at 390px in browser testing.
-- The screenshot's separate skyline artwork and verifiable font file were not supplied. The proof uses the documented Inter/system fallback and leaves artwork integration open. This is the first integration, not a claim of completed pixel-level visual sign-off. City/search controls remain visibly unavailable pending their routes; the full landing/city experience is outside this slice.
+- The screenshot's separate skyline artwork and verifiable font file were not supplied. The proof uses the documented Inter/system fallback and leaves artwork integration open. This is the first integration, not a claim of completed pixel-level visual sign-off. City/search experiences remain deferred; the full landing/city experience is outside this slice.
 
 ### Representative runtime results
 
@@ -100,7 +100,7 @@ These are generated from explicit development inputs, not production defaults:
 
 Display rounds to the nearest penny, half away from zero, only through the engine money formatter. Exact rational values remain separate and feed all calculations. No rounded value is returned to the engine.
 
-## Audit, tests and next slice
+## Slice 1 audit and validation history
 
 Legacy audit found no active calculator arithmetic in the app shell to remove. External HTML remains reference-only. No affordability score, prototype city fallback, static result numbers or spending profiles are introduced. The existing root development shell is unchanged.
 
@@ -110,4 +110,8 @@ Validation for this slice: lint, typecheck, complete Vitest suite, production bu
 
 Recorded outcome: all checks passed; 908 Vitest tests across 20 files (38 new product tests plus all 870 prior tests), and 5 Playwright tests (4 new plus the existing shell smoke test). All 32 generated artifact hashes and the workbook hash match the starting baseline. The build-generated `next-env.d.ts` path churn was restored and typecheck passed afterward. Nothing was staged or committed.
 
-Recommended Slice 2: wire the approved eight-step calculator journey to this strict draft contract using the existing React Hook Form dependency. Add explicit source/override choices, actual jurisdiction/date/scope fields, authority/band/water/product selections, recoverable gaps and review/edit navigation. Pass the in-memory result to the production results route without financial URL parameters or persistence. Do not introduce models or silently fill missing fields to complete the journey. Finish approved asset integration and responsive/visual sign-off after real form states are wired.
+Slice 2 implements the journey with a calculator-scoped context and reducer; React Hook Form was installed but unused, so no second form store was added. Fare-product and London borough selection remain deferred; monthly overrides and unresolved paths are available. Recommended next slice: production usability and approved visual/asset sign-off, including clearer evidence-scope guidance and source explanations. New financial models require separate approval.
+
+## Slice 2 production integration
+
+The calculator layout owns one in-memory draft and result. Routes collect the same product form contract; `journey.ts` owns empty-state construction, field descriptions, scoped validation and review labels. `validateJourney` calls the existing adapter, then the existing product orchestration remains the sole calculation entry. The only adapter contract extension permits an explicitly unselected Scottish water service in a draft, which remains unresolved and never receives a default. See [the journey implementation record](calculator-journey.md) for details and validation.

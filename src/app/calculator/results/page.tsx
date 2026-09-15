@@ -1,5 +1,2 @@
-import { EmptyResults } from "@/components/report/ResultsPage";
-
-export default function CalculatorResultsPage() {
-  return <EmptyResults />;
-}
+import { ProductionResults } from "@/features/calculator/journey/ProductionResults";
+export default function CalculatorResultsPage() { return <ProductionResults />; }

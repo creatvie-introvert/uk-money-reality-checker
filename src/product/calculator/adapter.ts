@@ -12,7 +12,7 @@ const locationSchema = z.strictObject({
   cityId: z.string(), effectiveOn: z.string(), bedrooms: z.string(), rentSourceMonth: z.string(),
   rent: z.discriminatedUnion("mode", [unknownChoice, enteredChoice, sourceChoice]),
   council: z.discriminatedUnion("mode", [unknownChoice, enteredChoice.extend({ selection: councilSelection.optional() }), sourceChoice.extend({ authorityName: z.string(), authorityCode: z.string().optional(), band: z.string() })]),
-  water: z.discriminatedUnion("mode", [unknownChoice, enteredChoice.extend({ selection: waterSelection.optional() }), sourceChoice.extend({ band: z.string(), connectedServices: z.enum(["combined", "clean_water", "wastewater"]) })]),
+  water: z.discriminatedUnion("mode", [unknownChoice, enteredChoice.extend({ selection: waterSelection.optional() }), sourceChoice.extend({ band: z.string(), connectedServices: z.enum(["", "combined", "clean_water", "wastewater"]) })]),
   energy: monthlyChoice, spending: z.strictObject({ groceries: monthlyChoice, essentials: monthlyChoice, lifestyle: monthlyChoice }),
   transport: z.discriminatedUnion("mode", [unknownChoice, enteredChoice, z.strictObject({ mode: z.literal("PRODUCT"), productId: z.string(), override: z.strictObject({ amountGbp: z.string(), note: z.string().optional() }).optional() }), z.strictObject({ mode: z.literal("NONE") })]),
   income: z.strictObject({ grossAnnualSalaryGbp: z.string(), taxJurisdiction: z.string(), taxYear: z.string(), niCategory: z.string(), scope: z.string(), calculationBasis: z.string(), netOverride: z.strictObject({ amountGbp: z.string(), note: z.string().optional() }).optional() }),
@@ -45,7 +45,7 @@ export function buildCalculatorInputsFromForm(raw: unknown): AdapterResult {
     }
     let water = q.water.mode === "AMOUNT" && q.water.selection ? { billingRegime: "council_tax_band", ...q.water.selection } : undefined;
     if (q.water.mode === "SOURCE") {
-      if (q.water.band.trim()) water = { billingRegime: "council_tax_band", band: q.water.band.trim(), connectedServices: q.water.connectedServices };
+      if (q.water.band.trim() && q.water.connectedServices) water = { billingRegime: "council_tax_band", band: q.water.band.trim(), connectedServices: q.water.connectedServices };
       else issues.push({ ...issue("ADAPTER_WATER_SELECTION_REQUIRED", "Select the actual water band and connected services.", [role, "water"], role, "warning"), action: "SELECT_WATER_OPTION", category: "water" });
     }
     const input = {

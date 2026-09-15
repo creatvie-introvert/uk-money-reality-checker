@@ -68,7 +68,7 @@ export interface FormLocation {
   cityId: string; effectiveOn: string; bedrooms: string; rentSourceMonth: string;
   rent: SourceChoice;
   council: (MonthlyChoice & { selection?: { authorityName: string; authorityCode?: string; band: string } }) | { mode: "SOURCE"; authorityName: string; authorityCode?: string; band: string };
-  water: (MonthlyChoice & { selection?: { band: string; connectedServices: "combined" | "clean_water" | "wastewater" } }) | { mode: "SOURCE"; band: string; connectedServices: "combined" | "clean_water" | "wastewater" };
+  water: (MonthlyChoice & { selection?: { band: string; connectedServices: "combined" | "clean_water" | "wastewater" } }) | { mode: "SOURCE"; band: string; connectedServices: "" | "combined" | "clean_water" | "wastewater" };
   energy: MonthlyChoice;
   spending: { groceries: MonthlyChoice; essentials: MonthlyChoice; lifestyle: MonthlyChoice };
   transport: MonthlyChoice | { mode: "PRODUCT"; productId: string; override?: { amountGbp: string; note?: string } } | { mode: "NONE" };

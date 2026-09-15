@@ -1,0 +1,51 @@
+.page { min-height: 100vh; }
+.container { max-width: 1060px; padding: 28px 24px 48px; margin: auto; }
+.panel { padding: 30px; border: 1px solid #e1e8ef; border-radius: 7px; background: white; }
+.panel h1 { font-size: 30px; line-height: 1.15; letter-spacing: -.8px; max-width: 30ch; margin-bottom: 12px; }
+.intro { color: #4a607c; max-width: 78ch; font-size: 14px; }
+.eyebrow { color: #006645; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+.progress { display: flex; gap: 12px; list-style: none; padding: 0; margin: 0 0 24px; }
+.progress li { display: flex; flex: 1; align-items: center; gap: 7px; font-size: 11px; color: #51647d; }
+.progress small { font-size: 9px; }
+.dot { flex: 0 0 26px; height: 26px; border: 1px solid #ccd8e5; border-radius: 50%; display: grid; place-items: center; background: white; }
+.progress [aria-current="step"] { color: #005be3; font-weight: 700; }
+.progress [aria-current="step"] .dot { color: white; background: #0068ff; border-color: #0068ff; }
+.fields { border: 0; margin: 0; padding: 0; min-width: 0; }
+.columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 22px; }
+.scenario, .shared { min-width: 0; border: 1px solid #e1e8ef; border-radius: 6px; background: #fbfcfd; padding: 20px; margin: 0; }
+.shared { margin-top: 24px; }
+.shared .field { display: inline-block; width: 48%; margin-right: 2%; vertical-align: top; }
+.shared p { font-size: 12px; color: #52657b; }
+.scenario legend, .shared legend { font-weight: 700; padding: 0 5px; font-size: 16px; }
+.field { margin: 8px 0 21px; }
+.field:last-child { margin-bottom: 0; }
+.field label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 7px; }
+.field label span { color: #62728a; font-weight: 400; font-size: 11px; }
+.field input:not([type="checkbox"]), .field select { display: block; width: 100%; min-width: 0; max-width: 100%; border: 1px solid #b6c6d9; border-radius: 4px; background: white; color: #15294a; padding: 10px; font: inherit; font-size: 14px; }
+.field small { margin-top: 6px; color: #52657b; font-size: 11px; }
+.confirm { display: flex !important; align-items: flex-start; gap: 8px; }
+.confirm input { margin-top: 4px; flex-shrink: 0; }
+.error, .errorSummary { color: #a42520; font-size: 13px; }
+.error { margin: 5px 0; }
+.errorSummary { border: 1px solid #ba3b30; background: #fff5f2; padding: 16px; margin-bottom: 20px; }
+.errorSummary h2 { margin-bottom: 8px; }
+.errorSummary a, .errorSummary button { color: #a42520; }
+.actions { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-top: 26px; }
+.page button { cursor: pointer; font: inherit; }
+.primary, .secondary { padding: 11px 20px; border-radius: 5px; font-size: 14px !important; font-weight: 600 !important; }
+.primary { background: #0068ff; color: white; border: 1px solid #0068ff; }
+.secondary { background: white; color: #005be3; border: 1px solid #b6c6d9; }
+.page button:disabled { cursor: wait; opacity: .6; }
+.notice { padding: 14px; font-size: 12px; border-radius: 5px; background: #fff4df; color: #7a481e; margin-top: 20px; }
+.privacy { font-size: 11px; color: #52657b; margin: 20px 0 0; }
+.review { border-bottom: 1px solid #e1e8ef; padding: 22px 0; }
+.reviewHeading { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.reviewHeading h2 { margin: 0; }
+.reviewHeading button, .errorSummary button { border: 0; padding: 4px; background: transparent; color: #005be3; text-decoration: underline; }
+.review h3 { font-size: 13px; }
+.review dl { font-size: 12px; margin: 0; }
+.review dl > div { border-top: 1px solid #edf1f5; padding: 8px 0; }
+.review dt { color: #52657b; }
+.review dd { margin: 3px 0 0; font-weight: 600; overflow-wrap: anywhere; }
+@media (max-width: 900px) { .progress { flex-wrap: wrap; } .progress li { flex: 0 1 calc(25% - 12px); } }
+@media (max-width: 600px) { .container { padding: 20px 12px 35px; } .panel { padding: 20px 16px; } .panel h1 { font-size: 27px; } .columns { grid-template-columns: 1fr; gap: 22px; } .progress li { flex-basis: calc(33.33% - 12px); align-items: flex-start; } .shared .field { width: 100%; margin-right: 0; } .scenario, .shared { padding: 15px; } .actions { align-items: stretch; } .primary, .secondary { padding: 11px 13px; } }
