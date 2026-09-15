@@ -4,6 +4,9 @@ import { mvpCityIdSchema } from "../../data/schemas/enums";
 export const categorySchema = z.enum(["income_tax", "national_insurance", "rent", "council_tax", "energy", "water", "groceries", "household_spending", "essentials", "lifestyle", "transport"]);
 export type Category = z.infer<typeof categorySchema>;
 export const diagnosticCodeSchema = z.enum([
+  "COMPARISON_PARTIAL", "COMPARISON_UNRESOLVED", "TAKE_HOME_COMPARISON_UNRESOLVED",
+  "HOUSEHOLD_COST_COMPARISON_PARTIAL", "HOUSEHOLD_COST_COMPARISON_UNRESOLVED",
+  "RESIDUAL_COMPARISON_PARTIAL", "RESIDUAL_COMPARISON_UNRESOLVED", "CATEGORY_COMPARISON_UNRESOLVED",
   "SCENARIO_INCOME_UNRESOLVED", "SCENARIO_COSTS_PARTIAL", "SCENARIO_COSTS_UNRESOLVED",
   "SCENARIO_RESIDUAL_PARTIAL", "NET_INCOME_OVERRIDE_APPLIED", "BASELINE_INCOME_UNAVAILABLE",
   "HOUSEHOLD_COST_PARTIAL", "HOUSEHOLD_COST_UNRESOLVED",
@@ -26,6 +29,9 @@ export const diagnosticSchema = z.strictObject({
   severity: z.enum(["info", "warning", "blocking"]),
   kind: z.enum(["calculation_policy", "validation", "evidence_gap", "applicability_unresolved", "source_age", "user_override", "model_required", "unsupported_combination"]),
   category: categorySchema.optional(), cityId: mvpCityIdSchema.optional(),
+  metric: z.enum(["take_home", "household_cost", "residual", "category", "comparison"]).optional(),
+  scenarioRole: z.enum(["current", "destination"]).optional(),
+  currentState: z.string().min(1).optional(), destinationState: z.string().min(1).optional(),
   canResolveWithUserInput: z.boolean().optional(),
   message: z.string().min(1), path: z.array(z.union([z.string(), z.number()])).optional(),
 });

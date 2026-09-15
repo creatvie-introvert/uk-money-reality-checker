@@ -1,5 +1,11 @@
 # Milestone 2: calculator engine architecture and core contracts
 
+## Slice 5 update
+
+`compareScenarios(current, destination)` now consumes two independently evaluated scenario results. It compares effective monthly take-home, complete household costs and complete residuals, always destination minus current, and exposes unranked category deltas. Incomplete total/residual metrics retain side context with no delta. See [scenario comparison](scenario-comparison.md) for completeness, N/A, lineage and diagnostic policies. The kickoff ComparisonEngine placeholder now takes two scenario results. No ranking, solver, UI or new evidence model is implemented.
+
+Earlier statements deferring scenario comparison are historical and are superseded by Slice 5. Prior calculators and evidence remain unchanged.
+
 ## Slice 4 update
 
 `calculateScenario(evidence, input)` now evaluates one `{ household, location }` request, resolves effective monthly net income, preserves the employment baseline and composes household costs with a discriminated complete/partial/unresolved residual. Net-only income is supported without fabricated gross salary; explicit zero net overrides are valid. See [scenario calculation](scenario-calculation.md) for contracts, diagnostics, examples and mixed-source-period lineage. The household context no longer requires income fields; existing normalized category contexts remain compatible. No comparison or salary solver is implemented.
