@@ -38,10 +38,11 @@ for (const width of [1440, 1280, 1024, 768, 390, 320]) {
   });
 }
 
-test("public keyboard navigation reaches transparency pages and returns home", async ({ page }) => {
+test("public keyboard navigation reaches transparency pages and returns home", async ({ page, browserName }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await page.keyboard.press("Tab");
+  // macOS WebKit follows the system preference: Option-Tab includes links.
+  await page.keyboard.press(browserName === "webkit" && process.platform === "darwin" ? "Alt+Tab" : "Tab");
   const skip = page.getByRole("link", { name: "Skip to main content", exact: true });
   await expect(skip).toBeFocused();
   await page.keyboard.press("Enter");

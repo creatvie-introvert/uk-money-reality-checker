@@ -1,18 +1,11 @@
+import { recordBase } from "./record-base";
+import { incomeTaxRuleRecordSchema, nationalInsuranceRuleRecordSchema } from "./income-records";
+export { incomeTaxRuleRecordSchema, nationalInsuranceRuleRecordSchema } from "./income-records";
 import { z } from "zod";
 
 import { geographySchema } from "./geography";
-import { confidenceClassSchema, jurisdictionSchema, releaseStatusSchema, mvpCityIdSchema } from "./enums";
+import { mvpCityIdSchema } from "./enums";
 import { provenanceSchema } from "../provenance/model";
-
-const recordBase = {
-  recordId: z.string().min(1),
-  dataset: z.string().min(1),
-  valueType: confidenceClassSchema,
-  releaseStatus: releaseStatusSchema,
-  provenance: provenanceSchema,
-  methodology: z.string().min(1).optional(),
-  qa: z.record(z.string(), z.unknown()).default({}),
-};
 
 export const rentRecordSchema = z.object({
   ...recordBase,
@@ -163,55 +156,6 @@ export const transportPeriodConversionRecordSchema = z.strictObject({
 }).superRefine((r, ctx) => {
   const weekly = r.observedValidityPeriod === "week";
   if (r.formula !== (weekly ? "fareGbp * 52 / 12" : "fareGbp / 12") || r.monthlyGbp !== (weekly ? r.observedFareGbp * 52 / 12 : r.observedFareGbp / 12)) ctx.addIssue({ code: "custom", message: "Formula/amount must preserve the unrounded parent period conversion" });
-});
-
-export const incomeTaxRuleRecordSchema = z.object({
-  ...recordBase,
-  category: z.literal("income_tax_rule"),
-  jurisdiction: jurisdictionSchema,
-  taxYear: z.string().regex(/^\d{4}\/\d{2}$/),
-  ruleType: z.enum(["personal_allowance", "personal_allowance_taper", "personal_allowance_zero_point", "tax_band"]),
-  bandName: z.string().min(1).optional(),
-  thresholdBasis: z.enum(["allowance_amount", "adjusted_net_income", "published_income_with_standard_allowance"]).optional(),
-  lowerInclusive: z.boolean().optional(),
-  upperInclusive: z.boolean().optional(),
-  threshold: z.number().finite().nonnegative().optional(),
-  lowerBound: z.number().finite().nonnegative().optional(),
-  upperBound: z.number().finite().nonnegative().optional(),
-  rate: z.number().finite().nonnegative().optional(),
-  effectiveFrom: z.iso.date(),
-  effectiveTo: z.iso.date(),
-}).superRefine((record, context) => {
-  if (record.effectiveFrom > record.effectiveTo) {
-    context.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
-  }
-  if (record.lowerBound !== undefined && record.upperBound !== undefined && record.lowerBound > record.upperBound) {
-    context.addIssue({ code: "custom", path: ["upperBound"], message: "Upper bound must not precede lower bound" });
-  }
-});
-
-export const nationalInsuranceRuleRecordSchema = z.object({
-  ...recordBase,
-  category: z.literal("national_insurance_rule"),
-  taxYear: z.string().regex(/^\d{4}\/\d{2}$/),
-  class: z.literal("Class 1"),
-  categoryLetter: z.string().min(1),
-  payPeriod: z.enum(["weekly", "monthly", "annual"]),
-  bandName: z.enum(["LEL_TO_PT", "PT_TO_UEL", "ABOVE_UEL"]).optional(),
-  lowerInclusive: z.boolean().optional(),
-  upperInclusive: z.boolean().optional(),
-  lowerThreshold: z.number().finite().nonnegative(),
-  upperThreshold: z.number().finite().nonnegative().optional(),
-  employeeRate: z.number().finite().nonnegative(),
-  effectiveFrom: z.iso.date(),
-  effectiveTo: z.iso.date(),
-}).superRefine((record, context) => {
-  if (record.effectiveFrom > record.effectiveTo) {
-    context.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
-  }
-  if (record.lowerThreshold !== undefined && record.upperThreshold !== undefined && record.lowerThreshold > record.upperThreshold) {
-    context.addIssue({ code: "custom", path: ["upperThreshold"], message: "Upper bound must not precede lower bound" });
-  }
 });
 
 export const councilTaxBandSchema = z.enum(["A", "B", "C", "D", "E", "F", "G", "H"]);

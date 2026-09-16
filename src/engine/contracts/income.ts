@@ -2,7 +2,8 @@ import { z } from "zod";
 import { gbpText } from "./input";
 import type { Money } from "../money";
 import type { Diagnostic } from "../diagnostics";
-import type { EvidenceLoader, EvidenceRecord } from "../loaders";
+import type { EvidenceLoader } from "../loaders";
+import type { RuntimeEvidenceRecord as EvidenceRecord } from "../loaders/runtime-types";
 import type { Jurisdiction } from "../../data/schemas/enums";
 
 const employmentFields = {

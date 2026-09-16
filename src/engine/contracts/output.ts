@@ -1,12 +1,12 @@
 import type { ConfidenceClass, MvpCityId } from "../../data/schemas/enums";
-import type { AuditRecord } from "../../data/schemas/records";
+import type { RuntimeEvidence } from "../loaders/runtime-types";
 import type { Category, Diagnostic } from "../diagnostics";
 import type { DataReleaseMetadata, DeepReadonly } from "../loaders";
 import type { IncomeTaxResolved, EmployeeNiResolved } from "./income";
 import type { HouseholdMonthlyCosts } from "./household";
 import type { Money } from "../money";
 
-export type EngineEvidence = DeepReadonly<AuditRecord>;
+export type EngineEvidence = RuntimeEvidence;
 export type BaselineEvidence<T> =
   | { status: "AVAILABLE"; records: readonly T[] }
   | { status: "UNAVAILABLE"; records: readonly T[]; diagnostics: readonly Diagnostic[] };

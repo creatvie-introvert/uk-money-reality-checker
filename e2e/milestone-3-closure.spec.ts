@@ -54,12 +54,14 @@ async function auditWidths(page: Page, name: string) {
     await page.setViewportSize({ width, height: 1000 });
     await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
     await expect(page.getByRole("main")).toHaveCount(1);
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    const layout = await page.evaluate(() => ({ viewport: innerWidth, scrollWidth: document.documentElement.scrollWidth, overflow: [...document.querySelectorAll("body *")].filter((el) => el.getBoundingClientRect().right > innerWidth + 1 || el.scrollWidth > el.clientWidth + 1).map((el) => ({ tag: el.tagName, name: el.getAttribute("name"), className: el.className, right: el.getBoundingClientRect().right, scroll: el.scrollWidth, client: el.clientWidth })) }));
+    expect(layout.scrollWidth, JSON.stringify({ step: name, ...layout })).toBeLessThanOrEqual(width);
     const clipped = await page.locator("main input, main select, main button").evaluateAll((els) => els.filter((el) => {
       const rect = el.getBoundingClientRect();
       return rect.width > 0 && rect.height > 0 && (rect.left < -1 || rect.right > innerWidth + 1);
     }).map((el) => el.getAttribute("name") || el.textContent));
     expect(clipped).toEqual([]);
+    expect(await page.locator("main select").evaluateAll((els) => els.every((el) => el.getBoundingClientRect().height >= 44))).toBe(true);
     await page.screenshot({ path: `/tmp/ukmr-closure-${name}-${width}.png`, fullPage: true });
   }
 }

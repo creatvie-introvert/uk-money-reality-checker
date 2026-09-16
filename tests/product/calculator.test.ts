@@ -1,3 +1,4 @@
+import * as preservation from "@/engine/comparison/salary-preservation";
 import { describe, expect, it, vi } from "vitest";
 import { readFileSync, readdirSync } from "node:fs";
 import * as engine from "@/engine";
@@ -123,8 +124,8 @@ describe("M2 acceptance fixtures through product orchestration", () => {
     expect(JSON.stringify(view)).not.toContain("MODELLED_ESTIMATE");
   });
   it("calls eligibility first, never calls solver for ineligible state", () => {
-    const eligibility = vi.spyOn(engine, "evaluateSalaryPreservationEligibility");
-    const solve = vi.spyOn(engine, "solveSalaryPreservation");
+    const eligibility = vi.spyOn(preservation, "evaluateSalaryPreservationEligibility");
+    const solve = vi.spyOn(preservation, "solveSalaryPreservation");
     evaluated(previewForm("partial"));
     expect(eligibility).toHaveBeenCalledTimes(1); expect(solve).not.toHaveBeenCalled();
     evaluated(previewForm("complete"));

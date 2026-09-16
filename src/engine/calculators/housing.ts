@@ -1,4 +1,5 @@
-import type { EvidenceLoader, EvidenceRecord } from "../loaders";
+import type { EvidenceLoader } from "../loaders";
+import type { RuntimeEvidenceRecord as EvidenceRecord } from "../loaders/runtime-types";
 import type { CategoryResult, EvidenceResolution, EngineEvidence } from "../contracts/output";
 import { fromGbp, monthlyEquivalent } from "../money";
 import { resolveRent, resolveCouncilTax, type RentRequest, type CouncilTaxRequest } from "../resolution";

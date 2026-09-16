@@ -2,7 +2,7 @@ import { z } from "zod";
 import { mvpCityIdSchema, jurisdictionSchema } from "../../data/schemas/enums";
 import { fromGbp, type Money } from "../money";
 import type { EvidenceLoader } from "../loaders";
-import { yearMonthSchema } from "../loaders";
+import { yearMonthSchema } from "../contracts/periods";
 import type { Diagnostic } from "../diagnostics";
 
 export const gbpText = z.string().max(128).regex(/^\d+(\.\d{1,2})?$/);

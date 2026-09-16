@@ -22,6 +22,9 @@
 .field label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 7px; }
 .field label span { color: #62728a; font-weight: 400; font-size: 12px; }
 .field input:not([type="checkbox"]), .field select { display: block; width: 100%; min-width: 0; max-width: 100%; border: 1px solid #8090a5; border-radius: 4px; background: white; color: #15294a; padding: 10px; font: inherit; font-size: 16px; min-height: var(--control-height); }
+/* WebKit can let a long native selected label overflow the control at 320px.
+   The native option menu retains the complete label. */
+.field select { height: var(--control-height); overflow: hidden; text-overflow: ellipsis; }
 .field small { margin-top: 6px; color: #52657b; font-size: 12px; }
 .confirm { display: flex !important; align-items: flex-start; gap: 8px; }
 .confirm input { margin-top: 4px; flex-shrink: 0; }

@@ -1,11 +1,11 @@
 import { z } from "zod";
 import { jurisdictionSchema } from "../../data/schemas/enums";
-import { incomeTaxRuleRecordSchema, nationalInsuranceRuleRecordSchema } from "../../data/schemas/records";
+import { incomeTaxRuleRecordSchema, nationalInsuranceRuleRecordSchema } from "../../data/schemas/income-records";
 import { incomeTaxRequestSchema, employeeNiRequestSchema, netEmploymentRequestSchema,
   type IncomeEvidenceLoader, type IncomeUnresolved, type IncomeTaxResult, type EmployeeNiResult,
   type NetEmploymentResult, type TaxBandCalculation, type ReferenceRelease,
 } from "../contracts/income";
-import type { EvidenceRecord } from "../loaders";
+import type { RuntimeEvidenceRecord as EvidenceRecord } from "../loaders/runtime-types";
 import type { Diagnostic, DiagnosticCode } from "../diagnostics";
 import { fromGbp, addMoney, subtractMoney, compareMoney, maxMoney, minMoney, applyDecimalRate, ceilWholeGbp, monthlyEquivalent, type Money } from "../money";
 

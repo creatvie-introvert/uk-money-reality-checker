@@ -1,7 +1,8 @@
 import { z } from "zod";
 import { mvpCityIdSchema, jurisdictionSchema } from "../../data/schemas/enums";
-import type { EvidenceLoader, EvidenceRecord } from "../loaders";
-import { yearMonthSchema } from "../loaders";
+import type { EvidenceLoader } from "../loaders";
+import type { RuntimeEvidenceRecord as EvidenceRecord } from "../loaders/runtime-types";
+import { yearMonthSchema } from "../contracts/periods";
 import { fromGbp } from "../money";
 import { monthlyOverrideSchema, bedroomSchema, authoritySelectionSchema, propertyTypeSchema, type MonthlyOverride } from "../contracts/input";
 import type { EvidenceResolution, EngineEvidence, BaselineEvidence } from "../contracts/output";

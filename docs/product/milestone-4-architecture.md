@@ -10,7 +10,7 @@ Milestone 1 evidence and Milestone 2 engine remain closed. [Milestone 3 closure]
 
 ## Route map
 
-| Route | Current status after Slice 4.3 | Owner |
+| Route | Current status after Slice 4.4 | Owner |
 | --- | --- | --- |
 | `/` | Public homepage | `src/app/(public)/page.tsx` |
 | `/cities` | Eight supported cities, equal cards and explicit evidence boundaries | `(public)/cities/page.tsx` |
@@ -82,7 +82,7 @@ See [Slice 4.2 implementation and QA](milestone-4-slice-2.md) for validation, ex
 
 `/sources` uses `buildSourceRegister` in `src/product/transparency/sources.ts`. All ten active observed datasets pass the existing pinned `validateDataset` gate. Entries are grouped by source family, organisation and publication title, retaining distinct publications rather than dumping records. The eight UI categories contain 32 publication entries and all 41 recorded source URLs. Exact original dates and periods are retained; unrecorded publication dates are omitted.
 
-An explicit projection includes only descriptive metadata, source links, scopes, periods, use status and reviewed public limitations. Raw records, financial source amounts, QA/import metadata, raw workbook content and development models are never projected. Ofgem links retain their recorded embedded-chart URLs and gain fuel/tariff/payment labels from released fields; NEED workbook links retain their nation groups. Provider and operator reuse restrictions remain qualified. The existing calculator client bundle still carries generated evidence QA/import metadata; the new transparency pages do not load that chunk. Bundle minimisation belongs in the later readiness audit.
+An explicit projection includes only descriptive metadata, source links, scopes, periods, use status and reviewed public limitations. Raw records, financial source amounts, QA/import metadata, raw workbook content and development models are never projected. Ofgem links retain their recorded embedded-chart URLs and gain fuel/tariff/payment labels from released fields; NEED workbook links retain their nation groups. Provider and operator reuse restrictions remain qualified. At the end of Slice 4.3 the calculator client bundle still carried generated evidence QA/import metadata; Slice 4.4 removes that raw payload through the boundary described below. The transparency pages never loaded that chunk.
 
 `PublicSourceEntry` separates observation classification, evidence role and current calculator use. Tax/NI references are labelled reference evidence and used as deterministic rule inputs. NEED/spending references are context only. Ofgem is published regional evidence but reference context in the present household flow; English water and transport likewise do not activate unsupported household calculations. Scottish band paths and exact rent/council matches are used with conditions. No calculated price table is exported.
 
@@ -90,8 +90,30 @@ An explicit projection includes only descriptive metadata, source links, scopes,
 
 Both new pages use server components, the public shell, native disclosures, semantic headings/definitions and scoped styling. Sources and methodology have unique production metadata. There are no new routes, client state, financial URLs or external requests. See [Slice 4.3 QA](milestone-4-slice-3.md) for release-safety, responsive and leakage checks.
 
-## Deferred Slice 4.4+ work
+## Deferred Slice 4.5+ work
 
-Later launch-integration slices should cover launch-readiness auditing, Privacy/Accessibility content, final metadata/SEO decisions, wider browser/assistive-technology and owner visual sign-off, then separately reviewed deployment/cutover. Analytics, if later requested, needs a deliberate privacy boundary. Do not treat temporary route availability as Milestone 4 closure or production-launch approval.
+Later launch-integration slices should cover Privacy/Accessibility content, final metadata/SEO decisions, real VoiceOver and owner visual sign-off, then separately reviewed deployment/cutover. Analytics, if later requested, needs a deliberate privacy boundary. Do not treat temporary route availability as Milestone 4 closure or production-launch approval.
 
 Validation and screenshot evidence for this slice are recorded in [Slice 4.1 QA](milestone-4-slice-1.md). No staging, commit, push or cutover is performed in this task.
+
+## Slice 4.4 runtime and evidence boundary
+
+The calculator server layout now validates the same ten pinned releases and constructs a small static evidence DTO. This is public evidence, never a user's inputs or results. The browser journey receives it as serializable props; its form and result remain exclusively in reducer memory. Calculating dynamically loads the shared pure runtime and a DTO reader. There is no server action, calculation request, cookie, storage adapter or result cache.
+
+| Classification | Modules | Boundary |
+| --- | --- | --- |
+| SERVER-SAFE | Public layouts/pages, city registry, source register, calculator evidence projection and its server-only entry | Validate/project static evidence and render descriptive content |
+| CLIENT-REQUIRED | PublicHeader (`aria-current`), JourneyProvider, forms/review/results, result source buttons, error retry | Navigation state, user interaction and browser-only financial state |
+| SHARED PURE | Exact evidence selectors, year-month schema, calculation runtime, adapter/composer/view model, financial arithmetic | No datasets, IO or persistence; inputs supplied explicitly |
+
+Import graph: generated JSON → `engine/loaders/datasets.ts` → original pinned validation → (public city/source projection → server HTML) or (calculator projection → layout DTO → client reader → shared selectors → pure calculation runtime). Development previews and test APIs retain the full validated loader. The ten JSON imports have one owner; no generated audits, ingestion reports or calculated artifacts are newly imported.
+
+The original exact selectors are extracted unchanged. The year-month schema no longer imports the dataset-owning loader. Income rule schemas move unchanged into a focused module, avoiding construction of unrelated release schemas in the browser. Existing form validation and income validation remain. No arithmetic, source-selection predicate, rounding rule, source artifact or release gate changes.
+
+Of 1,191 active records, 242 are needed by this product flow. Unused energy reference records, unsupported English water tariff calculations and rent rows without a selectable bedroom band stay server-side. Spending and transport reference records stay because their baseline provenance is still used. An explicit provenance allowlist removes worksheet coordinates, extraction diagnostics and arbitrary QA. Public periods, geography, source links, classifications, methodology and limitations remain. A deduplicated provenance dictionary avoids repeating the same text on every row. `qa.displayedAnnualGbp` is retained for council tax: despite its legacy field name it is the exact decimal financial input used by the unchanged engine. Required validation timestamps, source identities and release metadata remain for lineage. Six fixture classes are compared through both full and projected loaders, including their entire public result/disclosure models.
+
+The public pages continue to render server-side, with native Sources disclosures and no hydrated register object. Informational pages share the small active-navigation component and framework runtime; no calculator/evidence chunk belongs to them. The development preview import is inside the positive compile-time development branch so production emits neither its fixtures nor its raw-data chunk; the route itself returns 404.
+
+Root and global error fallbacks provide generic recovery without rendering/logging an error object. The public group's not-found fallback respects the shell's existing main landmark. Security headers disable framing, MIME sniffing, referrer transmission and unused camera/microphone/geolocation access. The initial CSP covers base URI, objects and ancestors; a script/style nonce/hash policy and HSTS await deployment/domain review. Browser production source maps and the powered-by header are disabled explicitly. There is no production cutover.
+
+See [Slice 4.4 audit and validation](milestone-4-slice-4.md) for byte measurements, privacy findings, browser results and launch debt.
