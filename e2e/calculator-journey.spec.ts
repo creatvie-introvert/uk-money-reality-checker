@@ -109,7 +109,7 @@ test("review edit changes result and retains later values; tablet and back navig
 test("field errors focus and explicit jurisdiction; unknown income is allowed", async ({ page }) => {
   await page.goto("/calculator");
   await page.getByRole("button", { name: /^Continue/ }).click();
-  await expect(page.getByRole("alert", { name: "Input errors" })).toBeFocused();
+  await expect(field(page, "current.cityId")).toBeFocused();
   await expect(field(page, "current.cityId")).toHaveAttribute("aria-invalid", "true");
   await page.goto("/calculator/income");
   await field(page, "current.income.grossAnnualSalaryGbp").fill("-1");
@@ -167,15 +167,15 @@ for (const width of [1440, 1280, 1024, 768, 390]) {
       expect(box!.x).toBeGreaterThanOrEqual(0);
       expect(box!.x + box!.width).toBeLessThanOrEqual(width);
     }
-    const disclosure = page.locator('summary[aria-label="Basis & sources: Rent, current, Manchester"]');
-    // Native summary supports Enter without custom key handlers.
+    const disclosure = page.getByRole("button", { name: "Basis & sources: Rent, current, Manchester", exact: true });
+    // Native button supports Enter and retains focus while the full-width row opens.
     await disclosure.focus();
     await expect(disclosure).toBeFocused();
     await disclosure.press("Enter");
-    await expect(disclosure.locator("..")).toHaveAttribute("open", "");
-    await expect(disclosure.locator("..")).toContainText(/entered|amount/i);
+    await expect(disclosure).toHaveAttribute("aria-expanded", "true");
+    await expect(page.getByRole("region", { name: "Rent — Current · Manchester", exact: true })).toContainText(/entered|amount/i);
     await disclosure.press("Enter");
-    await expect(disclosure.locator("..")).not.toHaveAttribute("open", "");
+    await expect(disclosure).toHaveAttribute("aria-expanded", "false");
     await page.getByText("Source release periods", { exact: true }).click();
     await expect(page.locator("#methodology")).toContainText("Sources use different publication and effective periods.");
     await expect(page.locator("#methodology")).toContainText("July 2026");
@@ -185,9 +185,11 @@ for (const width of [1440, 1280, 1024, 768, 390]) {
       const first = await cards.nth(0).boundingBox(), second = await cards.nth(1).boundingBox();
       expect(second!.y).toBeGreaterThanOrEqual(first!.y + first!.height);
       const table = page.getByRole("region", { name: "Monthly costs table" });
-      await table.focus();
-      await table.press("ArrowRight");
-      await expect.poll(() => table.evaluate((el) => el.scrollLeft)).toBeGreaterThan(0);
+      expect(await table.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
+      const row = table.getByRole("row").filter({ has: page.getByRole("rowheader", { name: "Rent", exact: true }) });
+      await expect(row).toContainText("Current · Manchester");
+      await expect(row).toContainText("Destination · London");
+      await expect(row.getByRole("button", { name: /Basis & sources/ })).toHaveCount(2);
     }
     await page.getByRole("button", { name: /Adjust your inputs/ }).click();
     await expect(page.getByRole("button", { name: "See my move reality" })).toBeVisible();

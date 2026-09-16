@@ -67,3 +67,9 @@ Final validation results are recorded after running all required commands. Raw w
 - No engine/data/product calculation diffs. No dependency or lockfile changes. Build/dev-generated `next-env.d.ts` churn is absent from the final diff.
 
 Slice 3 is safe to commit within this presentation/usability scope, excluding the raw workbook. Nothing was staged or committed. Recommended next slice: approved asset integration and owner visual/device-accessibility acceptance; new financial capabilities require separate scope.
+
+## Slice 3B superseding final QA
+
+See [Milestone 3 final QA](milestone-3-final-qa.md) for the current presentation and validation evidence. The earlier mobile-table and error-focus descriptions above are historical: mobile now uses full-width category cards with both source disclosures; step failures focus the first invalid field. Desktop retains the table. The final matrix includes 320px alongside the five previous widths, with explicit role/keyboard checks, current contrast figures and unchanged financial regression values. Approved font/artwork gaps and owner/device sign-off remain documented.
+
+Final disclosure correction: cost-source buttons now open a full-width evidence row beneath the category (within its mobile card), with explicit scenario/city headings. The native details description above remains historical for cost rows; methodology and employment retain native details. See final QA for the five-width, 20-panel review and 23 passing browser tests.

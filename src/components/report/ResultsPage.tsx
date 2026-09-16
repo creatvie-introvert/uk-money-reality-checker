@@ -1,25 +1,9 @@
 import Link from "next/link";
 import type { ResultsViewModel } from "@/product/calculator/view-model";
-import type { Explanation } from "@/product/calculator/contracts";
+import { CostBreakdown } from "./CostBreakdown";
+import { ExplanationDetails, sourcePeriodText } from "./SourceExplanation";
 import styles from "./results.module.css";
 
-// Display source dates without collapsing distinct publication/effective periods.
-function sourcePeriodText(period: string) {
-  return period.replace(/\b(\d{4})-(0[1-9]|1[0-2])(?:-(0[1-9]|[12]\d|3[01]))?\b/g, (_, year: string, month: string, day?: string) => {
-    const name = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][Number(month) - 1];
-    return `${day ? `${Number(day)} ` : ""}${name} ${year}`;
-  });
-}
-
-function ExplanationDetails({ explanation, context }: { explanation: Explanation; context: string }) {
-  return <details className={styles.details}><summary aria-label={`Basis & sources: ${context}`}>Basis & sources</summary><p>{explanation.summary}</p>
-    {explanation.baselineStatus === "UNAVAILABLE" && <p>Source baseline unavailable. An entered amount, where shown, is yours.</p>}
-    {explanation.sources.map((s) => <p key={s.id}><strong>{s.organisation}</strong> · {sourcePeriodText(s.period ?? "Period not supplied")}<br />{s.geography}<br />
-      {s.url ? <a href={s.url} target="_blank" rel="noreferrer">{s.title}</a> : s.title}
-      {(s.effectiveFrom || s.effectiveTo) && <small>Effective: {sourcePeriodText(s.effectiveFrom ?? "not specified")} to {sourcePeriodText(s.effectiveTo ?? "not specified")}</small>}</p>)}
-    {explanation.limitations.length > 0 && <ul>{explanation.limitations.map((l) => <li key={l}>{l}</li>)}</ul>}
-  </details>;
-}
 export function ResultsHeader({ onRestart, results = false }: { onRestart?: () => void; results?: boolean } = {}) {
   return <header className={styles.header}><Link href="/" className={styles.brand}>UK Money Reality<small>REAL NUMBERS. BRIGHTER DECISIONS.</small></Link>
     <nav aria-label="Main navigation"><Link href="/calculator" aria-current="location">Move Calculator</Link>{results && <><a href="#breakdown">Compare</a><a href="#methodology">How it works</a></>}{onRestart ? <button type="button" className={styles.outlineButton} onClick={onRestart}>New comparison</button> : <Link className={styles.outlineButton} href="/calculator">New comparison</Link>}</nav>
@@ -41,13 +25,7 @@ export function ResultsPage({ model, onRestart, onEdit }: { model: ResultsViewMo
       <nav className={styles.tabs} aria-label="Result sections"><a href="#overview">Overview</a><a href="#breakdown">Cost breakdown</a><a href="#changes">Biggest changes</a><a href="#salary">Salary reality</a><a href="#methodology">How we calculated this</a></nav>
       <section id="overview" className={styles.metricStrip} aria-label="Monthly changes">{model.headlines.map((m) => <div key={m.label} className={m.state !== "AVAILABLE" ? styles.unavailable : undefined}><span>{m.label}</span><strong>{m.text}</strong><small>{m.detail}</small></div>)}</section>
       <div className={styles.resultGrid}>
-        <section id="breakdown" className={styles.panel}><h2>Your monthly costs compared</h2><p className={styles.tableHint}>Scroll the table sideways to compare both locations.</p><div className={styles.tableScroll} tabIndex={0} role="region" aria-label="Monthly costs table">
-          <table className={styles.table}><caption className={styles.srOnly}>Monthly costs in pounds, by category and location</caption><thead><tr><th scope="col">Category</th><th scope="col">Current<small>{model.currentName}</small></th><th scope="col">Destination<small>{model.destinationName}</small></th><th scope="col">Change</th></tr></thead>
-            <tbody>{model.rows.map((row) => <tr key={row.category}><th scope="row">{row.label}</th>
-              <td><span>{row.current.text}</span>{row.current.badge && <small>{row.current.badge}</small>}<ExplanationDetails explanation={row.current.explanation} context={`${row.label}, current, ${model.currentName}`} /></td>
-              <td><span>{row.destination.text}</span>{row.destination.badge && <small>{row.destination.badge}</small>}<ExplanationDetails explanation={row.destination.explanation} context={`${row.label}, destination, ${model.destinationName}`} /></td>
-              <td className={row.change.tone === "INCREASE" ? styles.increase : row.change.tone === "DECREASE" ? styles.decrease : ""}>{row.change.state === "AVAILABLE" ? row.change.text : "Not comparable"}</td>
-            </tr>)}</tbody></table></div></section>
+        <CostBreakdown rows={model.rows} currentName={model.currentName} destinationName={model.destinationName} />
         <aside className={styles.aside}>
           <section id="changes" className={styles.panel}><h2>{model.drivers.title}</h2>
             <ol className={styles.drivers}>{model.drivers.entries.map((d) => <li key={d.category} value={d.rank}><span>{d.rank}. {d.label}</span><div className={styles.bar} aria-hidden="true"><span className={d.direction === "DECREASE" ? styles.savingBar : ""} style={{ width: `${d.width}%` }} /></div><div className={styles.driverAmount}><strong>{d.display}</strong><small>{d.direction === "DECREASE" ? "Lower cost" : "Higher cost"}</small></div></li>)}</ol>

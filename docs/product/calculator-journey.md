@@ -94,3 +94,9 @@ Review groups have consistent cards and explicit amber unresolved values. Form c
 Household evidence controls now use “Use evidence available on” and “Published rent period”, retaining separate explicit selections per scenario. Employment confirmation uses plain language with Class 1 category A/annual scope in a native disclosure. Actual monthly take-home guidance and spending/lifestyle helpers are clearer; input and eligibility semantics are unchanged.
 
 Review prioritizes user decisions and places technical evidence/calculation context in an always-visible secondary area. Edit controls use concise descriptive labels. Clean-session progress tests confirm future steps stay upcoming and Back preserves validated status; no progress-state change was necessary. See [Slice 3A UX review](slice-3a-ux-review.md) for decisions, accessibility coverage and Manchester–Leeds regression evidence.
+
+## Slice 3B final polish
+
+First-invalid-field focus now follows failed step validation while retaining the linked alert summary; review-level errors keep summary focus. Form spacing and narrow-screen legend/date bounds are consistent, and all seven progress labels remain readable at 320px without changing progress state. Review edit controls stack below headings at the narrowest width.
+
+Results use category cards instead of a sideways-scrolling breakdown at 600px and below, preserving the same table content, source disclosures and accessible table roles. See [final QA](milestone-3-final-qa.md) for the six-width matrix, keyboard checks, unchanged Manchester–Leeds figures and remaining device/owner sign-off.

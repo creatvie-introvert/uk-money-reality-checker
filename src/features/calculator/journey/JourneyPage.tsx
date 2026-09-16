@@ -27,7 +27,11 @@ export function JourneyPage({ step }: { step: JourneyStep }) {
   const attempt = useRef(0);
   const [errors, setErrors] = useState<FieldError[]>([]), [busy, setBusy] = useState(false), [failed, setFailed] = useState(false);
   useEffect(() => { heading.current?.focus(); return () => { attempt.current += 1; }; }, [step]);
-  useEffect(() => { if (errors.length) errorSummary.current?.focus(); }, [errors]);
+  useEffect(() => {
+    if (!errors.length) return;
+    const firstInvalid = step === "review" ? null : document.getElementById(errors[0].path);
+    (firstInvalid ?? errorSummary.current)?.focus();
+  }, [errors, step]);
   const position = steps.indexOf(step);
   function navigate(next: JourneyStep) { setErrors([]); setFailed(false); router.push(stepPath(next)); }
   function restart() { attempt.current += 1; dispatch({ type: "RESTART" }); navigate("start"); }

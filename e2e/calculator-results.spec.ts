@@ -15,8 +15,8 @@ test("complete engine result and source disclosure", async ({ page }) => {
   await expect(page.locator("#salary")).toContainText(/£.+\/year/);
   await expect(page.locator("#coverage")).toContainText("8 of 8 cost categories resolved");
   await page.screenshot({ path: "/tmp/ukmr-results-desktop.png", fullPage: true });
-  await page.locator("tbody tr").first().getByText("Basis & sources", { exact: true }).first().click();
-  await expect(page.locator("tbody tr").first()).toContainText("ONS");
+  await page.getByRole("button", { name: "Basis & sources: Rent, current, Manchester", exact: true }).click();
+  await expect(page.getByRole("region", { name: "Rent — Current · Manchester", exact: true })).toContainText("ONS");
 });
 
 test("partial costs retain income but disclose water and unavailable salary", async ({ page }) => {
@@ -28,9 +28,10 @@ test("partial costs retain income but disclose water and unavailable salary", as
   await expect(page.getByRole("row").filter({ has: page.getByRole("rowheader", { name: "Water", exact: true }) })).toContainText("Needs input");
   await expect(page.locator("#changes")).toContainText("Excluded from ranking");
   await expect(page.locator("#coverage")).toContainText("7 of 8 cost categories resolved");
+  await page.screenshot({ path: "/tmp/ukmr-3b-partial-desktop.png", fullPage: true });
 });
 
-test("override labels, mobile stacking and scrollable table", async ({ page }) => {
+test("override labels, mobile stacking and cost row cards", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await preview(page, "override");
   await expect(page.getByRole("region", { name: "Monthly results" }).getByText("Your amount", { exact: true })).toHaveCount(2);

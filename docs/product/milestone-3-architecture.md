@@ -127,3 +127,9 @@ See [visual and usability audit](visual-usability-audit.md) for responsive rules
 Product presentation metadata now distinguishes primary review rows from secondary evidence/calculation context and supplies descriptive edit labels. Input mappings, validation conditions, reducer/provider, engine calculations and completeness/eligibility semantics are unchanged. Complete-result hero copy refers specifically to monthly household costs; the buffer label refers to included costs. Drivers add textual direction cues, and essentials/lifestyle disclosures sit inside Cost coverage.
 
 [Slice 3A UX review](slice-3a-ux-review.md) records progress verification, retained per-scenario date/period controls, revised copy and exact Manchester–Leeds regression values. These refinements extend the uncommitted Slice 3 work; they do not replace its visual direction or introduce new financial logic.
+
+## Slice 3B final QA and responsive presentation
+
+The existing report table uses responsive CSS row cards on mobile, with explicit table roles and visually hidden column headers preserving semantic context. No alternate result model, values or calculation path is introduced. Hero wrapping, metric alignment, source badge rhythm, narrow driver/buffer/salary layouts and small shared visual tokens are refined within the current CSS modules.
+
+Step error focus now targets the first invalid control when present; review-level errors retain summary focus. Results continue to focus the H1 without an additional live region. Product/engine/data/state contracts are unchanged. [Final QA](milestone-3-final-qa.md) records validation, assets/fonts, accessibility evidence and the limits of launch sign-off.

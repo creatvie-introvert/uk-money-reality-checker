@@ -26,7 +26,7 @@ test("fresh comparison only marks submitted valid steps complete, including afte
   await expect(progress.locator('[data-completed="true"]')).toContainText("Move setup");
   await expect(progress.locator('[aria-current="step"]')).toContainText("Household & homes");
   await page.getByRole("button", { name: /^Continue/ }).click();
-  await expect(page.getByRole("alert", { name: "Input errors" })).toBeFocused();
+  await expect(field(page, "household.adults")).toBeFocused();
   await expect(progress.locator('[data-completed="true"]')).toHaveCount(1);
   await page.getByRole("button", { name: "Back", exact: true }).click();
   await expect(progress.locator('[aria-current="step"]')).toContainText("Move setup");
@@ -36,7 +36,7 @@ test("fresh comparison only marks submitted valid steps complete, including afte
   await expect(field(page, "current.cityId")).toHaveValue("");
 });
 
-for (const width of [1440, 390]) {
+for (const width of [1440, 1024, 768, 390, 320]) {
   test(`Manchester to Leeds reconciled results and plain-language UX at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto("/calculator");
@@ -56,7 +56,7 @@ for (const width of [1440, 390]) {
       await field(page, `${role}.council.authorityName`).selectOption(role === "current" ? "Manchester" : "Leeds");
       await field(page, `${role}.council.band`).selectOption("D");
     }
-    await page.screenshot({ path: `/tmp/ukmr-3a-household-${width}.png`, fullPage: true });
+    await page.screenshot({ path: `/tmp/ukmr-3b-household-${width}.png`, fullPage: true });
     await next(page, "/calculator/income");
     for (const role of ["current", "destination"]) {
       const group = page.getByRole("group", { name: role === "current" ? "Where you live now" : "Where you’re moving", exact: true });
@@ -74,7 +74,7 @@ for (const width of [1440, 390]) {
       await expect(disclosure.locator("..")).toContainText("Class 1 category A");
       await disclosure.press("Enter");
     }
-    await page.screenshot({ path: `/tmp/ukmr-3a-income-${width}.png`, fullPage: true });
+    await page.screenshot({ path: `/tmp/ukmr-3b-income-${width}.png`, fullPage: true });
     await next(page, "/calculator/spending");
     await expect(page.getByText("Leave blank if unknown. We won’t estimate this automatically.", { exact: true })).toHaveCount(6);
     for (const role of ["current", "destination"]) {
@@ -100,9 +100,10 @@ for (const width of [1440, 390]) {
     await expect(page.getByText("Evidence & calculation details", { exact: true })).toHaveCount(4);
     await expect(page.getByText("2026-09-16", { exact: true })).toHaveCount(2);
     await expect(page.getByText(/Confirmed — One employee, one employment, Class 1 category A/)).toHaveCount(2);
-    await page.screenshot({ path: `/tmp/ukmr-3a-review-${width}.png`, fullPage: true });
+    await page.screenshot({ path: `/tmp/ukmr-3b-review-${width}.png`, fullPage: true });
     await page.getByRole("button", { name: "See my move reality" }).click();
     await expect(page).toHaveURL(/\/calculator\/results$/);
+    await expect(page.locator("#result-title")).toBeFocused();
     await expect(page.locator("#result-title")).toHaveText("Your monthly household costs could be about £151.36 lower");
     const cards = page.getByRole("region", { name: "Monthly results" });
     await expect(cards).toContainText("Monthly buffer after included costs");
@@ -115,6 +116,84 @@ for (const width of [1440, 390]) {
     await expect(page.locator("#changes")).toContainText("Lower cost");
     await expect(page.locator("#changes")).toContainText("Higher cost");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.screenshot({ path: `/tmp/ukmr-3a-results-${width}.png`, fullPage: true });
+    if (width <= 390) {
+      const table = page.getByRole("region", { name: "Monthly costs table" });
+      expect(await table.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
+      const rent = table.getByRole("row").filter({ has: page.getByRole("rowheader", { name: "Rent", exact: true }) });
+      await expect(rent).toContainText("Current · Manchester");
+      await expect(rent).toContainText("Destination · Leeds");
+      await expect(rent).toContainText("−£257/month");
+    }
+    const table = page.getByRole("table");
+    const columns = table.getByRole("columnheader");
+    const widthsBefore = await columns.evaluateAll((cells) => cells.map((cell) => cell.getBoundingClientRect().width));
+    for (const [category, side, city, expected] of [
+      ["Rent", "current", "Manchester", "ONS"],
+      ["Rent", "destination", "Leeds", "ONS"],
+      ["Council tax", "current", "Manchester", "Limitations"],
+      ["Groceries", "destination", "Leeds", "Basis"],
+    ]) {
+      const trigger = page.getByRole("button", { name: `Basis & sources: ${category}, ${side}, ${city}`, exact: true });
+      const panelId = await trigger.getAttribute("aria-controls");
+      const panel = page.locator(`[id="${panelId}"]`);
+      await expect(trigger).toHaveAttribute("aria-expanded", "false");
+      await trigger.focus(); await trigger.press("Enter");
+      await expect(trigger).toBeFocused();
+      await expect(trigger).toHaveAttribute("aria-expanded", "true");
+      await expect(panel).toBeVisible();
+      await expect(panel.getByRole("heading", { level: 3 })).toContainText(`${side === "current" ? "Current" : "Destination"} · ${city}`);
+      await expect(panel).toContainText(expected);
+      const disclosureCell = panel.locator("..");
+      await expect(disclosureCell).toHaveAttribute("colspan", "4");
+      const mainRow = trigger.locator("xpath=ancestor::tr");
+      const rowBox = await mainRow.boundingBox(), cellBox = await disclosureCell.boundingBox();
+      expect(cellBox!.width).toBeGreaterThanOrEqual(rowBox!.width * .95);
+      expect(await panel.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+      const widthsAfter = await columns.evaluateAll((cells) => cells.map((cell) => cell.getBoundingClientRect().width));
+      widthsBefore.forEach((before, i) => expect(Math.abs(widthsAfter[i] - before)).toBeLessThanOrEqual(1));
+      await panel.screenshot({ path: `/tmp/ukmr-source-${category.replaceAll(" ", "-")}-${side}-${width}.png` });
+      await trigger.press("Space");
+      await expect(trigger).toBeFocused();
+      await expect(trigger).toHaveAttribute("aria-expanded", "false");
+      await expect(panel).not.toBeVisible();
+      await expect(panel.getByRole("link")).toHaveCount(0);
+    }
+    // Switching sides keeps evidence separate and closes the previous side in this category.
+    const current = page.getByRole("button", { name: "Basis & sources: Rent, current, Manchester", exact: true });
+    const destination = page.getByRole("button", { name: "Basis & sources: Rent, destination, Leeds", exact: true });
+    await current.click(); await destination.click();
+    await expect(current).toHaveAttribute("aria-expanded", "false");
+    await expect(destination).toHaveAttribute("aria-expanded", "true");
+    await destination.click();
+    await page.screenshot({ path: `/tmp/ukmr-3b-results-${width}.png`, fullPage: true });
   });
 }
+
+test("keyboard navigation, empty-result context and first-invalid focus at 320px", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto("/calculator/results");
+  const heading = page.getByRole("heading", { level: 1 });
+  await expect(heading).toHaveCount(1);
+  await expect(heading).toBeFocused();
+  const start = page.getByRole("link", { name: "Start calculator", exact: true });
+  await start.focus(); await start.press("Enter");
+  await expect(page).toHaveURL(/\/calculator$/);
+  const skip = page.getByRole("link", { name: "Skip to calculator" });
+  await skip.focus(); await skip.press("Enter");
+  await expect(page.locator("main")).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(field(page, "current.cityId")).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(field(page, "destination.cityId")).toBeFocused();
+  await page.keyboard.press("Tab");
+  const nextButton = page.getByRole("button", { name: /^Continue/ });
+  await expect(nextButton).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(field(page, "current.cityId")).toBeFocused();
+  await expect(field(page, "current.cityId")).toHaveAttribute("aria-invalid", "true");
+  await expect(field(page, "current.cityId")).toHaveAccessibleDescription(/choose or enter city/i);
+  expect(await field(page, "current.cityId").evaluate((el) => getComputedStyle(el).outlineStyle)).toBe("solid");
+  await expect(page.getByRole("alert", { name: "Input errors" })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
