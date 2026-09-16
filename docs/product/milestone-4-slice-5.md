@@ -49,11 +49,11 @@ Security headers remain unchanged from Slice 4.4: nosniff, no-referrer, denied c
 
 Placeholder audit: no mounted public route contains coming-soon/preparation/lorem/development-preview copy. Existing unmounted ComingSoonPage and its unused styles remain internal legacy code; no public page imports it. The engine's historical “placeholder” comment is explanatory and untouched. Source TODO/FIXME/HACK/TEMP scan found no actionable launch TODO in mounted product code. Pending owner/deployment items are explicit documentation gates, not hidden code comments.
 
-Internal public links, footer links, all eight cities, methodology/source links and new notices are checked in production automation. External source URLs retain the existing 41 recorded values and syntactic checks; no claim of current live external reachability is made. The public issue tracker is an existing repository URL, not a newly created contact service.
+Internal public links, footer links, all eight cities, methodology/source links and new notices are checked in production automation. External source URLs retain the existing 42 recorded values and syntactic checks; no claim of current live external reachability is made. The public issue tracker is an existing repository URL, not a newly created contact service.
 
 The responsive matrix covers 1440, 1024, 768, 390 and 320px on both notices and production homepage/calculator/results/London/Sources, with existing wider checks retained. DOM checks cover one main/H1, headings/contents links, footer targets and no placeholder noindex. Existing numerical/form/focus/disclosure assertions remain.
 
-Manchester → Leeds remains protected: costs £2,314.67 → £2,163.31 (−£151.36); take-home £3,293.30 → £3,538.12 (+£244.82); buffer £978.63 → £1,374.81 (+£396.18); salary preservation £47,477.35; coverage 8/8. Partial missing costs remain qualified with salary unavailable. Eight cities, Edinburgh rent gap, Greater Glasgow wording, Bristol split water, 32 source entries and 41 URLs are unchanged.
+Manchester → Leeds remains protected: costs £2,314.67 → £2,163.31 (−£151.36); take-home £3,293.30 → £3,538.12 (+£244.82); buffer £978.63 → £1,374.81 (+£396.18); salary preservation £47,477.35; coverage 8/8. Partial missing costs remain qualified with salary unavailable. Eight cities, Edinburgh rent gap, Greater Glasgow wording, Bristol split water, 32 source entries and 42 URLs are unchanged.
 
 ## Validation evidence
 
@@ -84,12 +84,12 @@ Fresh production contexts remain empty; seeded legacy preferences remain unchang
 
 Privacy at 1024px and Accessibility at 320px were visually inspected from WebKit captures; requested viewport/DOM checks pass on both browsers. Captures are `/tmp/ukmr-4-5-{privacy,accessibility}-{1440,1024,768,390,320}.png`; final production captures/metrics are in ignored `test-results-production/`. They are development/automated evidence, not owner manual sign-off.
 
-**Slice 4.5 is safe to commit as development preparation, excluding the raw workbook. Milestone 4 closure and public launch remain pending owner/deployment decisions below.**
+**Slice 4.5 is safe to commit as development preparation, excluding the raw workbook. Formal Milestone 4 development closure awaits its separate technical audit; public launch remains pending owner/deployment decisions below.**
 
 
 ## Remaining launch decisions
 
-No deployment is approved by code/test success. Before Milestone 4 closure: owner VoiceOver/Safari/device/content sign-off; operator/private contact and hosting/privacy facts; confirmed host/SITE_URL/apex-www/indexing plan; actual platform/branch/runtime/integration settings; legacy About/fragment/asset decisions; verified known-good recovery deployment and auto-deploy controls. Full CSP/HSTS decisions belong to that deployment review. Approved fonts/artwork remain nonblocking debt for this preparation slice.
+No deployment is approved by code/test success. Before production cutover: owner VoiceOver/Safari/device/content sign-off; operator/private contact and hosting/privacy facts; confirmed host/SITE_URL/apex-www/indexing plan; actual platform/branch/runtime/integration settings; legacy About/fragment/asset decisions; verified known-good recovery deployment and auto-deploy controls. Full CSP/HSTS decisions belong to that deployment review. Approved fonts/artwork remain nonblocking debt for this preparation slice.
 
 Recommend a separate Milestone 4 closure audit against the reviewed final commit, resolving or explicitly accepting each recorded owner gap and rerunning final acceptance/smoke. Only then request a concrete cutover approval. Do not equate a safe-to-commit development slice with a live-launch GO.
 
@@ -124,3 +124,5 @@ Modified (4):
 - `src/components/public/PublicFooter.tsx`
 
 The `/index.html` mapping uses the installed Next `src/proxy.ts` convention: a filesystem route named index.html conflicts with the prerendered homepage output. The proxy has only three matchers and no state, body parsing, logging or financial routing. It constructs fixed target URLs and strips query strings.
+
+Closure audit correction (16 September 2026): the unchanged public projection contains 42 distinct recorded source URLs, not the previously reported 41. Exact URL-set equality against all active evidence records passes; no source was added or altered.

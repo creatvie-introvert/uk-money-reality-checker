@@ -109,7 +109,7 @@ Manchester → Leeds remains: current costs £2,314.67; destination £2,163.31; 
 
 The partial journey retains 6/8 destination coverage, known-cost/incomplete-buffer qualification and unavailable salary preservation; no fabricated costs are introduced. Six complete product/disclosure outputs from the projected loader are deeply equal to their original full-loader equivalents, covering complete, partial, override, unchanged, limited and Scottish cases.
 
-Eight cities, Edinburgh's rent gap, Greater Glasgow wording, Bristol's provider split, Methodology explanations, 32 source entries and all 41 recorded URLs remain protected by existing tests. No public numeric claims or financial content changes were made.
+Eight cities, Edinburgh's rent gap, Greater Glasgow wording, Bristol's provider split, Methodology explanations, 32 source entries and all 42 recorded URLs remain protected by existing tests. No public numeric claims or financial content changes were made.
 
 ## Validation and files
 
@@ -196,3 +196,5 @@ This is not Milestone 4 closure or production launch approval. Remaining launch 
 Nonblocking debt for this slice: approved font files/licensing and artwork remain unavailable; public pages still carry the shared Next/React navigation runtime; the calculator retains necessary form/income validation and public provenance; full script/style CSP and HSTS await deployment-specific decisions. There is no unresolved numerical regression, privacy finding, browser defect or dependency vulnerability from this audit.
 
 Recommended Slice 4.5: owner VoiceOver and Safari/device sign-off, truthful Privacy/Accessibility content, approved asset/licence resolution, final SEO/domain/hosting decisions and a reviewed deployment plan with cache/header checks. Full script/style CSP and HSTS should be decided against that deployment. Any evidence refresh or licensed redistribution decision remains a separate audited data/legal scope. Do not add analytics or deploy without explicit scope.
+
+Closure audit correction (16 September 2026): the unchanged public projection contains 42 distinct recorded source URLs, not the previously reported 41. Exact URL-set equality against all active evidence records passes; no source was added or altered.

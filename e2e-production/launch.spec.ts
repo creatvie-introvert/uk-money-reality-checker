@@ -16,7 +16,7 @@ test("production routes, headers, static assets, reflow and local performance", 
       }
     }).observe({ type: "layout-shift", buffered: true });
   });
-  for (const route of ["/", "/cities", "/cities/london", "/methodology", "/sources", "/privacy", "/accessibility", "/calculator", "/calculator/results"]) {
+  for (const route of ["/", "/cities", "/cities/london", "/cities/edinburgh", "/methodology", "/sources", "/privacy", "/accessibility", "/calculator", "/calculator/results"]) {
     const response = await page.goto(route);
     expect(response?.status()).toBe(200);
     const headers = response!.headers();
@@ -25,7 +25,7 @@ test("production routes, headers, static assets, reflow and local performance", 
     expect(headers["referrer-policy"]).toBe("no-referrer");
     expect(headers["x-frame-options"]).toBe("DENY");
     expect(headers["permissions-policy"]).toBe("camera=(), microphone=(), geolocation=()");
-    expect(headers["content-security-policy"]).toContain("frame-ancestors 'none'");
+    expect(headers["content-security-policy"]).toBe("base-uri 'self'; object-src 'none'; frame-ancestors 'none'");
     await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
     if (route === "/sources") await expect(page.locator("details")).toHaveCount(32);
     // 720 CSS px is the reflow equivalent of a 1440px desktop at 200% browser zoom.

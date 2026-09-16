@@ -83,7 +83,7 @@ See [Slice 4.2 implementation and QA](milestone-4-slice-2.md) for validation, ex
 
 `/methodology` explains the eight-category comparison, monthly buffer equation, supported annual income model, salary preservation, partial results, coverage, classifications, overrides, dates, geography, rounding and exclusions. A contents navigation supports scanning. Public explanations live in `src/product/transparency/methodology.ts`; there is no arithmetic or additional model in the page.
 
-`/sources` uses `buildSourceRegister` in `src/product/transparency/sources.ts`. All ten active observed datasets pass the existing pinned `validateDataset` gate. Entries are grouped by source family, organisation and publication title, retaining distinct publications rather than dumping records. The eight UI categories contain 32 publication entries and all 41 recorded source URLs. Exact original dates and periods are retained; unrecorded publication dates are omitted.
+`/sources` uses `buildSourceRegister` in `src/product/transparency/sources.ts`. All ten active observed datasets pass the existing pinned `validateDataset` gate. Entries are grouped by source family, organisation and publication title, retaining distinct publications rather than dumping records. The eight UI categories contain 32 publication entries and all 42 recorded source URLs. Exact original dates and periods are retained; unrecorded publication dates are omitted.
 
 An explicit projection includes only descriptive metadata, source links, scopes, periods, use status and reviewed public limitations. Raw records, financial source amounts, QA/import metadata, raw workbook content and development models are never projected. Ofgem links retain their recorded embedded-chart URLs and gain fuel/tariff/payment labels from released fields; NEED workbook links retain their nation groups. Provider and operator reuse restrictions remain qualified. At the end of Slice 4.3 the calculator client bundle still carried generated evidence QA/import metadata; Slice 4.4 removes that raw payload through the boundary described below. The transparency pages never loaded that chunk.
 
@@ -95,7 +95,7 @@ Both new pages use server components, the public shell, native disclosures, sema
 
 ## Milestone 4 closure and deployment follow-up
 
-Later launch-integration slices should cover Privacy/Accessibility content, final metadata/SEO decisions, real VoiceOver and owner visual sign-off, then separately reviewed deployment/cutover. Analytics, if later requested, needs a deliberate privacy boundary. Do not treat temporary route availability as Milestone 4 closure or production-launch approval.
+Privacy/Accessibility and indexing preparation are complete through Slice 4.5. Development closure is audited separately from the pending canonical-host, real VoiceOver, owner device/content and deployment/cutover gates. See [Milestone 4 closure](milestone-4-closure.md). Analytics, if later requested, needs a deliberate privacy boundary. Do not treat temporary route availability as Milestone 4 closure or production-launch approval.
 
 Validation and screenshot evidence for this slice are recorded in [Slice 4.1 QA](milestone-4-slice-1.md). No staging, commit, push or cutover is performed in this task.
 
@@ -134,3 +134,5 @@ Production smoke can target local build or an explicitly supplied `SMOKE_BASE_UR
 Release preparation lives in [Slice 4.5 audit](milestone-4-slice-5.md), [owner accessibility/content QA](owner-accessibility-qa.md), [privacy implementation notes](privacy-implementation-notes.md), [legacy redirect map](legacy-redirect-map.md), [production smoke plan](production-smoke-test.md) and [cutover/rollback plan](production-cutover.md). They explicitly separate reviewed code readiness from owner sign-off and deployment authorisation. No merge, tag, deployment or external setting change is part of this slice.
 
 The `/index.html` mapping uses the installed Next `src/proxy.ts` convention: a filesystem route named index.html conflicts with the prerendered homepage output. The proxy has only three matchers and no state, body parsing, logging or financial routing. It constructs fixed target URLs and strips query strings.
+
+Closure audit correction (16 September 2026): the unchanged public projection contains 42 distinct recorded source URLs, not the previously reported 41. Exact URL-set equality against all active evidence records passes; no source was added or altered.

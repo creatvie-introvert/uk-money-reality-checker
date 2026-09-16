@@ -29,6 +29,6 @@ Three exact GET/HEAD proxy mappings return fixed 308 Location values and **disca
 
 Legacy storage is not read, imported, updated or silently deleted. A returning visitor can retain old keys/cookies on the same origin; fresh-context emptiness is not a promise that previously saved browser data disappears. The privacy notice explains clearing site data. Automated production coverage seeds legacy keys and confirms they remain unused and unchanged.
 
-Owner decision before closure: approve the three mappings; decide `/about.html`, fragment compatibility and old icon/manifest treatment; confirm actual production aliases. Do not turn unknown entries into redirects without evidence.
+Owner decision before production cutover: approve the three mappings; decide `/about.html`, fragment compatibility and old icon/manifest treatment; confirm actual production aliases. Do not turn unknown entries into redirects without evidence.
 
 The `/index.html` mapping uses the installed Next `src/proxy.ts` convention: a filesystem route named index.html conflicts with the prerendered homepage output. The proxy has only three matchers and no state, body parsing, logging or financial routing. It constructs fixed target URLs and strips query strings.

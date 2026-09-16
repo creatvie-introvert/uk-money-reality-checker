@@ -79,7 +79,7 @@ The exclusions section distinguishes absence of a dedicated model from what a us
 
 `buildSourceRegister` validates all ten active observed evidence families through the existing `validateDataset` function. Schema, classification, kind, release identity, count and every pinned payload field remain required. Invalid inputs throw; no replacement source or empty fallback budget is returned.
 
-Validated observations are grouped by source family, organisation and publication title. Distinct publications sharing a family remain distinct. Eight category groups contain **32 publication entries and all 41 unique recorded source URLs**. They are organised as Rent, Council tax, Energy, Water, Groceries/household spending, Transport, Income tax and National Insurance. Native details/summary entries keep the register scannable; essential category boundaries appear outside disclosures.
+Validated observations are grouped by source family, organisation and publication title. Distinct publications sharing a family remain distinct. Eight category groups contain **32 publication entries and all 42 unique recorded source URLs**. They are organised as Rent, Council tax, Energy, Water, Groceries/household spending, Transport, Income tax and National Insurance. Native details/summary entries keep the register scannable; essential category boundaries appear outside disclosures.
 
 `PublicSourceEntry` contains a public ID/category, publisher/title, observation classification, evidence role, current use status, how-used explanation, geography/scope, optional recorded publication dates, citations and curated public limitations. Citation projection permits publisher/title/recorded URL/source period/optional effective bounds and evidence label. Register energy links additionally identify the released fuel/tariff/payment combination or NEED nation group. Absent dates are omitted, never fabricated.
 
@@ -182,3 +182,5 @@ No blocking Slice 4.3 implementation gap remains. Existing source freshness, app
 Recommended Slice 4.4: public-site integration/launch-readiness audit (including existing calculator evidence-bundle metadata minimisation), any separately scoped Privacy/Accessibility content, cross-browser and assistive-technology review, owner visual review and metadata/link consistency. Production cutover, redirects and analytics remain separate authorisation decisions.
 
 **Safe to commit Slice 4.3 after review, excluding the raw workbook.** Nothing was staged, committed, pushed or deployed.
+
+Closure audit correction (16 September 2026): the unchanged public projection contains 42 distinct recorded source URLs, not the previously reported 41. Exact URL-set equality against all active evidence records passes; no source was added or altered.

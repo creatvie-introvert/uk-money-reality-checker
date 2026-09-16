@@ -6,7 +6,7 @@
 
 | Item | Finding / required decision |
 | --- | --- |
-| Rebuild branch | `rebuild/next-production`; Slice 4.5 starts at `8da8f0b` |
+| Rebuild branch | `rebuild/next-production`; closure candidate `ca99b30` plus reviewed closure documentation/tests |
 | Legacy reference | `origin/main` and `legacy-static-v1` at `ede9ffa7f73a52d832c4788eb95055796692d2e8` on inspection |
 | Historical host | Legacy README says GitHub Pages from main/root; CNAME records `ukmoneyreality.co.uk` |
 | Actual current production | **Owner check**: repository files do not prove live domain, host, DNS, deployed commit or provider settings |
@@ -59,7 +59,7 @@ HSTS requires working HTTPS for the confirmed domain, understanding every affect
 4. Capture existing provider settings and DNS/domain configuration securely. Record current live deployment ID, exact commit and a usable recovery URL/artifact. Verify `legacy-static-v1` or a newer known-good point really recovers the current service; repository tag alone is not proof.
 5. Check automatic deployments from BOTH hosts. A merge into main may trigger legacy GitHub Pages and/or Vercel before the intended cutover. Plan pausing/controlling those triggers as a separately approved action; never discover this during the merge.
 6. Run final install/build/tests on the chosen runtime, full browsers and [production smoke checks](production-smoke-test.md) on the exact preview candidate. Confirm no financial request/storage, raw artifacts, fixture chunks or dev routes. Do not assume platform behavior equals localhost.
-7. After closure GO and before cutover, recommend creating reviewed tag `pre-cutover-next-v1` at that exact rebuild commit. Confirm it does not already exist; do not move an existing tag. Tag creation/push requires the later instruction, not this slice.
+7. After the development closure commit is reviewed and pushed, immediately before the approved production merge/cutover, recommend creating reviewed tag `pre-cutover-next-v1` at that exact rebuild commit. Confirm it does not already exist; do not move an existing tag. Tag creation/push requires the later instruction, not this slice.
 
 ## Merge and cutover sequence — not executed
 
@@ -79,3 +79,11 @@ Triggers: wrong deployed commit/domain, critical route/calculator failure, numer
 - Restore the exact known-good legacy commit/artifact (`legacy-static-v1` at the recorded hash, or the documented newer recovery point). No force push: provider rollback or a reviewed revert is preferable. Disable unintended auto-redeployment of the failed revision through the approved settings process.
 - Verify root, old tool, privacy/cookies, assets, HTTPS and core navigation. Cached 308s can still send visitors to `/privacy`; plan compatibility on the recovery host. Cached HSTS is not undone by reverting the app. Legacy recovery can reintroduce its old advertising/storage behavior and old notices; owner must assess that tradeoff explicitly.
 - Record rollback timestamp, deployment/commit, restored settings, checks and follow-up defect. Do not resume cutover until the cause is resolved and GO is re-established.
+
+## Closure audit decisions (16 September 2026)
+
+See [Milestone 4 closure](milestone-4-closure.md): development completion, owner gates and production cutover are separate decisions. Pending owner gates do not by themselves prevent technical development closure, but essential unresolved gates prevent cutover GO.
+
+The limited CSP is acceptable for initial launch of the reviewed application, subject to checking actual provider integrations and final response headers. Full script/style/connect CSP is nonblocking post-launch hardening. HSTS stays off pending domain/HTTPS/subdomain review; absence alone is not a blocker when hosting HTTPS enforcement is verified and the decision recorded.
+
+Fetched main and legacy-static-v1 remain at ede9ffa7f73a52d832c4788eb95055796692d2e8; main is an ancestor of ca99b30 with no main-only commits and no present content-conflict risk. Re-fetch before the reviewed, non-force merge. Verify the actual live deployment/commit and capture a newer recovery reference if historical legacy-static-v1 does not match it. No recovery or pre-cutover tag was created in this audit.
