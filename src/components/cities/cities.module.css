@@ -1,0 +1,39 @@
+.hero { background: linear-gradient(115deg, #e1f5ed, #ecf8f4 70%, #d4ebe5); border-bottom: 1px solid #d9eee6; }
+.heroInner, .content { max-width: 1160px; margin: auto; padding: 48px 24px; }
+.heroInner h1 { font-size: clamp(34px, 4vw, 52px); max-width: 24ch; margin: 18px 0 22px; color: #072626; }
+.heroInner > p { max-width: 66ch; color: #304b54; font-size: 18px; }
+.breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 14px; padding: 0; margin: 0 0 32px; font-size: 13px; }
+.breadcrumb li + li::before { content: "/"; margin-right: 14px; color: #4e6281; }
+.cards, .coverage { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 0; margin: 0; }
+.cards > li { display: flex; }
+.card { width: 100%; display: flex; flex-direction: column; border: 1px solid #e1e8ef; border-radius: 8px; background: white; padding: 28px; }
+.card h2 { font-size: 28px; margin-bottom: 16px; }
+.card p { color: #4e6281; font-size: 15px; }
+.card .nation { color: #006645; font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.cardActions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: auto; padding-top: 14px; }
+.cardActions a { min-height: 44px; display: inline-flex; align-items: center; font-weight: 600; font-size: 14px; }
+.intro { max-width: 72ch; color: #4e6281; margin-top: 18px !important; }
+.coverage { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
+.coverage li { border: 1px solid #dbe5e9; background: white; border-radius: 6px; padding: 18px; }
+.coverage a { font-weight: 700; display: inline-flex; align-items: center; min-height: 44px; }
+.coverage span { display: block; color: #304b54; font-size: 13px; line-height: 1.5; }
+.evidence { border-top: 1px solid #dbe5e9; padding: 32px 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 32px; scroll-margin-top: 24px; }
+.evidence h2 { font-size: 27px; margin-bottom: 14px; }
+.state { display: inline-block; background: #edf6ff; border: 1px solid #d6e5f4; border-radius: 4px; padding: 5px 9px; color: #17456d; font-size: 12px; font-weight: 600; }
+.body { min-width: 0; }
+.body p { max-width: 76ch; font-size: 15px; color: #354e6e; }
+.body .summary { color: #091737; font-size: 17px; font-weight: 600; }
+.period { font-size: 13px !important; }
+.details { border: 1px solid #dbe5e9; border-radius: 5px; background: white; font-size: 14px; overflow-wrap: anywhere; }
+.details summary { padding: 14px 18px; cursor: pointer; color: #17456d; font-weight: 600; min-height: 48px; }
+.details ul { list-style: none; padding: 0 20px; margin: 0; }
+.details li { border-top: 1px solid #e1e8ef; padding: 18px 0; }
+.details li > span { display: block; margin-top: 8px; color: #4e6281; font-size: 13px; }
+.note { background: #edf6ff; border: 1px solid #d6e5f4; border-radius: 8px; padding: 28px; margin: 20px 0 32px; }
+.note h2 { font-size: 25px; margin-bottom: 18px; }
+.note p { max-width: 78ch; font-size: 15px; color: #354e6e; }
+.note p:last-child { margin-bottom: 0; }
+@media (max-width: 1000px) { .coverage { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .cards { grid-template-columns: 1fr; } .evidence { grid-template-columns: 1fr; gap: 18px; } }
+@media (max-width: 600px) { .heroInner, .content { padding: 36px 20px; } .heroInner > p { font-size: 16px; } .card { padding: 24px; } .note { padding: 24px 20px; } .coverage li { padding: 12px; } .coverage { gap: 10px; } }
+@media (max-width: 360px) { .coverage { grid-template-columns: 1fr; } .cardActions { flex-direction: column; align-items: stretch; } }

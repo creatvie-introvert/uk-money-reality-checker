@@ -21,7 +21,7 @@ for (const width of [1440, 1280, 1024, 768, 390, 320]) {
     await expect(navigation.getByRole("link", { name: "Home", exact: true })).toHaveAttribute("aria-current", "page");
     const cities = page.getByRole("region", { name: "Eight cities. Your own circumstances.", exact: true });
     for (const city of ["London", "Birmingham", "Manchester", "Leeds", "Liverpool", "Bristol", "Edinburgh", "Glasgow"]) {
-      await expect(cities.getByRole("link", { name: city, exact: true })).toHaveAttribute("href", "/cities");
+      await expect(cities.getByRole("link", { name: city, exact: true })).toHaveAttribute("href", `/cities/${city.toLowerCase()}`);
     }
     for (const title of ["Official UK evidence", "Your actual household amounts", "Missing stays missing", "Transparent sources"]) await expect(page.getByRole("heading", { name: title, exact: true })).toBeVisible();
     await expect(page.getByRole("link", { name: "Read the methodology", exact: true })).toHaveAttribute("href", "/methodology");
@@ -47,7 +47,6 @@ test("public keyboard navigation reaches honest temporary pages and returns home
   await page.keyboard.press("Enter");
   await expect(page.getByRole("main")).toBeFocused();
   for (const [label, path, heading] of [
-    ["Cities", "/cities", "City pages are being prepared"],
     ["Methodology", "/methodology", "The methodology page is being prepared"],
     ["Sources", "/sources", "The sources page is being prepared"],
   ]) {
@@ -71,7 +70,7 @@ test("public keyboard navigation reaches honest temporary pages and returns home
     await expect(page).toHaveURL(/\/$/);
   }
   await page.getByRole("link", { name: "London", exact: true }).click();
-  await expect(page).toHaveURL(/\/cities$/);
+  await expect(page).toHaveURL(/\/cities\/london$/);
   await page.getByRole("contentinfo").getByRole("link", { name: "Calculator", exact: true }).click();
   await expect(page).toHaveURL(/\/calculator$/);
   await expect(page.getByRole("banner")).toHaveCount(1);

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cityDefinitions } from "@/product/cities/registry";
 import Link from "next/link";
 import styles from "@/components/public/public.module.css";
 
@@ -7,7 +8,6 @@ export const metadata: Metadata = {
   description: "Compare household costs, take-home pay and monthly financial buffer across supported UK cities using published evidence and your own household amounts.",
 };
 
-const cities = ["London", "Birmingham", "Manchester", "Leeds", "Liverpool", "Bristol", "Edinburgh", "Glasgow"];
 const principles = [
   ["Official UK evidence", "Published UK data is used where it can suitably represent the cost you’re comparing."],
   ["Your actual household amounts", "Enter your own costs where published evidence cannot truthfully represent your household."],
@@ -55,8 +55,8 @@ export default function HomePage() {
 
     <section className={styles.section} aria-labelledby="cities-title">
       <div className={styles.sectionHeading}><p className={styles.eyebrow}>Places you can compare</p><h2 id="cities-title">Eight cities. Your own circumstances.</h2><p>These cities are supported by the calculator. Published evidence varies by category and location; your own amounts can fill supported gaps.</p></div>
-      <ul className={styles.cityGrid}>{cities.map((city) => <li key={city}><Link href="/cities">{city}<span aria-hidden="true">↗</span></Link></li>)}</ul>
-      <p className={styles.supporting}>Individual city pages are being prepared. These links take you to the city-page update.</p>
+      <ul className={styles.cityGrid}>{cityDefinitions.map((city) => <li key={city.slug}><Link href={`/cities/${city.slug}`}>{city.displayName}<span aria-hidden="true">↗</span></Link></li>)}</ul>
+      <p className={styles.supporting}>Explore each city’s evidence coverage, source periods and known limitations.</p>
     </section>
 
     <section className={styles.transparency} aria-labelledby="transparency-title">
