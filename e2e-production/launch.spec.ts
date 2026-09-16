@@ -16,7 +16,7 @@ test("production routes, headers, static assets, reflow and local performance", 
       }
     }).observe({ type: "layout-shift", buffered: true });
   });
-  for (const route of ["/", "/cities", "/cities/london", "/methodology", "/sources", "/calculator", "/calculator/results"]) {
+  for (const route of ["/", "/cities", "/cities/london", "/methodology", "/sources", "/privacy", "/accessibility", "/calculator", "/calculator/results"]) {
     const response = await page.goto(route);
     expect(response?.status()).toBe(200);
     const headers = response!.headers();
@@ -29,7 +29,7 @@ test("production routes, headers, static assets, reflow and local performance", 
     await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
     if (route === "/sources") await expect(page.locator("details")).toHaveCount(32);
     // 720 CSS px is the reflow equivalent of a 1440px desktop at 200% browser zoom.
-    for (const width of [1440, 720, 320]) {
+    for (const width of [1440, 1024, 768, 720, 390, 320]) {
       await page.setViewportSize({ width, height: 1000 });
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     }
@@ -48,7 +48,7 @@ test("production routes, headers, static assets, reflow and local performance", 
   await testInfo.attach("local-performance", { body: JSON.stringify(observations, null, 2), contentType: "application/json" });
 });
 
-for (const partial of [false, true]) test(`production ${partial ? "partial" : "complete"} calculation has no financial network or storage persistence`, async ({ page, context }, testInfo) => {
+for (const partial of [false, true]) test(`production ${partial ? "partial" : "complete"} calculation has no financial network or storage persistence`, async ({ page, context, baseURL }, testInfo) => {
   const requests: { method: string; url: string; body: string | null }[] = [];
   const errors: string[] = [];
   page.on("request", (r) => requests.push({ method: r.method(), url: r.url(), body: r.postData() }));
@@ -71,20 +71,28 @@ for (const partial of [false, true]) test(`production ${partial ? "partial" : "c
   } else await expect(page.locator("#salary")).not.toContainText("Salary result unavailable");
   await page.getByRole("button", { name: "Basis & sources: Rent, current, Manchester", exact: true }).press("Enter");
   await expect(page.getByRole("button", { name: "Basis & sources: Rent, current, Manchester", exact: true })).toHaveAttribute("aria-expanded", "true");
-  for (const width of [1440, 720, 320]) {
+  for (const width of [1440, 1024, 768, 720, 390, 320]) {
     await page.setViewportSize({ width, height: 1000 });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   }
   await page.screenshot({ path: testInfo.outputPath("result-320.png"), fullPage: true });
   await page.screenshot({ path: testInfo.outputPath("result-320-viewport.png") });
   expect(errors).toEqual([]);
-  expect(requests.every((r) => ["GET", "HEAD"].includes(r.method) && r.body === null && new URL(r.url).origin === "http://127.0.0.1:3100")).toBe(true);
+  expect(requests.every((r) => ["GET", "HEAD"].includes(r.method) && r.body === null && new URL(r.url).origin === new URL(baseURL!).origin)).toBe(true);
   expect(new URL(page.url()).search).toBe("");
   expect(requests.some((r) => /50000|60000|amountGbp|grossAnnual/.test(r.url))).toBe(false);
   expect(await page.evaluate(async () => ({ local: localStorage.length, session: sessionStorage.length, dbs: (await indexedDB.databases()).length, caches: (await caches.keys()).length }))).toEqual({ local: 0, session: 0, dbs: 0, caches: 0 });
   expect(await context.cookies()).toEqual([]);
   await writeFile(testInfo.outputPath("privacy-and-interaction.json"), JSON.stringify({ calculationAndRenderMs, loadedJs, journeyMs: Date.now() - started, requestCount: requests.length, methods: [...new Set(requests.map((r) => r.method))] }));
   await testInfo.attach("privacy-and-interaction", { body: JSON.stringify({ calculationAndRenderMs, loadedJs, journeyMs: Date.now() - started, requestCount: requests.length, methods: [...new Set(requests.map((r) => r.method))] }), contentType: "application/json" });
+  if (partial) {
+    await page.reload();
+  } else {
+    await page.getByRole("button", { name: "New comparison", exact: true }).click();
+    await expect(page.locator('[name="current.cityId"]')).toHaveValue("");
+    await page.goto("/calculator/results");
+  }
+  await expect(page.getByRole("link", { name: "Start calculator", exact: true })).toBeVisible();
 });
 
 test("production 404 and dev/static-data isolation", async ({ page, request }) => {

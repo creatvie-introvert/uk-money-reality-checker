@@ -10,29 +10,32 @@ Milestone 1 evidence and Milestone 2 engine remain closed. [Milestone 3 closure]
 
 ## Route map
 
-| Route | Current status after Slice 4.4 | Owner |
+| Route | Current status after Slice 4.5 | Owner |
 | --- | --- | --- |
 | `/` | Public homepage | `src/app/(public)/page.tsx` |
 | `/cities` | Eight supported cities, equal cards and explicit evidence boundaries | `(public)/cities/page.tsx` |
 | `/cities/[slug]` | Eight statically generated city pages; unsupported slugs call `notFound()` | `(public)/cities/[slug]/page.tsx` |
 | `/methodology` | Production explanation of calculations, partial results, overrides and scope | `(public)/methodology/page.tsx` |
 | `/sources` | Production register of approved publications, periods, geography and limitations | `(public)/sources/page.tsx` |
+| `/privacy`, `/accessibility` | Factual server-rendered notices, footer integration | `(public)/privacy/page.tsx`, `(public)/accessibility/page.tsx` |
+| `/robots.txt`, `/sitemap.xml` | Public discovery, sitemap gated by approved SITE_URL | Server GET handlers |
+| `/index.html`, `/privacy.html`, `/cookies.html` | Fixed query-stripping 308 redirects | `src/proxy.ts` |
 | `/calculator` and existing step/results routes | Existing production journey, unchanged behavior | Existing calculator layout/provider/pages |
 | `/dev/calculator-results` | Existing development-only fixture route | Existing development route; production 404 |
 
-Only the eight canonical city detail routes are supported. About, Privacy and Accessibility routes are not fabricated. Methodology and Sources are now completed public pages with factual metadata and no noindex directive. Route availability alone does not authorise production cutover.
+Only the eight canonical city detail routes are supported. Privacy and Accessibility are completed in Slice 4.5; About remains absent with no navigation link. Methodology and Sources are now completed public pages with factual metadata and no noindex directive. Route availability alone does not authorise production cutover.
 
 ## Layout and shell strategy
 
 The existing top-level root layout remains the single `html`/`body` owner. Its default description now describes the product factually. A `(public)` route group adds `PublicLayout` without changing URLs or creating a second root layout. The former root development-shell page is replaced by the route-group homepage; there is no duplicate `/` route.
 
-PublicLayout owns one skip link, PublicHeader, focusable main target and PublicFooter. All public routes share them. PublicHeader is a small client component only because `usePathname` supplies `aria-current="page"`. Homepage, placeholder content and footer are server components. No data fetching, account state, storage or analytics is introduced.
+PublicLayout owns one skip link, PublicHeader, focusable main target and PublicFooter. All public routes share them. PublicHeader is a small client component only because `usePathname` supplies `aria-current="page"`. Homepage, public content and footer are server components. No data fetching, account state, storage or analytics is introduced.
 
 The calculator deliberately retains its focused Milestone 3 shell variant: ResultsHeader, its existing skip link, progress, New comparison and result section links. PublicHeader/Footer do not wrap it, so there are no duplicate banners, main landmarks or competing restart controls. Its shared provider, focus handling, result state and navigation behavior are unchanged. The brand/home links provide the return to the homepage. Only factual calculator metadata is added to its layout.
 
 Mobile public navigation stays visible and wraps into rows; it has no collapsing menu, focus trap or extra menu state. Every primary nav item has a minimum 44px height. Natural Tab/Enter behavior works without menu-specific Escape logic. Calculator receives the outlined CTA treatment, while the current public route also has a textual/semantic active state.
 
-The footer includes the brand, a short product description, Calculator/Cities/Methodology/Sources links, evidence principles and the UTC year rendered by the server. Static builds capture the build year's value and need a rebuild when the year changes. Privacy/Accessibility links can be added when their actual pages exist. No social accounts are invented.
+The footer includes the brand, a short product description, Calculator/Cities/Methodology/Sources links, evidence principles and the UTC year rendered by the server. Static builds capture the build year's value and need a rebuild when the year changes. Privacy/Accessibility links are present after Slice 4.5. No social accounts are invented.
 
 ## Homepage information architecture
 
@@ -90,7 +93,7 @@ An explicit projection includes only descriptive metadata, source links, scopes,
 
 Both new pages use server components, the public shell, native disclosures, semantic headings/definitions and scoped styling. Sources and methodology have unique production metadata. There are no new routes, client state, financial URLs or external requests. See [Slice 4.3 QA](milestone-4-slice-3.md) for release-safety, responsive and leakage checks.
 
-## Deferred Slice 4.5+ work
+## Milestone 4 closure and deployment follow-up
 
 Later launch-integration slices should cover Privacy/Accessibility content, final metadata/SEO decisions, real VoiceOver and owner visual sign-off, then separately reviewed deployment/cutover. Analytics, if later requested, needs a deliberate privacy boundary. Do not treat temporary route availability as Milestone 4 closure or production-launch approval.
 
@@ -117,3 +120,17 @@ The public pages continue to render server-side, with native Sources disclosures
 Root and global error fallbacks provide generic recovery without rendering/logging an error object. The public group's not-found fallback respects the shell's existing main landmark. Security headers disable framing, MIME sniffing, referrer transmission and unused camera/microphone/geolocation access. The initial CSP covers base URI, objects and ancestors; a script/style nonce/hash policy and HSTS await deployment/domain review. Browser production source maps and the powered-by header are disabled explicitly. There is no production cutover.
 
 See [Slice 4.4 audit and validation](milestone-4-slice-4.md) for byte measurements, privacy findings, browser results and launch debt.
+
+## Slice 4.5 policies and release preparation
+
+`/privacy` and `/accessibility` are Server Components using a small shared PolicyPage renderer and existing transparency styles. The footer links to both and includes a concise informational-tool disclaimer. No About or Cookies placeholder is added. Privacy explains browser-memory calculation, no app persistence/financial requests, disabled analytics/advertising, ordinary hosting requests/logs, external sources and the possibility of retained legacy storage. Existing public repository contact is available for non-sensitive reports; a private contact and deployment-specific processing details remain owner launch gates. Accessibility states actual Chromium/WebKit checks and pending manual VoiceOver/device review, without claiming WCAG certification.
+
+`src/product/launch/indexing.ts` reuses the typed city registry to list the 15 public entry routes. `/robots.txt` permits public pages and excludes development/source/result paths; it is not security enforcement. `/sitemap.xml` uses only explicitly approved server `SITE_URL`, never Host/preview inference. These two small dynamic GET handlers avoid build-time stale host configuration. Missing origin returns a non-cached 503 for the sitemap and omits robots discovery; configured valid HTTPS origin returns XML with exactly 15 routes. Unknown host is an explicit launch gate. There are no invented canonical tags or preview-domain fallbacks.
+
+Three fixed GET/HEAD proxy redirects replace legacy `/index.html`, `/privacy.html` and `/cookies.html`; 308 destinations are `/`, `/privacy` and `/privacy#cookies`. The exact-path server proxy deliberately discards legacy queries, unlike automatic Next config query forwarding. `/about.html`, old fragment bookmarks and historical icons require owner decisions documented in the redirect inventory. No engine/data artifact or numerical behavior changes.
+
+Production smoke can target local build or an explicitly supplied `SMOKE_BASE_URL`; it never selects a guessed domain or deploys. A remote run also requires `SMOKE_EXPECT_SITE_URL`. Expanded checks cover new policy routes/footer, internal links, indexing, fixed redirects, legacy-storage non-import, restart/refresh and existing privacy/header/fixture boundaries. No analytics, secrets, new financial endpoint or persistent result cache is introduced.
+
+Release preparation lives in [Slice 4.5 audit](milestone-4-slice-5.md), [owner accessibility/content QA](owner-accessibility-qa.md), [privacy implementation notes](privacy-implementation-notes.md), [legacy redirect map](legacy-redirect-map.md), [production smoke plan](production-smoke-test.md) and [cutover/rollback plan](production-cutover.md). They explicitly separate reviewed code readiness from owner sign-off and deployment authorisation. No merge, tag, deployment or external setting change is part of this slice.
+
+The `/index.html` mapping uses the installed Next `src/proxy.ts` convention: a filesystem route named index.html conflicts with the prerendered homepage output. The proxy has only three matchers and no state, body parsing, logging or financial routing. It constructs fixed target URLs and strips query strings.

@@ -8,8 +8,9 @@ export function PublicFooter() {
       <nav aria-label="Footer navigation">
         <Link href="/calculator">Calculator</Link><Link href="/cities">Cities</Link>
         <Link href="/methodology">Methodology</Link><Link href="/sources">Sources</Link>
+        <Link href="/privacy">Privacy</Link><Link href="/accessibility">Accessibility</Link>
       </nav>
-      <div className={styles.footerBottom}><span>© {new Date().getUTCFullYear()} UK Money Reality</span><p>Published evidence where suitable. Your own amounts where needed. Missing values stay visible.</p></div>
+      <div className={styles.footerBottom}><span>© {new Date().getUTCFullYear()} UK Money Reality</span><p>UK Money Reality is an informational comparison tool, not financial advice. Results depend on your inputs and the evidence available for each category.</p></div>
     </div>
   </footer>;
 }
