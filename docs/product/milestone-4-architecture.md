@@ -2,7 +2,7 @@
 
 ## Scope and starting point
 
-Slice 4.1 added the public homepage and navigation around the closed Milestone 3 calculator. Slice 4.2 now adds the supported-city index and eight evidence-aware city pages. Neither slice adds financial calculations, a source register, methodology content, analytics, redirects or production cutover.
+Slice 4.1 added the public homepage and navigation around the closed Milestone 3 calculator. Slice 4.2 now adds the supported-city index and eight evidence-aware city pages. Slice 4.3 adds the public Methodology and Sources pages. These slices add no financial calculations, analytics, redirects or production cutover.
 
 Started on `rebuild/next-production`, commit `92076a833ca3725f2a1afc5f4959ec1a4156da2a` (`Close Milestone 3 calculator product experience`). `git fetch origin` succeeded; local HEAD matched `origin/rebuild/next-production` with zero commits ahead/behind. The only untracked file was the protected raw workbook. AGENTS.md, installed Next.js layout/route-group/CSS/metadata guidance, app routes, tokens, metadata, tests and Milestone 3 visual/product records informed the implementation.
 
@@ -10,17 +10,17 @@ Milestone 1 evidence and Milestone 2 engine remain closed. [Milestone 3 closure]
 
 ## Route map
 
-| Route | Current status after Slice 4.2 | Owner |
+| Route | Current status after Slice 4.3 | Owner |
 | --- | --- | --- |
 | `/` | Public homepage | `src/app/(public)/page.tsx` |
 | `/cities` | Eight supported cities, equal cards and explicit evidence boundaries | `(public)/cities/page.tsx` |
 | `/cities/[slug]` | Eight statically generated city pages; unsupported slugs call `notFound()` | `(public)/cities/[slug]/page.tsx` |
-| `/methodology` | Clearly marked temporary page; directs users to existing result explanations | `(public)/methodology/page.tsx` |
-| `/sources` | Clearly marked temporary page; not a source register | `(public)/sources/page.tsx` |
+| `/methodology` | Production explanation of calculations, partial results, overrides and scope | `(public)/methodology/page.tsx` |
+| `/sources` | Production register of approved publications, periods, geography and limitations | `(public)/sources/page.tsx` |
 | `/calculator` and existing step/results routes | Existing production journey, unchanged behavior | Existing calculator layout/provider/pages |
 | `/dev/calculator-results` | Existing development-only fixture route | Existing development route; production 404 |
 
-Only the eight canonical city detail routes are supported. About, Privacy and Accessibility routes are not fabricated. Methodology and Sources remain explicitly incomplete with `noindex, follow`; they must be completed before Milestone 4 closure.
+Only the eight canonical city detail routes are supported. About, Privacy and Accessibility routes are not fabricated. Methodology and Sources are now completed public pages with factual metadata and no noindex directive. Route availability alone does not authorise production cutover.
 
 ## Layout and shell strategy
 
@@ -41,7 +41,7 @@ The footer includes the brand, a short product description, Calculator/Cities/Me
 3. Four product principles: suitable official UK evidence, actual household amounts, missing stays missing, transparent sources. The sole currency illustration is the explicit explanation that unknown values are not silently converted to £0.
 4. Three steps: move details; household/money details; results, including costs, take-home, buffer, drivers and eligible salary preservation.
 5. Eight supported city names in neutral informational cards: London, Birmingham, Manchester, Leeds, Liverpool, Bristol, Edinburgh and Glasgow. Each links to its canonical `/cities/[slug]` evidence page. No city-level numeric cost claims are published.
-6. “Built to show its workings”: category-specific source/effective periods, limitations, partial results and readable classification explanations. Methodology/Sources links disclose that those public pages are being prepared; existing calculator source explanations remain available.
+6. “Built to show its workings”: category-specific source/effective periods, limitations, partial results and readable classification explanations. Methodology/Sources links point to completed pages; existing calculator source explanations remain available.
 7. Final invitation to start the calculator, without urgency or promised outcomes.
 
 ## Design and accessibility boundary
@@ -60,7 +60,7 @@ The calculator metadata change does not alter its context/provider, adapter, eng
 
 ## Metadata
 
-The homepage has a factual title and description matching its scope. Calculator metadata describes household costs, take-home, buffer and explicit unknown/source states. Each temporary public route has its own in-preparation title/description and `robots: { index: false, follow: true }`. No canonical domain, fabricated social images, structured financial claims or redirect configuration is introduced.
+The homepage has a factual title and description matching its scope. Calculator metadata describes household costs, take-home, buffer and explicit unknown/source states. Cities, Methodology and Sources have production titles/descriptions; their previous placeholder noindex directives are removed. No canonical domain, fabricated social images, structured financial claims or redirect configuration is introduced.
 
 ## Slice 4.2 city architecture
 
@@ -72,12 +72,26 @@ Five textual coverage states describe evidence availability, required inputs and
 
 London rent remains regional and council tax has no released borough schedule; Edinburgh has no exact rent row; Glasgow rent remains Greater Glasgow rather than Glasgow City. Bristol preserves separate clean-water/wastewater providers. Birmingham retains unresolved applicability. Transport network names come only from the applicable city's released products; the verified 14 September 2026 observations do not establish later-date fares.
 
-City CTAs link directly to `/calculator`, with no preselection, query state or financial URL payload. Calculator code, engine, data generation and artifacts remain unchanged. Taxpayer status is explicitly user-confirmed. City metadata has unique factual titles/descriptions; no deployment domain, rankings, structured financial claims or aliases are invented. Methodology and Sources retain their placeholder/noindex treatment.
+City CTAs link directly to `/calculator`, with no preselection, query state or financial URL payload. Calculator code, engine, data generation and artifacts remain unchanged. Taxpayer status is explicitly user-confirmed. City metadata has unique factual titles/descriptions; no deployment domain, rankings, structured financial claims or aliases are invented. Methodology and Sources now use the Slice 4.3 production treatment described below.
 
 See [Slice 4.2 implementation and QA](milestone-4-slice-2.md) for validation, exceptions and screenshot evidence.
 
-## Deferred Slice 4.3+ work
+## Slice 4.3 transparency architecture
 
-Later launch-integration slices should implement public methodology and the sources register, Privacy/Accessibility content, final metadata/SEO decisions, wider browser/assistive-technology and owner visual sign-off, then separately reviewed deployment/cutover. Analytics, if later requested, needs a deliberate privacy boundary. Do not treat temporary route availability as Milestone 4 closure or production-launch approval.
+`/methodology` explains the eight-category comparison, monthly buffer equation, supported annual income model, salary preservation, partial results, coverage, classifications, overrides, dates, geography, rounding and exclusions. A contents navigation supports scanning. Public explanations live in `src/product/transparency/methodology.ts`; there is no arithmetic or additional model in the page.
+
+`/sources` uses `buildSourceRegister` in `src/product/transparency/sources.ts`. All ten active observed datasets pass the existing pinned `validateDataset` gate. Entries are grouped by source family, organisation and publication title, retaining distinct publications rather than dumping records. The eight UI categories contain 32 publication entries and all 41 recorded source URLs. Exact original dates and periods are retained; unrecorded publication dates are omitted.
+
+An explicit projection includes only descriptive metadata, source links, scopes, periods, use status and reviewed public limitations. Raw records, financial source amounts, QA/import metadata, raw workbook content and development models are never projected. Ofgem links retain their recorded embedded-chart URLs and gain fuel/tariff/payment labels from released fields; NEED workbook links retain their nation groups. Provider and operator reuse restrictions remain qualified. The existing calculator client bundle still carries generated evidence QA/import metadata; the new transparency pages do not load that chunk. Bundle minimisation belongs in the later readiness audit.
+
+`PublicSourceEntry` separates observation classification, evidence role and current calculator use. Tax/NI references are labelled reference evidence and used as deterministic rule inputs. NEED/spending references are context only. Ofgem is published regional evidence but reference context in the present household flow; English water and transport likewise do not activate unsupported household calculations. Scottish band paths and exact rent/council matches are used with conditions. No calculated price table is exported.
+
+`Provenance` shares classification definitions and source citation presentation between Methodology, Sources and Cities. The classification labels reuse the calculator mapping. The existing results date formatter moves unchanged to a shared `periods.ts` module and remains re-exported for compatibility. Results retain their separate explanation/interaction model, without a broad refactor. City factual content is retained; only shared citation presentation and completed-page link copy change. Homepage preparation copy is removed.
+
+Both new pages use server components, the public shell, native disclosures, semantic headings/definitions and scoped styling. Sources and methodology have unique production metadata. There are no new routes, client state, financial URLs or external requests. See [Slice 4.3 QA](milestone-4-slice-3.md) for release-safety, responsive and leakage checks.
+
+## Deferred Slice 4.4+ work
+
+Later launch-integration slices should cover launch-readiness auditing, Privacy/Accessibility content, final metadata/SEO decisions, wider browser/assistive-technology and owner visual sign-off, then separately reviewed deployment/cutover. Analytics, if later requested, needs a deliberate privacy boundary. Do not treat temporary route availability as Milestone 4 closure or production-launch approval.
 
 Validation and screenshot evidence for this slice are recorded in [Slice 4.1 QA](milestone-4-slice-1.md). No staging, commit, push or cutover is performed in this task.

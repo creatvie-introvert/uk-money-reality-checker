@@ -1,0 +1,45 @@
+.hero { background: linear-gradient(115deg, #e1f5ed, #ecf8f4 70%, #d4ebe5); border-bottom: 1px solid #d9eee6; }
+.heroInner, .content { max-width: 1160px; margin: auto; padding: 48px 24px; }
+.heroInner h1 { color: #072626; font-size: clamp(36px, 4vw, 52px); margin: 16px 0 22px; }
+.heroInner > p:not(:first-child) { color: #304b54; font-size: 18px; max-width: 68ch; }
+.layout { max-width: 1160px; margin: auto; padding: 48px 24px; display: grid; grid-template-columns: minmax(0, 230px) minmax(0, 1fr); gap: 52px; align-items: start; }
+.toc { border: 1px solid #dbe5e9; background: white; border-radius: 6px; padding: 20px; }
+.toc h2 { font-size: 18px; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; margin: 0; }
+.toc a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
+.article { min-width: 0; }
+.section { border-bottom: 1px solid #dbe5e9; padding-bottom: 32px; margin-bottom: 36px; scroll-margin-top: 24px; }
+.section h2 { font-size: 29px; margin-bottom: 20px; }
+.section h3 { font-size: 21px; margin: 26px 0 14px; }
+.section p { color: #354e6e; max-width: 80ch; }
+.equation { padding: 24px; background: #edf6ff; border: 1px solid #d6e5f4; border-radius: 6px; font-size: 20px; font-weight: 600; line-height: 1.7; margin: 24px 0; }
+.equation span { display: block; }
+.legend { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }
+.legend > div { padding: 20px; border: 1px solid #dbe5e9; border-radius: 6px; background: white; }
+.legend dt { font-weight: 700; margin-bottom: 10px; }
+.legend dd { margin: 0; color: #354e6e; font-size: 14px; line-height: 1.6; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.badge { display: inline-block; padding: 4px 9px; border: 1px solid #d6e5f4; border-radius: 4px; color: #17456d; background: #edf6ff; font-size: 12px; font-weight: 600; }
+.note { padding: 22px; background: #edf6ff; border: 1px solid #d6e5f4; border-radius: 6px; margin: 24px 0; }
+.note p:last-child { margin-bottom: 0; }
+.groupNav { display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 18px 0; margin-bottom: 24px; border-block: 1px solid #dbe5e9; }
+.groupNav a { min-height: 44px; display: inline-flex; align-items: center; font-weight: 600; font-size: 14px; }
+.group { padding-top: 32px; margin-bottom: 38px; scroll-margin-top: 20px; }
+.group h2 { font-size: 29px; margin-bottom: 18px; }
+.group > p { max-width: 80ch; color: #354e6e; }
+.source { border: 1px solid #dbe5e9; border-radius: 6px; background: white; margin: 12px 0; overflow-wrap: anywhere; }
+.source summary { padding: 20px 24px; min-height: 64px; cursor: pointer; }
+.source summary h3 { display: inline; font-size: 18px; line-height: 1.5; letter-spacing: -.015em; }
+.source summary .meta { display: block; margin-top: 8px; color: #4e6281; font-size: 13px; }
+.sourceBody { border-top: 1px solid #dbe5e9; padding: 24px; }
+.sourceBody h4 { font-size: 15px; margin: 20px 0 10px; }
+.sourceBody p, .sourceBody li { color: #354e6e; font-size: 14px; max-width: 85ch; }
+.sourceBody ul { margin: 10px 0 18px; padding-left: 22px; }
+.sourceBody li { margin: 8px 0; }
+.citations { list-style: none; padding: 0 !important; margin: 0 !important; }
+.citations li { border-top: 1px solid #e1e8ef; padding: 16px 0; overflow-wrap: anywhere; }
+.citationMeta { display: block; margin-top: 7px; color: #4e6281; font-size: 13px; }
+.footerLinks { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; gap: 32px; } .toc ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; } }
+@media (max-width: 600px) { .heroInner, .content, .layout { padding: 36px 20px; } .heroInner > p:not(:first-child) { font-size: 16px; } .legend { grid-template-columns: 1fr; } .source summary, .sourceBody { padding: 20px; } .section h2, .group h2 { font-size: 27px; } .equation { padding: 18px; font-size: 18px; } .footerLinks { flex-direction: column; } }
+@media (max-width: 360px) { .toc ul { grid-template-columns: 1fr; } }

@@ -38,7 +38,7 @@ for (const width of [1440, 1280, 1024, 768, 390, 320]) {
   });
 }
 
-test("public keyboard navigation reaches honest temporary pages and returns home", async ({ page }) => {
+test("public keyboard navigation reaches transparency pages and returns home", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await page.keyboard.press("Tab");
@@ -47,8 +47,8 @@ test("public keyboard navigation reaches honest temporary pages and returns home
   await page.keyboard.press("Enter");
   await expect(page.getByRole("main")).toBeFocused();
   for (const [label, path, heading] of [
-    ["Methodology", "/methodology", "The methodology page is being prepared"],
-    ["Sources", "/sources", "The sources page is being prepared"],
+    ["Methodology", "/methodology", "Methodology"],
+    ["Sources", "/sources", "Data sources"],
   ]) {
     const link = page.getByRole("navigation", { name: "Main navigation", exact: true }).getByRole("link", { name: label, exact: true });
     await page.keyboard.press("Tab");
@@ -57,9 +57,8 @@ test("public keyboard navigation reaches honest temporary pages and returns home
     await link.press("Enter");
     await expect(page).toHaveURL(new RegExp(`${path}$`));
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(heading);
-    await expect(page.getByRole("heading", { name: "This page is not complete yet" })).toBeVisible();
-    await expect(page.getByRole("main")).toContainText("temporary page");
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+    await expect(page.getByRole("main")).not.toContainText("being prepared");
+    await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
     await expect(page.getByRole("navigation", { name: "Main navigation", exact: true }).getByRole("link", { name: label, exact: true })).toHaveAttribute("aria-current", "page");
     for (const width of [1440, 1280, 1024, 768, 390, 320]) {
       await page.setViewportSize({ width, height: 844 });

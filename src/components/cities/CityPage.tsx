@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SourceCitation } from "@/components/transparency/Provenance";
 import type { CityPageModel } from "@/product/cities/registry";
 import styles from "./cities.module.css";
 import publicStyles from "@/components/public/public.module.css";
@@ -25,9 +26,7 @@ export function CityPage({ model }: { model: CityPageModel }) {
         <div className={styles.body}><p className={styles.summary}>{item.summary}</p>{item.context.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           <p className={styles.period}><strong>Source periods: </strong>{item.sources.length ? [...new Set(item.sources.map((source) => source.period))].join(" · ") : "No matching published evidence in this release."}</p>
           {item.sources.length > 0 && <details className={styles.details}><summary>{item.label}: sources and effective periods</summary><ul>{item.sources.map((source, index) => <li key={index}>
-            <a href={source.url}>{source.organisation} — {source.title}</a>
-            <span>{source.classification} · Source period: {source.period}</span>
-            {(source.effectiveFrom || source.effectiveTo) && <span>Recorded effective bounds: {source.effectiveFrom ?? "not specified"} to {source.effectiveTo ?? "not specified"}</span>}
+            <SourceCitation source={source} />
           </li>)}</ul></details>}
         </div>
       </section>)}
@@ -35,7 +34,7 @@ export function CityPage({ model }: { model: CityPageModel }) {
       <section className={styles.note} aria-labelledby="periods-title"><h2 id="periods-title">Evidence periods and limitations</h2>
         <p>Each category keeps its own published period. A source period is not a claim that a price applies today. The source links above identify the pinned evidence; later-date use may need refreshed evidence.</p>
         <p>Published evidence can support a calculation only when its geography, period and household conditions match. Reference evidence alone does not resolve a household amount. Your calculator results explain the basis of the values actually used.</p>
-        <p>The public <Link href="/methodology">Methodology</Link> and <Link href="/sources">Sources</Link> pages are still in preparation.</p>
+        <p>Read the <Link href="/methodology">Methodology</Link> and explore the <Link href="/sources">Sources</Link> for the calculations, evidence periods and limitations.</p>
       </section>
       <div className={publicStyles.actions}><Link href={model.calculatorHref} className={publicStyles.primary}>Compare a move involving {city.displayName}</Link><Link href="/cities" className={publicStyles.secondary}>Explore all supported cities</Link></div>
       <p className={publicStyles.supporting}>Choose your current and destination cities in the calculator. This link does not preselect either location.</p>

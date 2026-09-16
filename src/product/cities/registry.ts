@@ -1,3 +1,4 @@
+import { projectSourceCitations as sources, type PublicSource } from "@/product/transparency/provenance";
 import type { MvpCityId } from "@/data/schemas/enums";
 import { validateDataset } from "@/engine/loaders";
 import { activeDatasets, type DatasetKey } from "@/engine/loaders/datasets";
@@ -28,15 +29,6 @@ export const cityDefinitions = [
 export type CitySlug = typeof cityDefinitions[number]["slug"];
 export type CoverageState = "Published evidence available" | "Supported with conditions" | "Evidence gap" | "Requires your amount" | "Reference evidence only";
 export type CoverageCategory = "rent" | "council_tax" | "energy" | "water" | "groceries" | "essentials" | "lifestyle" | "transport";
-export interface PublicSource {
-  organisation: string;
-  title: string;
-  url: string;
-  period: string;
-  effectiveFrom?: string;
-  effectiveTo?: string;
-  classification: "Published evidence" | "Reference evidence only";
-}
 export interface CityCoverageItem {
   id: CoverageCategory;
   label: string;
@@ -57,22 +49,6 @@ export const cityMetadata = (city: typeof cityDefinitions[number]) => ({
   description: `See which rent, council tax, water, transport and household-cost evidence UK Money Reality supports for ${city.displayName} before comparing your move.`,
 });
 
-// Explicit allowlist projection: never serialize price fields, QA payloads or modelled fixtures.
-// Source context is editorial coverage copy, not a redistribution of provider tariff tables.
-function sources(records: readonly EvidenceRecord<DatasetKey>[]): PublicSource[] {
-  const projected = records.map((record): PublicSource => {
-    if (!record.provenance.sourceUrl || !record.provenance.sourcePeriod) throw new Error("Public evidence requires a source URL and period");
-    return ({
-    organisation: record.provenance.organisation,
-    title: record.provenance.publicationTitle,
-    url: record.provenance.sourceUrl,
-    period: record.provenance.sourcePeriod,
-    effectiveFrom: record.provenance.effectiveFrom,
-    effectiveTo: record.provenance.effectiveTo,
-    classification: record.releaseStatus === "REFERENCE_ONLY" ? "Reference evidence only" : "Published evidence",
-  }); });
-  return [...new Map(projected.map((source) => [JSON.stringify(source), source])).values()];
-}
 const evidenceKeys = ["rent", "councilTax", "energyPrice", "energyConsumption", "water", "groceries", "householdSpending", "transport"] as const;
 export type CityEvidenceKey = typeof evidenceKeys[number];
 
