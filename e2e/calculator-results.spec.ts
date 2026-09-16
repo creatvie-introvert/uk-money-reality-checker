@@ -10,7 +10,7 @@ async function preview(page: Page, fixture: string) {
 test("complete engine result and source disclosure", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1080 });
   await preview(page, "complete");
-  await expect(page.locator("#result-title")).toContainText(/£.+more each month/);
+  await expect(page.locator("#result-title")).toContainText(/£.+higher/);
   await expect(page.locator("#overview")).not.toContainText("Not available");
   await expect(page.locator("#salary")).toContainText(/£.+\/year/);
   await expect(page.locator("#coverage")).toContainText("8 of 8 cost categories resolved");

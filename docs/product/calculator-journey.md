@@ -82,3 +82,15 @@ Deferred: full fare-product selection with conditions, London borough coverage/s
 Final checks passed: lint, typecheck, 924 unit tests across 21 files (all prior 908 plus 16 new), all 10 browser tests (five new journey tests), production build, data:verify and whitespace checks including new files. Two existing solver tests timed out when run concurrently with the production build; the entire suite passed when rerun alone, without changing tests or timeout limits. The final build was also run separately.
 
 Production prerender metadata confirms `/dev/calculator-results` has status 404. All 32 generated JSON artifact hashes and the raw workbook hash match the starting baseline. Workbook SHA-256: `63905dd882d36567dbc039be2f822bb0c16a1763d662c38de0525103b85c7fab`. Build-generated `next-env.d.ts` path changes were restored and typecheck rerun. Nothing was staged or committed; the workbook remains untracked and must not be included in a commit.
+
+## Slice 3 usability refinement
+
+The shared shell now aligns with the results content width. Current/destination fieldsets have restrained grey/blue borders; validated progress steps use checkmarks while preserving current-step semantics. Money inputs display £ and period units around unchanged decimal-text values. Required semantics, stronger input boundaries, explicit error-link focus, skip navigation and calculation status improve keyboard and assistive-technology access.
+
+Review groups have consistent cards and explicit amber unresolved values. Form columns stack at 800px, full progress labels wrap at small widths, and mobile Back/Continue controls span the available width. Results retain edit/restart/refresh behavior, with a clearer empty state and native source disclosures. See [Slice 3 visual and usability audit](visual-usability-audit.md) for the viewport matrix, validation evidence and remaining asset/owner sign-off items.
+
+## Slice 3A terminology and review hierarchy
+
+Household evidence controls now use “Use evidence available on” and “Published rent period”, retaining separate explicit selections per scenario. Employment confirmation uses plain language with Class 1 category A/annual scope in a native disclosure. Actual monthly take-home guidance and spending/lifestyle helpers are clearer; input and eligibility semantics are unchanged.
+
+Review prioritizes user decisions and places technical evidence/calculation context in an always-visible secondary area. Edit controls use concise descriptive labels. Clean-session progress tests confirm future steps stay upcoming and Back preserves validated status; no progress-state change was necessary. See [Slice 3A UX review](slice-3a-ux-review.md) for decisions, accessibility coverage and Manchester–Leeds regression evidence.

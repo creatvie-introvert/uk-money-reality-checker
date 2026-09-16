@@ -7,10 +7,15 @@ export const steps = ["start", "household", "income", "spending", "transport", "
 export type JourneyStep = typeof steps[number];
 export const stepLabels: Record<JourneyStep, string> = { start: "Move setup", household: "Household & homes", income: "Income", spending: "Everyday spending", transport: "Transport", lifestyle: "Lifestyle", review: "Review" };
 export const stepTitles: Record<JourneyStep, string> = { start: "Where are you moving?", household: "Tell us about your household and homes", income: "What do you earn now, and after the move?", spending: "How do your everyday costs look?", transport: "What will you spend on getting around?", lifestyle: "What lifestyle spending should we include?", review: "Check your move before we calculate" };
+export const journeyCopy = {
+  unknownAmount: "Leave blank if unknown. We won’t estimate this automatically.",
+  spendingNote: "Enter your own household amounts. We do not automatically estimate personal spending. Childcare and payroll deductions are outside this calculation.",
+  employmentDetails: "One employee, one employment, Class 1 category A National Insurance, using an annual comparison. Actual payroll take-home may differ.",
+};
 export const stepPath = (step: JourneyStep) => step === "start" ? "/calculator" : `/calculator/${step}`;
 export const roles = ["current", "destination"] as const;
 export const roleLabels = { current: "Where you live now", destination: "Where you’re moving" };
-export type Field = { path: string; label: string; kind: "text" | "money" | "count" | "date" | "select" | "scope"; options?: readonly (readonly [string, string])[]; hint?: string; required?: boolean; positive?: boolean };
+export type Field = { path: string; label: string; kind: "text" | "money" | "count" | "date" | "select" | "scope"; options?: readonly (readonly [string, string])[]; hint?: string; details?: string; required?: boolean; positive?: boolean };
 export type FieldError = { path: string; message: string; step: JourneyStep };
 const options = (values: readonly string[]) => values.map((v) => [v, v] as const);
 const bands = options(["A", "B", "C", "D", "E", "F", "G", "H"]);
@@ -59,13 +64,13 @@ export function stepFields(form: CalculatorFormState, step: JourneyStep, role?: 
   const q = form[role], p = (path: string) => `${role}.${path}`;
   const select = (path: string, label: string, items: Field["options"], hint?: string, required = false): Field => ({ path: p(path), label, kind: "select", options: items, hint, required });
   const money = (path: string, label: string, positive = false, hint?: string, required = false): Field => ({ path: p(path), label, kind: "money", positive, hint, required });
-  const cost = (path: string, label: string, positive = false) => money(`${path}.amountGbp`, `${label} (£/month)`, positive, "Leave blank if unknown. This cost will remain unresolved; no automatic estimate is made.");
+  const cost = (path: string, label: string, positive = false) => money(`${path}.amountGbp`, `${label} (£/month)`, positive, journeyCopy.unknownAmount);
   if (step === "start") return [select("cityId", "City", Object.entries(cityLabels), undefined, true)];
   if (step === "household") return [
     select("bedrooms", "Bedrooms", [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4 or more"]], "Published rent uses the bedroom band, not a property type.", true),
-    { path: p("effectiveOn"), label: "Evidence applicability date", kind: "date", required: true, hint: "The date for checking source applicability, not your move date. Sources have different effective periods." },
-    select("rentSourceMonth", "Rent source period", [["2026-07", "July 2026"]], "Select the pinned source period, including for baseline context when entering your rent.", true),
-    select("rent.mode", "Rent basis", [["SOURCE", "Use published rent for these inputs"], ["AMOUNT", "Enter my monthly rent"]], "Edinburgh has no resolved published rent; selecting that source can produce a partial result.", true),
+    { path: p("effectiveOn"), label: "Use evidence available on", kind: "date", required: true, hint: "This tells us which published prices and charges were applicable on this date. It is not your moving date." },
+    select("rentSourceMonth", "Published rent period", [["2026-07", "July 2026"]], "Select the published rent period used for this comparison. If you enter your own rent, this period is kept for source context.", true),
+    select("rent.mode", "Rent basis", [["SOURCE", "Use published rent for these inputs"], ["AMOUNT", "Enter my monthly rent"]], "Published rent uses source evidence; an entered amount uses your own rent instead. Published rent is unavailable for Edinburgh, so that choice can produce a partial result.", true),
     ...(q.rent.mode === "AMOUNT" ? [money("rent.amountGbp", "Rent (£/month)", true, undefined, true)] : []),
     select("council.mode", "Council tax basis", [["UNKNOWN", "I don’t know yet"], ...(authorities[q.cityId] ? [["SOURCE", "Select authority and band"] as const] : []), ["AMOUNT", "Enter my monthly council tax"]], "No borough, band, discount or London default is assumed."),
     ...(q.council.mode === "SOURCE" ? [select("council.authorityName", "Council authority", authorities[q.cityId] ? options([authorities[q.cityId]]) : [], "Select only if this is your actual authority; otherwise enter your bill."), select("council.band", "Council tax band", bands)] : []),
@@ -75,8 +80,8 @@ export function stepFields(form: CalculatorFormState, step: JourneyStep, role?: 
     money("income.grossAnnualSalaryGbp", "Gross annual salary (£/year)", false, "One employee’s salary. Leave blank if unknown; destination salary is never copied automatically."),
     select("income.taxJurisdiction", "Tax jurisdiction", [["rUK", "England/Wales/Northern Ireland tax rates"], ["Scotland", "Scottish tax rates"]], "Confirm your taxpayer status. Your selected city does not determine it."),
     select("income.taxYear", "Income tax year", [["2026/27", "2026/27"]]),
-    { path: p("income.scope"), label: "I confirm one employee, one employment, Class 1 category A NI and an annual comparison", kind: "scope", hint: "This simplified calculation excludes pensions, student loans and other payroll deductions. Actual payroll may differ." },
-    money("income.netOverride.amountGbp", "Actual take-home override (£/month)", false, "Optional: use actual net income while retaining any gross baseline. A destination override prevents the salary-preservation solver. Clear this field to remove it."),
+    { path: p("income.scope"), label: "This calculation matches my employment", kind: "scope", hint: "I have one employment and standard employee National Insurance. I understand pensions, student loans and other payroll deductions are not included.", details: journeyCopy.employmentDetails },
+    money("income.netOverride.amountGbp", "Use my actual monthly take-home instead (optional)", false, `Use this if your real take-home differs from the simplified salary calculation. Your gross salary is still kept for reference.${role === "destination" ? " Using an actual destination take-home amount means the salary-preservation calculation will not be available." : ""} Clear this field to use the salary calculation again.`),
   ];
   if (step === "spending") return [cost("spending.groceries", "Groceries", true), cost("spending.essentials", "Household essentials"), cost("energy", "Energy", true),
     select("water.mode", "Water basis", [["UNKNOWN", "I don’t know yet"], ...(["LOC-EDI", "LOC-GLA"].includes(q.cityId) ? [["SOURCE", "Scottish unmetered council-band charge"] as const] : []), ["AMOUNT", "Enter my monthly water bill"]], "English tariff evidence alone does not determine your bill. Birmingham applicability stays unresolved without a supported input."),
@@ -117,16 +122,17 @@ export function validateJourney(form: CalculatorFormState): FieldError[] {
   if (!errors.length) for (const role of roles) if (adapted[role].state !== "READY") for (const issue of adapted[role].issues) errors.push({ path: issue.path?.join(".") ?? role, message: "Review this input; it is not valid for the supported calculator.", step: "household" });
   return errors;
 }
-function retainedBaselineRows(form: CalculatorFormState, step: JourneyStep, role?: ScenarioRole) {
+type ReviewRow = { label: string; value: string; secondary?: boolean };
+function retainedBaselineRows(form: CalculatorFormState, step: JourneyStep, role?: ScenarioRole): ReviewRow[] {
   if (!role) return [];
   const council = form[role].council, water = form[role].water;
-  if (step === "household" && council.mode === "AMOUNT" && council.selection) return [{ label: "Retained council source context", value: `${council.selection.authorityName} · Band ${council.selection.band}` }];
-  if (step === "spending" && water.mode === "AMOUNT" && water.selection) return [{ label: "Retained water source context", value: `Band ${water.selection.band} · ${water.selection.connectedServices === "combined" ? "Clean water and wastewater" : water.selection.connectedServices === "clean_water" ? "Clean water only" : "Wastewater only"}` }];
+  if (step === "household" && council.mode === "AMOUNT" && council.selection) return [{ label: "Retained council source context", secondary: true, value: `${council.selection.authorityName} · Band ${council.selection.band}` }];
+  if (step === "spending" && water.mode === "AMOUNT" && water.selection) return [{ label: "Retained water source context", secondary: true, value: `Band ${water.selection.band} · ${water.selection.connectedServices === "combined" ? "Clean water and wastewater" : water.selection.connectedServices === "clean_water" ? "Clean water only" : "Wastewater only"}` }];
   return [];
 }
 export function reviewSections(form: CalculatorFormState) {
-  return steps.filter((s) => s !== "review").map((step) => ({ step, label: stepLabels[step], groups: [undefined, ...roles].map((role) => ({ label: role ? roleLabels[role] : "Moving together", rows: stepFields(form, step, role).map((f) => {
+  return steps.filter((s) => s !== "review").map((step) => ({ step, label: stepLabels[step], editLabel: step === "start" ? "Edit move" : `Edit ${stepLabels[step].toLowerCase()}`, groups: [undefined, ...roles].map((role) => ({ label: role ? roleLabels[role] : "Moving together", rows: stepFields(form, step, role).map((f): ReviewRow => {
     const value = fieldValue(form, f.path);
-    return { label: f.label, value: !value && f.path.endsWith("netOverride.amountGbp") ? "Not used — use salary calculation where supported" : !value || value === "UNKNOWN" ? "Not supplied / unresolved" : f.kind === "scope" ? "Confirmed" : f.kind === "select" ? f.options?.find(([v]) => v === value)?.[1] ?? "Selection needs review" : f.kind === "money" ? `£${value} — your entered amount` : value };
-  }).concat(retainedBaselineRows(form, step, role)) })).filter((g) => g.rows.length) })).flatMap((section) => section.step === "household" ? [{ ...section, label: "Household", groups: section.groups.slice(0, 1) }, { ...section, label: "Housing & council tax", groups: section.groups.slice(1) }] : [section]);
+    return { label: f.kind === "scope" ? "Employment details" : f.label, secondary: ["effectiveOn", "rentSourceMonth", "taxYear", "scope"].includes(f.path.split(".").at(-1)!), value: !value && f.path.endsWith("netOverride.amountGbp") ? "Not used — use salary calculation where supported" : !value || value === "UNKNOWN" ? "Not supplied / unresolved" : f.kind === "scope" ? `Confirmed — ${journeyCopy.employmentDetails}` : f.kind === "select" ? f.options?.find(([v]) => v === value)?.[1] ?? "Selection needs review" : f.kind === "money" ? `£${value} — your entered amount` : value };
+  }).concat(retainedBaselineRows(form, step, role)) })).filter((g) => g.rows.length) })).flatMap((section) => section.step === "household" ? [{ ...section, label: "Household", editLabel: "Edit household", groups: section.groups.slice(0, 1) }, { ...section, label: "Housing & council tax", editLabel: "Edit housing & council tax", groups: section.groups.slice(1) }] : [section]);
 }

@@ -10,8 +10,8 @@ function metricView(m: ProductMetric) {
 export function buildResultsViewModel(p: ProductCalculatorResult) {
   const costs = p.headlines.costs;
   const hero = costs.state === "AVAILABLE"
-    ? costs.direction === "NO_CHANGE" ? "Your monthly costs are unchanged"
-      : `Your move could cost about ${formatMoney(absoluteMoney(costs.exact))} ${costs.direction === "INCREASE" ? "more" : "less"} each month`
+    ? costs.direction === "NO_CHANGE" ? copy.unchangedHero
+      : `Your monthly household costs could be about ${formatMoney(absoluteMoney(costs.exact))} ${costs.direction === "INCREASE" ? "higher" : "lower"}`
     : p.completeness === "LIMITED" ? copy.limitedHero : copy.partialHero;
   const top = p.drivers.ranked[0];
   const salary = p.salary;
@@ -23,7 +23,7 @@ export function buildResultsViewModel(p: ProductCalculatorResult) {
     cards: [
       { label: "Current take-home", ...amountView(p.current.income) }, { label: "New take-home", ...amountView(p.destination.income) },
       { label: p.destination.costs.state === "PARTIAL" ? "Known monthly costs — incomplete" : "New monthly spending", ...amountView(p.destination.costs) },
-      { label: p.destination.residual.state === "PARTIAL" ? copy.partialResidual : "Estimated amount left", ...amountView(p.destination.residual) },
+      { label: p.destination.residual.state === "PARTIAL" ? copy.partialResidual : copy.buffer, ...amountView(p.destination.residual) },
     ],
     rows: p.breakdown.map((r) => ({ category: r.category, label: r.label, current: amountView(r.current), destination: amountView(r.destination), change: metricView(r.change) })),
     drivers: { title: p.drivers.title, entries: p.drivers.ranked.filter((d) => d.direction !== "NO_CHANGE").map((d) => ({ category: d.category, label: d.label, rank: d.rank, display: d.display, direction: d.direction, width: top ? barPercent(d.magnitude, top.magnitude) : 0 })), unchanged: p.drivers.unchanged.map((d) => d.label), excluded: p.drivers.excluded },

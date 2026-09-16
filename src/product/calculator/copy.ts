@@ -7,6 +7,8 @@ export const classificationLabels: Record<Classification, string> = {
 export const categoryLabels = { rent: "Rent", council_tax: "Council tax", energy: "Energy", water: "Water", groceries: "Groceries", essentials: "Household essentials", lifestyle: "Lifestyle", transport: "Transport" } as const;
 export const cityLabels: Record<string, string> = { "LOC-LON": "London", "LOC-MAN": "Manchester", "LOC-BIR": "Birmingham", "LOC-LEE": "Leeds", "LOC-LIV": "Liverpool", "LOC-BRS": "Bristol", "LOC-EDI": "Edinburgh", "LOC-GLA": "Glasgow" };
 export const copy = {
+  buffer: "Monthly buffer after included costs",
+  unchangedHero: "Your monthly household costs are about the same",
   salary: "Salary needed to keep the same monthly buffer",
   annual: "Annual comparison for one employee and one employment, Class 1 category A. Actual payroll take-home may differ.",
   periods: "Sources use different publication and effective periods.",

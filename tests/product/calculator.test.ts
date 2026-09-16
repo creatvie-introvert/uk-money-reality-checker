@@ -159,7 +159,7 @@ describe("M2 acceptance fixtures through product orchestration", () => {
   });
   it("retains zero changes and does not claim exact equality after display rounding", () => {
     const { view, product } = evaluated(previewForm("unchanged"));
-    expect(view.title).toBe("Your monthly costs are unchanged");
+    expect(view.title).toBe("Your monthly household costs are about the same");
     expect(product.headlines.costs.display).toBe("£0 — no change");
     expect(view.drivers.unchanged).toHaveLength(8);
     expect(formatChange(engine.fromGbp("0.0001"))).toBe("+less than £0.01");

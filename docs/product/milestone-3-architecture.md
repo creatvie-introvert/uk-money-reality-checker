@@ -115,3 +115,15 @@ Slice 2 implements the journey with a calculator-scoped context and reducer; Rea
 ## Slice 2 production integration
 
 The calculator layout owns one in-memory draft and result. Routes collect the same product form contract; `journey.ts` owns empty-state construction, field descriptions, scoped validation and review labels. `validateJourney` calls the existing adapter, then the existing product orchestration remains the sole calculation entry. The only adapter contract extension permits an explicitly unselected Scottish water service in a draft, which remains unresolved and never receives a default. See [the journey implementation record](calculator-journey.md) for details and validation.
+
+## Slice 3 presentation and usability refinement
+
+The production presentation now shares a consistent content width, readable supporting typography, tabular metrics, explicit partial/unavailable card treatment and contextual source disclosures. Header anchors appear only where targets exist. Date display expands source-specific ISO tokens without changing evidence periods. Coverage and same-city comparisons explicitly identify current/destination roles. No financial or state contracts changed.
+
+See [visual and usability audit](visual-usability-audit.md) for responsive rules, keyboard/contrast checks, browser validation and outstanding approved font/artwork sign-off. Native CSS modules and the existing fallback fonts are retained; no dependencies or unapproved assets were added.
+
+## Slice 3A targeted presentation refinement
+
+Product presentation metadata now distinguishes primary review rows from secondary evidence/calculation context and supplies descriptive edit labels. Input mappings, validation conditions, reducer/provider, engine calculations and completeness/eligibility semantics are unchanged. Complete-result hero copy refers specifically to monthly household costs; the buffer label refers to included costs. Drivers add textual direction cues, and essentials/lifestyle disclosures sit inside Cost coverage.
+
+[Slice 3A UX review](slice-3a-ux-review.md) records progress verification, retained per-scenario date/period controls, revised copy and exact Manchester–Leeds regression values. These refinements extend the uncommitted Slice 3 work; they do not replace its visual direction or introduce new financial logic.
