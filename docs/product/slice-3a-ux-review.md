@@ -69,7 +69,7 @@ All figures match before and after edits. The product regression asserts both to
 
 ## Remaining decisions
 
-Approved font/artwork assets and owner visual acceptance remain open from Slice 3. Review remains comprehensive and therefore long on mobile, with secondary information always visible as requested. The breakdown retains its labelled horizontal scroll region. A shared-date interaction or fixed-release simplification would need a separately scoped UX/contract decision. No new financial logic is needed for this pass.
+Approved font/artwork assets and owner visual acceptance remain open from Slice 3. Review remains comprehensive and therefore long on mobile, with secondary information always visible as requested. At Slice 3A the breakdown retained its labelled horizontal scroll region; Slice 3B superseded this with mobile category cards and full-width evidence disclosures. A shared-date interaction or fixed-release simplification would need a separately scoped UX/contract decision. No new financial logic is needed for this pass.
 
 ## File inventory for this pass
 

@@ -30,7 +30,7 @@ Starting state: `rebuild/next-production`, `c110a843a6d9c1f92d3e587d5cba55e4ccac
 - Shared adult/child counts and location/date/bedroom/rent-period fields must be explicit. Numeric money stays decimal text; only count fields convert to numbers before engine schema validation.
 - Rent requires an explicit SOURCE or AMOUNT choice. UNKNOWN never triggers an implicit published-rent selection.
 - AMOUNT preserves explicit zero where the engine permits it; empty or invalid overrides do not fall through to a baseline. Rent's strictly positive validation remains engine-owned.
-- Council authority and band must both be selected, or the user must enter a monthly amount. London borough applicability is never guessed. Missing source selection produces a diagnostic and unresolved engine input.
+- To resolve council tax, authority and band must both be selected, or the user must enter a monthly amount; an unknown selection may proceed as an unresolved financial gap. London borough applicability is never guessed. Missing source selection produces a diagnostic and unresolved engine input.
 - Water accepts explicit supported band/services or monthly override. Energy, groceries, essentials and lifestyle require explicit monthly inputs to resolve. Reference data is not a household budget model.
 - Transport accepts a selected product, monthly override or explicit NONE. A selected product can retain its override and baseline; UNKNOWN never selects a first/cheapest fare. NONE stays distinct from an entered zero.
 - Council/water overrides can retain explicit source selections for baseline explanation. Override provenance is never relabelled as official data.
@@ -110,7 +110,7 @@ Validation for this slice: lint, typecheck, complete Vitest suite, production bu
 
 Recorded outcome: all checks passed; 908 Vitest tests across 20 files (38 new product tests plus all 870 prior tests), and 5 Playwright tests (4 new plus the existing shell smoke test). All 32 generated artifact hashes and the workbook hash match the starting baseline. The build-generated `next-env.d.ts` path churn was restored and typecheck passed afterward. Nothing was staged or committed.
 
-Slice 2 implements the journey with a calculator-scoped context and reducer; React Hook Form was installed but unused, so no second form store was added. Fare-product and London borough selection remain deferred; monthly overrides and unresolved paths are available. Recommended next slice: production usability and approved visual/asset sign-off, including clearer evidence-scope guidance and source explanations. New financial models require separate approval.
+Slice 2 implements the journey with a calculator-scoped context and reducer; React Hook Form was installed but unused, so no second form store was added. Fare-product and London borough selection remain deferred; monthly overrides and unresolved paths are available. At Slice 2, the recommended next slice was production usability and approved visual/asset sign-off; usability and source explanations are now implemented. Owner/device review and original assets remain as recorded in closure QA. New financial models require separate approval.
 
 ## Slice 2 production integration
 
@@ -133,3 +133,7 @@ Product presentation metadata now distinguishes primary review rows from seconda
 The existing report table uses responsive CSS row cards on mobile, with explicit table roles and visually hidden column headers preserving semantic context. No alternate result model, values or calculation path is introduced. Hero wrapping, metric alignment, source badge rhythm, narrow driver/buffer/salary layouts and small shared visual tokens are refined within the current CSS modules.
 
 Step error focus now targets the first invalid control when present; review-level errors retain summary focus. Results continue to focus the H1 without an additional live region. Product/engine/data/state contracts are unchanged. [Final QA](milestone-3-final-qa.md) records validation, assets/fonts, accessibility evidence and the limits of launch sign-off.
+
+## Closure status
+
+See [Milestone 3 closure audit](milestone-3-closure.md) for the current implementation audit and test results. Earlier first-proof descriptions of local preview state and mobile table scrolling are historical: production uses JourneyProvider; mobile uses category cards. Cost-source buttons open full-width labelled evidence rows; methodology retains native details. The adapter waits for both sides to be READY before orchestration, as documented above, rather than calculating a lone structurally valid side. No financial result is fabricated while structural inputs are missing.

@@ -35,7 +35,7 @@ Calculated using the sRGB relative-luminance formula and current CSS token pairs
 
 | Foreground / background | Ratio |
 | --- | --- |
-| Hero title / mint | 14.07:1 |
+| Hero title / darkest mint endpoint | 12.79:1 |
 | Hero helper / mint | 7.44:1 |
 | Badge text / pale blue | 8.40:1 |
 | Primary button white / blue | 5.82:1 |
@@ -91,7 +91,7 @@ No code, numeric or usability launch blocker was found in the exercised Chromium
 
 ## Validation and file inventory
 
-All required checks passed: `npm run lint`, `npm run typecheck` (including after restoring generated route-path churn), `npm test` (925 tests across 22 files), `npm run build`, `npm run data:verify` (32 artifacts; 1191 observed rows; 80 coverage cells), `npm run test:e2e -- --workers=2` (23 tests), and `git diff --check`. The two added browser cases are the 320px full regression journey and keyboard/empty-state test. Existing assertions were extended for mobile source cards, result H1 focus and first-invalid focus. Production metadata confirms the development-only route returns 404.
+All required checks passed: `npm run lint`, `npm run typecheck` (including after restoring generated route-path churn), `npm test` (925 tests across 22 files), `npm run build`, `npm run data:verify` (32 artifacts; 1191 observed rows; 80 coverage cells), `npm run test:e2e -- --workers=2` (23 tests), and `git diff --check`. Slice 3B added the 320px full regression journey and keyboard/empty-state test; its final disclosure correction added 1024px and 768px Manchester–Leeds cases, bringing the Slice 3A baseline of 19 to 23. Existing assertions were extended for mobile source cards, result H1 focus and first-invalid focus. Production metadata confirms the development-only route returns 404.
 
 All 32 generated JSON hashes match the starting baseline. The raw workbook remains untracked and unchanged at SHA-256 `63905dd882d36567dbc039be2f822bb0c16a1763d662c38de0525103b85c7fab`. There are no changes in `src/engine`, `src/data` or `src/product`, nor in reducer/provider/result-state behavior. No dependency or lockfile changes. Nothing staged or committed.
 
@@ -121,3 +121,5 @@ SourceExplanation extracts the existing renderer and date formatter without chan
 The real Manchester–Leeds production journey opens Current Rent, Destination Rent, Current Council tax and Destination entered Groceries at 1440, 1024, 768, 390 and 320px. All 20 close-ups were visually inspected: prose and readable source titles wrap naturally, effective dates and full limitation lists remain present, and both source and entered-baseline contexts remain explicit. Mobile lists are naturally longer but no longer compete with adjacent monetary columns. Captures: `/tmp/ukmr-source-{Rent-current,Rent-destination,Council-tax-current,Groceries-destination}-{1440,1024,768,390,320}.png`.
 
 Browser assertions cover colSpan=4 and available row width, stable header widths, no page/panel overflow, context, keyboard focus, expanded state, closed links and side switching. Existing source selectors were updated for the button/region structure. The first run found one obsolete exact-text selector; after correcting it, all 23 browser tests passed. The full 925-test unit suite and financial regression values remain unchanged. No calculation, engine/product contract, dependency or evidence data changes were needed. This fix is safe to include in the existing Slice 3B commit; nothing is staged or committed. The existing Safari/VoiceOver sign-off limitation still applies.
+
+Closure recheck: the hero-title figure above uses #072626 against the darkest mint gradient endpoint #d4ebe5; the previous 14.07:1 value used a lighter endpoint. It still exceeds the applicable threshold. For the current closure counts and decision, see [Milestone 3 closure audit](milestone-3-closure.md); the validation history above remains the Slice 3B record.
