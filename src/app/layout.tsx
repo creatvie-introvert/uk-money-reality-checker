@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "UK Money Reality",
-  description: "Production rebuild foundation for UK Money Reality.",
+  description: "Compare the financial impact of a move across supported UK cities, using published evidence and your own household amounts.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
