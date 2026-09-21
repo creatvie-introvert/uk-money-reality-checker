@@ -24,6 +24,13 @@ npm run dev
 
 Open `http://localhost:3000` to view the temporary development shell.
 
+For physical-phone testing on the same Wi-Fi, open `http://192.168.1.20:3000/calculator`.
+`next.config.ts` explicitly allows this Mac's current LAN address and `127.0.0.1`
+for Next.js development connections. If the Mac's LAN address changes, replace
+that address in `allowedDevOrigins` and restart `npm run dev`; do not use a wildcard.
+A rejected development connection can leave the server-rendered calculator disabled
+because it has not hydrated. This allowlist applies only to `next dev`.
+
 ## Checks
 
 ```bash

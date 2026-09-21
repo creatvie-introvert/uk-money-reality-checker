@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Dev-only: allow loopback automation and this Mac's LAN origin for phone testing.
+  // A blocked development connection leaves the server-rendered form unhydrated.
+  allowedDevOrigins: ["127.0.0.1", "192.168.1.20"],
   reactStrictMode: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
