@@ -1,13 +1,13 @@
 import Link from "next/link";
+import { PublicHeader } from "@/components/public/PublicHeader";
+import { PublicFooter } from "@/components/public/PublicFooter";
 import type { ResultsViewModel } from "@/product/calculator/view-model";
 import { CostBreakdown } from "./CostBreakdown";
 import { ExplanationDetails, sourcePeriodText } from "./SourceExplanation";
 import styles from "./results.module.css";
 
 export function ResultsHeader({ onRestart, results = false }: { onRestart?: () => void; results?: boolean } = {}) {
-  return <header className={styles.header}><Link href="/" className={styles.brand}>UK Money Reality<small>REAL NUMBERS. BRIGHTER DECISIONS.</small></Link>
-    <nav aria-label="Main navigation"><Link href="/calculator" aria-current="location">Move Calculator</Link>{results && <><a href="#breakdown">Compare</a><a href="#methodology">How it works</a></>}{onRestart ? <button type="button" className={styles.outlineButton} onClick={onRestart}>New comparison</button> : <Link className={styles.outlineButton} href="/calculator">New comparison</Link>}</nav>
-  </header>;
+  return <PublicHeader calculator results={results} onRestart={onRestart} />;
 }
 /** Presentation only: receives composed strings, states and visual scales, never engine data. */
 export function ResultsPage({ model, onRestart, onEdit }: { model: ResultsViewModel; onRestart?: () => void; onEdit?: (category?: string) => void }) {
@@ -48,8 +48,9 @@ export function ResultsPage({ model, onRestart, onEdit }: { model: ResultsViewMo
       </section>
       <section id="next-actions" className={styles.next}><h2>Next steps</h2><div>{onEdit ? <button type="button" onClick={() => onEdit()}><strong>Adjust your inputs →</strong><span>Review and edit your comparison</span></button> : <div aria-disabled="true"><strong>Adjust your inputs</strong><span>Development preview</span></div>}{onRestart ? <button type="button" onClick={onRestart}><strong>Start a new comparison →</strong><span>Clear inputs and start again</span></button> : <div aria-disabled="true"><strong>Start a new comparison</strong><span>Development preview</span></div>}<a href="#methodology"><strong>Explore the sources →</strong><span>See how these results were calculated</span></a></div></section>
     </main>
+    <PublicFooter />
   </div>;
 }
 export function EmptyResults() {
-  return <div className={styles.page}><a className={styles.skip} href="#results-main">Skip to results</a><ResultsHeader /><main id="results-main" tabIndex={-1} className={styles.container}><section className={`${styles.hero} ${styles.empty}`}><div><span className={styles.eyebrow}>Your move reality</span><h1>Your comparison starts with your inputs</h1><p>Start the calculator to see your result. Inputs and results stay in memory only; refreshing or leaving the calculator clears them.</p><Link className={styles.outlineButton} href="/calculator">Start calculator</Link></div></section></main></div>;
+  return <div className={styles.page}><a className={styles.skip} href="#results-main">Skip to results</a><ResultsHeader /><main id="results-main" tabIndex={-1} className={styles.container}><section className={`${styles.hero} ${styles.empty}`}><div><span className={styles.eyebrow}>Your move reality</span><h1>Your comparison starts with your inputs</h1><p>Start the calculator to see your result. Inputs and results stay in memory only; refreshing or leaving the calculator clears them.</p><Link className={styles.outlineButton} href="/calculator">Start calculator</Link></div></section></main><PublicFooter /></div>;
 }

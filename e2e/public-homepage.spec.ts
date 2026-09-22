@@ -10,6 +10,7 @@ for (const width of [1440, 1280, 1024, 768, 390, 320]) {
     await expect(page.getByRole("banner")).toHaveCount(1);
     await expect(page.getByRole("contentinfo")).toHaveCount(1);
     const navigation = page.getByRole("navigation", { name: "Main navigation", exact: true });
+    if (width <= 700) await page.getByRole("button", { name: "Menu", exact: true }).click();
     for (const label of ["Home", "Calculator", "Cities", "Methodology", "Sources"]) {
       const link = navigation.getByRole("link", { name: label, exact: true });
       await expect(link).toBeVisible();
@@ -51,6 +52,7 @@ test("public keyboard navigation reaches transparency pages and returns home", a
     ["Methodology", "/methodology", "Methodology"],
     ["Sources", "/sources", "Data sources"],
   ]) {
+    await page.getByRole("button", { name: "Menu", exact: true }).click();
     const link = page.getByRole("navigation", { name: "Main navigation", exact: true }).getByRole("link", { name: label, exact: true });
     await page.keyboard.press("Tab");
     await link.focus();
@@ -60,7 +62,7 @@ test("public keyboard navigation reaches transparency pages and returns home", a
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(heading);
     await expect(page.getByRole("main")).not.toContainText("being prepared");
     await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
-    await expect(page.getByRole("navigation", { name: "Main navigation", exact: true }).getByRole("link", { name: label, exact: true })).toHaveAttribute("aria-current", "page");
+    await expect(page.locator('header nav a[aria-current="page"]')).toHaveText(label);
     for (const width of [1440, 1280, 1024, 768, 390, 320]) {
       await page.setViewportSize({ width, height: 844 });
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

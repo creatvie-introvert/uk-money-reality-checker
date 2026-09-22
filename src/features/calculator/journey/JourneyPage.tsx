@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { PublicFooter } from "@/components/public/PublicFooter";
 import { ResultsHeader } from "@/components/report/ResultsPage";
 import report from "@/components/report/results.module.css";
 import { journeyCopy, fieldValue, reviewSections, roles, roleLabels, steps, stepLabels, stepTitles, stepFields, stepPath, validateStep, validateJourney, type Field, type FieldError, type JourneyStep } from "@/product/calculator/journey";
@@ -58,7 +59,7 @@ export function JourneyPage({ step }: { step: JourneyStep }) {
   return <div className={`${report.page} ${styles.page}`}><a className={report.skip} href="#calculator-main">Skip to calculator</a><ResultsHeader onRestart={restart} />
     <main id="calculator-main" tabIndex={-1} className={styles.container}>
       <nav aria-label="Calculator progress"><ol className={styles.progress}>{steps.map((s, i) => <li key={s} data-completed={state.completed.includes(s)} aria-current={s === step ? "step" : undefined}><span className={styles.dot} aria-hidden="true">{state.completed.includes(s) && s !== step ? "✓" : i + 1}</span><span>{stepLabels[s]}{state.completed.includes(s) && <small>Visited & validated</small>}</span></li>)}</ol></nav>
-      <section className={styles.panel}><p className={styles.eyebrow}>Step {position + 1} of 7 · Your move comparison</p><h1 ref={heading} tabIndex={-1}>{stepTitles[step]}</h1>
+      <section className={styles.panel}><p className={styles.eyebrow}>Step {position + 1} of 7 · Your move comparison</p><h1 ref={heading} tabIndex={-1} style={{ outline: "0 none transparent", boxShadow: "none" }}>{stepTitles[step]}</h1>
         <p className={styles.intro}>{step === "review" ? "Review your entered inputs. Unknown costs stay unresolved; they are never replaced with estimates." : "Your current and destination details stay separate. Nothing is saved after you leave this calculator session."}</p>
         {errors.length > 0 && <div className={styles.errorSummary} role="alert" aria-label="Input errors" tabIndex={-1} ref={errorSummary}><h2>Check these inputs</h2><ul>{errors.map((e, i) => <li key={`${e.path}:${i}`}>{step === "review" ? <button type="button" onClick={() => { dispatch({ type: "EDIT" }); navigate(e.step); }}>{e.message} — {stepLabels[e.step]}</button> : <a href={`#${e.path}`} onClick={() => document.getElementById(e.path)?.focus()}>{e.message}</a>}</li>)}</ul></div>}
         {failed && <p role="alert">The comparison could not be calculated. Your inputs are still here; please try again.</p>}
@@ -76,5 +77,6 @@ export function JourneyPage({ step }: { step: JourneyStep }) {
         <p className={styles.privacy}>Progress tracks the steps you have visited and validated, not financial completeness. Refreshing clears your inputs.</p>
       </section>
     </main>
+    <PublicFooter />
   </div>;
 }

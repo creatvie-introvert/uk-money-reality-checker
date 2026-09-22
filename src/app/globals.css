@@ -14,9 +14,9 @@
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  background: var(--ukmr-color-paper);
+  color: var(--ukmr-color-text);
+  font-family: var(--ukmr-font-sans);
 }
 
 button,

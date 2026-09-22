@@ -11,15 +11,6 @@
 .site :focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
 .skip { position: absolute; top: 10px; left: -10000px; z-index: 10; padding: 12px 18px; background: white; }
 .skip:focus { left: 12px; }
-.header { background: white; border-bottom: 1px solid var(--line); }
-.headerInner { max-width: 1160px; margin: auto; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.brand { font-size: 26px; font-weight: 800; letter-spacing: -1px; line-height: 1; color: var(--navy) !important; text-decoration: none; white-space: nowrap; }
-.brand small { display: block; margin-top: 9px; font-size: 8px; font-weight: 500; letter-spacing: 1.6px; }
-.header nav { display: flex; align-items: center; gap: 20px; }
-.header nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; color: #233c68; font-size: 13px; font-weight: 600; }
-.header nav a[aria-current] { color: var(--blue); box-shadow: inset 0 -2px var(--blue); }
-.header nav a:hover { text-decoration: underline; }
-.header nav .navCalculator { padding: 0 15px; border: 1px solid var(--blue); border-radius: 5px; color: var(--blue); }
 .hero { background: linear-gradient(115deg, #e1f5ed, #ecf8f4 70%, #d4ebe5); border-bottom: 1px solid #d9eee6; }
 .heroInner { max-width: 1160px; margin: auto; padding: 68px 24px 64px; display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 52px; align-items: center; }
 .eyebrow { color: #006645; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.15px; margin-bottom: 18px !important; }
@@ -76,18 +67,6 @@
 .finalCta h2 { font-size: 30px; margin-bottom: 12px; }
 .finalCta p { margin: 0; color: var(--muted); font-size: 14px; }
 .finalCta .primary { flex-shrink: 0; }
-.footer { background: #091737; color: white; }
-.footerInner { max-width: 1160px; padding: 44px 24px 24px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
-.site .footer a { color: white; text-decoration: none; }
-.site .footer a:hover { text-decoration: underline; }
-.footerBrand { font-size: 23px; font-weight: 800; letter-spacing: -.7px; }
-.footer p { max-width: 52ch; font-size: 13px; color: #c8d5e7; margin: 12px 0 0; }
-.footer nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 24px; align-content: start; }
-.footer nav a { display: inline-flex; min-height: 44px; align-items: center; font-size: 14px; }
-.footerBottom { border-top: 1px solid #3c4a65; padding-top: 20px; grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 24px; align-items: baseline; }
-.footerBottom span { font-size: 12px; color: #c8d5e7; }
-.footerBottom p { margin: 0; font-size: 12px; }
-.footer :focus-visible { outline-color: white; }
 .placeholder { max-width: 880px; margin: 0 auto; padding: 72px 24px 80px; }
 .placeholder h1 { max-width: 22ch; font-size: clamp(34px, 4vw, 46px); margin-bottom: 24px; }
 .placeholder > p { color: var(--muted); }
@@ -95,8 +74,6 @@
 .preparationNotice h2 { font-size: 20px; margin-bottom: 12px; }
 .preparationNotice p { margin: 0; font-size: 15px; }
 @media (max-width: 1000px) {
-  .headerInner { gap: 20px; flex-wrap: wrap; }
-  .header nav { gap: 24px; }
   .heroInner { gap: 28px; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); padding-top: 48px; }
   .hero h1 { font-size: 42px; }
   .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -110,15 +87,8 @@
   .cityGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .steps { gap: 24px; }
   .transparency { grid-template-columns: 1fr; }
-  .footerInner { grid-template-columns: 1fr; }
-  .footer nav { justify-content: flex-start; }
 }
 @media (max-width: 600px) {
-  .headerInner { padding: 22px 20px 12px; gap: 18px; }
-  .brand { font-size: 25px; }
-  .header nav { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 8px; }
-  .header nav a { min-height: 44px; font-size: 13px; justify-content: center; }
-  .header nav .navCalculator { padding-inline: 10px; }
   .heroInner { padding: 36px 20px; gap: 30px; }
   .hero h1 { font-size: clamp(34px, 8.5vw, 40px); line-height: 1.1; }
   .lead { font-size: 16px; }
@@ -136,9 +106,6 @@
   .transparency { margin-inline: 20px; padding: 24px 20px; gap: 26px; }
   .evidenceCard { padding: 20px; }
   .finalCta { flex-direction: column; align-items: stretch; padding: 44px 20px; }
-  .footerInner { padding: 36px 20px 24px; gap: 24px; }
-  .footer nav { column-gap: 22px; }
-  .footerBottom { flex-direction: column; gap: 12px; }
   .placeholder { padding: 44px 20px 52px; }
 }
 @media (max-width: 360px) {

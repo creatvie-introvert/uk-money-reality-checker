@@ -1,0 +1,43 @@
+/* Shared foundation from the approved homepage/calculator prototypes.
+   Existing page-body palettes remain scoped until their own redesign milestone. */
+:root {
+  --ukmr-color-brand: #142748;
+  --ukmr-color-text: #16253f;
+  --ukmr-color-muted: #5d6b80;
+  --ukmr-color-paper: #f7f8f6;
+  --ukmr-color-surface: #fff;
+  --ukmr-color-border: #dce4ec;
+  --ukmr-color-positive: #177653;
+  --ukmr-color-surface-positive: #d9f5e8;
+  --ukmr-color-surface-info: #eaf2fb;
+  --ukmr-color-action: var(--ukmr-color-brand);
+  --ukmr-color-on-action: #fff;
+  --ukmr-color-focus: #e6a04b;
+  --ukmr-color-focus-on-light: var(--ukmr-color-brand);
+  --ukmr-color-footer: #112342;
+  --ukmr-color-footer-text: #bfcedf;
+  --ukmr-color-footer-muted: #adbed3;
+  --ukmr-color-footer-border: #334660;
+  --ukmr-color-footer-mark: #32654f;
+  --ukmr-font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ukmr-text-small: .8125rem;
+  --ukmr-text-body: 1rem;
+  --ukmr-line-body: 1.55;
+  --ukmr-space-1: 4px;
+  --ukmr-space-2: 8px;
+  --ukmr-space-3: 12px;
+  --ukmr-space-4: 16px;
+  --ukmr-space-5: 24px;
+  --ukmr-space-6: 32px;
+  --ukmr-space-7: 48px;
+  --ukmr-space-8: 64px;
+  --ukmr-radius-control: 12px;
+  --ukmr-radius-card: 24px;
+  --ukmr-radius-pill: 999px;
+  --ukmr-border-width: 1px;
+  --ukmr-shadow-action: 0 9px 18px #14274819;
+  --ukmr-shadow-panel: 0 12px 25px #16253f14;
+  --ukmr-container-public: 1180px;
+  --ukmr-container-calculator: 1150px;
+  --ukmr-target-min: 44px;
+}
