@@ -1,69 +1,244 @@
 import type { Metadata } from "next";
 import { cityDefinitions } from "@/product/cities/registry";
 import Link from "next/link";
-import styles from "@/components/public/public.module.css";
+import { HomepageExample } from "@/components/public/HomepageExample";
+import styles from "@/components/public/homepage.module.css";
 
 export const metadata: Metadata = {
   title: "UK Money Reality — Compare the financial impact of moving in the UK",
   description: "Compare household costs, take-home pay and monthly financial buffer across supported UK cities using published evidence and your own household amounts.",
 };
 
-const principles = [
-  ["Official UK evidence", "Published UK data is used where it can suitably represent the cost you’re comparing."],
-  ["Your actual household amounts", "Enter your own costs where published evidence cannot truthfully represent your household."],
-  ["Missing stays missing", "Unknown or unsupported values are not silently turned into £0. A result can be partial."],
-  ["Transparent sources", "See which values are official data, calculated values or your own entered amounts."],
-];
-
 export default function HomePage() {
-  return <>
-    <section className={styles.hero} aria-labelledby="home-title">
-      <div className={styles.heroInner}>
-        <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>UK relocation, grounded in evidence</p>
-          <h1 id="home-title">See what a move could really mean for your monthly money</h1>
-          <p className={styles.lead}>Compare household costs, take-home pay and the monthly buffer left after the costs included in the calculator.</p>
-          <div className={styles.actions}><Link href="/calculator" className={styles.primary}>Compare your move <span aria-hidden="true">→</span></Link><Link href="/cities" className={styles.secondary}>Explore supported cities</Link></div>
-          <p className={styles.heroNote}>Your household. Your inputs. A comparison with its limits in view.</p>
-        </div>
-        <aside className={styles.moveIllustration} aria-label="What your comparison brings together">
-          <p className={styles.eyebrow}>A move is more than a rent change</p>
-          <div className={styles.locationPair}><span>Where you live now</span><span aria-hidden="true">→</span><span>Where you’re moving</span></div>
-          <ul className={styles.comparisonRows}>
-            <li><span className={styles.motif} aria-hidden="true">↔</span><div><strong>Household costs</strong><span>What changes in your included costs</span></div></li>
-            <li><span className={styles.motif} aria-hidden="true">↔</span><div><strong>Take-home pay</strong><span>Income after supported tax and NI calculations, or your actual amount</span></div></li>
-            <li><span className={styles.motif} aria-hidden="true">↔</span><div><strong>Monthly buffer</strong><span>What remains after the costs included</span></div></li>
-          </ul>
-          <p className={styles.illustrationNote}>Your inputs and published evidence, explained together.</p>
-        </aside>
-      </div>
-    </section>
-
-    <section className={styles.section} aria-labelledby="principles-title">
-      <div className={styles.sectionHeading}><p className={styles.eyebrow}>A useful comparison starts with honesty</p><h2 id="principles-title">Real evidence. Room for your reality.</h2><p>Published figures are a starting point, not a complete picture of every household.</p></div>
-      <div className={styles.principles}>{principles.map(([title, text]) => <article key={title}><span className={styles.smallRule} aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div>
-    </section>
-
-    <section className={styles.how} aria-labelledby="how-title"><div className={styles.section}>
-      <div className={styles.sectionHeading}><p className={styles.eyebrow}>How it works</p><h2 id="how-title">From a possible move to a clearer picture</h2></div>
-      <ol className={styles.steps}>
-        <li><span aria-hidden="true">01</span><h3>Tell us about the move</h3><p>Choose where you live now and where you’re considering moving. Each location keeps its own details.</p></li>
-        <li><span aria-hidden="true">02</span><h3>Add the household and money details</h3><p>Enter your housing, income and household costs. Review your choices before you calculate.</p></li>
-        <li><span aria-hidden="true">03</span><h3>See what changes</h3><p>Compare monthly costs, take-home pay and buffer, and see the biggest cost drivers. Where eligible, see the salary needed to preserve the same monthly buffer.</p></li>
-      </ol>
-    </div></section>
-
-    <section className={styles.section} aria-labelledby="cities-title">
-      <div className={styles.sectionHeading}><p className={styles.eyebrow}>Places you can compare</p><h2 id="cities-title">Eight cities. Your own circumstances.</h2><p>These cities are supported by the calculator. Published evidence varies by category and location; your own amounts can fill supported gaps.</p></div>
-      <ul className={styles.cityGrid}>{cityDefinitions.map((city) => <li key={city.slug}><Link href={`/cities/${city.slug}`}>{city.displayName}<span aria-hidden="true">↗</span></Link></li>)}</ul>
-      <p className={styles.supporting}>Explore each city’s evidence coverage, source periods and known limitations.</p>
-    </section>
-
-    <section className={styles.transparency} aria-labelledby="transparency-title">
-      <div><p className={styles.eyebrow}>The context belongs with the numbers</p><h2 id="transparency-title">Built to show its workings</h2><p>Source and effective periods differ by category. Not every cost has one official city-level figure that describes your household.</p><p>Inspect sources and assumptions in your results. When the evidence or your inputs are incomplete, the calculator can return a partial result rather than guess.</p><Link href="/methodology" className={styles.textLink}>Read the methodology <span aria-hidden="true">→</span></Link><p className={styles.supporting}>Read how the comparison works, including partial results and your own amounts. Source explanations also accompany calculator results.</p></div>
-      <div className={styles.evidenceCard}><h3>Know what each value represents</h3><dl><div><dt>Official data</dt><dd>Published evidence suitable for the selected inputs.</dd></div><div><dt>Calculated</dt><dd>A calculation from supported inputs and evidence.</dd></div><div><dt>Your amount</dt><dd>An amount you entered for your household.</dd></div></dl><Link href="/sources" className={styles.textLink}>Explore the data sources <span aria-hidden="true">→</span></Link></div>
-    </section>
-
-    <section className={styles.finalCta} aria-labelledby="start-title"><div><h2 id="start-title">Ready to compare your move?</h2><p>Start with what you know. See which details still need your input.</p></div><Link href="/calculator" className={styles.primary}>Start the calculator <span aria-hidden="true">→</span></Link></section>
-  </>;
+  return <div className={styles.home}>
+<section className={styles["hero"]} id="hero" aria-labelledby="hero-title">
+<div className={styles["wrap"] + " " + styles["hero-grid"]}>
+<div>
+<div className={styles["eyebrow"]}>Your move, your numbers</div>
+<h1 id="hero-title">See what a move could mean for your <em>monthly money.</em>
+</h1>
+<p>Compare household costs, take-home pay and what you could have left each month. Start with published UK evidence, then add the figures that reflect your household.</p>
+<div className={styles["actions"]}>
+<Link className={styles["btn"] + " " + styles["btn-primary"]} href="/calculator">Compare your move <span aria-hidden="true">↗</span>
+</Link>
+<Link className={styles["btn"] + " " + styles["btn-secondary"]} href="#how">See how it works <span aria-hidden="true">↓</span>
+</Link>
+</div>
+<div className={styles["micro"]}>
+<span>Eight UK cities</span>
+<span>No account needed</span>
+<span>Sources and gaps shown clearly</span>
+</div>
+</div>
+<div className={styles["mock-shell"]} id="calculator-preview">
+<div aria-hidden="true" className={styles["orbit"]}>
+</div>
+<div className={styles["mock"]} aria-hidden="true">
+<div className={styles["mock-top"]}>
+<span className={styles["mock-brand"]}>Your move, in focus.</span>
+<span className={styles["pill"]}>PRODUCT PREVIEW</span>
+</div>
+<div className={styles["mock-inner"]}>
+<div className={styles["locations"]}>
+<div className={styles["location"]}>
+<small>CURRENT CITY</small>
+<b>Current city</b>
+</div>
+<span aria-hidden="true" className={styles["arrow"]}>→</span>
+<div className={styles["location"]}>
+<small>NEXT UP</small>
+<b>Next city</b>
+</div>
+</div>
+<div className={styles["mock-title"]}>What your results could show</div>
+<div className={styles["signal"]}>
+<span aria-hidden="true" className={styles["icon-b"]}>⌂</span>
+<div>
+<strong>Household outgoings</strong>
+<small>Rent, bills and everyday spending</small>
+</div>
+<span aria-hidden="true" className={styles["rail"]}>
+<i>
+</i>
+</span>
+</div>
+<div className={styles["signal"]}>
+<span aria-hidden="true" className={styles["icon-b"]}>£</span>
+<div>
+<strong>Take-home pay</strong>
+<small>Income after tax and NI</small>
+</div>
+<span aria-hidden="true" className={styles["rail"]}>
+<i>
+</i>
+</span>
+</div>
+<div className={styles["signal"]}>
+<span aria-hidden="true" className={styles["icon-b"]}>↗</span>
+<div>
+<strong>Monthly buffer</strong>
+<small>What remains after included costs</small>
+</div>
+<span aria-hidden="true" className={styles["rail"]}>
+<i>
+</i>
+</span>
+</div>
+</div>
+<div className={styles["mock-bottom"]}>
+<strong>Clarity over guesswork.</strong>
+<span>Evidence + your numbers</span>
+</div>
+</div>
+<p className={styles["mock-note"]}>Illustrative product preview: no personal amounts or outcomes have been calculated.</p>
+</div>
+</div>
+</section>
+<HomepageExample />
+<section className={styles["section"] + " " + styles["steps"]} id="how" aria-labelledby="how-title">
+<div className={styles["wrap"]}>
+<div className={styles["section-intro"]}>
+<span className={styles["eyebrow"]}>Three clear steps</span>
+<h2 id="how-title">Three steps to a clearer picture.</h2>
+<p>Choose your cities, add your household details and see what could change. You can go back and update your answers whenever you need to.</p>
+</div>
+<ol role="list" className={styles["steps-grid"]}>
+<li className={styles["step"]}>
+<span className={styles["step-num"]}>01 / CHOOSE</span>
+<div aria-hidden="true" className={styles["step-art"]}>
+<span className={styles["art-chip"]}>Current city</span>→<span className={styles["art-chip"]}>Next city</span>
+</div>
+<h3>Choose your cities</h3>
+<p>Compare two of our eight supported cities, or explore changes within the same city.</p>
+</li>
+<li className={styles["step"]}>
+<span className={styles["step-num"]}>02 / PERSONALISE</span>
+<div aria-hidden="true" className={styles["step-art"]}>
+<span className={styles["art-chip"]}>£ Income</span>
+<span className={styles["art-chip"]}>⌂ Outgoings</span>
+</div>
+<h3>Add your household details</h3>
+<p>Enter your income, housing details and everyday costs. Use published figures where supported and your own amounts where needed.</p>
+</li>
+<li className={styles["step"]}>
+<span className={styles["step-num"]}>03 / UNDERSTAND</span>
+<div aria-hidden="true" className={styles["step-art"]}>
+<span className={styles["art-line"]}>
+</span>
+<span className={styles["art-line"]} style={{ width: 56, background: "var(--ukmr-color-positive)" }}>
+</span>
+<span className={styles["art-line"]} style={{ width: 28, background: "var(--ukmr-color-focus)" }}>
+</span>
+</div>
+<h3>See what changes</h3>
+<p>Explore your monthly costs, take-home pay and buffer, with sources and missing information clearly identified. Where supported, see the salary needed to preserve the same monthly buffer.</p>
+</li>
+</ol>
+</div>
+</section>
+<section className={styles["section"] + " " + styles["cities"]} id="cities" aria-labelledby="cities-title">
+<div className={styles["wrap"]}>
+<div className={styles["cities-top"]}>
+<div className={styles["section-intro"]}>
+<span className={styles["eyebrow"]}>Explore the UK</span>
+<h2 id="cities-title">Eight cities. Your next chapter.</h2>
+<p>Explore the evidence available for each location before building a household comparison.</p>
+</div>
+<Link className={styles["btn"] + " " + styles["btn-secondary"]} href="/calculator">Start a comparison ↗</Link>
+</div>
+<ul role="list" className={styles["city-grid"]}>{cityDefinitions.map((city) => <li key={city.slug}>
+<Link className={styles.city} href={`/cities/${city.slug}`} aria-label={city.displayName}>
+  <span className={styles["city-surface"]} aria-hidden="true">
+<span>{city.displayName.slice(0, 3).toUpperCase()}</span>
+</span>
+  <span className={styles["city-name"]}>{city.displayName}</span>
+<span className={styles["city-meta"]}>{city.slug === "london" ? "Regional rent evidence" : city.slug === "edinburgh" ? "Exact published rent row unavailable" : city.slug === "glasgow" ? "Greater Glasgow rent geography" : "Explore available evidence"}</span>
+<span aria-hidden="true" className={styles["city-arrow"]}>↗</span>
+</Link>
+</li>)}</ul>
+<p className={styles["cities-foot"]}>Evidence coverage varies by category and geography. Explore each city’s published sources and limitations before comparing your household.</p>
+</div>
+</section>
+<section className={styles["section"] + " " + styles["method-context"]} id="evidence-context" aria-labelledby="evidence-context-title">
+<div className={styles["wrap"]}>
+<div className={styles["context-panel"]}>
+<div className={styles["context-copy"]}>
+<span className={styles["eyebrow"]}>Understand your results</span>
+<h2 id="evidence-context-title">Know where your numbers come from.</h2>
+<p>You can inspect the published sources, dates and locations behind a figure, see which amounts you entered and spot any gaps in your comparison.</p>
+<div className={styles["context-links"]}>
+<Link className={styles["text-link"]} href="/methodology">Read the methodology <span aria-hidden="true">→</span>
+</Link>
+<Link className={styles["text-link"]} href="/sources">Explore the data sources <span aria-hidden="true">→</span>
+</Link>
+</div>
+</div>
+<aside aria-label="What you will see in your results" className={styles["context-card"]}>
+<h3>What you’ll see in your results</h3>
+<div className={styles["context-list"]}>
+<div className={styles["context-item"]}>
+<strong>Official data</strong>
+<p>Published figures, with their source, geography and period.</p>
+</div>
+<div className={styles["context-item"]}>
+<strong>Calculated</strong>
+<p>Amounts worked out from supported evidence and your inputs.</p>
+</div>
+<div className={styles["context-item"]}>
+<strong>Your amount</strong>
+<p>Costs and take-home figures you entered yourself.</p>
+</div>
+<div className={styles["context-item"]}>
+<strong>Missing information</strong>
+<p>Gaps stay visible. An unknown amount is not an explicit £0. If a comparison is incomplete, we say so.</p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<section className={styles["section"] + " " + styles["faq"]} id="faq" aria-labelledby="faq-title">
+<div className={styles["wrap"] + " " + styles["faq-grid"]}>
+<div className={styles["faq-heading"]}>
+<span className={styles["eyebrow"]}>Before you begin</span>
+<h2 id="faq-title">Questions before you start?</h2>
+<p>The calculator is here to help you explore a decision, not give you a one-size-fits-all answer.</p>
+<Link className={styles["text-link"]} href="/calculator">Start your comparison <span aria-hidden="true">→</span>
+</Link>
+</div>
+<div className={styles["faq-list"]}>
+<details>
+<summary>How recent is the data?<span aria-hidden="true" className={styles["faq-plus"]}>+</span>
+</summary>
+<p>Different sources cover different periods. We show the source, geography and relevant dates alongside the figures used in your comparison.</p>
+</details>
+<details>
+<summary>What if I don’t know one of my costs?<span aria-hidden="true" className={styles["faq-plus"]}>+</span>
+</summary>
+<p>You can leave optional costs unknown. If missing information prevents a complete comparison, your results explain what is unresolved rather than filling it with a guess.</p>
+</details>
+<details>
+<summary>Can I compare more than one move?<span aria-hidden="true" className={styles["faq-plus"]}>+</span>
+</summary>
+<p>Yes. You can start another comparison, but this version of the calculator does not save a history of earlier comparisons.</p>
+</details>
+<details>
+<summary>Is this my complete household budget?<span aria-hidden="true" className={styles["faq-plus"]}>+</span>
+</summary>
+<p>Not necessarily. Results cover the categories included in your comparison. Other expenses—such as childcare or debt repayments—may not be represented.</p>
+</details>
+</div>
+</div>
+</section>
+<section className={styles["bottom-cta"]} id="start" aria-labelledby="start-title">
+<div className={styles["wrap"] + " " + styles["cta-inner"]}>
+<div>
+<span className={styles["eyebrow"]}>Start with your household</span>
+<h2 id="start-title">Ready to see what could change?</h2>
+<p>Choose your cities, add your household details and explore your results.</p>
+</div>
+<Link className={styles["btn"] + " " + styles["btn-primary"]} href="/calculator">Compare your move ↗</Link>
+</div>
+</section>
+</div>;
 }

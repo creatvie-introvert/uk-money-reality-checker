@@ -20,16 +20,17 @@ for (const width of [1440, 1280, 1024, 768, 390, 320]) {
       expect(box!.x + box!.width).toBeLessThanOrEqual(width);
     }
     await expect(navigation.getByRole("link", { name: "Home", exact: true })).toHaveAttribute("aria-current", "page");
-    const cities = page.getByRole("region", { name: "Eight cities. Your own circumstances.", exact: true });
+    const cities = page.getByRole("region", { name: "Eight cities. Your next chapter.", exact: true });
     for (const city of ["London", "Birmingham", "Manchester", "Leeds", "Liverpool", "Bristol", "Edinburgh", "Glasgow"]) {
       await expect(cities.getByRole("link", { name: city, exact: true })).toHaveAttribute("href", `/cities/${city.toLowerCase()}`);
     }
-    for (const title of ["Official UK evidence", "Your actual household amounts", "Missing stays missing", "Transparent sources"]) await expect(page.getByRole("heading", { name: title, exact: true })).toBeVisible();
+    const context = page.locator("#evidence-context");
+    for (const label of ["Official data", "Calculated", "Your amount", "Missing information"]) await expect(context).toContainText(label);
+    await expect(context).toContainText("An unknown amount is not an explicit £0");
     await expect(page.getByRole("link", { name: "Read the methodology", exact: true })).toHaveAttribute("href", "/methodology");
-    // The only currency figure is the explicit missing-is-not-zero explanation.
-    const text = await page.getByRole("main").innerText();
-    expect(text.match(/£[\d,.]+/g)).toEqual(["£0."]);
-    expect(text).not.toMatch(/£47,477|£151\.36|cheapest|most affordable|\d+%/i);
+    const example = page.locator("#example");
+    for (const value of ["−£151.36", "+£244.82", "+£396.18"]) await expect(example).toContainText(value);
+    await expect(page.getByRole("main")).not.toContainText(/cheapest|most affordable|design prototype/i);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const outOfBounds = await page.locator("main a, footer a").evaluateAll((links) => links.filter((link) => {
       const r = link.getBoundingClientRect(); return r.left < 0 || r.right > innerWidth;
