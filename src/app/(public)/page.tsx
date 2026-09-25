@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { cityDefinitions } from "@/product/cities/registry";
 import Link from "next/link";
+import Image from "next/image";
+import { cityPhotography, cityPhotographSizes } from "@/product/homepage/city-photography";
 import { HomepageExample } from "@/components/public/HomepageExample";
 import styles from "@/components/public/homepage.module.css";
 
@@ -148,15 +150,38 @@ export default function HomePage() {
 </div>
 <ul role="list" className={styles["city-grid"]}>{cityDefinitions.map((city) => <li key={city.slug}>
 <Link className={styles.city} href={`/cities/${city.slug}`} aria-label={city.displayName}>
-  <span className={styles["city-surface"]} aria-hidden="true">
-<span>{city.displayName.slice(0, 3).toUpperCase()}</span>
-</span>
+  <Image
+    className={styles["city-photo"]}
+    src={cityPhotography[city.slug].localFilename}
+    alt=""
+    fill
+    sizes={cityPhotographSizes(cityPhotography[city.slug])}
+    loading="lazy"
+    style={{ objectPosition: cityPhotography[city.slug].objectPosition }}
+  />
   <span className={styles["city-name"]}>{city.displayName}</span>
 <span className={styles["city-meta"]}>{city.slug === "london" ? "Regional rent evidence" : city.slug === "edinburgh" ? "Exact published rent row unavailable" : city.slug === "glasgow" ? "Greater Glasgow rent geography" : "Explore available evidence"}</span>
 <span aria-hidden="true" className={styles["city-arrow"]}>↗</span>
 </Link>
 </li>)}</ul>
 <p className={styles["cities-foot"]}>Evidence coverage varies by category and geography. Explore each city’s published sources and limitations before comparing your household.</p>
+<details className={styles["photo-credits"]} id="city-photo-credits">
+  <summary>City photo credits and licences</summary>
+  <p>City photography is illustrative and is not financial evidence.</p>
+  <ul>{cityDefinitions.map((city) => {
+    const photo = cityPhotography[city.slug];
+    return <li key={city.slug}>
+      <strong>{city.displayName}:</strong> {photo.imageTitle} — {photo.creatorUrl
+        ? <a href={photo.creatorUrl} target="_blank" rel="noopener noreferrer">{photo.creator} (opens in new tab)</a>
+        : photo.creator}.{" "}
+      <a href={photo.sourcePageUrl} target="_blank" rel="noopener noreferrer">Image source (opens in new tab)</a>.{" "}
+      <a href={photo.licenceUrl} target="_blank" rel="noopener noreferrer">{photo.licence} (opens in new tab)</a>.{" "}
+      {photo.previousModifications.join(" ")} {photo.modificationNote}{" "}
+      {photo.licence.includes("BY-SA") && <>Photographic adaptation shared under {photo.licence}. </>}
+      {city.slug === "glasgow" && <>Public-domain dedication; credit retained for provenance.</>}
+    </li>;
+  })}</ul>
+</details>
 </div>
 </section>
 <section className={styles["section"] + " " + styles["method-context"]} id="evidence-context" aria-labelledby="evidence-context-title">
