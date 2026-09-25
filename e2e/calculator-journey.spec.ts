@@ -84,6 +84,8 @@ test("field errors focus and explicit jurisdiction; unknown income is allowed", 
 test("explicit Scottish source selections and retained override baseline", async ({ page }) => {
   await throughReview(page);
   await page.getByRole("button", { name: "Edit move", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Save and return to review" })).toBeVisible();
+  await expect(page.getByTestId("move-route-preview")).toBeVisible();
   await field(page, "destination.cityId").selectOption("LOC-GLA");
   await page.getByRole("button", { name: "Save and return to review" }).click();
   await page.getByRole("button", { name: "Edit housing & council tax", exact: true }).click();

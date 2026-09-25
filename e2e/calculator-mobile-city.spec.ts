@@ -39,7 +39,7 @@ for (const width of [320, 390]) {
     await next.tap();
     await expect(page).toHaveURL(/\/calculator$/);
     await expect(destination).toBeFocused();
-    await expect(destination).toHaveAccessibleDescription(/choose or enter city/i);
+    await expect(destination).toHaveAccessibleDescription(/choose a city/i);
     await destination.selectOption("LOC-LEE");
     await current.selectOption("LOC-BRS");
     await expect(destination).toHaveValue("LOC-LEE");

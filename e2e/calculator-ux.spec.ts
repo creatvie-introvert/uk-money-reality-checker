@@ -170,7 +170,8 @@ for (const width of [1440, 1024, 768, 390, 320]) {
   });
 }
 
-test("keyboard navigation, empty-result context and first-invalid focus at 320px", async ({ page }) => {
+test("keyboard navigation, empty-result context and first-invalid focus at 320px", async ({ page, browserName }) => {
+  const tabKey = browserName === "webkit" && process.platform === "darwin" ? "Alt+Tab" : "Tab";
   await page.setViewportSize({ width: 320, height: 900 });
   await page.goto("/calculator/results");
   const heading = page.getByRole("heading", { level: 1 });
@@ -182,18 +183,113 @@ test("keyboard navigation, empty-result context and first-invalid focus at 320px
   const skip = page.getByRole("link", { name: "Skip to calculator" });
   await skip.focus(); await skip.press("Enter");
   await expect(page.locator("main")).toBeFocused();
-  await page.keyboard.press("Tab");
+  await page.keyboard.press(tabKey);
+  await expect(page.getByRole("navigation", { name: "Breadcrumb", exact: true }).getByRole("link", { name: "UK Money Reality" })).toBeFocused();
+  await page.keyboard.press(tabKey);
   await expect(field(page, "current.cityId")).toBeFocused();
-  await page.keyboard.press("Tab");
+  await page.keyboard.press(tabKey);
   await expect(field(page, "destination.cityId")).toBeFocused();
-  await page.keyboard.press("Tab");
+  await page.keyboard.press(tabKey);
   const nextButton = page.getByRole("button", { name: /^Continue/ });
   await expect(nextButton).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(field(page, "current.cityId")).toBeFocused();
   await expect(field(page, "current.cityId")).toHaveAttribute("aria-invalid", "true");
-  await expect(field(page, "current.cityId")).toHaveAccessibleDescription(/choose or enter city/i);
+  await expect(field(page, "current.cityId")).toHaveAccessibleDescription(/choose a city/i);
   expect(await field(page, "current.cityId").evaluate((el) => getComputedStyle(el).outlineStyle)).toBe("solid");
   await expect(page.getByRole("alert", { name: "Input errors" })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+
+for (const width of [1440, 1280, 1024, 1011, 1010, 768, 701, 700, 390, 320]) {
+  test(`Move setup presentation and accessible progress at ${width}px`, async ({ page, browserName }) => {
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto("/calculator");
+    await expect(page.getByRole("main")).toHaveCount(1);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Where are you moving?");
+    const progress = page.getByRole("navigation", { name: "Calculator progress" });
+    await expect(progress.getByRole("listitem")).toHaveCount(7);
+    await expect(progress.locator('[aria-current="step"]')).toContainText("Move setup");
+    await expect(progress.getByRole("link")).toHaveCount(0);
+    const form = page.getByRole("region", { name: "Your two locations" });
+    const aside = page.getByRole("complementary", { name: "About your comparison" });
+    const current = field(page, "current.cityId"), destination = field(page, "destination.cityId");
+    for (const control of [current, destination]) {
+      await expect(control).toBeEnabled();
+      await expect(control).toHaveValue("");
+      await expect(control).toHaveCSS("font-size", "16px");
+      await expect(control).toHaveCSS("appearance", "auto");
+      expect((await control.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+    }
+    const first = (await current.boundingBox())!, second = (await destination.boundingBox())!;
+    if (width <= 700) expect(second.y).toBeGreaterThan(first.y + first.height);
+    else expect(Math.abs(second.y - first.y)).toBeLessThan(2);
+    const formBox = (await form.boundingBox())!, asideBox = (await aside.boundingBox())!;
+    if (width <= 1010) expect(asideBox.y).toBeGreaterThanOrEqual(formBox.y + formBox.height);
+    else expect(asideBox.x).toBeGreaterThan(formBox.x + formBox.width);
+    await page.getByRole("button", { name: /^Continue/ }).click();
+    await expect(current).toBeFocused();
+    await expect(page.getByRole("alert", { name: "Input errors" })).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await current.selectOption("LOC-BIR");
+    await destination.selectOption("LOC-MAN");
+    await expect(page.getByTestId("move-route-preview")).toContainText("Birmingham");
+    await expect(page.getByTestId("move-route-preview")).toContainText("Manchester");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await page.screenshot({ path: `/tmp/ukmr-move-setup-${browserName}-${width}.png`, fullPage: true });
+  });
+}
+
+test("Move setup validates both roles, clears corrected errors on submit and derives route preview", async ({ page }) => {
+  await page.goto("/calculator");
+  const current = field(page, "current.cityId"), destination = field(page, "destination.cityId");
+  const proceed = page.getByRole("button", { name: /^Continue/ });
+  const preview = page.getByTestId("move-route-preview");
+  const summary = page.getByRole("alert", { name: "Input errors" });
+  await expect(proceed).toBeEnabled();
+  await expect(preview).toHaveCount(0);
+  await proceed.click();
+  await expect(summary.getByRole("link")).toHaveText(["Current city: Choose a city.", "Destination city: Choose a city."]);
+  await expect(current).toBeFocused();
+  await expect(destination).toHaveAttribute("aria-invalid", "true");
+  await summary.getByRole("link", { name: /^Destination city:/ }).click();
+  await expect(destination).toBeFocused();
+  await destination.selectOption("LOC-EDI");
+  await expect(current).toHaveValue("");
+  await expect(preview).toHaveCount(0);
+  await proceed.click();
+  await expect(current).toBeFocused();
+  await expect(summary.getByRole("link")).toHaveCount(1);
+  await expect(destination).toHaveAttribute("aria-invalid", "false");
+  await expect(page.locator('[id="destination.cityId-error"]')).toHaveCount(0);
+  await current.selectOption("LOC-MAN");
+  await expect(preview).toContainText("Manchester");
+  await expect(preview).toContainText("Edinburgh");
+  await destination.selectOption("");
+  await expect(preview).toHaveCount(0);
+  await proceed.click();
+  await expect(destination).toBeFocused();
+  await expect(current).toHaveAttribute("aria-invalid", "false");
+  await expect(summary.getByRole("link")).toHaveText(["Destination city: Choose a city."]);
+  await destination.selectOption("LOC-MAN");
+  await expect(preview.locator("strong")).toHaveText(/Manchester.*to.*Manchester/);
+  await proceed.click();
+  await expect(page).toHaveURL(/\/calculator\/household$/);
+  await expect(page.getByRole("alert", { name: "Input errors" })).toHaveCount(0);
+  await expect(page.getByRole("complementary", { name: "About your comparison" })).toHaveCount(0);
+  await page.getByRole("button", { name: "Back", exact: true }).click();
+  await expect(current).toHaveValue("LOC-MAN");
+  await expect(destination).toHaveValue("LOC-MAN");
+  await expect(preview).toBeVisible();
+  const progress = page.getByRole("navigation", { name: "Calculator progress" });
+  await expect(progress.locator('[aria-current="step"]')).toHaveAttribute("data-completed", "true");
+  await current.selectOption("LOC-LON");
+  await expect(progress.locator('[aria-current="step"]')).toHaveAttribute("data-completed", "false");
+  await expect(preview).toContainText("London");
+  await expect(destination).toHaveValue("LOC-MAN");
+  await page.getByRole("button", { name: "New comparison", exact: true }).click();
+  await expect(preview).toHaveCount(0);
+  await expect(current).toHaveValue("");
+  await expect(destination).toHaveValue("");
 });
