@@ -39,7 +39,10 @@ test("keyboard navigation and validation retain meaningful focus and control out
   await expectStepFocus(page);
   await page.keyboard.press(tabKey);
   await expect(field(page, "current.cityId")).toBeFocused();
-  await expect(field(page, "current.cityId")).toHaveCSS("outline-style", "solid");
+  await expect(field(page, "current.cityId").locator("..")).toHaveCSS("outline-style", "solid");
+  await expect(field(page, "current.cityId").locator("..")).toHaveCSS("outline-width", "2px");
+  await expect(field(page, "current.cityId").locator("..")).toHaveCSS("outline-color", "rgb(20, 39, 72)");
+  await expect(field(page, "current.cityId")).toHaveCSS("outline-style", "none");
   await field(page, "current.cityId").selectOption("LOC-MAN");
   await field(page, "destination.cityId").selectOption("LOC-LEE");
   const next = page.getByRole("button", { name: /^Continue/ });
@@ -74,4 +77,32 @@ test("programmatically refocused step title has no outline or shadow", async ({ 
   await page.keyboard.press("Tab");
   await page.getByRole("heading", { level: 1 }).evaluate((heading) => heading.focus());
   await expectStepFocus(page);
+});
+
+test("Move setup has one focus edge on both normal and invalid native selects", async ({ page, browserName }) => {
+  await page.setViewportSize({ width: 390, height: 1000 });
+  await page.goto("/calculator");
+  await page.keyboard.press("Tab");
+  for (const invalid of [false, true]) {
+    if (invalid) await page.getByRole("button", { name: /^Continue/ }).click();
+    for (const role of ["current", "destination"]) {
+      const select = field(page, `${role}.cityId`), frame = select.locator("..");
+      await select.focus();
+      await expect(select).toBeFocused();
+      await expect(select).toHaveAttribute("aria-invalid", String(invalid));
+      await expect(select).toHaveCSS("appearance", "auto");
+      await expect(select).toHaveCSS("outline-style", "none");
+      await expect(select).toHaveCSS("box-shadow", "none");
+      await expect(frame).toHaveCSS("outline-style", "solid");
+      await expect(frame).toHaveCSS("outline-width", "2px");
+      await expect(frame).toHaveCSS("outline-color", "rgb(20, 39, 72)");
+      await expect(frame).toHaveCSS("outline-offset", "-1px");
+      await expect(frame).toHaveCSS("border-color", "rgba(0, 0, 0, 0)");
+      await expect(frame).toHaveCSS("background-color", invalid ? "rgb(255, 245, 242)" : "rgb(255, 255, 255)");
+      if (invalid) await expect(select).toHaveAccessibleDescription(/Choose a city/);
+      await page.locator(`[data-scenario="${role}"]`).screenshot({ path: `/tmp/ukmr-select-focus-${browserName}-${role}-${invalid ? "invalid" : "normal"}.png` });
+    }
+  }
+  await page.getByRole("heading", { level: 1 }).focus();
+  await expect(field(page, "destination.cityId").locator("..")).toHaveCSS("border-color", "rgb(164, 37, 32)");
 });

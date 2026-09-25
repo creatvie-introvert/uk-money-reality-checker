@@ -196,7 +196,8 @@ test("keyboard navigation, empty-result context and first-invalid focus at 320px
   await expect(field(page, "current.cityId")).toBeFocused();
   await expect(field(page, "current.cityId")).toHaveAttribute("aria-invalid", "true");
   await expect(field(page, "current.cityId")).toHaveAccessibleDescription(/choose a city/i);
-  expect(await field(page, "current.cityId").evaluate((el) => getComputedStyle(el).outlineStyle)).toBe("solid");
+  await expect(field(page, "current.cityId").locator("..")).toHaveCSS("outline-width", "2px");
+  await expect(field(page, "current.cityId").locator("..")).toHaveCSS("outline-style", "solid");
   await expect(page.getByRole("alert", { name: "Input errors" })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

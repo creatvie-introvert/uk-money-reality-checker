@@ -158,6 +158,9 @@
 .moveSetup .field select { appearance: auto; font-family: var(--ukmr-font-sans); font-size: 16px; height: 49px; min-height: 49px; padding: 13px 11px; border: 0; border-radius: 9px; color: var(--ukmr-color-text); background: var(--ukmr-color-surface); }
 .moveSetup .field select[aria-invalid="true"] { border-color: #a42520; background: #fff5f2; }
 .moveSetup .field select:disabled { color: var(--ukmr-color-muted); background: #eef2f5; cursor: wait; }
+/* One focus edge around the full visual control, including the chevron inset. */
+.moveSetup .moveSelect:has(select:focus-visible) { border-color: transparent; outline: 2px solid var(--ukmr-color-focus-on-light); outline-offset: -1px; }
+.moveSetup .field select:focus-visible { outline: none; }
 .moveSetup .field small { margin-top: 10px; color: var(--ukmr-color-muted); line-height: 1.5; }
 .moveSetup .error { overflow-wrap: anywhere; margin-top: 7px; }
 .moveSetup .errorSummary { margin: 24px 32px 0; border-radius: var(--ukmr-radius-control); overflow-wrap: anywhere; }
