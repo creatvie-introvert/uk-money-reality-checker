@@ -20,7 +20,7 @@ test("mouse navigation keeps step heading focus without a control-like outline",
   await page.getByRole("button", { name: /^Continue/ }).click();
   await expect(page).toHaveURL(/\/calculator\/household$/);
   await expectStepFocus(page);
-  await page.getByRole("button", { name: "Back", exact: true }).click();
+  await page.getByRole("button", { name: "Back to move setup", exact: true }).click();
   await expect(page).toHaveURL(/\/calculator$/);
   await expectStepFocus(page);
   await expect(field(page, "current.cityId")).toHaveValue("LOC-MAN");
@@ -52,7 +52,9 @@ test("keyboard navigation and validation retain meaningful focus and control out
   await next.focus(); await next.press("Enter");
   await expect(field(page, "household.adults")).toBeFocused();
   await expect(field(page, "household.adults")).toHaveAttribute("aria-invalid", "true");
-  await expect(field(page, "household.adults")).toHaveCSS("outline-style", "solid");
+  await expect(field(page, "household.adults").locator("..")).toHaveCSS("outline-style", "solid");
+  await expect(field(page, "household.adults").locator("..")).toHaveCSS("outline-width", "2px");
+  await expect(field(page, "household.adults")).toHaveCSS("outline-style", "none");
   await expect(page.getByRole("alert", { name: "Input errors" })).toBeVisible();
 });
 

@@ -46,7 +46,19 @@ for (const width of [320, 390]) {
     await next.tap();
     await expect(page).toHaveURL(/\/calculator\/household$/);
     await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
-    await page.getByRole("button", { name: "Back", exact: true }).tap();
+    for (const name of ["adults", "children"]) {
+      const input = page.locator(`[name="household.${name}"]`);
+      const increase = page.getByRole("button", { name: `Increase ${name}`, exact: true });
+      const decrease = page.getByRole("button", { name: `Decrease ${name}`, exact: true });
+      await expect(input).toHaveValue("");
+      await increase.tap(); await expect(input).toHaveValue("1");
+      await increase.tap(); await expect(input).toHaveValue("2");
+      await decrease.tap(); await expect(input).toHaveValue("1");
+      if (name === "children") { await decrease.tap(); await expect(input).toHaveValue("0"); }
+      await expect(decrease).toBeDisabled();
+    }
+    await expect(page.getByRole("alert", { name: "Input errors" })).toHaveCount(0);
+    await page.getByRole("button", { name: "Back to move setup", exact: true }).tap();
     await expect(current).toHaveValue("LOC-BRS");
     await expect(destination).toHaveValue("LOC-LEE");
     await next.tap();

@@ -28,7 +28,7 @@ test("fresh comparison only marks submitted valid steps complete, including afte
   await page.getByRole("button", { name: /^Continue/ }).click();
   await expect(field(page, "household.adults")).toBeFocused();
   await expect(progress.locator('[data-completed="true"]')).toHaveCount(1);
-  await page.getByRole("button", { name: "Back", exact: true }).click();
+  await page.getByRole("button", { name: "Back to move setup", exact: true }).click();
   await expect(progress.locator('[aria-current="step"]')).toContainText("Move setup");
   await expect(progress.locator('[data-completed="true"]')).toHaveCount(1);
   await page.getByRole("button", { name: "New comparison", exact: true }).click();
@@ -43,7 +43,7 @@ for (const width of [1440, 1024, 768, 390, 320]) {
     await field(page, "current.cityId").selectOption("LOC-MAN");
     await field(page, "destination.cityId").selectOption("LOC-LEE");
     await next(page, "/calculator/household");
-    await page.getByLabel("Adults", { exact: false }).fill("1");
+    await page.getByRole("textbox", { name: "Adults", exact: false }).fill("1");
     await page.getByLabel("Children aged under 18", { exact: false }).fill("0");
     for (const role of ["current", "destination"]) {
       const group = page.getByRole("group", { name: role === "current" ? "Where you live now" : "Where you’re moving", exact: true });
@@ -279,7 +279,7 @@ test("Move setup validates both roles, clears corrected errors on submit and der
   await expect(page).toHaveURL(/\/calculator\/household$/);
   await expect(page.getByRole("alert", { name: "Input errors" })).toHaveCount(0);
   await expect(page.getByRole("complementary", { name: "About your comparison" })).toHaveCount(0);
-  await page.getByRole("button", { name: "Back", exact: true }).click();
+  await page.getByRole("button", { name: "Back to move setup", exact: true }).click();
   await expect(current).toHaveValue("LOC-MAN");
   await expect(destination).toHaveValue("LOC-MAN");
   await expect(preview).toBeVisible();
