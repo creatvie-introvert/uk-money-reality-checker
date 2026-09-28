@@ -22,7 +22,7 @@ export async function throughReview(page: Page, partial = false) {
   for (const role of ["current", "destination"]) {
     await field(page, `${role}.income.grossAnnualSalaryGbp`).fill(role === "current" ? "50000" : "60000");
     await field(page, `${role}.income.taxJurisdiction`).selectOption("rUK");
-    await field(page, `${role}.income.taxYear`).selectOption("2026/27");
+    await field(page, "comparison.taxYear").selectOption("2026/27");
     await field(page, `${role}.income.scope`).check();
   }
   await next(page, "How do your everyday costs look?");

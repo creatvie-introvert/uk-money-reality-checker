@@ -62,7 +62,7 @@ for (const width of [1440, 1024, 768, 390, 320]) {
       const group = page.getByRole("group", { name: role === "current" ? "Where you live now" : "Where you’re moving", exact: true });
       await field(page, `${role}.income.grossAnnualSalaryGbp`).fill(role === "current" ? "50000" : "55000");
       await field(page, `${role}.income.taxJurisdiction`).selectOption("rUK");
-      await field(page, `${role}.income.taxYear`).selectOption("2026/27");
+      await field(page, "comparison.taxYear").selectOption("2026/27");
       const confirmation = group.getByRole("checkbox", { name: "This calculation matches my employment" });
       await expect(confirmation).toHaveAccessibleDescription(/one employment and standard employee National Insurance/);
       await confirmation.check();
