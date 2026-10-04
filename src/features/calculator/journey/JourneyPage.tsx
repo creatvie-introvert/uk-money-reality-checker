@@ -43,6 +43,7 @@ function FormField({ field, step, errors, hint }: { field: Field; step: JourneyS
   // Malformed typed values stay untouched; buttons resume after the user corrects them.
   const validCount = /^\d+$/.test(value) && Number.isSafeInteger(count) && count >= minimum;
   const shared = { id: field.path, name: field.path, "aria-invalid": Boolean(error), "aria-required": Boolean(field.required), "aria-describedby": `${field.path}-help${error ? ` ${field.path}-error` : ""}` };
+  const hasNativeSelectFrame = field.path.endsWith(".water.mode") || field.path.endsWith(".transport.mode");
   const select = field.kind === "select" && <select {...shared} value={value} onChange={(e) => update(e.target.value)}><option value="">{field.path === comparisonTaxYearPath ? "No tax year selected" : "Choose an option"}</option>{field.options?.map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select>;
   return <div className={styles.field}>
     {field.kind === "scope" ? <label className={styles.confirm}><input {...shared} type="checkbox" checked={Boolean(value)} onChange={(e) => update(e.target.checked ? "ONE_EMPLOYEE_ONE_EMPLOYMENT" : "")} />{field.label}</label> : <><label htmlFor={field.path}>{field.label}{field.required && <span> · required</span>}</label>
@@ -50,7 +51,7 @@ function FormField({ field, step, errors, hint }: { field: Field; step: JourneyS
         <button type="button" aria-label={`Decrease ${countName}`} disabled={!validCount || count <= minimum} onClick={() => update(String(count - 1))}>−</button>
         <div className={styles.householdControl}><input {...shared} type="text" inputMode="numeric" autoComplete="off" value={value} onChange={(e) => update(e.target.value)} /></div>
         <button type="button" aria-label={`Increase ${countName}`} disabled={value !== "" && (!validCount || count >= Number.MAX_SAFE_INTEGER)} onClick={() => update(value === "" ? "1" : String(count + 1))}>+</button>
-      </div> : field.kind === "select" ? (step === "start" || step === "household") ? <div className={styles.moveSelect}>{select}</div> : select
+      </div> : field.kind === "select" ? (step === "start" || step === "household" || step === "income" || hasNativeSelectFrame) ? <div className={hasNativeSelectFrame ? styles.nativeSelect : styles.moveSelect}>{select}</div> : select
         : <div className={field.kind === "money" ? styles.money : step === "household" ? styles.householdControl : undefined}>{field.kind === "money" && <span aria-hidden="true">£</span>}<input {...shared} type={field.kind === "date" ? "date" : "text"} inputMode={field.kind === "money" ? "decimal" : field.kind === "count" ? "numeric" : undefined} autoComplete="off" value={value} onChange={(e) => update(e.target.value)} />{field.kind === "money" && <span aria-hidden="true">{field.path.endsWith("grossAnnualSalaryGbp") ? "/ year" : "/ month"}</span>}</div>}</>}
     <small id={`${field.path}-help`}>{hint ?? field.hint ?? (field.kind === "money" ? "Enter pounds without a £ sign or commas." : "")}</small>
     {field.details && <details className={styles.employmentDetails}><summary>Employment calculation details</summary><p>{field.details}</p></details>}
@@ -96,6 +97,37 @@ function HouseholdFields({ errors }: { errors: FieldError[] }) {
   </>;
 }
 
+function incomeSummary(error: FieldError) {
+  if (error.path === comparisonTaxYearPath) return error.message;
+  const [role, , ...parts] = error.path.split(".");
+  const labels: Record<string, string> = { grossAnnualSalaryGbp: "Gross annual salary", taxJurisdiction: "Tax jurisdiction", scope: "Employment scope", "netOverride.amountGbp": "Monthly take-home" };
+  return `${role === "current" ? "Current" : "Destination"} income — ${labels[parts.join(".")] ?? "Income"}: ${error.message}`;
+}
+
+function IncomeFields({ errors }: { errors: FieldError[] }) {
+  const { state, dispatch } = useJourney();
+  return <>
+    <fieldset className={styles.incomeYear}><legend>Comparison tax year</legend><p>Salary-based calculations currently support the 2026/27 tax year. Confirm it for each comparison where calculated take-home is used.</p>
+      {comparisonTaxYearMismatch(state.form) && <p role="status">The stored scenario tax years differ. No year has been chosen on your behalf. Select a year for both scenarios, or explicitly clear the shared choice. <button type="button" onClick={() => dispatch({ type: "CHANGE", path: comparisonTaxYearPath, value: "", step: "income" })}>Clear comparison tax year</button></p>}
+      {stepFields(state.form, "income").map((field) => <FormField key={field.path} field={field} step="income" errors={errors} />)}
+    </fieldset>
+    <div className={styles.incomeIntro}><span className={styles.movePlaceIcon}><MoveIcon kind="card" /></span><div><h3>Two locations, two income scenarios</h3><p>Choose the tax rules that apply to each income scenario. They may be the same or different. Selecting a city does not set your tax jurisdiction.</p></div></div>
+    <div className={styles.incomeGrid}>{roles.map((role) => {
+      const fields = stepFields(state.form, "income", role), city = cityLabels[state.form[role].cityId];
+      const render = (field: Field) => <FormField key={field.path} field={field} step="income" errors={errors} />;
+      return <fieldset className={styles.incomeCard} data-scenario={role} key={role}><legend><span className={styles.homeMark}><MoveIcon kind={role === "current" ? "home" : "pin"} /></span><span><span className={styles.sectionKicker} aria-hidden="true">{role === "current" ? "Current income" : "Destination income"}</span>{roleLabels[role]}</span></legend><div className={styles.incomeBody}>
+        {city && <div className={styles.homeLocation}><strong>{city}</strong><span>Your selected {role} city. Tax jurisdiction is your separate choice.</span></div>}
+        {fields.filter((f) => f.path.endsWith("grossAnnualSalaryGbp") || f.path.endsWith("taxJurisdiction")).map(render)}
+        <div className={styles.incomeEmployment}>{fields.filter((f) => f.kind === "scope").map(render)}</div>
+        <div className={styles.incomeOverride}>{fields.filter((f) => f.path.endsWith("netOverride.amountGbp")).map(render)}
+          {role === "destination" && state.form.destination.income.netOverride && <div className={styles.incomeWarning} role="status"><strong>Salary needed will be unavailable</strong><p>Using actual destination take-home makes salary preservation unavailable. Clear this amount to use the supported salary calculation again.</p></div>}
+        </div>
+      </div></fieldset>;
+    })}</div>
+    <div className={styles.homeEvidence}><MoveIcon kind="info" /><p>Leave income blank if unknown. Entered take-home takes precedence over salary calculation; clearing it restores calculation where supported. Unknown income can produce a partial result.</p></div>
+  </>;
+}
+
 export function JourneyPage({ step }: { step: JourneyStep }) {
   const { state, dispatch, hydrated, calculate } = useJourney();
   const router = useRouter(), heading = useRef<HTMLHeadingElement>(null), errorSummary = useRef<HTMLDivElement>(null);
@@ -130,49 +162,53 @@ export function JourneyPage({ step }: { step: JourneyStep }) {
     } catch { if (submittedAttempt === attempt.current) setFailed(true); } finally { setBusy(false); }
   }
   const shared = stepFields(state.form, step);
-  const isMoveSetup = step === "start", isHousehold = step === "household";
-  const isDesigned = isMoveSetup || isHousehold;
+  const isMoveSetup = step === "start", isHousehold = step === "household", isIncome = step === "income";
+  const isDesigned = isMoveSetup || isHousehold || isIncome;
   const currentCity = cityLabels[state.form.current.cityId];
   const destinationCity = cityLabels[state.form.destination.cityId];
   const stepHeading = <h1 ref={heading} tabIndex={-1} style={{ outline: "0 none transparent", boxShadow: "none" }}>{stepTitles[step]}</h1>;
-  return <div className={`${report.page} ${styles.page}${isDesigned ? ` ${styles.designedStep}` : ""}${isHousehold ? ` ${styles.householdStep}` : ""}`}><a className={report.skip} href="#calculator-main">Skip to calculator</a><ResultsHeader onRestart={restart} />
+  return <div className={`${report.page} ${styles.page}${isDesigned ? ` ${styles.designedStep}` : ""}${isHousehold ? ` ${styles.householdStep}` : ""}${isIncome ? ` ${styles.incomeStep}` : ""}`}><a className={report.skip} href="#calculator-main">Skip to calculator</a><ResultsHeader onRestart={restart} />
     <main id="calculator-main" tabIndex={-1} className={styles.container}>
       {isDesigned && <>
         <nav className={styles.moveBreadcrumb} aria-label="Breadcrumb"><Link href="/">UK Money Reality</Link><span aria-hidden="true">/</span><span>Calculator</span><span aria-hidden="true">/</span><span aria-current="page">{stepLabels[step]}</span></nav>
         <div className={styles.moveIntro}>
-          <div><div className={styles.moveEyebrow}>{isHousehold ? "Your household, your comparison" : "Your comparison starts here"}</div>{stepHeading}<p>{isHousehold ? "Start with who’s moving, then choose how to include housing costs for each location." : "Choose your current city and the city you’re considering. You can also compare changes within the same city."}</p></div>
+          <div><div className={styles.moveEyebrow}>{(isHousehold || isIncome) ? "Your household, your comparison" : "Your comparison starts here"}</div>{stepHeading}<p>{isIncome ? "Add what you earn now and what you expect to earn after your move. We’ll keep the two scenarios separate." : isHousehold ? "Start with who’s moving, then choose how to include housing costs for each location." : "Choose your current city and the city you’re considering. You can also compare changes within the same city."}</p></div>
           <div className={styles.movePrivacy}><MoveIcon kind="lock" /><span>Your answers stay in this calculator session. Refreshing or leaving the calculator clears them.</span></div>
         </div>
       </>}
       <nav aria-label="Calculator progress" className={isDesigned ? styles.moveProgress : undefined}>
-        {isDesigned && <><div className={styles.moveProgressTop}><strong>Step {position + 1} of 7 · {stepLabels[step]}</strong><span>{isHousehold ? "About your household" : "About your move"}</span></div><div className={styles.moveTrack} aria-hidden="true"><span style={{ width: `${(position + 1) / steps.length * 100}%` }} /></div></>}
+        {isDesigned && <><div className={styles.moveProgressTop}><strong>Step {position + 1} of 7 · {stepLabels[step]}</strong><span>{isIncome ? "Compare take-home pay" : isHousehold ? "About your household" : "About your move"}</span></div><div className={styles.moveTrack} aria-hidden="true"><span style={{ width: `${(position + 1) / steps.length * 100}%` }} /></div></>}
         <ol className={styles.progress}>{steps.map((s, i) => <li key={s} data-completed={state.completed.includes(s)} aria-current={s === step ? "step" : undefined}><span className={styles.dot} aria-hidden="true">{state.completed.includes(s) && s !== step ? "✓" : i + 1}</span><span>{stepLabels[s]}{state.completed.includes(s) && <small>Visited & validated</small>}</span></li>)}</ol></nav>
       <div className={isDesigned ? styles.moveWorkspace : undefined}>
       <section className={styles.panel} aria-labelledby={isDesigned ? "move-locations-title" : undefined}>
-        {isDesigned ? <div className={styles.moveFormTop}>{isHousehold && <span className={styles.sectionKicker}>Your details · Step 2</span>}<h2 id="move-locations-title">{isHousehold ? "Make the comparison yours" : "Your two locations"}</h2><p>{isHousehold ? "We’ll keep your current home and destination separate, so you can see what changes." : "Start with where you live now, then choose where you’re thinking of moving."}</p></div> : <><p className={styles.eyebrow}>Step {position + 1} of 7 · Your move comparison</p>{stepHeading}</>}
+        {isDesigned ? <div className={styles.moveFormTop}>{(isHousehold || isIncome) && <span className={styles.sectionKicker}>Your details · Step {position + 1}</span>}<h2 id="move-locations-title">{isIncome ? "Income in each location" : isHousehold ? "Make the comparison yours" : "Your two locations"}</h2><p>{isIncome ? "Enter one annual gross salary for each scenario, or use your actual monthly take-home pay when the simplified calculation does not fit." : isHousehold ? "We’ll keep your current home and destination separate, so you can see what changes." : "Start with where you live now, then choose where you’re thinking of moving."}</p></div> : <><p className={styles.eyebrow}>Step {position + 1} of 7 · Your move comparison</p>{stepHeading}</>}
         {!isDesigned && <p className={styles.intro}>{step === "review" ? "Review your entered inputs. Unknown costs stay unresolved; they are never replaced with estimates." : "Your current and destination details stay separate. Nothing is saved after you leave this calculator session."}</p>}
-        {errors.length > 0 && <div className={styles.errorSummary} role="alert" aria-label="Input errors" tabIndex={-1} ref={errorSummary}><h2>Check these inputs</h2><ul>{errors.map((e, i) => <li key={`${e.path}:${i}`}>{step === "review" ? <button type="button" onClick={() => { dispatch({ type: "EDIT" }); navigate(e.step); }}>{errorMessage(e)} — {stepLabels[e.step]}</button> : <a href={`#${e.path}`} onClick={() => document.getElementById(e.path)?.focus()}>{isMoveSetup ? `${e.path.startsWith("current.") ? "Current city" : "Destination city"}: ${errorMessage(e)}` : isHousehold ? householdSummary(e) : errorMessage(e)}</a>}</li>)}</ul></div>}
+        {errors.length > 0 && <div className={styles.errorSummary} role="alert" aria-label="Input errors" tabIndex={-1} ref={errorSummary}><h2>Check these inputs</h2><ul>{errors.map((e, i) => <li key={`${e.path}:${i}`}>{step === "review" ? <button type="button" onClick={() => { dispatch({ type: "EDIT" }); navigate(e.step); }}>{errorMessage(e)} — {stepLabels[e.step]}</button> : <a href={`#${e.path}`} onClick={() => document.getElementById(e.path)?.focus()}>{isMoveSetup ? `${e.path.startsWith("current.") ? "Current city" : "Destination city"}: ${errorMessage(e)}` : isHousehold ? householdSummary(e) : isIncome ? incomeSummary(e) : errorMessage(e)}</a>}</li>)}</ul></div>}
         {failed && <p role="alert">The comparison could not be calculated. Your inputs are still here; please try again.</p>}
         <form noValidate onSubmit={(event) => { event.preventDefault(); void submit(); }}>
           <fieldset disabled={!hydrated || busy} className={styles.fields}>
             {step === "review" ? <><div className={styles.notice}>Unentered costs and unsupported evidence may make your result partial. These are your inputs, not calculated financial results. Childcare is outside the current scope.</div>
               {reviewSections(state.form).map((section) => <section className={styles.review} key={section.label}><div className={styles.reviewHeading}><h2>{section.label}</h2><button type="button" onClick={() => { dispatch({ type: "EDIT" }); navigate(section.step); }}>{section.editLabel}</button></div><div className={styles.columns}>{section.groups.map((group) => <div key={group.label}><h3>{group.label}</h3><dl>{group.rows.filter((row) => !row.secondary).map((row) => <div key={row.label}><dt>{row.label}</dt><dd data-unresolved={row.value === "Not supplied / unresolved"}>{row.value}</dd></div>)}</dl>{group.rows.some((row) => row.secondary) && <div className={styles.reviewContext}><p>Evidence & calculation details</p><dl>{group.rows.filter((row) => row.secondary).map((row) => <div key={row.label}><dt>{row.label}</dt><dd>{row.value}</dd></div>)}</dl></div>}</div>)}</div></section>)}</>
-              : isHousehold ? <HouseholdFields errors={errors} /> : <>{shared.length > 0 && <fieldset className={styles.shared}><legend>{step === "income" ? "Comparison tax year" : "Everyone moving together"}</legend><p>{step === "income" ? "Choose the tax rules that apply to each income scenario. They may be the same or different. Selecting a city does not set your tax jurisdiction." : "Household composition is shared. Costs and salary are not multiplied by these counts."}</p>{step === "income" && comparisonTaxYearMismatch(state.form) && <p role="status">The stored scenario tax years differ. No year has been chosen on your behalf. Select a year for both scenarios, or explicitly clear the shared choice. <button type="button" onClick={() => dispatch({ type: "CHANGE", path: comparisonTaxYearPath, value: "", step: "income" })}>Clear comparison tax year</button></p>}{shared.map((field) => <FormField key={field.path} field={field} errors={errors} step={step} />)}</fieldset>}
+              : isHousehold ? <HouseholdFields errors={errors} /> : isIncome ? <IncomeFields errors={errors} /> : <>{shared.length > 0 && <fieldset className={styles.shared}><legend>Everyone moving together</legend><p>Household composition is shared. Costs and salary are not multiplied by these counts.</p>{shared.map((field) => <FormField key={field.path} field={field} errors={errors} step={step} />)}</fieldset>}
                 <div className={styles.columns}>{roles.map((role, index) => <Fragment key={role}>
                   {isMoveSetup && index > 0 && <span className={styles.moveArrow} aria-hidden="true">→</span>}
                   <fieldset className={styles.scenario} data-scenario={role}><legend>{isMoveSetup && <span className={styles.movePlaceIcon}><MoveIcon kind={role === "current" ? "home" : "pin"} /></span>}<span>{isMoveSetup && <span className={styles.moveRole} aria-hidden="true">{role === "current" ? "Current" : "Destination"}</span>}{roleLabels[role]}</span></legend>{stepFields(state.form, step, role).map((field) => <FormField key={field.path} field={field} step={step} errors={errors} hint={isMoveSetup ? role === "current" ? "Choose from the eight supported UK cities." : "The same city is allowed if you’re comparing a change in circumstances." : undefined} />)}</fieldset>
                 </Fragment>)}</div>
                 {isMoveSetup && <div aria-live="polite" aria-atomic="true">{currentCity && destinationCity && <div className={styles.moveRoute} data-testid="move-route-preview"><strong>{currentCity} <span aria-hidden="true">→</span><span className={report.srOnly}> to </span> {destinationCity}</strong><span>You can change either city before continuing.</span></div>}</div>}
                 {["spending", "lifestyle"].includes(step) && <p className={styles.notice}>{journeyCopy.spendingNote}</p>}</>}
-            <div role="status" className={report.srOnly}>{busy ? "Calculating your comparison" : ""}</div><div className={styles.actions}>{position > 0 ? <button type="button" className={styles.secondary} onClick={() => navigate(steps[position - 1])}>{isHousehold ? "Back to move setup" : "Back"}</button> : isMoveSetup ? <p className={styles.moveActionNote}>Choose both locations to continue. No financial figures are estimated at this step.</p> : <span />}
-              <button className={styles.primary} type="submit">{busy ? "Calculating…" : step === "review" ? "See my move reality" : state.editing ? "Save and return to review" : isMoveSetup ? "Continue to household & homes" : isHousehold ? "Continue to income" : "Continue"} <span aria-hidden="true">→</span></button></div>
+            <div role="status" className={report.srOnly}>{busy ? "Calculating your comparison" : ""}</div><div className={styles.actions}>{position > 0 ? <button type="button" className={styles.secondary} aria-describedby={isIncome ? "income-back-hint" : undefined} onClick={() => navigate(steps[position - 1])}>{isIncome ? <>Back<span aria-hidden="true"> to household &amp; homes</span></> : isHousehold ? "Back to move setup" : "Back"}</button> : isMoveSetup ? <p className={styles.moveActionNote}>Choose both locations to continue. No financial figures are estimated at this step.</p> : <span />}
+              <button className={styles.primary} type="submit">{busy ? "Calculating…" : step === "review" ? "See my move reality" : state.editing ? "Save and return to review" : isMoveSetup ? "Continue to household & homes" : isHousehold ? "Continue to income" : isIncome ? "Continue to everyday spending" : "Continue"} <span aria-hidden="true">→</span></button></div>
           </fieldset>
         </form>
-        <p className={styles.privacy}>Progress tracks the steps you have visited and validated, not financial completeness. Refreshing clears your inputs.</p>
+        {isIncome && <span id="income-back-hint" className={report.srOnly}>Return to Household &amp; homes</span>}<p className={styles.privacy}>Progress tracks the steps you have visited and validated, not financial completeness. Refreshing clears your inputs.</p>
       </section>
       {isMoveSetup && <aside className={styles.moveSide} aria-label="About your comparison">
         <section className={styles.moveSideCard}><span className={styles.moveSideIcon}><MoveIcon kind="card" /></span><h2>What happens next?</h2><p>We’ll ask about your household, home, income and the costs you want to include. You can go back and edit your answers as you go.</p><ul><li><MoveIcon kind="check" /><span>Published figures are used only where the evidence fits your choices.</span></li><li><MoveIcon kind="check" /><span>Unknown costs can stay unknown; your result may be partial.</span></li></ul></section>
         <section className={styles.moveSideCard}><span className={styles.moveSideIcon}><MoveIcon kind="info" /></span><h2>Why these eight cities?</h2><p>This is the current UK launch coverage. Evidence differs by location and cost category; selecting a city does not fill in your household spending automatically.</p></section>
+      </aside>}
+      {isIncome && <aside className={styles.moveSide} aria-label="About income calculations">
+        <section className={styles.moveSideCard}><span className={styles.moveSideIcon}><MoveIcon kind="card" /></span><h2>What goes into take-home pay?</h2><p>A supported annual salary uses your chosen tax jurisdiction and comparison year to calculate monthly take-home. The scope is one employee, one employment and Class 1 category A National Insurance, on an annual comparison basis.</p><div className={styles.homeCallout}><h3>What isn’t included?</h3><p>Pensions, student loans, salary sacrifice and other payroll deductions are not modelled. There are no separate inputs for bonuses, overtime, multiple employments, self-employment, benefits or other income, or tax-code variations. Actual payroll may differ.</p></div></section>
+        <section className={styles.moveSideCard}><span className={styles.moveSideIcon}><MoveIcon kind="info" /></span><h2>Prefer your actual take-home?</h2><p>Use the amount you receive each month if the simplified calculation does not fit. This is your entered amount, not payroll advice.</p><div className={styles.homeCallout}><h3>What salary preservation means</h3><p>Results may calculate the destination salary needed to retain your monthly buffer. It uses destination tax jurisdiction and year, and requires supported inputs and evidence. It is not guaranteed; partial or unavailable results remain possible. An actual destination take-home override makes it unavailable.</p></div></section>
       </aside>}
       {isHousehold && <aside className={styles.moveSide} aria-label="About your household and homes">
         <section className={styles.moveSideCard}><span className={styles.moveSideIcon}><MoveIcon kind="home" /></span><h2>Why we ask about your home</h2><p>Bedroom band and source month help us check whether published rent evidence fits your comparison. You can enter your actual monthly rent instead.</p><ul><li><MoveIcon kind="check" /><span>Current and destination inputs remain independent.</span></li><li><MoveIcon kind="check" /><span>No rent, council-tax band or discounts are invented.</span></li></ul></section>

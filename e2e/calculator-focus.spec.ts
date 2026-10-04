@@ -108,3 +108,37 @@ test("Move setup has one focus edge on both normal and invalid native selects", 
   await page.getByRole("heading", { level: 1 }).focus();
   await expect(field(page, "destination.cityId").locator("..")).toHaveCSS("border-color", "rgb(164, 37, 32)");
 });
+
+test('Water basis uses the approved native select spacing and focus on both scenarios', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 1000 });
+  await page.goto('/calculator');
+  const measure = (el: Element) => {
+    const s = getComputedStyle(el), frame = getComputedStyle(el.parentElement!);
+    return { padding: s.padding, height: s.height, fontSize: s.fontSize, radius: s.borderRadius, border: s.borderWidth, inset: frame.paddingRight, frameRadius: frame.borderRadius, frameBorder: frame.borderWidth };
+  };
+  const approved = await field(page, 'current.cityId').evaluate(measure);
+  await page.goto('/calculator/spending');
+  for (const role of ['current', 'destination']) {
+    const select = field(page, `${role}.water.mode`), frame = select.locator('..');
+    expect(await select.evaluate(measure)).toEqual(approved);
+    await expect(select).toHaveCSS('appearance', 'auto');
+    await select.selectOption('AMOUNT');
+    await expect(field(page, `${role}.water.amountGbp`)).toBeVisible();
+    await select.focus();
+    await expect(select).toBeFocused();
+    await expect(select).toHaveCSS('outline-style', 'none');
+    await expect(frame).toHaveCSS('outline-width', '2px');
+    await expect(frame).toHaveCSS('outline-offset', '-1px');
+    await select.selectOption('');
+  }
+  for (const role of ['current', 'destination']) {
+    const select = field(page, `${role}.water.mode`);
+    // Exercise the error presentation without changing optional-water validation rules.
+    await select.evaluate((el) => el.setAttribute('aria-invalid', 'true'));
+    await select.focus();
+    await expect(select).toHaveAttribute('aria-invalid', 'true');
+    await expect(select.locator('..')).toHaveCSS('background-color', 'rgb(255, 245, 242)');
+    await expect(select.locator('..')).toHaveCSS('outline-width', '2px');
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});

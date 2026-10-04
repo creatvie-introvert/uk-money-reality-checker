@@ -151,16 +151,16 @@
 .moveArrow { pointer-events: none; display: grid; place-items: center; color: #38886b; font-size: 23px; font-weight: 800; }
 .designedStep .field label { font-size: 13px; font-weight: 760; margin-bottom: 8px; }
 /* Inset the native control inside its visual border; retain the browser-drawn arrow. */
-.designedStep .moveSelect { padding-right: 8px; border: 1px solid #aebfcd; border-radius: 10px; background: var(--ukmr-color-surface); }
-.designedStep .moveSelect:has(select[aria-invalid="true"]) { border-color: #a42520; background: #fff5f2; }
-.designedStep .moveSelect:has(select:disabled) { background: #eef2f5; }
+:is(.designedStep .moveSelect, .nativeSelect) { padding-right: 8px; border: 1px solid #aebfcd; border-radius: 10px; background: var(--ukmr-color-surface); }
+:is(.designedStep .moveSelect, .nativeSelect):has(select[aria-invalid="true"]) { border-color: #a42520; background: #fff5f2; }
+:is(.designedStep .moveSelect, .nativeSelect):has(select:disabled) { background: #eef2f5; }
 /* An explicit height is required by WebKit’s native select; min-height alone is ignored. */
-.designedStep .field select { appearance: auto; font-family: var(--ukmr-font-sans); font-size: 16px; height: 49px; min-height: 49px; padding: 13px 11px; border: 0; border-radius: 9px; color: var(--ukmr-color-text); background: var(--ukmr-color-surface); }
-.designedStep .field select[aria-invalid="true"] { border-color: #a42520; background: #fff5f2; }
-.designedStep .field select:disabled { color: var(--ukmr-color-muted); background: #eef2f5; cursor: wait; }
+:is(.designedStep .field select, .field .nativeSelect select) { appearance: auto; font-family: var(--ukmr-font-sans); font-size: 16px; height: 49px; min-height: 49px; padding: 13px 11px; border: 0; border-radius: 9px; color: var(--ukmr-color-text); background: var(--ukmr-color-surface); }
+:is(.designedStep .field select, .field .nativeSelect select)[aria-invalid="true"] { border-color: #a42520; background: #fff5f2; }
+:is(.designedStep .field select, .field .nativeSelect select):disabled { color: var(--ukmr-color-muted); background: #eef2f5; cursor: wait; }
 /* One focus edge around the full visual control, including the chevron inset. */
-.designedStep .moveSelect:has(select:focus-visible) { border-color: transparent; outline: 2px solid var(--ukmr-color-focus-on-light); outline-offset: -1px; }
-.designedStep .field select:focus-visible { outline: none; }
+:is(.designedStep .moveSelect, .nativeSelect):has(select:focus-visible) { border-color: transparent; outline: 2px solid var(--ukmr-color-focus-on-light); outline-offset: -1px; }
+:is(.designedStep .field select, .field .nativeSelect select):focus-visible { outline: none; }
 .designedStep .field small { margin-top: 10px; color: var(--ukmr-color-muted); line-height: 1.5; }
 .designedStep .error { overflow-wrap: anywhere; margin-top: 7px; }
 .designedStep .errorSummary { margin: 24px 32px 0; border-radius: var(--ukmr-radius-control); overflow-wrap: anywhere; }
@@ -289,3 +289,49 @@
 .householdCounter button:hover:not(:disabled) { background: #deeee5; }
 .householdCounter button:disabled { opacity: .45; cursor: default; }
 .householdStep .householdCounter button:focus-visible { border-color: transparent; outline: 2px solid var(--ukmr-color-focus-on-light); outline-offset: -1px; }
+
+/* Income presentation; canonical controls and later steps are unchanged. */
+.incomeStep .moveFormTop { padding-bottom: 22px; border-bottom: 1px solid var(--ukmr-color-border); }
+.incomeStep .moveFormTop h2 { margin-top: 7px; }
+.incomeYear { min-width: 0; margin: 24px 30px 0; padding: 18px 20px; border: 1px solid #dbe7e4; border-radius: 16px; background: #f2faf6; }
+.incomeYear legend { padding: 0 7px; font-weight: 800; font-size: 18px; }
+.incomeYear > p { font-size: 13px; color: var(--ukmr-color-muted); margin: 0 0 15px; }
+.incomeYear .field { max-width: 440px; }
+.incomeIntro { display: flex; gap: 15px; align-items: center; margin: 20px 30px; padding: 18px 20px; border: 1px solid #dbe7e4; border-radius: 16px; background: #f2faf6; }
+.incomeIntro h3 { margin: 0 0 4px; font-size: 18px; letter-spacing: -.025em; }
+.incomeIntro p { margin: 0; color: var(--ukmr-color-muted); font-size: 13px; line-height: 1.55; }
+.incomeGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; padding: 0 23px 25px; align-items: start; }
+.incomeCard { min-width: 0; margin: 0; padding: 0 0 20px; background: #fbfdfc; border: 1px solid #d8e5e4; border-radius: 18px; }
+.incomeCard[data-scenario="destination"] { background: #f4f8fc; border-color: #d8e6f1; }
+.incomeCard legend { display: flex; align-items: center; gap: 7px; max-width: calc(100% - 28px); font-size: 16px; font-weight: 800; letter-spacing: -.025em; padding: 0 7px; margin-left: 13px; }
+.incomeBody { padding: 15px 18px 0; display: grid; gap: 21px; }
+.incomeStep .field, .incomeBody .homeLocation { margin: 0; }
+.incomeCard[data-scenario="destination"] .homeLocation { background: #eaf2fb; }
+.incomeCard[data-scenario="destination"] .homeMark { background: #e0ebf7; color: #31618c; }
+.incomeEmployment, .incomeOverride { border-top: 1px solid #dfe7ee; padding-top: 18px; }
+.incomeStep .employmentDetails { border: 1px solid #dce7ec; border-radius: 12px; padding: 0 12px; background: white; }
+.incomeStep .employmentDetails summary { font-weight: 760; }
+.incomeStep .money { border: 1px solid #aebfcd; border-radius: 10px; }
+.incomeStep .field .money input { min-height: 49px; font-family: var(--ukmr-font-sans); font-size: 16px; }
+.incomeStep .money:focus-within { border-color: transparent; outline: 2px solid var(--ukmr-color-focus-on-light); outline-offset: -1px; }
+.incomeStep .money input:focus-visible { outline: none; }
+.incomeStep .container button:focus-visible, .incomeStep .container summary:focus-visible, .incomeStep .confirm input:focus-visible { outline: 2px solid var(--ukmr-color-focus-on-light); outline-offset: 2px; }
+.incomeStep .confirm { min-height: 44px; }
+.incomeWarning { margin-top: 12px; padding: 13px 14px; border: 1px solid #e7d5a9; background: #fff8e8; border-radius: 12px; color: #735a3b; font-size: 12px; }
+.incomeWarning p { margin: 5px 0 0; }
+.incomeStep .secondary { border: 1px solid #afc0cf; border-radius: 12px; padding: 12px 16px; min-height: 52px; color: #23416b; }
+.incomeStep .actions { flex-wrap: wrap; }
+@media (max-width: 1150px) {
+  .incomeStep .moveWorkspace { grid-template-columns: minmax(0, 1fr); }
+  .incomeStep .moveSide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .incomeGrid { grid-template-columns: minmax(0, 1fr); padding: 0 18px 22px; }
+  .incomeYear, .incomeIntro { margin: 20px 18px; padding: 16px; }
+  .incomeBody { padding: 14px 16px 0; }
+  .incomeCard legend { font-size: 15px; }
+  .incomeStep .moveSide { grid-template-columns: minmax(0, 1fr); }
+  .incomeStep .actions { flex-direction: column; align-items: stretch; }
+  .incomeStep .actions button { width: 100%; }
+  .incomeStep .homeEvidence { margin: 0 19px 18px; }
+}
